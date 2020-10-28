@@ -1,5 +1,5 @@
 ---
-title: Archives
+title: Archivo
 type: archives
 # The Archives of posts.
 # v2.0
@@ -20,7 +20,8 @@ type: archives
   {% endif %}
     <li>
       <div>
-        {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %} {% capture this_month %} {% assign m = post.date | date: "%b" %} {% case m %} {% when 'Jan' %}Ene {% when 'Feb' %}Feb {% when 'Mar' %}Mar {% when 'Apr' %}Abr {% when 'May' %}May {% when 'Jun' %}Jun {% when 'Jul' %}Jul {% when 'Aug' %}Ago {% when 'Sep' %}Sep {% when 'Oct' %}Oct {% when 'Nov' %}Nov {% when 'Dec' %}Dic {% endcase %} {% endcapture %} {{ this_day }} {{ this_month }} {{ post.title }}}</a>
+        {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
+        {% capture this_month %} {% assign m = post.date | date: "%b" %} {% case m %} {% when 'Jan' %}Ene {% when 'Feb' %}Feb {% when 'Mar' %}Mar {% when 'Apr' %}Abr {% when 'May' %}May {% when 'Jun' %}Jun {% when 'Jul' %}Jul {% when 'Aug' %}Ago {% when 'Sep' %}Sep {% when 'Oct' %}Oct {% when 'Nov' %}Nov {% when 'Dec' %}Dic {% endcase %}{% endcapture %} {{ this_day }} {{ this_month }} {{ post.title }}}</a>
       </div>
     </li>
   {% if forloop.last %}
