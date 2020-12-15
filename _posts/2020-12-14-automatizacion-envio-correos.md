@@ -76,7 +76,7 @@ server.quit()
 ```
 
 
-![Primer paso, ir a archivos origen](assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
+![Primer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 *Primer paso, ir a archivos origen*
 
 Cambiar 
