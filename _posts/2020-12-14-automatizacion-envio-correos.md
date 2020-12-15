@@ -39,11 +39,11 @@ today = date.today()
 d1 = today.strftime("%Y-%m-%d")
 remitente = 'correo_remitente@gmail.com'
 destinatarios = [ 'correo_destino@gmail.com']
-asunto = 'Base de plan emergencia '+ d1
+asunto = 'Base diaria '+ d1
 cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día de hoy.'+'\n'+'\n'+' Quedo atento a tus comentarios.'
 
 # Datos
-username = 'cmoreno@gmail.com'
+username = 'correo_remitente@gmail.com'
 password = #contraseña
 # Creamos el objeto mensaje
 mensaje = MIMEMultipart()
@@ -80,7 +80,7 @@ server.quit()
 *Primer paso, ir a archivos origen*
 ![Segundo paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
 *Segundo paso, ir a archivos origen*
-![Tercer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
+![Tercer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
 *Tercer paso, ir a archivos origen*
 
 
