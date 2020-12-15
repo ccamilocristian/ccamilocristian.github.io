@@ -78,5 +78,11 @@ server.quit()
 
 ![Primer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 *Primer paso, ir a archivos origen*
+![Segundo paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
+*Segundo paso, ir a archivos origen*
+![Tercer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
+*Tercer paso, ir a archivos origen*
+
+
 
 Cambiar 
