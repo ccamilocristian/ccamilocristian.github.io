@@ -1,5 +1,5 @@
 ---
-title: Automatización 
+title: Automatización envío de correos 
 author: Cristian Moreno
 date: 2020-12-14 10:00:00 -0500
 categories: [Automatizacion, Python]
@@ -15,6 +15,7 @@ url = 'https://raw.githubusercontent.com/lorey/list-of-countries/master/csv/coun
 df = pd.read_csv(url, sep=";")
 ruta:''
 ```
+
 
 ```python
 fecha=datetime.date.today().strftime('%Y-%m-%d')
@@ -43,7 +44,7 @@ cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día d
 
 # Datos
 username = 'cmoreno@gmail.com'
-password = '#contraseña
+password = #contraseña
 # Creamos el objeto mensaje
 mensaje = MIMEMultipart()
 # Establecemos los atributos del mensaje
@@ -73,5 +74,5 @@ server.login(username,password)
 server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
-
+<img src=assets/img/sample/paso_1_link_python.png>
 Cambiar 
