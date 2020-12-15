@@ -74,5 +74,9 @@ server.login(username,password)
 server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
-<img src=assets/img/sample/paso_1_link_python.png>
+
+
+![Primer paso, ir a archivos origen](assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.pngg)
+*Primer paso, ir a archivos origen*
+
 Cambiar 
