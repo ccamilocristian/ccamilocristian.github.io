@@ -99,7 +99,7 @@ Luego de tener confirgurado el python en formato .py, se procede a configurar el
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
 2. Se entra a las propiedades del archivo "Anaconda Prompt". <br />
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png){:height="400px" width="400px"}
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
 
 3. Ya en la configuración del programa, se copia la ruta que se encuentra en el campo "Target". <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
