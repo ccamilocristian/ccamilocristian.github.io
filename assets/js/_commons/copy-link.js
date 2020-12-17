@@ -16,5 +16,5 @@ function copyLink(url) {
   document.execCommand("copy");
   $temp.remove();
 
-  alert("Link copied successfully!");
+  alert("¡Enlace copiado con éxito!);
 }
