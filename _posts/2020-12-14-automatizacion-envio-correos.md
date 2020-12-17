@@ -98,27 +98,27 @@ Luego de tener confirgurado el python en formato .py, se procede a configurar el
 1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de Anaconda. <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
-2. Se entra a las propiedades del archivo "Anaconda Prompt". </n>
+2. Se entra a las propiedades del archivo "Anaconda Prompt". <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
 
-3. Ya en la configuración del programa, se copia la ruta que se encuentra en el campo "Target". </n>
+3. Ya en la configuración del programa, se copia la ruta que se encuentra en el campo "Target". <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
 
-4. Luego se debe crear un blog de notas, se pega la ruta del punto anterior, la ruta del archivo python (.py) y se modifica de tal manera que quede de la siguiente manera: </n>
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso4_bat.PNG) </n>
+4. Luego se debe crear un blog de notas, se pega la ruta del punto anterior, la ruta del archivo python (.py) y se modifica de tal manera que quede de la siguiente manera: <br />
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso4_bat.PNG) <br />
 Para este paso, transformar el nombre blog de notas guardado a extensión .bat, ejemplo: "envio_automatico.bat"
 
-5. Abrir programador de tareas en windows e ir a crear tarea. Ingresa el nombre de la tarea y descripción de la misma.</n>
+5. Abrir programador de tareas en windows e ir a crear tarea. Ingresa el nombre de la tarea y descripción de la misma. <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso5_task.PNG)
 
-6. Agrega el desencadenador, el cual es una rutina diaria que se ejecuta, para este caso, a las 12 pm desde el primero de diciembre del año 2020. </n>
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso6_desencadenador.PNG) </n>
+6. Agrega el desencadenador, el cual es una rutina diaria que se ejecuta, para este caso, a las 12 pm desde el primero de diciembre del año 2020. <br />
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso6_desencadenador.PNG) <br />
 
-7. Finalmente, agrega una acción la cual es el script .bat que creaciamos a partir del blog de notas y la ruta de ejecución del python. </n>
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso7_action.PNG) </n>
+7. Finalmente, agrega una acción la cual es el script .bat que creaciamos a partir del blog de notas y la ruta de ejecución del python. <br />
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso7_action.PNG) <br />
 
 Así se debe visualizar la tarea en la aplicación de programación de tareas:
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_final.PNG) </n>
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_final.PNG) <br />
 
 Finalmente, el resultado de todos los procesos anteriores es un correo automatico que se envia diariamente como se muestra acontinuación:
 
