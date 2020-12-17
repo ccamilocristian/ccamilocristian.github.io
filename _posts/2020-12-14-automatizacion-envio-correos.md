@@ -96,7 +96,7 @@ server.quit()
 Luego de tener confirgurado el python en formato .py, se procede a configurar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
 1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de Anaconda.
-![Primer paso](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png) *Primer paso, ir a archivos origen*
+![Primer paso](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
 2. Se entra a las propiedades del archivo "Anaconda Prompt"
 ![Segundo paso](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png) *Segundo paso, ir propiedades*
