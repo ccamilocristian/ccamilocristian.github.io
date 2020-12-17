@@ -7,11 +7,12 @@ tags: [automatizacion, python, correo, windows, gmail]
 math: true
 ---
 
-A continuación desarrollaremos un tutorial con el fin de automatizar el envio de una base de datos por correo electronico, usando unicamente python 3 y el programador de tareas de Windows.
+A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el programador de tareas de Windows.
 
-Para poder realizar esta función de envío automatico, se debe generar un archivo .py con el código que se va a describir.
+Para poder realizar esta función de envío automático, se debe generar un archivo .py con el código que se va a describir.
 
-En primera medida, usaremos una base de datos online que se encuentra en la ruta "url". Esta base de datos tiene la informacion de paises relacionada a características básicas comoo moneda, capital, entre otros.
+En primera medida, usaremos una base de datos online que se encuentra en la ruta "url". Esta base de datos tiene la información de países relacionada a características básicas como moneda, capital, entre otros.
+
 
 ```python
 import pandas as pd
@@ -20,7 +21,7 @@ df = pd.read_csv(url, sep=";")
 ruta:'' # aca va la ruta donde se va a alojar la base de datos
 ```
 
-Se programa la generación de la fecha del día del envío de la base con la libreria datetime, como se muestra a continuación y se guarda la base de datos a un excel en la ruta especificada anteriormente:
+Se programa la generación de la fecha del día del envío de la base con la librería datetime, como se muestra a continuación y se guarda la base de datos a un excel en la ruta especificada anteriormente:
 
 ```python
 import datetime
@@ -42,7 +43,7 @@ import os
 from datetime import date
 ```
 
-Estas siguientes lineas de código relacionan el remitente, destinatario, asunto y cuerpo del correo.
+Estas siguientes líneas de código relacionan el remitente, destinatario, asunto y cuerpo del correo.
 
 ```python
 today = date.today()
@@ -93,7 +94,7 @@ server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
 
-Luego de tener confirgurado el python en formato .py, se procede a configurar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
+Luego de tener configurado el python en formato .py, se procede a programar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
 1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de Anaconda. <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
@@ -104,7 +105,7 @@ Luego de tener confirgurado el python en formato .py, se procede a configurar el
 3. Ya en la configuración del programa, se copia la ruta que se encuentra en el campo "Target". <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
 
-4. Luego se debe crear un blog de notas, se pega la ruta del punto anterior, la ruta del archivo python (.py) y se modifica de tal manera que quede de la siguiente manera: <br />
+4. Luego se debe crear un blog de notas, se pega la ruta del punto anterior, la ruta del archivo python (.py) y se modifica para quede de la siguiente manera: <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso4_bat.PNG) <br />
 Para este paso, transformar el nombre blog de notas guardado a extensión .bat, ejemplo: "envio_automatico.bat"
 
@@ -120,7 +121,7 @@ Para este paso, transformar el nombre blog de notas guardado a extensión .bat, 
 Así se debe visualizar la tarea en la aplicación de programación de tareas:
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_final.PNG) <br />
 
-Finalmente, el resultado de todos los procesos anteriores es un correo automatico que se envia diariamente como se muestra acontinuación:
+Finalmente, el resultado de todos los procesos anteriores es un correo automático que se envía diariamente como se muestra a continuación:
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/correo.PNG)
 
@@ -131,4 +132,4 @@ Contras del proceso:
 
 Mejoras al proceso:
 
-- Hacer este mismo proceso en alguna maquina virtual en la nube para que se corra sin ninguna intervención humana.
+- Hacer este mismo proceso en alguna máquina virtual en la nube para que se corra sin ninguna intervención humana.
