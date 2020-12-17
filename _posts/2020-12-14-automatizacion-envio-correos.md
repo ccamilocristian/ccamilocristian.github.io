@@ -39,7 +39,7 @@ from email import encoders
 import os
 from datetime import date
 ```
-Estas siguientes lineas de códsigo relacionan el remitente, destinatario, asunto y cuerpo del correo.
+Estas siguientes lineas de código relacionan el remitente, destinatario, asunto y cuerpo del correo.
 
 ```python
 today = date.today()
@@ -54,7 +54,6 @@ Finalmente, se configura la dirección del correo y la contraseña. Así mismo, 
 Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](https://docs.rocketbot.co/?p=1567). 
 
 ![Acceso aplicaciones poco seguras](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
-
 *Acceso aplicaciones poco seguras*
 
 
@@ -91,18 +90,57 @@ server.login(username,password)
 server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
+Luego de tener confirgurado el python en formato .py, se procede a configurar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
-
+1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de Anaconda.
 ![Primer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
-
 *Primer paso, ir a archivos origen*
-![Segundo paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
 
-*Segundo paso, ir a archivos origen*
-![Tercer paso, ir a archivos origen](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
+2. Se entra a las propiedades del archivo "Anaconda Prompt"
 
-*Tercer paso, ir a archivos origen*
+![Segundo paso, ir a propiedades](/assets/img/2020-12-14-automatizacion-envio-correos/paso_2_link_python.png)
+*Segundo paso, ir propiedades*
+
+3. Ya en la configuración del programa, se copia la ruta que se encuentra en el campo "Target".
+
+![Tercer paso, ir a target](/assets/img/2020-12-14-automatizacion-envio-correos/paso_3_link_python.png)
+*Tercer paso, ir a target*
+
+4. Luego se debe crear un blog de notas, se pega la ruta del punto anterior, la ruta del archivo python (.py) y se modifica de tal manera que quede de la siguiente manera:
+
+![Cuarto paso, generar archivo bat](/assets/img/2020-12-14-automatizacion-envio-correos/paso4_bat.PNG)
+*Cuarto paso, generar archivo bat*
+
+Para este paso, transformar el nombre blog de notas guardado a extensión .bat, ejemplo: "envio_automatico.bat"
+ 
+5. Abrir programador de tareas en windows e ir a crear tarea. Ingresa el nombre de la tarea y descripción de la misma.
+
+![Quinto paso, generar tarea programada](/assets/img/2020-12-14-automatizacion-envio-correos/paso5_task.PNG)
+*Quinto paso, generar tarea programada*
+
+6. Agrega el desencadenador, el cual es una rutina diaria que se ejecuta, para este caso, a las 12 pm desde el primero de diciembre del año 2020.
+
+![Sexto paso, desencadenador](/assets/img/2020-12-14-automatizacion-envio-correos/paso6_desencadenador.PNG)
+*Sexto paso, desencadenador*
+
+7. Finalmente, agrega una acción la cual es el script .bat que creaciamos a partir del blog de notas y la ruta de ejecución del python. 
+
+![Septimo paso, acción](/assets/img/2020-12-14-automatizacion-envio-correos/paso7_action.PNG)
+*Septimo paso, acción*
+
+Así se debe visualizar la tarea en la aplicación de programación de tareas: 
+![resultado](/assets/img/2020-12-14-automatizacion-envio-correos/paso_final.PNG)
+*resultado tarea programada*
+
+Finalmente, el resultado de todos los procesos anteriores es un correo automatico que se envia diariamente como se muestra acontinuación:
+
+![correo](/assets/img/2020-12-14-automatizacion-envio-correos/correo.PNG)
+*correo resultado de la tarea programada*
 
 
+Contras del proceso:
+- Se necesita que el computador este prendido.
+- Hay cierto nivel de riesgo si se envia información delicada, ya que hay intervención de un tercero (la libreria usada en python para el envío de correos)
 
-Cambiar 
+Mejoras al proceso:
+- Hacer este mismo proceso en alguna maquina virtual en la nube para que se corra sin ninguna intervención humana.
