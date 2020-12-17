@@ -57,7 +57,8 @@ cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día d
 Finalmente, se configura la dirección del correo y la contraseña. Así mismo, se configura la información que irá en el correo, adjuntos, remitentes, destinatarios y asuto.
 Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](https://docs.rocketbot.co/?p=1567).
 
-![Acceso](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG) *Acceso aplicaciones poco seguras*
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
+*Acceso aplicaciones poco seguras*
 
 ```python
 # Datos
