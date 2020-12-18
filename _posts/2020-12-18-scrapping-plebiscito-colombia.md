@@ -33,7 +33,7 @@ En este proceso, se extrajo la información de 1.186 municipios para 34 departam
 
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/3ff5ad92-7dcd-4ecd-988b-584811f353c2/page/m0vMB" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-## Proceo Scrapping
+## Proceso del Scrapping
 
 Se empieza importanto las librerias necesarias para la manipulación de los datos y al extracción en la página web. Para este fin, usaremos pandas, BeautifulSoup y requests, como se muestra a continuación:
 
