@@ -24,7 +24,7 @@ Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas
 1. El proceso de Scrapping de la página de la [Registraduría Nacional](https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm) tiene las siguientes funciones:
 
 * Realizar el scrapping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
-* Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participacion y de aprobacion al plebiscito.
+* Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
 
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
@@ -35,7 +35,7 @@ En este proceso, se extrajo la información de 1.186 municipios para 34 departam
 
 ## Proceso del Scrapping
 
-Se empieza importanto las librerias necesarias para la manipulación de los datos y al extracción en la página web. Para este fin, usaremos pandas, BeautifulSoup y requests, como se muestra a continuación:
+Se empieza importanto las librerias necesarias para la manipulación de los datos y la extracción en la página web. Para este fin, usaremos pandas, BeautifulSoup y requests, como se muestra a continuación:
 
 ```python
 import re
@@ -47,6 +47,7 @@ import warnings
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 warnings.simplefilter('ignore',InsecureRequestWarning)
 ```
+
 Una vez importadas las librerías, con la librería request traemos el código que se usa para la construcción de la página web con el fin de encontrar el link de la información del resultado del prebliscito por cada departamento.
 
 ```python
@@ -60,7 +61,7 @@ departamentos['link1']=depa
 
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/municipios.PNG)
 
-Luego con el lista de links por departamento, se realiza una limpieza de la información para generar el insumo con el cual se hará el segundo scrapping a nivel de municipio.
+Luego con la lista de links por departamento, se realiza una limpieza de la información para generar el insumo con el cual se hará el segundo scrapping a nivel de municipio.
 
 ```python
 departamentos['link']=departamentos['link1'].map(lambda x:x.replace('<a href="../', '').replace("</a></li>", "").replace('">', ",")).map(lambda x:x[:32])
@@ -68,7 +69,7 @@ departamentos['departamento']=departamentos['link1'].map(lambda x:x.replace('<a 
 departamentos1=departamentos[['link', 'departamento']]
 ```
 
-A continuación se  describe la función con la cual se realiza el loop por cada departamento para así extraer el link de cada municipio relacionado.
+A continuación, se describe la función con la cual se realiza el loop por cada departamento para así extraer el link de cada municipio relacionado.
 
 ```python
 def func_mun(link, departamento):
@@ -98,7 +99,7 @@ total=total.reset_index(drop=True)
 total1=total[['link', 'municipio', 'departamento']]
 ```
 
-Esta función descrita a continuación extrae la información de cada municipio relacionada al númer de votantes frente al si o al no en el plebiscito y medidas porcentuales.
+Esta función descrita a continuación extrae la información de cada municipio relacionada al número de votantes frente al si o al no en el plebiscito y medidas porcentuales.
 
 ```python
 def busqueda(link):
