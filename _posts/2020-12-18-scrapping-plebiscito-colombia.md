@@ -15,7 +15,7 @@ Recolección de los resultados del plebiscito 2016 Colombia.
 
 Esta fue la pregunta realizada en:
 
-<img src=/assets/img/2020-12-18-scrapping-plebiscito-colombia/pregunta.png>
+![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/pregunta.png)
 
 Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas de Scrapping a de Python para extraer dicha información a nivel de municipio y departamento para posteriormente mostrar dichos resultados en un panel de Google Data Studio.
 
@@ -27,7 +27,7 @@ Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas
 * Realizar el scrapping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
 * Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participacion y de aprobacion al plebiscito.
 
-<img src=/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG>
+![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
 
 En este proceso, se extrajo la información de 1.186 municipios para 34 departamentos (incluidos consulados y Bogotá DC)
