@@ -23,8 +23,8 @@ Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas
 
 1. El proceso de Scrapping de la página de la [Registraduría Nacional](https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm) tiene las siguientes funciones:
 
-* Realizar el scrapping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
-* Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
+    * Realizar el scrapping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
+    * Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
 
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
