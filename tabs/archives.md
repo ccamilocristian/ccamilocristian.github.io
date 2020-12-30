@@ -1,5 +1,5 @@
 ---
-title: Archivo
+title: Posts
 type: archives
 # The Archives of posts.
 # v2.0

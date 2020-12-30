@@ -9,22 +9,29 @@
   name: "Inicio"
   icon: "fas fa-home"
 -
-  name: "Categorías"
-  icon: "fas fa-stream"
+  name: "Hoja de vida"
+  icon: "fas fa-info"
   path: tabs
-  url: categories
+  url: Hoja de vida  
 -
-  name: "Etiquetas"
-  icon: "fas fa-tags"
-  path: tabs
-  url: tags
--
-  name: "Archivo"
+  # name: "Etiquetas"
+  # icon: "fas fa-tags"
+  # path: tabs
+  # url: tags
+
+  name: "Posts"
   path: tabs
   url: archives
   icon: "fas fa-archive"
 -
-  name: "Acerca de"
-  icon: "fas fa-info"
+  name: "Categorías"
+  icon: "fas fa-stream"
   path: tabs
-  url: about
+  url: categories
+# -
+#   name: "Acerca de"
+#   icon: "fas fa-info"
+#   path: tabs
+#   url: about
+
+

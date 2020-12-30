@@ -9,11 +9,10 @@
 #--------------------------
 
 title: Cristian Moreno                          # the main title
-
-tagline: Portafolio  # it will display as the sub-title
-
+tagline: >- # it will display as the sub-title
+  Economista con gran interes en inteligencia de mercados y ciencia de datos, programación y visualización de datos.
 description: >-                        # used by seo meta and the atom feed
-  Página personal para divulgación de conocimiento en manipulación y visualización de datos .
+  Página personal para divulgación de conocimiento en manipulación y visualización de datos.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ccamilocristian.github.io/'

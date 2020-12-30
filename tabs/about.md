@@ -1,5 +1,5 @@
 ---
-title: Acerca de
+title: Acerca de mi
 
 # The About page
 # v2.0
@@ -7,10 +7,8 @@ title: Acerca de
 # © 2017-2019 Cotes Chung
 # MIT License
 ---
-# ola!
----
-Mi nombre es
 
 
+Soy economista y estudiante de la Maestría en Economía de la Universidad del Rosario con experiencia en Minería de
+Datos e inteligencia de Negocios. Tengo amplio conocimiento en Python para manipulación de bases de datos y SQL. Así mismo, tengo gran interés por el análisis cuantitativo, manipulación de datos, análisis de riesgo e investigación economía.
 
-#> **Note**: Add Markdown syntax content to file `tabs/about.md` and it will show up on this page.
