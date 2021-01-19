@@ -1,6 +1,6 @@
 ---
 title: Web Scrapping plebiscito 2016 Colombia
-author: Cristian Moreno
+author: Cristian Camilo Moreno Narvaez
 date: 2020-12-18 01:00:00 -0500
 categories: [Python,Web scrapping, Data studio]
 tags: [automatizacion, python, web scrapping, colombia, visualizaciones]
