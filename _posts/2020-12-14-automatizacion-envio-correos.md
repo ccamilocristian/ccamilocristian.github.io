@@ -1,6 +1,6 @@
 ---
 title: Automatización envío de correos 
-author: Cristian Moreno
+author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 15:00:00 -0500
 categories: [Python,Automatizacion ]
 tags: [automatizacion, python, correo, windows, gmail]
