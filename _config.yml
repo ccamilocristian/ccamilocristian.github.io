@@ -8,7 +8,7 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Cristian Moreno                          # the main title
+title: Cristian Camilo Moreno Narvaez                          # the main title
 tagline: >- # it will display as the sub-title
   Economista con gran interes en inteligencia de mercados y ciencia de datos, programación y visualización de datos.
 description: >-                        # used by seo meta and the atom feed
@@ -17,7 +17,7 @@ description: >-                        # used by seo meta and the atom feed
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ccamilocristian.github.io/'
 
-author: Cristian Moreno                  # change to your full name
+author: Cristian Camilo Moreno Narvaez                  # change to your full name
 
 avatar: /assets/img/sample/ciencia_datos.jfif   # support internet resources
 
@@ -28,7 +28,7 @@ twitter:
   username: camilo_more            # change to your twitter username
 
 social:
-  name: Cristian Moreno                  # it will shows as the copyright owner in Footer
+  name: Cristian Camilo Moreno Narvaez                  # it will shows as the copyright owner in Footer
   email: cristianmorenonarvaez@outlook.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
