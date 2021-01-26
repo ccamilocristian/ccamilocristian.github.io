@@ -1,9 +1,14 @@
 ---
+<<<<<<< Updated upstream
 title: Web Scrapping plebiscito 2016 Colombia
 author: Cristian Camilo Moreno Narvaez
+=======
+title: Web Scraping plebiscito 2016 Colombia
+author: Cristian Moreno
+>>>>>>> Stashed changes
 date: 2020-12-18 01:00:00 -0500
-categories: [Python,Web scrapping, Data studio]
-tags: [automatizacion, python, web scrapping, colombia, visualizaciones]
+categories: [Python,Web scraping, Data studio]
+tags: [automatizacion, python, web scraping, colombia, visualizaciones]
 math: true
 ---
 
@@ -15,16 +20,16 @@ Esta fue la pregunta realizada en:
 
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/pregunta.png)
 
-Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas de Scrapping a de Python para extraer dicha información a nivel de municipio y departamento para posteriormente mostrar dichos resultados en un panel de Google Data Studio.
+Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas de Scraping a de Python para extraer dicha información a nivel de municipio y departamento para posteriormente mostrar dichos resultados en un panel de Google Data Studio.
 
 ----
 
 ## Metodologías
 
-+ El proceso de Scrapping de la página de la [Registraduría Nacional](https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm) tiene las siguientes funciones:
++ El proceso de Scraping de la página de la [Registraduría Nacional](https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm) tiene las siguientes funciones:
 
-  * Realizar el scrapping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
-  * Realizar el scrapping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
+  * Realizar el scraping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
+  * Realizar el scraping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
 
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
@@ -34,7 +39,7 @@ En este proceso, se extrajo la información de 1.186 municipios para 34 departam
 
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/3ff5ad92-7dcd-4ecd-988b-584811f353c2/page/m0vMB" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-## Proceso del Scrapping
+## Proceso del Scraping
 
 Se empieza importanto las librerias necesarias para la manipulación de los datos y la extracción en la página web. Para este fin, usaremos pandas, BeautifulSoup y requests, como se muestra a continuación:
 
@@ -188,7 +193,7 @@ def busqueda(link):
     return base
 ```
 
-Finalmente, generamos el loop el cual hace el scapping para cada municipio por departamento y lo almacena en un dataframe, el cual es exportado en csv para poder ser manipulado en Google Data studio.
+Finalmente, generamos el loop el cual hace el scraping para cada municipio por departamento y lo almacena en un dataframe, el cual es exportado en csv para poder ser manipulado en Google Data studio.
 
 ```python
 base_total=pd.DataFrame()
