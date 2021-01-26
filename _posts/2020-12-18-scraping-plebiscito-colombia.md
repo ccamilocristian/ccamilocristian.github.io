@@ -1,6 +1,6 @@
 ---
 <<<<<<< Updated upstream
-title: Web Scrapping plebiscito 2016 Colombia
+title: Web Scraping plebiscito 2016 Colombia
 author: Cristian Camilo Moreno Narvaez
 =======
 title: Web Scraping plebiscito 2016 Colombia
