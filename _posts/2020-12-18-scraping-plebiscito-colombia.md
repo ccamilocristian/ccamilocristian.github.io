@@ -1,11 +1,6 @@
 ---
-<<<<<<< Updated upstream
 title: Web Scraping plebiscito 2016 Colombia
 author: Cristian Camilo Moreno Narvaez
-=======
-title: Web Scraping plebiscito 2016 Colombia
-author: Cristian Moreno
->>>>>>> Stashed changes
 date: 2020-12-18 01:00:00 -0500
 categories: [Python,Web scraping, Data studio]
 tags: [automatizacion, python, web scraping, colombia, visualizaciones]
