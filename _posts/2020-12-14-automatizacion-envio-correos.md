@@ -1,5 +1,5 @@
 ---
-title: Automatización envío de correos 
+title: Envío automático de correos 
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 15:00:00 -0500
 categories: [Python,Automatizacion]
