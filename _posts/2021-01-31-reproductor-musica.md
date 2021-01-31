@@ -9,7 +9,7 @@ math: true
 
 A continuación mostraré cómo realizar un reproductor de música haciendo uso de programación con objetos en Python.
 
-![](/assets/img/2021-01-31-reproductor-musica/reproductor.png)
+![](/assets/img/2021-01-31-reproductor-musica/reproductor.PNG)
 
 El resultado del siguiente código es el reproductor de la imagen anterior.
 
