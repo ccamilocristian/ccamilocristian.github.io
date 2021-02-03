@@ -57,6 +57,7 @@ Finalmente, se debe copiar y pegar el token que arroja el permitir los accesos.
 Partiendo que la información esta almacenada en Google Big query, abrimos en el navegador Google Data Studio, un proyecto nuevo. Ya allí, abrimos los recursos para importar los datos:  
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
+
 Ahí, seleccionamos "gestionar las fuentes de datos añadidas". Saldrá las siguientes opciones, de las cuales se debe escoger BigQuery.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
