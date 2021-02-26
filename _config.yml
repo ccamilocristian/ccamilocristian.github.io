@@ -166,17 +166,15 @@ sass:
 
 compress_html:
   clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: [html, head, body, dt, dd, rt, rp,
-            optgroup, option, colgroup, caption,
-            thead, tbody, tfoot, tr, td, th]
+  comments: all
+  endings: all
   profile: false
   blanklines: false
   ignore:
-    envs: []
+    envs: [development]
 
 exclude:
-  - vendor        # Avoid Jekyll mistakenly read the vendor directory on Travis-CI's VM .
+  - vendor
   - Gemfile.lock
   - Gemfile
   - tools
@@ -184,17 +182,11 @@ exclude:
   - README.md
   - LICENSE
 
-sitemap_exclude:  # Sitemap will exclude the following items.
-  fuzzy:
-    - /assets/
-  accurate:
-    - /norobots/
-    - /tabs/
-    - /categories/
-    - /tags/
-    - /posts/
-    - 404.html
-    - feed.xml
-    - sitemap.xml
-    - robots.txt
-    - redirects.json
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
