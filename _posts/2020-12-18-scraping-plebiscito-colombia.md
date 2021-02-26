@@ -205,6 +205,4 @@ base_total.to_csv("base_total1.csv", encoding='utf-8', index=False)
 
 Ya con la base generada y depurada, nos remitimos a Google data studio para realizar las gráficas para dicha información.
 
-<iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/3ff5ad92-7dcd-4ecd-988b-584811f353c2/page/m0vMB" frameborder="0" style="border:0" allowfullscreen></iframe>
-
 Este proceso realizado, es replicable a cualquier pagina web en donde no haya renderización. Así mismo, este proyecto no tiene el alcance de analizar a fondo la información ya que para esto hay que revisar más factores socio-demograficos y políticos y económicos.
