@@ -87,7 +87,7 @@ Logros:
 
 <br />
 
-[Hoja de vida](\assets\docs\Cristian_Moreno_CV_2020.pdf "Hoja de vida")
+#[Hoja de vida](\assets\docs\Cristian_Moreno_CV_2020.pdf "Hoja de vida")
 
 <!-- {% comment %}
   'site.tags' looks like a Map, e.g. site.tags.MyTag.[ Post0, Post1, ... ]
