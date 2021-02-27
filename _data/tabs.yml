@@ -23,11 +23,11 @@
   path: tabs
   url: archives
   icon: "fas fa-archive"
--
-  name: "Categorías"
-  icon: "fas fa-stream"
-  path: tabs
-  url: categories
+#-
+#  name: "Categorías"
+#  icon: "fas fa-stream"
+#  path: tabs
+#  url: categories
 # -
 #   name: "Acerca de"
 #   icon: "fas fa-info"
