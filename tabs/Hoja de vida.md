@@ -25,7 +25,7 @@ title: Hoja de vida
 #### [QNT S.A.S](https://qnt.com.co/)
 
 *Analista de Metodologías en Riesgo* <br />
-Dic. 2019 – Actual <br />
+Dic. 2019 – Feb. 2021 <br />
 <u> Funciones: </u>
 
 + Monitorear y garantizar la veracidad de las fuentes de información para el seguimiento del riesgo de crédito.
@@ -36,6 +36,9 @@ Dic. 2019 – Actual <br />
 Logros:
 
 + Estandaricé y disminuí tiempos de respuesta en el proceso de reporte de clientes a centrales de riesgo.
++ Lideré y estructuré la coordinación de sistemas de información, con dos personas a cargo.
++ Automaticé procesos de extracción, generación y envío periódica de bases de datos a través de Python. 
+
 
 #### [QNT S.A.S](https://qnt.com.co/)
 
@@ -87,7 +90,7 @@ Logros:
 
 <br />
 
-[Hoja de vida](\assets\docs\Cristian_Moreno_CV_2020.pdf "Hoja de vida")
+[Hoja de vida](\assets\docs\Cristian_Moreno_CV_2021.pdf "Hoja de vida")
 
 <!-- {% comment %}
   'site.tags' looks like a Map, e.g. site.tags.MyTag.[ Post0, Post1, ... ]
