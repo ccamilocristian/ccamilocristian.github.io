@@ -8,6 +8,8 @@ title: Hoja de vida
 # MIT License
 ---
 
+Economista y estudiante de la Maestría en Economía de la Universidad del Rosario con experiencia en Minería de Datos e inteligencia de Negocios. Amplio conocimiento en Python para manipulación y visualización de datos, SQL, Excel y Stata. Interés por el análisis cuantitativo, estadística, manipulación de datos, visualización de datos, análisis de riesgo crediticio, operacional, investigación económica y econométrica. De aprendizaje rápido, proactivo y con iniciativa para el desarrollo de ideas novedosas en aras al mejoramiento de procesos y productividad.
+
 ## Formación académica
 
 ---
@@ -28,16 +30,14 @@ title: Hoja de vida
 Dic. 2019 – Feb. 2021 <br />
 <u> Funciones: </u>
 
-+ Monitorear y garantizar la veracidad de las fuentes de información para el seguimiento del riesgo de crédito.
++ Hacer seguimiento y mejora en la integralidad de los datos de carteras de los aliados para llevar a cabo el Modelo de Machine Learning QBK. 
 + Participar en el diseño funcional de los sistemas de información necesarios para la evaluación y seguimiento del riesgo de crédito.
+  + Estandaricé y disminuí tiempo de respuesta a un día en el proceso de reporte de clientes a centrales de riesgo.
++ Evaluar indicadores de desempeño del portafolio y presentar reportes analíticos que identifiquen alertas y oportunidades.
 + Apoyar analítica y operativamente al Vicepresidente de Riesgo y Desarrollo de Negocio y al Director de Riesgo con los requerimientos que surjan en la gestión de riesgos.
-+ Generar informes a través de Data Studio con base a tablas generadas en Google Cloud Big Query.
-
-Logros:
-
-+ Estandaricé y disminuí tiempos de respuesta en el proceso de reporte de clientes a centrales de riesgo.
-+ Lideré y estructuré la coordinación de sistemas de información, con dos personas a cargo.
-+ Automaticé procesos de extracción, generación y envío periódica de bases de datos a través de Python. 
+  + Lideré y estructuré la coordinación de sistemas de información, con dos personas a cargo.
+  + Automaticé más de 5 procesos de extracción, generación y envío periódica de bases de datos a través de Python.
++ Desarrollar informes a través de Data Studio con base a tablas generadas en Google Cloud Big Query.
 
 
 #### [QNT S.A.S](https://qnt.com.co/)
@@ -46,16 +46,12 @@ Logros:
 Abr. 2019 - Dic. 2019 <br />
 <u> Funciones: </u>
 
-+ Hacer seguimiento y monitoreo en la integralidad de los datos de carteras de los aliados para llevar a cabo el Modelo de Machine Learning QBK.
 + Interpretar las bases de carteras de los aliados según su perfil de cliente, analizar los resultados obtenidos por el Modelo Qbk y proveer reportes de dichos resultados encontrados.
-+ Desarrollar y generar reportes automáticos en la plataforma Qlik.
-+ Identificar patrones y tendencias en las bases de datos para mejorar los procesos del Modelo QBK.
-+ Estandarizar y automatizar los procesos operativos del área de Gestión de datos.
-
-Logros:
-
++ Comunicar y corregir incidencias en la plataforma Salesforce para mejorar el desarrollo de las tareas del Call Center, así mismo como implementar reportes periódicos a través de paneles de control.
 + Estructurar el Área de gestión de datos, estandarizando procesos de recepción, análisis y reportaría para cada base de datos.
-+ Mejorar los tiempos de respuesta en procesamiento de bases de datos gracias a la estructuración y automatización de procesos a través de Python.
++ Optimizar los tiempos de respuesta en procesamiento de bases de datos gracias a la estructuración y automatización de procesos a través de Python.
++ Desarrollar y mejorar reportes automáticos en la plataforma Qlik
++ Identificar patrones y tendencias en las bases de datos para corregir los procesos del Modelo QBK
 
 #### [Allianz Colombia, Casa Principal](https://www.allianz.co/)
 
@@ -65,11 +61,9 @@ Jul. 2018 – Ene. 2019 <br />
 
 + Manejar bases de datos y analizar pólizas de hogar no renovadas mes a mes para su renovación.
 + Cruzar bases de datos para homologación de Códigos Fasecolda según datos actualizados mes a mes.
-+ Hacer seguimiento en implementación y de procesos de respuesta en términos de inspecciones de asegurabilidad y análisis de restricción de placas de vehículos para expedición de pólizas.
-
-Logros:
-
-+ Optimicé y estandaricé la elaboración de las tareas del cargo disminuyendo el tiempo de respuesta de 3 a 1 día.
++ Hacer seguimiento en implementación y de procesos de respuesta en términos de inspecciones de asegurabilidad
+y análisis de restricción de placas de vehículos para expedición de pólizas.
+  + Optimicé y estandaricé la elaboración de las tareas del cargo disminuyendo el tiempo de respuesta de 3 a 1 día.
 
 ### Habilidades
 
