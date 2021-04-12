@@ -2,7 +2,7 @@
 title: Decretos y Resoluciones del Ministerio de Salud y Protección Social de Colombia (2000-2020)
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-12 01:00:00 -0500
-categories: [Python, Web scraping]
+categories: [Python, Web_scraping]
 tags:  [automatizacion, python, web-scraping, colombia, visualizaciones]
 math: true
 ---

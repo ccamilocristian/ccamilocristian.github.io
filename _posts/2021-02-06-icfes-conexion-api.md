@@ -2,7 +2,7 @@
 title: ¿Cómo interactuar con APIs en Python? Caso de estudio, resultados del Icfes en Colombia del 2019-2
 author: Cristian Camilo Moreno Narvaez
 date: 2021-02-06 15:00:00 -0500
-categories: [Python, Economics, Data studio]
+categories: [Python, Economics, Data_studio]
 tags: [python, api, visualizaciones, big-query]
 math: true
 ---
