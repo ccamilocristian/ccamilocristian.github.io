@@ -3,7 +3,7 @@ title: ¿Cómo interactuar con APIs en Python? Caso de estudio, resultados del I
 author: Cristian Camilo Moreno Narvaez
 date: 2021-02-06 15:00:00 -0500
 categories: [Python, Economics, Data studio]
-tags: [python, api, visualizaciones, big query]
+tags: [python, api, visualizaciones, big-query]
 math: true
 ---
 Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](https://www.datos.gov.co/) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.

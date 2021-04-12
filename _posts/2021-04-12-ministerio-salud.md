@@ -3,7 +3,7 @@ title: Decretos y Resoluciones del Ministerio de Salud y Protección Social de C
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-12 01:00:00 -0500
 categories: [Python, Web scraping]
-tags:  [automatizacion, python, web scraping, colombia, visualizaciones]
+tags:  [automatizacion, python, web-scraping, colombia, visualizaciones]
 math: true
 ---
 
