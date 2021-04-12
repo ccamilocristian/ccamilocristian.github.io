@@ -1,5 +1,5 @@
 ---
-title: Reproductor de música en Python
+title: ¿Cómo realizar un reproductor de música en Python?
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-31 11:00:00 -0500
 categories: [Python]
