@@ -9,7 +9,7 @@ math: true
 
 A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el programador de tareas de Windows.
 
-![ ](/assets/img/2020-12-14-automatizacion-envio-correos/descarga1.jfif)
+![ ](/assets/img/2020-12-14-automatizacion-envio-correos/descar.jpg)
 
 Para poder realizar esta función de envío automático, se debe generar un archivo .py con el código que se va a describir.
 
