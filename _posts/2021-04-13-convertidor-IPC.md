@@ -15,7 +15,7 @@ La inflación es el aumento generalizado y sostenido de los precios de bienes y 
 
 Para el caso colombiano, el DANE (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de Laspeyres y de Paasche. El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.png)
+![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
 
 Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del IPC (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](https://www.banrep.gov.co/es/estadisticas/indice-precios-consumidor-ipc).
 
@@ -102,8 +102,8 @@ calculadora(valor0,año0, añof)
 
 Este es el resultado de la función anterior, mostrando los valores a través del tiempo en el periodo de referencia según se seleccione en la calculadora.
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen2.png)
+![ ](/assets/img/2021-04-14-convertidor-IPC/imagen2.PNG)
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.png)
+![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
 Como ejercicio a futuro para complementar la calculadora, se podría agregar una función la cual realice el cálculo de valor futuro a valor presente, es decir realiza el calculo de valores actuales a precios pasadaos. Por ejemplo, los mismos $3'000.000 de precios del 2020 a precios del 2000.
