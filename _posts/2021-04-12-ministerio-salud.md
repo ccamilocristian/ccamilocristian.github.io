@@ -7,11 +7,11 @@ tags:  [automatizacion, python, web-scraping, colombia, visualizaciones]
 math: true
 ---
 
-Según estudios de [McKinsey](https://www.mckinsey.com/featured-insights/artificial-intelligence/visualizing-the-uses-and-potential-impact-of-ai-and-other-analytics), el análisis del datos referente a información no estructurada como audios, textos e imagen, a futuro tienen gran potencial debido a su gran cantidad de datos que almacén y su poca investigación en la actualidad.
+Según estudios de [McKinsey](http://gestyy.com/euLdUN), el análisis del datos referente a información no estructurada como audios, textos e imagen, a futuro tienen gran potencial debido a su gran cantidad de datos que almacén y su poca investigación en la actualidad.
 
-Dado lo anterior, el presente documento tiene como objetivo hacer el análisis exploratorio de los datos encontrados en la extracción de información no estructurada como los son textos en formato PDF. Así, se usarán los actos administrativos más relevantes de los entres de control como lo son los Decretos y las resoluciones, tomando el intervalo del año 2000 a mayo del 2020. En el análisis exploratorio se relacionarán indicadores macroeconómicos con el fin de dar insumos para investigaciones futuras de efectos causales y correlaciones estadísticas. 
+Dado lo anterior, el presente documento tiene como objetivo hacer el análisis exploratorio de los datos encontrados en la extracción de información no estructurada como los son textos en formato PDF. Así, se usarán los actos administrativos más relevantes de los entres de control como lo son los Decretos y las resoluciones, tomando el intervalo del año 2000 a mayo del 2020. En el análisis exploratorio se relacionarán indicadores macroeconómicos con el fin de dar insumos para investigaciones futuras de efectos causales y correlaciones estadísticas.
 
-Las siguientes son interrogantes que motivaron el análisis de los dos actos administrativos: 
+Las siguientes son interrogantes que motivaron el análisis de los dos actos administrativos:
 
 - A lo largo de los últimos 20 años se han presentado varias enfermedades a nivel mundial, ¿Los datos reflejan las normativas y controles que tuvo Colombia para manejar dichas problemáticas?
 - El nivel de gasto público en salud ha estado en constante fluctuación en los últimos años, ¿los documentos reflejan este cambio político en los últimos 20 años?
@@ -24,32 +24,32 @@ Las siguientes son interrogantes que motivaron el análisis de los dos actos adm
 
 ### Scrapping
 
-El proceso de Scrapping se divide en dos scripts, en [Scrapping_Decretos_MinSalud.ipynb](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Decretos/Scrapping_Decretos_MinSalud.ipynb) se encuentra el proceso para los decretos y en [Scrapping_Resoluciones_MinSalud.ipynb](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Resoluciones/Scrapping_Resoluciones_MinSalud.ipynb) se encuentra el proceso para las resoluciones.
+El proceso de Scrapping se divide en dos scripts, en [Scrapping_Decretos_MinSalud.ipynb](http://gestyy.com/euLdPt) se encuentra el proceso para los decretos y en [Scrapping_Resoluciones_MinSalud.ipynb](http://gestyy.com/euLdP3) se encuentra el proceso para las resoluciones.
 
 Cada código tiene dos funcionalidades:
 
 1. La primera es traer el número de registros, año e indicativo del año para así mismo desarrollar el scrapping de la página.
-   - 558 Decretos [Decretos MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Decretos.aspx)
-   - 1406 Resoluciones [Resoluciones MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx)
+   - 558 Decretos [Decretos MinSalud](http://gestyy.com/euLdFj)
+   - 1406 Resoluciones [Resoluciones MinSalud](http://gestyy.com/euLdXk)
 
  <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/publicaciones_año.png">
 
 Las líneas verticales son las marcas de cambio de gobiernos presidencial.
 
-2. La segunda parte, con la ayuda de [Selenium](https://github.com/SeleniumHQ/selenium) hace el scrapping de la página del ministerio simulando los click necesarios para el proceso, esto para traer el link de cada documento para descargarlo en proceso posterior. En cada script se encuentra el proceso anteriormente descrito a través de imágenes ilustrativas.
+2. La segunda parte, con la ayuda de [Selenium](http://gestyy.com/euLdNL) hace el scrapping de la página del ministerio simulando los click necesarios para el proceso, esto para traer el link de cada documento para descargarlo en proceso posterior. En cada script se encuentra el proceso anteriormente descrito a través de imágenes ilustrativas.
 
 Para este último scrapping es necesario descargar el ejecutable del siguiente link, como complemento de selenium:
-[Chromedriver selenium](https://chromedriver.chromium.org/)
+[Chromedriver selenium](http://gestyy.com/euLdMS)
 
 La finalidad de estos scripts anteriores es obtener la ruta de cada uno de los PDFs de las resoluciones del Ministerio de salud, publicados en la página web y traer esta información en un Dataframe para exportar a excel.
 
 ### Descarga de PDFs y trasncripción de textos
 
-El proceso de Descarga de PDFs y transcripción de textos se divide en dos scripts, en [Código descarga PDFs Decretos](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Decretos/Descarga_PDFs_%26_Trasncripci%C3%B3n_decretos.ipynb) se encuentra el proceso para los decretos y en [Código descarga PDFs Resoluciones](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Resoluciones/Scrapping_Resoluciones_MinSalud.ipynb) se encuentra el proceso para las resoluciones.
+El proceso de Descarga de PDFs y transcripción de textos se divide en dos scripts, en [Código descarga PDFs Decretos](http://gestyy.com/euLd2o) se encuentra el proceso para los decretos y en [Código descarga PDFs Resoluciones](http://gestyy.com/euLdP3) se encuentra el proceso para las resoluciones.
 
 Cada código tiene dos funcionalidades:
 
- 1. La primera es descargar cada uno de los documentos publicados en la página del Miniterio de Salud, con base al Scrapping realizado en los scripts [Scrapping Decretos](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Decretos/Scrapping_Decretos_MinSalud.ipynb) y [Scrapping Resoluciones](https://github.com/ccamilocristian/Scrapping_MinSalud/blob/master/Resoluciones/Scrapping_Resoluciones_MinSalud.ipynb) , esto con ayuda de la librería "urllib".
+ 1. La primera es descargar cada uno de los documentos publicados en la página del Miniterio de Salud, con base al Scrapping realizado en los scripts [Scrapping Decretos](http://gestyy.com/euLdPt) y [Scrapping Resoluciones](http://gestyy.com/euLdP3) , esto con ayuda de la librería "urllib".
  2. La segunda parte, transcribe los pdf a texto y valida si los textos tienen menos de 200 palabras para transformar dichos PDFs en archivos Word y posteriormente reescribir el archivo PDF, esto debido a que hay textos que se publican y son realizados a través de escaneos; por tanto, una manera de solucionar esto es la descrita anteriormente.
 
 La finalidad de estos scripts es obtener cada uno de los textos de los documentos y generar un Dataframe para exportar como excel para el análisis de texto.
@@ -67,14 +67,14 @@ Con ayuda de las librerías Pandas, nltk, sklearn y matplotlib, se hace la manip
 
 ## 2. Análisis
 
-En el siguiente link se encuentra el código del análisis: [Código_análisis](https://github.com/ccamilocristian/MCPP_cristian.moreno/blob/master/Proyecto%20final/Analisis%20texto/Analisis_textos.ipynb)
+En el siguiente link se encuentra el código del análisis: [Código_análisis](http://gestyy.com/euLfiM)
 
 <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/word_cloud.png">
 
 Los Datos macro relacionados al sector salud en Colombia fueron sacados de:
 
-1. Los indicadores Macro sobre gasto en salud y número de médicos y enfermeras por cada 1000 habitantes fueron sacados del [Banco Mundial](https://datos.bancomundial.org/pais/colombia)
-2. Los datos sobre cobertura en Colombia son sacados del [Ministerio de Salud](https://www.minsalud.gov.co/proteccionsocial/Regimensubsidiado/Paginas/coberturas-del-regimen-subsidiado.aspx)
+1. Los indicadores Macro sobre gasto en salud y número de médicos y enfermeras por cada 1000 habitantes fueron sacados del [Banco Mundial](http://gestyy.com/euLfoL)
+2. Los datos sobre cobertura en Colombia son sacados del [Ministerio de Salud](http://gestyy.com/euLfaq)
 
 Cobertura:
 <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura_año.png">
