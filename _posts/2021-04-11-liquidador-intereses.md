@@ -9,7 +9,7 @@ math: true
 
 El solicitar préstamos es una de las operaciones bancarias más usadas por el ciudadano de a pie con el fin de tener dinero para invertir o gastar en necesidades, dinero que antes no tenía a disposición. Sin embargo, estos préstamos o crédito no son gratis, tienen un precio y este precio es la tasa de interés. Cada entidad bancaria en cada país manaje su propia tasa de interés según el producto que desean solicitar, ejemplo de esto son créditos para consumo, hipotecarios, vivienda, entre otros.
 
-Previo a solicitar estos préstamos, es necesario conocer las diferentes modalidades que existen para así no incurrir en incumplimientos de pago que conlleven a reportes negativos en los buros como Datacrédito, para el caso colombiano.
+Previo a solicitar estos préstamos, es necesario conocer las diferentes modalidades que existen para así no incurrir en incumplimientos de pago que conlleven a reportes negativos en los buros como [Datacrédito](http://gestyy.com/euLdjk), para el caso colombiano.
 
 En primer medida, el valor del préstamo estará muy afectado por el precio en este caso, la tasa de interés, al igual que la modalidad de pago que se vaya a usar. Por ejemplo, no es lo mismo pactar realizar un pago mensual de la misma cantidad, a pactar una cuota mensual variable que dependa de los intereses a pagar; así mismo depende si se va a realizar el pago de una cuota inicial o no.
 
