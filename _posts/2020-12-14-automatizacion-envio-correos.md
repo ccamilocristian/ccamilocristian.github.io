@@ -58,7 +58,7 @@ cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día d
 ```
 
 Finalmente, se configura la dirección del correo y la contraseña. Así mismo, se configura la información que irá en el correo, adjuntos, remitentes, destinatarios y asuto.
-Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](https://docs.rocketbot.co/?p=1567).
+Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](http://gestyy.com/euK5g2).
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
 
@@ -98,7 +98,7 @@ server.quit()
 
 Luego de tener configurado el python en formato .py, se procede a programar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
-1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de Anaconda. <br />
+1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de [Anaconda](http://gestyy.com/euK5xM). <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
 2. Se entra a las propiedades del archivo "Anaconda Prompt". <br />

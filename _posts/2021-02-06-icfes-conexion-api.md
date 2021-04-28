@@ -6,21 +6,21 @@ categories: [Python, Economics, Data_studio]
 tags: [python, api, visualizaciones, big-query]
 math: true
 ---
-Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](https://www.datos.gov.co/) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
+Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](http://gestyy.com/euLuHj) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
 
-Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una API para conectar diferentes programas con esta página y extraer dicha información.
+Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una [API](http://gestyy.com/euLir7) para conectar diferentes programas con esta página y extraer dicha información.
 
 # Extracción de datos y almacenamiento
 
-Partiendo de lo anterior, a continuación, se hará la explicación de cómo conectar esta API con python y como posteriormente almacenar dicha información en Google Big Query para realizar visualizaciones más fáciles en Google Data Studio.
+Partiendo de lo anterior, a continuación, se hará la explicación de cómo conectar esta API con python y como posteriormente almacenar dicha información en [Google Big Query](http://gestyy.com/euLoVt) para realizar visualizaciones más fáciles en Google Data Studio.
 
-Primero, se debe instalar la librería [sodapy]().
+Primero, se debe instalar la librería [sodapy](http://gestyy.com/euLaFp).
 
 ```python
 ! pip install sodapy
 ```
 
-Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](https://www.datos.gov.co/Educaci-n/Saber-11-2019-2/ynam-yc42) del segundo semestre del 2019.
+Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](http://gestyy.com/euLaCV) del segundo semestre del 2019.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 
@@ -71,7 +71,7 @@ Después de realizadas las gráficas, el resultado fue el siguiente:
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/ed4ce89d-0e2b-43d1-a0af-680946cccbb2/page/JdozB" frameborder="0" style="border:0" allowfullscreen></iframe>
 # Análisis
 
-Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no implica causalidades ni conclusiones, solo hipótesis para futuras investigaciones. 
+Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no implica causalidades ni conclusiones, solo hipótesis para futuras investigaciones.
 
 - La mayor participación de los estudiantes se encuentra en estratos, seguido por estrato 1 y 3.
 - La mayoría de las personas que presentaron el examen tenían en promedio 17 años.

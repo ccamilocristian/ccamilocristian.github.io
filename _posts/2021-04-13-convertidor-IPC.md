@@ -13,11 +13,11 @@ En la economía hay diferentes formas de medir el comportamiento de los agentes 
 
 La inflación es el aumento generalizado y sostenido de los precios de bienes y servicios en una economía durante un periodo especifico. Esto anterior, lo que quiere decir es que el poder adquisitivo de cada agente económico después de la inflación disminuye, por lo que podrán adquirir menos bienes y servicios, si todo lo demás se mantiene constante.
 
-Para el caso colombiano, el DANE (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de Laspeyres y de Paasche. El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
+Para el caso colombiano, el [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de [Laspeyres y de Paasche](gestyy.com/euK3Fc). El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
 
-Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del IPC (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](https://www.banrep.gov.co/es/estadisticas/indice-precios-consumidor-ipc).
+Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](gestyy.com/euK32D).
 
 Primero, se deben importar las librerpias necesarias para el cálculo de valores y generación de gráficas.
 
@@ -94,6 +94,7 @@ def calculadora(valor0,t0, tf):
     plt.show()
     return 
 ```
+
 Finalmente, se correo el código con la función creada, relacionando los valores a recisar en la calculadora, las cuales fueron mencionada anteriormente.
 
 ```python
