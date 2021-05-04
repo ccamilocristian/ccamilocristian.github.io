@@ -76,7 +76,7 @@ $$ y_i= \sum_{n=1}^{N}\beta_{n}*X_{in} + \varepsilon_{i} $$
 
 donde $$y$$ es el riesgo de automatización por ocupación en donde el trabajador $$i$$ fue empleado y $$X_n $$ son las variables que capturan el conjuto de 7 medidas de las habilidades por trabajador $$i$$, nivel educativo, grupo de la edad y genero. $$N$$ es el número de variables independientes a incluir en el modelo.
 
-![ ](/assets/img/2021-05-03-step-colombia/ModeloSTEP.png)
+![ ](/assets/img/2021-05-03-step-colombia/ModeloSTEP.PNG)
 
 # Resultados
 
