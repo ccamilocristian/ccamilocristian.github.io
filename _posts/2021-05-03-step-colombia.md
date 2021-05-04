@@ -61,11 +61,11 @@ Se construyen las medidas siguiendo el proceso de estandarización del Z-score c
 |Educación superior|0.342581|0.474726|
 |Riesgo Automatización|0.628414|0.247711|
 
-![ ](/assets/img/2021-05-03-step-colombia/edad.PNG)
+![ ](/assets/img/2021-05-03-step-colombia/edad.png)
 
 La gráfica anterior muestra una concentración en la cola izquierda, en donde la media es 35 años, como los muestra la tabla de descriptivos.
 
-![ ](/assets/img/2021-05-03-step-colombia/estrato.PNG)
+![ ](/assets/img/2021-05-03-step-colombia/estrato.png)
 
 Por otro lado, la encuestra presenta una concentración en los estrados 2 y 3 de la población colombia; sin embargo, estos no son significativos para el total de la población del país. Para esto, es necesario empalmar los datos con encuestas como la GEIH (Gran Encuesta Integrada de Hogares) del DANE, la cual presenta factores de expasión para tener en cuenta el total de la población.
 
