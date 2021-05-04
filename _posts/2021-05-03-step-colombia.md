@@ -114,5 +114,4 @@ Por último, es de vital importancia realizar más investigaciones sobre el impa
 # Referencias
 + Frey, C. B., & Osborne, M. A. (2017). “The future of employment: How susceptible are jobs to
  computerisation? Technological Forecasting and Social Change”, 114, 254–280.
-+ Bustelo, M., Egana-delSol, P., Ripani, L., Nicolas, S., & Viollaz, M. (2020). Automation in Latin America: Are Women at Higher Risk of Losing Their Jobs? Inter-American Development Bank.
-+asdf
++ Bustelo, M., Egana-delSol, P., Ripani, L., Nicolas, S., & Viollaz, M. (2020). "Automation in Latin America: Are Women at Higher Risk of Losing Their Jobs?" Inter-American Development Bank.
