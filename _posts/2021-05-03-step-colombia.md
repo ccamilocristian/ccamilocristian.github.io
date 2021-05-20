@@ -13,6 +13,19 @@ La automatización de trabajos corresponde al desarrollo e inclusión de nuevas 
 
 Con base en lo anterior, siguiendo a Bustelo et al. (2020) se desarrollará la metodología para ajustar la probabilidad de automatización de las ocupaciones en Colombia, basado en el cálculo de Frey & Osborne (2017) y los datos recolectados por el Banco Mundial en el proyecto [STEP](https://microdata.worldbank.org/index.php/catalog/2012) (Skills Toward Employment and Productivity), para así obtener medidas relacionadas a las habilidades que desempeñan los trabajadores en ciertas ocupaciones.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 Además, este resultado anterior puede ayudarnos a vislumbrar el riesgo que podrían tener las ocupaciones actuales, y los sectores económicos,  ante choques tecnológicos, específicamente la llegada de robots.
 
 Este programa STEP se desarrolló en el año 2012 para 13 áreas metropolitanas de Colombia, para 1550 personas encuestadas, teniendo como alcance las siguientes características:
@@ -69,6 +82,19 @@ La gráfica anterior muestra una concentración en la cola izquierda, en donde l
 
 Por otro lado, la encuestra presenta una concentración en los estrados 2 y 3 de la población colombia; sin embargo, estos no son significativos para el total de la población del país. Para esto, es necesario empalmar los datos con encuestas como la GEIH (Gran Encuesta Integrada de Hogares) del DANE, la cual presenta factores de expasión para tener en cuenta el total de la población.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 # Construcción del modelo
 El modelo a estimar es el siguiente:
 
@@ -115,3 +141,15 @@ Por último, es de vital importancia realizar más investigaciones sobre el impa
 + Frey, C. B., & Osborne, M. A. (2017). “The future of employment: How susceptible are jobs to
  computerisation? Technological Forecasting and Social Change”, 114, 254–280.
 + Bustelo, M., Egana-delSol, P., Ripani, L., Nicolas, S., & Viollaz, M. (2020). "Automation in Latin America: Are Women at Higher Risk of Losing Their Jobs?" Inter-American Development Bank.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

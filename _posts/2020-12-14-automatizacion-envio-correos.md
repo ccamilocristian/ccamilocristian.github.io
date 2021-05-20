@@ -95,6 +95,16 @@ server.login(username,password)
 server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="1836855266"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 Luego de tener configurado el python en formato .py, se procede a programar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
@@ -135,3 +145,15 @@ Contras del proceso:
 Mejoras al proceso:
 
 - Hacer este mismo proceso en alguna máquina virtual en la nube para que se corra sin ninguna intervención humana.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

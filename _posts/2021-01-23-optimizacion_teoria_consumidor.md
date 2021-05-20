@@ -9,6 +9,19 @@ math: true
 
 Hoy día en las aulas de clase, en las asignaturas del pregrado en Economía, se empieza enseñando la Teoría del consumidor, tema de un gran campo de la economía, que es la [Microeconomía](http://gestyy.com/euLqYG). Sin embargo, siempre se enseña la teoría sin poder ver su aplicación pragmática en la vida real. Por tanto, este artículo tiene como objetivo introducir a los lectores en temas de economía aplicando estas teorías en un lenguaje de programación como lo es [Python](http://sh.st/noE8B).
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 Para este artículo haremos uso de Python 3, además es necesario instalar las librerías numpy, matplotlib y scipy como se describe a continuación:
 
 ```python
@@ -24,6 +37,18 @@ Se llama la librería numpy ya que en código posterior haremos uso de métodos 
 La teoría del consumidor es aquella rama de la microeconomía encargada de analizar el comportamiento de los agentes económicos, específicamente de cómo asignan su renta en la compra de bienes con el fin de obtener el mayor bienestar posible.
 
 Se continuará teniendo en cuenta a la teoría neoclásica del consumidor basada en las preferencias del agente económico y su respectiva restricción presupuestal.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 ## Función de utilidad
 
@@ -174,6 +199,19 @@ X, Y\geq 0
 \end{aligned}
 $$
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 Dado que la mayoría de los programas para optimización realizan solamente la minimización de las funciones (como es el caso de Python), es necesario convertir la función objetivo en una función negativa como se describe a continuación, para así obtener el resultado de la maximización.
 
 ```python
@@ -232,3 +270,16 @@ Como se puede observar, la teoría económica enseñada día a día en los claus
 <!-- wp:list -->
 <ul><li>Guerrera, J., Sánchez, A. &amp; Zambrano, A. (2006). Notas de Microeconomía I.</li><li>Carvajal, A., Riascos, A. (2012). Introducción a la Teoría Micreconómica.</li><li>http://www.eco.uc3m.es/docencia/microeconomia/Transparencias/M1.pdf.</li><li>http://allman.rhon.itam.mx/~aburto/eco%203/Preferencias_y_utilidad_del_consumidor_2010_a.pdf.</li></ul>
 <!-- /wp:list -->
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

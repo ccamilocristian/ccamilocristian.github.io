@@ -13,6 +13,19 @@ En la economía hay diferentes formas de medir el comportamiento de los agentes 
 
 La inflación es el aumento generalizado y sostenido de los precios de bienes y servicios en una economía durante un periodo especifico. Esto anterior, lo que quiere decir es que el poder adquisitivo de cada agente económico después de la inflación disminuye, por lo que podrán adquirir menos bienes y servicios, si todo lo demás se mantiene constante.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 Para el caso colombiano, el [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de [Laspeyres y de Paasche](gestyy.com/euK3Fc). El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
@@ -108,3 +121,15 @@ Este es el resultado de la función anterior, mostrando los valores a través de
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
 Como ejercicio a futuro para complementar la calculadora, se podría agregar una función la cual realice el cálculo de valor futuro a valor presente, es decir realiza el calculo de valores actuales a precios pasadaos. Por ejemplo, los mismos $3'000.000 de precios del 2020 a precios del 2000.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

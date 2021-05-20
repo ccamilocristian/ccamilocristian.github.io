@@ -22,6 +22,18 @@ Para este proposito, en primera instancia son necesarias las siguientes librerí
 |PIL|time|
 |threaing|
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 Para comenzar con el programa, es necesario realizar la importación de las librerías mencionadas anteriormente; y así mismo, configurar la clase de reproductor de música y la función de iniciación la cual contiene el container del programa.  
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -122,6 +134,19 @@ self.menu.grid(column=0,row=0, columnspan=1)
 ```
 
 Otra configuración que se agregó en el programa es la generación de descripción del estado de la canción, es decir el tiempo total de duración y el tiempo que ha trascurrido desde su inicio.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 ```python
 #Descripción del total de canción y tiempo transcurrido

@@ -11,6 +11,19 @@ Según estudios de [McKinsey](http://gestyy.com/euLdUN), el análisis del datos 
 
 Dado lo anterior, el presente documento tiene como objetivo hacer el análisis exploratorio de los datos encontrados en la extracción de información no estructurada como los son textos en formato PDF. Así, se usarán los actos administrativos más relevantes de los entres de control como lo son los Decretos y las resoluciones, tomando el intervalo del año 2000 a mayo del 2020. En el análisis exploratorio se relacionarán indicadores macroeconómicos con el fin de dar insumos para investigaciones futuras de efectos causales y correlaciones estadísticas.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 Las siguientes son interrogantes que motivaron el análisis de los dos actos administrativos:
 
 - A lo largo de los últimos 20 años se han presentado varias enfermedades a nivel mundial, ¿Los datos reflejan las normativas y controles que tuvo Colombia para manejar dichas problemáticas?
@@ -42,6 +55,19 @@ Para este último scrapping es necesario descargar el ejecutable del siguiente l
 [Chromedriver selenium](http://gestyy.com/euLdMS)
 
 La finalidad de estos scripts anteriores es obtener la ruta de cada uno de los PDFs de las resoluciones del Ministerio de salud, publicados en la página web y traer esta información en un Dataframe para exportar a excel.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 ### Descarga de PDFs y trasncripción de textos
 
@@ -111,3 +137,16 @@ Investigaciones a futuro:
 1. Analizar correlaciones y efectos externos como corrupción en este ente de control.
 2. Realizar un análisis causal de indicadores de ineficiencia de los centros de salud en cada año, para ver el impacto de dichos datos en el número de intervenciones realizadas por el ministerio.
 3. Revisar la dinámica de pensionados y subsidiados a lo largo del tiempo y si esto tiene significancia estadística con el aumento en cobertura en salud.
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

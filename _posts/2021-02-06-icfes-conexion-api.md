@@ -7,6 +7,18 @@ tags: [python, api, visualizaciones, big-query]
 math: true
 ---
 Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](http://gestyy.com/euLuHj) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una [API](http://gestyy.com/euLir7) para conectar diferentes programas con esta página y extraer dicha información.
 
@@ -88,3 +100,14 @@ Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no 
 - Revisar si los temas socioeconómicos del hogar afectan estadísticamente los resultados de los estudiantes.
 - Hacer una limpieza de datos para mejorar el entendimiento de los datos y revisión de casos atípicos.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

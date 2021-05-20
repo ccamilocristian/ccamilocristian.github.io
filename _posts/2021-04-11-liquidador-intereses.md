@@ -13,6 +13,19 @@ Previo a solicitar estos préstamos, es necesario conocer las diferentes modalid
 
 En primer medida, el valor del préstamo estará muy afectado por el precio en este caso, la tasa de interés, al igual que la modalidad de pago que se vaya a usar. Por ejemplo, no es lo mismo pactar realizar un pago mensual de la misma cantidad, a pactar una cuota mensual variable que dependa de los intereses a pagar; así mismo depende si se va a realizar el pago de una cuota inicial o no.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 En esta ocasión, mostraremos cómo realizar un simulador de créditos con cuotas fijas a través de python, lo cual puede ser de mucha ayuda a la hora de pedir un préstamo a alguna entidad bancaria.
 
 # Generación del simulador
@@ -124,3 +137,15 @@ Finalmente, este código a continuación realizará la gráfica referente a la a
 ![ ](/assets/img/2021-04-11-liquidador-intereses/capital.PNG)
 
 Para finalizar, es muy importante tener en cuenta ya que como dijo Albert Einstein "El interés compuesto es la octava maravilla del mundo. Quien la entiende se beneficia de ella ...  el que no ... la paga". Como ejercicio del lector, una buena forma de practicar eso es genera el simulador para créditos con cuota variable.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>

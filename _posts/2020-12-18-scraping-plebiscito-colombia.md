@@ -17,6 +17,19 @@ Esta fue la pregunta realizada en:
 
 Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas de Scraping a de Python para extraer dicha información a nivel de municipio y departamento para posteriormente mostrar dichos resultados en un panel de Google Data Studio.
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
 ----
 
 ## Metodologías
@@ -50,6 +63,19 @@ warnings.simplefilter('ignore',InsecureRequestWarning)
 ```
 
 Una vez importadas las librerías, con la librería request traemos el código que se usa para la construcción de la página web con el fin de encontrar el link de la información del resultado del prebliscito por cada departamento.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 ```python
 html = requests.get("https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm", verify=False).text
@@ -206,3 +232,15 @@ base_total.to_csv("base_total1.csv", encoding='utf-8', index=False)
 Ya con la base generada y depurada, nos remitimos a Google data studio para realizar las gráficas para dicha información.
 
 Este proceso realizado, es replicable a cualquier pagina web en donde no haya renderización. Así mismo, este proyecto no tiene el alcance de analizar a fondo la información ya que para esto hay que revisar más factores socio-demograficos y políticos y económicos.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
