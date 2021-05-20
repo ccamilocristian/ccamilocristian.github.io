@@ -57,7 +57,7 @@ asunto = 'Base diaria '+ d1
 cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día de hoy.'+'\n'+'\n'+' Quedo atento a tus comentarios.'
 ```
 
-Finalmente, se configura la dirección del correo y la contraseña. Así mismo, se configura la información que irá en el correo, adjuntos, remitentes, destinatarios y asuto.
+Finalmente, se configura la dirección del correo y la contraseña. Así mismo, se configura la información que irá en el correo, adjuntos, remitentes, destinatarios y asunto.
 Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](http://gestyy.com/euK5g2).
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
