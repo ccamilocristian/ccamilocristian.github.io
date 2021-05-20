@@ -24,6 +24,17 @@ Para este proposito, en primera instancia son necesarias las siguientes librerí
 
 Para comenzar con el programa, es necesario realizar la importación de las librerías mencionadas anteriormente; y así mismo, configurar la clase de reproductor de música y la función de iniciación la cual contiene el container del programa.  
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="1836855266"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 ```python
 import tkinter as tk
 import pygame
@@ -128,6 +139,17 @@ self.barra.grid(column=1,row=0, columnspan=3)
 self.container.protocol("WM_DELETE_WINDOW", self.cierre)        
 
 ```
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="1836855266"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 Finalmente, para el correcto desarrollo del programa, se empalma a funciones las anteriores configuraciones dependediendo el objetivo a desarrollar. Para eso, las funciones que se realizaron fueron:
 
@@ -266,3 +288,15 @@ app.mainloop()
 + Mejorar el estilo del programa en términos de colores y letra.
 + Poder reproducir canciones de youtube a través de un enlace.
 + Agregar la función de reproducir la canción con una velocidad mayor o menor.
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- horizontal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2402437399062384"
+     data-ad-slot="8047040393"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
