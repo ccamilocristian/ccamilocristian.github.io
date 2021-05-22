@@ -29,7 +29,6 @@ Given the preceding introduction, the current project aims to use Python scrapin
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
 ----
 
 ## Methodologies
@@ -39,20 +38,17 @@ Given the preceding introduction, the current project aims to use Python scrapin
   * Making the scraping of the principal page about the scrutiny of the votation results the previous action is to extract the access link to each Colombia's department in the votation.  Later, extracting the information by department, we extract each one of the municipal links related to that department.
   * We make the scraping of each municipal page to extract the votation results such as the participation percentage and plebiscite approval.
 
-
 ![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
 In this project, we extract the information the 1.186 municipals by 34 departments (including consulates and Bogota D.C.).<br />
 
 + After we extract the information, we generate a Dashboard in Google Data Studio. The following visualization is the dashboard which is the result of the scrapping.
 
-
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/3ff5ad92-7dcd-4ecd-988b-584811f353c2/page/m0vMB" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 ## Scraping process
 
 We begin importing the libraries needed for the manipulation of the databases and the extraction in the website. For that purpose, we use pandas, BeautifulSoup y requests, as we show in the following code:
-
 
 ```python
 import re
@@ -78,7 +74,6 @@ Once we imported the libraries, with the library calls request, we call the code
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
 
 ```python
 html = requests.get("https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm", verify=False).text
