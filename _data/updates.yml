@@ -2,13 +2,13 @@
   filename: 'automatizacion-envio-correos'             # the post filename without date and extension
   lastmod: '2020-11-17 16:00:00 -0500'    # the post last modified date
 -
- filename: 'automation-sending'             # the post filename without date and extension
+  filename: 'automation-sending'             # the post filename without date and extension
   lastmod: '2020-11-17 16:00:00 -0500'    # the post last modified date
 -
   filename: 'scraping-plebiscito-colombia'             # the post filename without date and extension
   lastmod: '2020-11-18 02:00:00 -0500'    # the post last modified date
 -
-  filename: 'scraping-english'             # the post filename without date and extension
+  filename: 'scraping-colombia-english'             # the post filename without date and extension
   lastmod: '2020-11-19 02:00:00 -0500'    # the post last modified date
 -
   filename: 'optimizacion-teoria-consumidor'             # the post filename without date and extension
