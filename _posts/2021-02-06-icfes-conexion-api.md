@@ -88,7 +88,7 @@ Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no 
 - La mayor participación de los estudiantes se encuentra en estratos, seguido por estrato 1 y 3.
 - La mayoría de las personas que presentaron el examen tenían en promedio 17 años.
 - Hay una tendencia que muestra que mayor cantidad de libros en el hogar, mejor puntaje en promedio tendría los estudiantes (Esto se puede validar con un análisis de causalidad)
-- Estudiantes con internet tuvieron, en promedio, mejor resultados que los estudiantes con internet.
+- Estudiantes con internet tuvieron, en promedio, mejor resultados que los estudiantes sin internet.
 - La categoría en la que peor les fue, en promedio, a los estudiantes de estratos bajos fue en inglés; en cambio a estratos socioeconómicos alto, esta fue la mejor categoría.
 - Parece haber un óptimo de personas con las cuales vivir para tener un buen puntaje en el icfes (3-4 personas), más de 9 personas en el hogar refleja que en promedio al estudiante no le ira bien en comparación con las demás categorías de hogar.
 - En promedio a los colegios masculinos les va mejor que a los colegios femeninos y mixtos.

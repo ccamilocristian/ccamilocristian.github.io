@@ -7,7 +7,8 @@ tags: [python, api, visualization, big-query]
 math: true
 ---
 
-Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](http://gestyy.com/euLuHj) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
+Nowadays, Colombia's government dispose of a platform to check the public databases, this website calls [datos.gov.co]. Here, anyone can extract databases related to all public areas such as the information about ministries, superintendencies,  and more government entities.
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
 <ins class="adsbygoogle"
@@ -20,86 +21,86 @@ Actualmente, el gobierno colombiano dispone de una plataforma para revisión de 
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
+However, the manipulation and extraction of databases, sometimes, can be winding for the number of rows and columns. For that reason, the platform disposes of an [API](http://gestyy.com/euLir7) to connect different programs with the website and extract the information easily.
 
-Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una [API](http://gestyy.com/euLir7) para conectar diferentes programas con esta página y extraer dicha información.
+# Database extraction and storage
 
-# Extracción de datos y almacenamiento
+Following on from the previous section, we will show you how to link this API to Python and then how to store the data in [Google Big Query](http://gestyy.com/euLoVt) so you can easily create data visualizations in Google Data Studio.
 
-Partiendo de lo anterior, a continuación, se hará la explicación de cómo conectar esta API con python y como posteriormente almacenar dicha información en [Google Big Query](http://gestyy.com/euLoVt) para realizar visualizaciones más fáciles en Google Data Studio.
-
-Primero, se debe instalar la librería [sodapy](http://gestyy.com/euLaFp).
+First, We have to install the library [sodapy](http://gestyy.com/euLaFp).
 
 ```python
 ! pip install sodapy
 ```
 
-Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](http://gestyy.com/euLaCV) del segundo semestre del 2019.
+Later, we import the needed libraries for data manipulation. For this analysis, we have to take into account the results of the [ICFES](http://gestyy.com/euLaCV) in the second semester in 2019.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 
-Después se copia el último fragmento de la ruta, en este caso sería: ynam-yc42
 
-Esta identificación de la base se copia y se pega en el código de python.
+After we copy the last fragment of the path, in this case: ynam-yc42
+
+The previous fragment identifies the database and we have to copy and paste it into the python code.
 
 ```python
 import pandas as pd
 from sodapy import Socrata
 client = Socrata("www.datos.gov.co", None)
-# se debe especificar el número de registros a importar
+# we have to specify the number of rows to import.
 results = client.get("ynam-yc42", limit=546212)
 
-# Convertir a pandas DataFrame
+# We have to convert the results into pandas Dataframe.
 results_df = pd.DataFrame.from_records(results)
 ```
 
-Finalmente, una vez guardada la información en python y manipulada se realiza en Google Big Query para poder almacenar en una fuente propia estos datos para posterior análisis.
+Once we store and manipulate the information in Python and Google Big Query, we can use this storage to make future data analyses.
 
 ```python
-results_df.to_gbq("nombre_tabla_global.nombre_tabla", "nombre_proyecto", if_exists="replace", chunksize=80000)
+results_df.to_gbq("table_name_global.table_name", "project_name", if_exists="replace", chunksize=80000)
 ```
-En este paso, el programa pedirá permiso para acceder a la cuenta Gmail ya que Google Big Query necesita estos permisos, como se muestra a continuación.
+
+In this step, the program will ask access permission to the Gmail account because Google Big Query needs these permissions, as we show as follows:
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/cuenta_gmail.PNG)
 
-Finalmente, se debe copiar y pegar el token que arroja el permitir los accesos.
+Finally, we copy and paste the token into the label.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/codigo.PNG)
 
-# Visualización 
+# Visualization
 
-Partiendo que la información esta almacenada en Google Big query, abrimos en el navegador Google Data Studio, un proyecto nuevo. Ya allí, abrimos los recursos para importar los datos:  
+Base on the information stored in Google Big Query, we open the website Google Data Studio, a new project. There, we open the resources to import the databases:
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
 
-Ahí, seleccionamos "gestionar las fuentes de datos añadidas". Saldrá las siguientes opciones, de las cuales se debe escoger BigQuery.
+Then, we select "Manage added data sources". These are the options, and we have to choose Big Query.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
 
-Allí, se escogerá la tabla en BigQuery según el proyecto y conjunto de datos a usar.
+There, we choose the Big Query table by the project name and data set.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG)
 
-Después de realizadas las gráficas, el resultado fue el siguiente:
+We make the graphs, the result is the following dashboard:
 
 <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/ed4ce89d-0e2b-43d1-a0af-680946cccbb2/page/JdozB" frameborder="0" style="border:0" allowfullscreen></iframe>
-# Análisis
 
-Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no implica causalidades ni conclusiones, solo hipótesis para futuras investigaciones.
+# Analysis
 
-- La mayor participación de los estudiantes se encuentra en estratos, seguido por estrato 1 y 3.
-- La mayoría de las personas que presentaron el examen tenían en promedio 17 años.
-- Hay una tendencia que muestra que mayor cantidad de libros en el hogar, mejor puntaje en promedio tendría los estudiantes (Esto se puede validar con un análisis de causalidad)
-- Estudiantes con internet tuvieron, en promedio, mejor resultados que los estudiantes con internet.
-- La categoría en la que peor les fue, en promedio, a los estudiantes de estratos bajos fue en inglés; en cambio a estratos socioeconómicos alto, esta fue la mejor categoría.
-- Parece haber un óptimo de personas con las cuales vivir para tener un buen puntaje en el icfes (3-4 personas), más de 9 personas en el hogar refleja que en promedio al estudiante no le ira bien en comparación con las demás categorías de hogar.
-- En promedio a los colegios masculinos les va mejor que a los colegios femeninos y mixtos.
-- Parece haber una clara relación positiva con el nivel educativo de la madre y el desempeño del estudiante en la prueba.
+- To clarify, this is a simple exploratory data analysis. The analysis does not imply causality. It just makes a hypothesis for future research.
+- The majority of the people that presented the exam are 17 years old on average.
+- There is a positive relationship between the number of books in the household and the average score in the exam. (This hypothesis can be proved with a hypothesis test)
+- The students with the internet, on average, have better performance than the students without the internet.
+- The worst category, on average, was English to the students in low levels of stratification. Instead, the English category was the best for the students in the high level of stratification.
+- There is a number optime of people who may be in a household to get a better score in the ICFES (3-4 people), more than 9 people reflects in average a worse score than the people in the other categories.
+- On average, the men's schools are better than female and mixed schools.
+- Seems to be a positive relationship between the mother's education level and the performance of the student in the exam.
 
-# Mejoras
+# Future improves
 
-- Hacer análisis de causalidad para ver si el puntaje de los estudiantes depende de los niveles educativos de los padres.
-- Revisar si los temas socioeconómicos del hogar afectan estadísticamente los resultados de los estudiantes.
-- Hacer una limpieza de datos para mejorar el entendimiento de los datos y revisión de casos atípicos.
+- Analyze causality to show if the student's score depends on the parents' education level.
+- Check whether the socioeconomics aspects in the household affect statistically the student performance.
+- Make a data cleaning to improve the data performance and check the outlier.
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
