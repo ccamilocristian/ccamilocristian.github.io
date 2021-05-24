@@ -1,5 +1,5 @@
 ---
-title: ¿Cómo realizar una calculadora de Inflación?asdfghjs Caso de estudio, Colombia entre el 2003 al 2020.
+title: How make an inflation calculator? Case of study, Colombia between 2003 and 2020.
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]
@@ -7,11 +7,12 @@ tags: [economics, python]
 math: true
 ---
 
-En la economía hay diferentes formas de medir el comportamiento de los agentes económicos, específicamente el comportamiento de los bienes y servicios que oferta y demanda la economía.  Una de las variables macroeconómicas que mayor importancia se tiene y que se debe controlar para el correcto funcionamiento de la economía es la inflación.
+In the economy, there are different forms to measure the behavior of the economic agents, specifically in the goods and services demanded and supplied in the economy. One of the macroeconomic variables with the most importance is inflation. The inflation variable needs to be controlled to have a good economic performance. 
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/descarga.png)
 
-La inflación es el aumento generalizado y sostenido de los precios de bienes y servicios en una economía durante un periodo especifico. Esto anterior, lo que quiere decir es que el poder adquisitivo de cada agente económico después de la inflación disminuye, por lo que podrán adquirir menos bienes y servicios, si todo lo demás se mantiene constante.
+Inflation is the generalized increase and sustained of the goods and services prices in an economy during a specific period. That means the purchasing power parity of each economic agent inflation, decrease, and for that reason, they can not acquire the same amount of goods and services as before, where everything keeps constant.
+
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -25,14 +26,12 @@ La inflación es el aumento generalizado y sostenido de los precios de bienes y 
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
-Para el caso colombiano, el [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de [Laspeyres y de Paasche](gestyy.com/euK3Fc). El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
+For this case, the [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) is in charge of calculating the inflation in Colombia with the use of the ponderation price index to a basket of goods. The measure of the index can be done in two ways, [Laspeyres and Paasche](gestyy.com/euK3Fc) index. The DANE uses a variant of the Laspeyres index because it allows an easy actualization of the basket of goods to the price tracking.
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
+The present article pretends to show how to make an inflation calculator, in the Colombian case. with the [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) information between 2003 and 2020. The calculator has the objective to measure the time valor of the goods and services in Colombia. The information was sustract from the [Banco de la República](gestyy.com/euK32D)'s website.
 
-Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](gestyy.com/euK32D).
-
-Primero, se deben importar las librerpias necesarias para el cálculo de valores y generación de gráficas.
+First, we import the needed libraries to compute the values and generate the graphs. 
 
 ```python
 import pandas as pd
@@ -44,7 +43,7 @@ plt.rcParams['figure.figsize'] = (14, 8)
 plt.style.use('ggplot')
 ```
 
-Basado en la información del IPC en base del 2018 extraido del Banco de la Republica, se genera a continuación una base que incluye el calculo de la variación anual del IPC la cual se traduce como la inflación.  
+With the IPC's information based on 2018 extracted from the Banco de la Republica, later we generate a database that includes the annual variation of the IPC, i.e. the inflation. 
 
 $$
 \begin{aligned}
@@ -61,10 +60,10 @@ for i in range(len(ipc)-1):
     ipc['variacion'][i+1]=(ipc['IPC'][i+1]-ipc['IPC'][i])/ipc['IPC'][i]
 ```
 
-Para este caso, supondremos los siguientes valores:
-+ Valor inicial: $3'000.000
-+ Fecha incial: año 2005
-+ Fecha final: año 2019
+In this case, we suppose the next values: 
++ Initial value: $3'000.000
++ Initial date (year): 2005
++ Final date (year): 2019
 
 ```python
 año0=int(input("año inicial"))
@@ -72,7 +71,7 @@ añof=int(input("año final de referencia"))
 valor0=int(input("valor a calcular"))
 ```
 
-Por otro lado, se genera la función necesaria para relizar los cálculos en donde se trae el valor inicial de $3'000.000 en el año 2005 a precios del año 2019, a traves de la siguiente formula:
+On the other hand, we generate the function to generate the computation base on the initial value of $3'000.000 in 2005 to prices of 2019, using the following formula:
 
 $$
 \begin{aligned}
@@ -108,19 +107,20 @@ def calculadora(valor0,t0, tf):
     return 
 ```
 
-Finalmente, se correo el código con la función creada, relacionando los valores a recisar en la calculadora, las cuales fueron mencionada anteriormente.
+Finally, we run the code with a function that relates to the values mentioned in the previous section.
 
 ```python
 calculadora(valor0,año0, añof)
 ```
 
-Este es el resultado de la función anterior, mostrando los valores a través del tiempo en el periodo de referencia según se seleccione en la calculadora.
+This is the result of the previous function, showing the values across the time in the reference period according to values selected in the calculator.
+
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen2.PNG)
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
-Como ejercicio a futuro para complementar la calculadora, se podría agregar una función la cual realice el cálculo de valor futuro a valor presente, es decir realiza el calculo de valores actuales a precios pasadaos. Por ejemplo, los mismos $3'000.000 de precios del 2020 a precios del 2000.
+As a future project to complements this calculator, the reader can add a function that computes the future value to present value, i.e. compute current prices to past prices. For example, the same previous $3'000.000 in 2020's prices to 2000's prices.
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->

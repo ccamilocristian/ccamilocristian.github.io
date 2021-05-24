@@ -32,7 +32,7 @@ Para el caso colombiano, el [DANE](gestyy.com/euK27v) (Departamento Administrati
 
 Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](gestyy.com/euK32D).
 
-Primero, se deben importar las librerpias necesarias para el cálculo de valores y generación de gráficas.
+Primero, se deben importar las librerías necesarias para el cálculo de valores y generación de gráficas.
 
 ```python
 import pandas as pd
@@ -72,7 +72,7 @@ añof=int(input("año final de referencia"))
 valor0=int(input("valor a calcular"))
 ```
 
-Por otro lado, se genera la función necesaria para relizar los cálculos en donde se trae el valor inicial de $3'000.000 en el año 2005 a precios del año 2019, a traves de la siguiente formula:
+Por otro lado, se genera la función necesaria para realizar los cálculos en donde se trae el valor inicial de $3'000.000 en el año 2005 a precios del año 2019, a través de la siguiente formula:
 
 $$
 \begin{aligned}
@@ -108,7 +108,7 @@ def calculadora(valor0,t0, tf):
     return 
 ```
 
-Finalmente, se correo el código con la función creada, relacionando los valores a recisar en la calculadora, las cuales fueron mencionada anteriormente.
+Finalmente, se correo el código con la función creada, relacionando los valores a revisar en la calculadora, las cuales fueron mencionada anteriormente.
 
 ```python
 calculadora(valor0,año0, añof)
@@ -120,7 +120,7 @@ Este es el resultado de la función anterior, mostrando los valores a través de
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
-Como ejercicio a futuro para complementar la calculadora, se podría agregar una función la cual realice el cálculo de valor futuro a valor presente, es decir realiza el calculo de valores actuales a precios pasadaos. Por ejemplo, los mismos $3'000.000 de precios del 2020 a precios del 2000.
+Como ejercicio a futuro para complementar la calculadora, se podría agregar una función la cual realice el cálculo de valor futuro a valor presente, es decir realiza el calculo de valores actuales a precios pasados. Por ejemplo, los mismos $3'000.000 de precios del 2020 a precios del 2000.
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
