@@ -266,7 +266,7 @@ plt.savefig("optimo.png")
 As we can see, the economic theory that taught day by day in the university cloisters can be didactic with a new point of view related to computer programming. Thus, this article invites readers to delve into the world of programming, which will help make professional training more comprehensive to the labor market.
 
 <!-- wp:heading -->
-<h2>Referencias:</h2>
+<h2>References:</h2>
 <!-- /wp:heading -->
 
 <!-- wp:list -->
