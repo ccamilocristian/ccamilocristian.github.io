@@ -108,7 +108,7 @@ def calculadora(valor0,t0, tf):
     return 
 ```
 
-Finalmente, se correo el código con la función creada, relacionando los valores a revisar en la calculadora, las cuales fueron mencionada anteriormente.
+Finalmente, se correo el código con la función creada, relacionando los valores a revisar en la calculadora, las cuales fueron mencionadas anteriormente.
 
 ```python
 calculadora(valor0,año0, añof)

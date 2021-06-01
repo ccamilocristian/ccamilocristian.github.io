@@ -7,7 +7,7 @@ tags: [economics, python, optimization]
 math: true
 ---
 
-Hoy día en las aulas de clase, en las asignaturas del pregrado en Economía, se empieza enseñando la Teoría del consumidor, tema de un gran campo de la economía, que es la [Microeconomía](http://gestyy.com/euLqYG). Sin embargo, siempre se enseña la teoría sin poder ver su aplicación pragmática en la vida real. Por tanto, este artículo tiene como objetivo introducir a los lectores en temas de economía aplicando, especificamente estas teorías, en un lenguaje de programación como lo es [Python](http://sh.st/noE8B).
+Nowadays in the classrooms, in the courses of the economics' undergraduate, the professors begin teaching the consumer theory, theme with big impact in [Microeconomics](http://gestyy.com/euLqYG). However, this theory is always taught without a pragmatic application in real life. Therefore, the article has the objective to introduce to the readers' themes about applied economics in a programming language like [Python](http://sh.st/noE8B).
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -21,8 +21,7 @@ Hoy día en las aulas de clase, en las asignaturas del pregrado en Economía, se
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
-Para este artículo haremos uso de Python 3, además es necesario instalar las librerías numpy, matplotlib y scipy como se describe a continuación:
+In this article we use Python 3, also it is necessary to install the libraries numpy, matplotlib, and scipy as we show in the next code:
 
 ```python
 import numpy as np
@@ -30,13 +29,14 @@ import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 ```
 
-Se llama la librería numpy ya que en código posterior haremos uso de métodos que nos simplificarán la expresión de funciones en Python. Así mismo se llama la librería matplotlib.pyplot con el fin de graficar las funciones que posteriormente se mencionarán relacionadas a la utilidad de ciertos bienes. Finalmente se usará scipy.optimize con el fin de realizar la optimización de la función de utilidad como ejemplo a través del método [SLSQP](http://gestyy.com/euLwy2).
+We import the NumPy library because we will need it to simplify the function expressions in Python.
+In addition, we import the matplotlib.pyplot library to make the function graphs, explained later, related to the utility function of goods. Finally, we use the scipy.optimize library to optime the utility function with the [SLSQP](http://gestyy.com/euLwy2) method, as an example.
 
-# Teoría del consumidor
+#  Consumer Theory
 
-La teoría del consumidor es aquella rama de la microeconomía encargada de analizar el comportamiento de los agentes económicos, específicamente de cómo asignan su renta en la compra de bienes con el fin de obtener el mayor bienestar posible.
+The consumer theory is the branch of the economy in charge of analyzing the economic agents' behavior, specifically how they designate their wages in goods purchase to obtain the mayor welfare as possible.
 
-Se continuará teniendo en cuenta a la teoría neoclásica del consumidor basada en las preferencias del agente económico y su respectiva restricción presupuestal.
+We take into account the neoclassic theory of the consumers based on the preferences of the economic agent and his budget constraint.
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -50,12 +50,12 @@ Se continuará teniendo en cuenta a la teoría neoclásica del consumidor basada
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-## Función de utilidad
+## Utility Function
 
-Es aquella función que asigna cierto nivel de utilidad (o bienestar) a una cesta de bienes de mercado, dado las preferencias del agente económico frente a estos bienes.
-Ejemplos de funciones de [utilidad](http://gestyy.com/euLwhV):
+It is the function that designates a utility level (or welfare) to a bucket of goods in the market, based on the preferences of the economic agent.
+These are some example of [utility](http://gestyy.com/euLwhV): functions:
 
-* Función  de bienes sustitutos:
+* Substitutes goods function:
 
 $$
 \begin{aligned}
@@ -63,7 +63,7 @@ U(X,Y)= aX+bY
 \end{aligned}
 $$
 
-En este caso, dos bienes (X, Y) son sustitutos perfectos si el consumidor está dispuesto a sustituir un bien por otro a una tasa constante.
+In this case, two goods (X, Y) are perfect substitutes if the consumer is disposed to substitute a good for another at a constant rate.
 
 ```python
 x=y=np.arange(0.0, 100, 10)
@@ -83,7 +83,7 @@ plt.savefig('sustitutos.png')
 
 ![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/sustitutos.png)
 
-* Función Cuasilineal:
+* Cuasi-linear function:
 
 $$
 \begin{aligned}
@@ -91,7 +91,7 @@ U(X,Y)= X+ \sqrt{y}
 \end{aligned}
 $$
 
-Para este caso, el bien X es lineal; por tanto el bien Y depende exclusivamente de la relación de precios (p1/p2) y no de la renta del consumidor, como si es el caso de X.
+For this case, the X good is lineal, therefore the Y good depends only on the price relation (p1/p2) and not on the consumer's wage like X does.
 
 ```python
 x=y=np.arange(0.0, 100, 10)
@@ -108,7 +108,7 @@ plt.savefig('cuasilineal.png')
 
 ![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cuasilineal.png)
 
-* Función Cobb-Douglas:
+* Cobb-Douglas Function:
 
 $$
 \begin{aligned}
@@ -116,7 +116,7 @@ U(X,Y)= X^\alpha *Y^\beta
 \end{aligned}
 $$
 
-Una característica de esta función es que la suma de los exponentes debe dar uno para que la solución de la optimización se un óptimo global.
+The total of the exponents must be one to find a global solution in the optimization, which is a feature of this function.
 
 ```python
 x=y=np.arange(0.0, 100, 10)
@@ -136,9 +136,11 @@ plt.savefig('cobb.png')
 
 ![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cobb.png)
 
-# Elección del consumidor:
-El consumidor debe elegir la cesta de bienes que maximiza su bienestar, en este caso utilidad,  sujeto a  la restricción  presupuestal  dado  los precios de los bienes en el mercado y sus ingresos.
-Dado lo anterior, el consumidor debe gastar su renta en no mas de:
+# Consumer choice:
+
+The consumer has to choose the bucket goods that maximize his welfare, in this case, utility, subject to budget constrain based on the market prices and his wage. 
+
+The consumer has to use his wage at least:
 
 $$
 \begin{aligned}
@@ -146,16 +148,17 @@ p_xX +p_yY
 \end{aligned}
 $$
 
-Este es el caso para dos bienes.
+This is the case for two goods.
 
-Por tanto, el conjunto presupuestal en el cual el consumidor debe elegir la canasta es:
+Therefore, the budget constraint used in the consumer's optimization is the following:
   
 $$
 \begin{aligned}
 [(X,Y)| p_xX+p_yY\leq W]
 \end{aligned}
 $$
-Donde w es wage.
+
+Where W is "wage".
 
 ```python
 x=np.arange(0.0, 1000, 10)
@@ -177,9 +180,9 @@ plt.savefig('restriccion.png')
 
 ![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/restriccion.png)
 
-Además, dado el supuesto de no saciabilidad de las preferencias del agentes económicos, el  conjunto  presupuestal se vuelve en  una recta  presupuesta también contiene las cestas de bienes  donde el costo de las mismas es igual a la renta.
+In addition, based on the assumption of not satiability in the economic agent preferences, the budget set becomes in a budget line that also contains the basket of goods where the cost is equal to the wage.
 $ p_xX+p_yY=W$
-Así que el problema de elección del consumidor queda resumido en la siguiente maximización:
+So, the consumer election problem is summarized in the following maximization:
 
 $$
 \begin{aligned}
@@ -189,7 +192,7 @@ X, Y\geq 0
 \end{aligned}
 $$
 
-A   continuación   un   ejemplo  mostraremos la maximización  de una función [Cobb-Dougglas](http://gestyy.com/euLw8P) con su respectivo código en Pyhton.
+The following function is the example of the maximization  of the [Cobb-Dougglas](http://gestyy.com/euLw8P) function made in Python:
 
 $$
 \begin{aligned}
@@ -211,8 +214,7 @@ $$
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-
-Dado que la mayoría de los programas para optimización realizan solamente la minimización de las funciones (como es el caso de Python), es necesario convertir la función objetivo en una función negativa como se describe a continuación, para así obtener el resultado de la maximización.
+Most of the optimization programs compute only the minimization of the functions. We need to convert the objective function into a negative function as we describe as follows, to obtain the result of the maximization. 
 
 ```python
 def restriccion_1(x):
@@ -231,7 +233,7 @@ sol=minimize(objetivo, (0,0), method="SLSQP", constraints=restriccion, bounds=bn
 optimo=sol.x
 ```
 
-La solución analítica de este problema es (X = 500 y Y = 62,5). Sin  embargo, Python nos arroja una solución  por métodos numéricos que es (X = 499,9 y Y = 62,5) la cual esté muy cerca a  la solución  analítica.  A  continuación  la gráfica  con la  solución numérica.
+The analytical solution of this problem is a tuple (X = 500, Y = 62.5). However, Python returns a numeric solution (X = 499,9 y Y = 62,5) which is very close to the analytical solution. The following graph is the numeric solution:
 
 ```python
 x=y=np.arange(0.0, 1000,10)
@@ -261,7 +263,7 @@ plt.savefig("optimo.png")
 
 ![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/optimo.png)
 
-Como se puede observar, la teoría económica enseñada día a día en los claustros universitarios se pueden enseñar también con la nueva corriente de enseñanza en programación computacional. Así, este artículo hace la invitación al lector a incurrir más en el mundo de la programación, la cual ayudará a la formación de profesionales más integrales para el mercado laboral. 
+As we can see, the economic theory that taught day by day in the university cloisters can be didactic with a new point of view related to computer programming. Thus, this article invites readers to delve into the world of programming, which will help make professional training more comprehensive to the labor market.
 
 <!-- wp:heading -->
 <h2>Referencias:</h2>
