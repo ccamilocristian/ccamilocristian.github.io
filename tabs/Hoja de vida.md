@@ -9,7 +9,7 @@ title: Hoja de vida
 ---
 # Español
 
-Economista y estudiante de la Maestría en Economía de la Universidad del Rosario con experiencia en Minería de Datos e inteligencia de Negocios. Amplio conocimiento en Python para manipulación y visualización de datos, SQL, Excel y Stata. Interés por el análisis cuantitativo, estadística, manipulación de datos, visualización de datos, análisis de riesgo crediticio, operacional, investigación económica y econométrica. De aprendizaje rápido, proactivo y con iniciativa para el desarrollo de ideas novedosas en aras al mejoramiento de procesos y productividad.
+Economista y Magister en Economía de la Universidad del Rosario con experiencia en Minería de Datos e inteligencia de Negocios. Amplio conocimiento en Python para manipulación y visualización de datos, SQL, Excel y Stata. Interés por el análisis cuantitativo, estadística, machine learning, manipulación de datos, visualización de datos, análisis de riesgo crediticio, operacional, investigación económica y econométrica. De aprendizaje rápido, proactivo y con iniciativa para el desarrollo de ideas novedosas en aras al mejoramiento de procesos y productividad.
 
 ## Formación académica
 
@@ -19,11 +19,34 @@ Economista y estudiante de la Maestría en Economía de la Universidad del Rosar
 [Univeridad del Rosario](https://www.urosario.edu.co), 2014 - 2018
 
 + #### Maestría en Economía
-[Univeridad del Rosario](https://www.urosario.edu.co), 2019 - Actual
+[Univeridad del Rosario](https://www.urosario.edu.co), 2020 - 2022
 
 ## Experiencia laboral
 
 ---
+#### [Banco de Bogotá](https://www.bancodebogota.com/)
+
+*Analista de Riesgo de Crédito* <br />
+Oct. 2021 – Presente <br />
+<u> Funciones: </u>
+
++ Realizar seguimiento al comportamiento de la cartera de diferentes productos de consumo en Power Bi.
++ Estructurar las políticas de prodcutso como créditos para segmento STEM y Buy Now Pay Later.
++ Proponer e implementar políticas que permitieron el aumento del monto promedio en 26% en el producto de Libre Destino Digital.
++ Mejorar el indicador de la cartera a partir de cierres de perfiles riesgosos, disminuyendo en 1,3 puntos porcentuales.
++ Segmentar clientes a través de perfilamientos con uso de modelos de Machine Learning.
+
+
+#### [Banco Davivienda](https://www.davivienda.com/)
+
+*Profesional en modelos y metodologías de riesgo operacional* <br />
+Jun. 2021 – Oct. 2021 <br />
+<u> Funciones: </u>
+
++ Realizar el seguimiento de las pérdidas y recuperaciones de riesgo operacional a través de informes en Google Data Studio.
++ Apoyar el cálculo y la aprobación del VeRRo del banco, así como la generar informes de seguimiento de este indicador.
++ Analizar con herramientas estadisticas y modelos de Machine Learning la Tolerancia al Riesgo operacional, teniendo en cuenta las características específicas de cada negocio del Banco.
++ Optimizar la integralidad y generación de informes en Google Data Studio relacionados al monitoreo de riesgos, controles y dinámicas de eventos tipo A y B en el Banco.
 
 #### [QNT S.A.S](https://qnt.com.co/)
 
@@ -31,7 +54,7 @@ Economista y estudiante de la Maestría en Economía de la Universidad del Rosar
 Dic. 2019 – Feb. 2021 <br />
 <u> Funciones: </u>
 
-+ Hacer seguimiento y mejora en la integralidad de los datos de carteras de los aliados para llevar a cabo el Modelo de Machine Learning QBK. 
++ Hacer seguimiento y mejora en la integralidad de los datos de carteras de los aliados para llevar a cabo el Modelo de Machine Learning QBK.
 + Participar en el diseño funcional de los sistemas de información necesarios para la evaluación y seguimiento del riesgo de crédito.
   + Estandaricé y disminuí tiempo de respuesta a un día en el proceso de reporte de clientes a centrales de riesgo.
 + Evaluar indicadores de desempeño del portafolio y presentar reportes analíticos que identifiquen alertas y oportunidades.
@@ -70,8 +93,8 @@ y análisis de restricción de placas de vehículos para expedición de pólizas
 
 |Programa|Nivel|Programa|Nivel|
 |--|--|--|--|--|
-|Python|Intermedio|R|Básico|
-|SQL|Intermedio|Latex|Intermedio|
+|Python|Avanzado|R|Básico|
+|SQL|Avanzado|Latex|Intermedio|
 |Google Data studio|Intermedio|Qlik|Intermedio|
 |Stata|Intermedio|Microsoft  Office|Intermedio|
 
@@ -85,25 +108,11 @@ y análisis de restricción de placas de vehículos para expedición de pólizas
 
 <br />
 
-[Hoja de vida](\assets\docs\Cristian_Moreno_CV_2021.pdf "Hoja de vida")
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+[Hoja de vida](\assets\docs\Cristian_Moreno_esp.pdf "Hoja de vida")
 
 # Curriculum Vitae - English
 
-
-Economist and student of the magister in economics in Universidad Del Rosario with experience in data mining and business intelligence. Large knowledge in Python to databases manipulation and visualization, SQL, Excel, and Stata. Interested in quantitative analysis, statistics, data manipulation, data visualization, credit risk, operational risk analysis, economic and econometric research. Fast learning, proactive, and initiative for the development of innovative ideas for the improvement of processes and productivity. 
+Economist and Magister in Economics from Universidad del Rosario with a wealth of experience in data mining and business intelligence. Skilled in Python, SQL, Excel, SAS, and Stata for data manipulation and visualization. Proven ability to develop quantitative analysis, statistical models, and machine learning solutions that drive business decisions and improve processes. Experienced in credit risk, operational risk analysis, and economic research. Strong ability to quickly learn new concepts and technologies, and a proactive and innovative approach to problem-solving. Experience creating reports and visualizations in Google Data Studio, Power BI, and Qlik. Aims to continue building skills and knowledge in data mining and business intelligence to help organizations make better decisions and achieve goals.
 
 ## Education
 
@@ -113,11 +122,36 @@ Economist and student of the magister in economics in Universidad Del Rosario wi
 [Univeridad del Rosario](https://www.urosario.edu.co), from Jan. 14 – to Dec. 18
 
 + #### Master of Science in Economics
-[Univeridad del Rosario](https://www.urosario.edu.co), from Jan. 19 - Present
+[Univeridad del Rosario](https://www.urosario.edu.co), from Jan. 20 - Dec. 2022
 
 ## Work Experience
 
 ---
+
+#### [Banco de Bogotá](https://www.bancodebogota.com/)
+
+*Analyst in credit risk* <br />
+from Oct. 2021 – Present <br />
+<u> Job description:: </u>
+
++ Track the behavior of the portfolio of different products of consumption in Power Bi.
++ Structure product policies as credits for STEM segment and Buy Now Pay Later.
++ Propose and implement policies that allowed the increase of the amount average of 26% in the product of Digital Consumer Credit.
++ Improve the portfolio indicator from closures of risky profiles, decreasing by 1.3 percentage points.
++ Segment customers through profiling with the use of Machine Learning.
+
+
+#### [Banco Davivienda](https://www.davivienda.com/)
+
+*Professional in operational risk models and methodologies* <br />
+from Jun. 2021 – Oct. 2021 <br />
+<u> Job description: </u>
+
++ Follow up the losses and recoveries of operational risk with data visualizations as Google Data Studio Dashboards.
++ Support to compute and approve the Bank's Vero and generate dashboards to follow up the indicator.
++ Analyze with the use of statistical tools and Machine Learning models the tolerance of operational risk, taking into account the specific characteristics of each bank business.
++ Optimize the integrability and generation of dashboards in Google Data Studio related to monitoring risks, controls, and events type A and B in the Bank.
+
 
 #### [QNT S.A.S](https://qnt.com.co/)
 
@@ -128,7 +162,7 @@ from Dec. 19 – Feb. 2021 <br />
 + Follow up and improve the completeness of the portfolio data of the allies to carry out the Machine Learning Model QBK.
  + Participate in the functional design of the information system necessary for the evaluation and monitoring of the credit risk.
  + I standardized and decreased the time of response in one day in the report of clients to risk centers.
-+ Evaluate indicators of the portfolio performance and present analytical reports that identify alerts and opportunities. 
++ Evaluate indicators of the portfolio performance and present analytical reports that identify alerts and opportunities.
 + Analytically and operationally support the Vice-president of Risk and Business Development and the Risk
 Director with the requirements that arise in risk management.
  + I led and structured the coordination of information systems. I was the leader of two people.
@@ -179,4 +213,4 @@ from Jul. 18 - to Jan. 19 <br />
 
 <br />
 
-[Curriculum Vitae](\assets\docs\Cristian_Moreno_CV_English.pdf "Curriculum Vitae")
+[Curriculum Vitae](\assets\docs\Cristian_Moreno_Ing.pdf "Curriculum Vitae")
