@@ -26,11 +26,11 @@ La inflación es el aumento generalizado y sostenido de los precios de bienes y 
 </script>
 
 
-Para el caso colombiano, el [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de [Laspeyres y de Paasche](gestyy.com/euK3Fc). El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
+Para el caso colombiano, el [DANE](https://www.dane.gov.co/index.php/en/) (Departamento Administrativo Nacional de Estadística) es el encargado de calcular dicha inflación a través de un índice ponderado de los precios de una cesta de bienes. La medición de este índice se puede realizar de varias formas, índice de [Laspeyres y de Paasche](https://policonomics.com/laspeyres-paasche/). El DANE usa una variante del índice Laspeyres, ya que permite una actualización de la canasta para seguimiento de los precios.
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
 
-Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](gestyy.com/euK32D).
+Dado lo anterior, el presente artículo pretende mostrar cómo realizar una calculadora de inflación para el caso colombiano, con la información del [IPC](https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc) (Indice de Precios al Consumidor) entre el año 2003 y 2020, esto con el fin de calcular el valor en el tiempo de algún bien y servicio. La información que usaremos se encuentra en la página del [Banco de la República](https://www.banrep.gov.co/es).
 
 Primero, se deben importar las librerías necesarias para el cálculo de valores y generación de gráficas.
 

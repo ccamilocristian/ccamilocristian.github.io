@@ -26,12 +26,12 @@ Inflation is the generalized increase and sustained of the goods and services pr
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-For this case, the [DANE](gestyy.com/euK27v) (Departamento Administrativo Nacional de Estadística) is in charge of calculating the inflation in Colombia with the use of the ponderation price index to a basket of goods. The measure of the index can be done in two ways, [Laspeyres and Paasche](gestyy.com/euK3Fc) index. The DANE uses a variant of the Laspeyres index because it allows an easy actualization of the basket of goods to the price tracking.
+For this case, the [DANE](https://www.dane.gov.co/index.php/en/) (Departamento Administrativo Nacional de Estadística) is in charge of calculating the inflation in Colombia with the use of the ponderation price index to a basket of goods. The measure of the index can be done in two ways, [Laspeyres and Paasche](https://policonomics.com/laspeyres-paasche/) index. The DANE uses a variant of the Laspeyres index because it allows an easy actualization of the basket of goods to the price tracking.
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
-The present article pretends to show how to make an inflation calculator, in the Colombian case. with the [IPC](gestyy.com/euK3BY) (Indice de Precios al Consumidor) information between 2003 and 2020. The calculator has the objective to measure the time valor of the goods and services in Colombia. The information was sustract from the [Banco de la República](gestyy.com/euK32D)'s website.
+The present article pretends to show how to make an inflation calculator, in the Colombian case. with the [IPC](https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc) (Indice de Precios al Consumidor) information between 2003 and 2020. The calculator has the objective to measure the time valor of the goods and services in Colombia. The information was sustract from the [Banco de la República](https://www.banrep.gov.co/es)'s website.
 
-First, we import the needed libraries to compute the values and generate the graphs. 
+First, we import the needed libraries to compute the values and generate the graphs.
 
 ```python
 import pandas as pd

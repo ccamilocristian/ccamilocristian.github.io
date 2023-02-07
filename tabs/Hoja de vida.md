@@ -132,7 +132,7 @@ Economist and Magister in Economics from Universidad del Rosario with a wealth o
 
 *Analyst in credit risk* <br />
 from Oct. 2021 – Present <br />
-<u> Job description:: </u>
+<u> Job description: </u>
 
 + Track the behavior of the portfolio of different products of consumption in Power Bi.
 + Structure product policies as credits for STEM segment and Buy Now Pay Later.

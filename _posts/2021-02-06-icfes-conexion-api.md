@@ -24,15 +24,15 @@ Sin embargo, esta manipulación y extracción de datos en varias ocasiones se pu
 
 # Extracción de datos y almacenamiento
 
-Partiendo de lo anterior, a continuación, se hará la explicación de cómo conectar esta API con python y como posteriormente almacenar dicha información en [Google Big Query](http://gestyy.com/euLoVt) para realizar visualizaciones más fáciles en Google Data Studio.
+Partiendo de lo anterior, a continuación, se hará la explicación de cómo conectar esta API con python y como posteriormente almacenar dicha información en [Google Big Query](https://cloud.google.com/bigquery?hl=en) para realizar visualizaciones más fáciles en Google Data Studio.
 
-Primero, se debe instalar la librería [sodapy](http://gestyy.com/euLaFp).
+Primero, se debe instalar la librería [sodapy](https://pypi.org/project/sodapy/).
 
 ```python
 ! pip install sodapy
 ```
 
-Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](http://gestyy.com/euLaCV) del segundo semestre del 2019.
+Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](https://www.icfes.gov.co/) del segundo semestre del 2019.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 

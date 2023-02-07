@@ -7,7 +7,7 @@ tags: [economics, python, optimization]
 math: true
 ---
 
-Nowadays in the classrooms, in the courses of the economics' undergraduate, the professors begin teaching the consumer theory, theme with big impact in [Microeconomics](http://gestyy.com/euLqYG). However, this theory is always taught without a pragmatic application in real life. Therefore, the article has the objective to introduce to the readers' themes about applied economics in a programming language like [Python](http://sh.st/noE8B).
+Nowadays in the classrooms, in the courses of the economics' undergraduate, the professors begin teaching the consumer theory, theme with big impact in [Microeconomics](https://economictimes.indiatimes.com/definition/microeconomics). However, this theory is always taught without a pragmatic application in real life. Therefore, the article has the objective to introduce to the readers' themes about applied economics in a programming language like [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -30,7 +30,7 @@ from scipy.optimize import minimize
 ```
 
 We import the NumPy library because we will need it to simplify the function expressions in Python.
-In addition, we import the matplotlib.pyplot library to make the function graphs, explained later, related to the utility function of goods. Finally, we use the scipy.optimize library to optime the utility function with the [SLSQP](http://gestyy.com/euLwy2) method, as an example.
+In addition, we import the matplotlib.pyplot library to make the function graphs, explained later, related to the utility function of goods. Finally, we use the scipy.optimize library to optime the utility function with the [SLSQP](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html) method, as an example.
 
 #  Consumer Theory
 
@@ -53,7 +53,7 @@ We take into account the neoclassic theory of the consumers based on the prefere
 ## Utility Function
 
 It is the function that designates a utility level (or welfare) to a bucket of goods in the market, based on the preferences of the economic agent.
-These are some example of [utility](http://gestyy.com/euLwhV): functions:
+These are some example of [utility](https://www.investopedia.com/ask/answers/072915/what-utility-function-and-how-it-calculated.asp): functions:
 
 * Substitutes goods function:
 
@@ -192,7 +192,7 @@ X, Y\geq 0
 \end{aligned}
 $$
 
-The following function is the example of the maximization  of the [Cobb-Dougglas](http://gestyy.com/euLw8P) function made in Python:
+The following function is the example of the maximization  of the [Cobb-Dougglas](https://inomics.com/terms/cobb-douglas-production-function-1456726#:~:text=A%20Cobb%2DDouglas%20production%20function,technological%20change%20in%20production%20methods.) function made in Python:
 
 $$
 \begin{aligned}
@@ -214,7 +214,7 @@ $$
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-Most of the optimization programs compute only the minimization of the functions. We need to convert the objective function into a negative function as we describe as follows, to obtain the result of the maximization. 
+Most of the optimization programs compute only the minimization of the functions. We need to convert the objective function into a negative function as we describe as follows, to obtain the result of the maximization.
 
 ```python
 def restriccion_1(x):

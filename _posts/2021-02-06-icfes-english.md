@@ -7,7 +7,7 @@ tags: [python, api, visualization, big-query]
 math: true
 ---
 
-Nowadays, Colombia's government dispose of a platform to check the public databases, this website calls [datos.gov.co]. Here, anyone can extract databases related to all public areas such as the information about ministries, superintendencies,  and more government entities.
+Nowadays, Colombia's government dispose of a platform to check the public databases, this website calls [datos.gov.co](https://www.datos.gov.co/). Here, anyone can extract databases related to all public areas such as the information about ministries, superintendencies,  and more government entities.
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -21,19 +21,19 @@ Nowadays, Colombia's government dispose of a platform to check the public databa
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-However, the manipulation and extraction of databases, sometimes, can be winding for the number of rows and columns. For that reason, the platform disposes of an [API](http://gestyy.com/euLir7) to connect different programs with the website and extract the information easily.
+However, the manipulation and extraction of databases, sometimes, can be winding for the number of rows and columns. For that reason, the platform disposes of an [API](https://en.wikipedia.org/wiki/API) to connect different programs with the website and extract the information easily.
 
 # Database extraction and storage
 
-Following on from the previous section, we will show you how to link this API to Python and then how to store the data in [Google Big Query](http://gestyy.com/euLoVt) so you can easily create data visualizations in Google Data Studio.
+Following on from the previous section, we will show you how to link this API to Python and then how to store the data in [Google Big Query](https://cloud.google.com/bigquery?hl=es) so you can easily create data visualizations in Google Data Studio.
 
-First, We have to install the library [sodapy](http://gestyy.com/euLaFp).
+First, We have to install the library [sodapy](https://pypi.org/project/sodapy/).
 
 ```python
 ! pip install sodapy
 ```
 
-Later, we import the needed libraries for data manipulation. For this analysis, we have to take into account the results of the [ICFES](http://gestyy.com/euLaCV) in the second semester in 2019.
+Later, we import the needed libraries for data manipulation. For this analysis, we have to take into account the results of the [ICFES](https://www.icfes.gov.co/) in the second semester in 2019.
 
 ![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 

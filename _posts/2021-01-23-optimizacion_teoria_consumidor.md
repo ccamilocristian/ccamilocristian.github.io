@@ -7,7 +7,7 @@ tags: [economics, python, optimization]
 math: true
 ---
 
-Hoy día en las aulas de clase, en las asignaturas del pregrado en Economía, se empieza enseñando la Teoría del consumidor, tema de un gran campo de la economía, que es la [Microeconomía](http://gestyy.com/euLqYG). Sin embargo, siempre se enseña la teoría sin poder ver su aplicación pragmática en la vida real. Por tanto, este artículo tiene como objetivo introducir a los lectores en temas de economía aplicando, especificamente estas teorías, en un lenguaje de programación como lo es [Python](http://sh.st/noE8B).
+Hoy día en las aulas de clase, en las asignaturas del pregrado en Economía, se empieza enseñando la Teoría del consumidor, tema de un gran campo de la economía, que es la [Microeconomía](https://economictimes.indiatimes.com/definition/microeconomics). Sin embargo, siempre se enseña la teoría sin poder ver su aplicación pragmática en la vida real. Por tanto, este artículo tiene como objetivo introducir a los lectores en temas de economía aplicando, especificamente estas teorías, en un lenguaje de programación como lo es [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- horizontal ad -->
@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 ```
 
-Se llama la librería numpy ya que en código posterior haremos uso de métodos que nos simplificarán la expresión de funciones en Python. Así mismo se llama la librería matplotlib.pyplot con el fin de graficar las funciones que posteriormente se mencionarán relacionadas a la utilidad de ciertos bienes. Finalmente se usará scipy.optimize con el fin de realizar la optimización de la función de utilidad como ejemplo a través del método [SLSQP](http://gestyy.com/euLwy2).
+Se llama la librería numpy ya que en código posterior haremos uso de métodos que nos simplificarán la expresión de funciones en Python. Así mismo se llama la librería matplotlib.pyplot con el fin de graficar las funciones que posteriormente se mencionarán relacionadas a la utilidad de ciertos bienes. Finalmente se usará scipy.optimize con el fin de realizar la optimización de la función de utilidad como ejemplo a través del método [SLSQP](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html).
 
 # Teoría del consumidor
 
@@ -53,7 +53,7 @@ Se continuará teniendo en cuenta a la teoría neoclásica del consumidor basada
 ## Función de utilidad
 
 Es aquella función que asigna cierto nivel de utilidad (o bienestar) a una cesta de bienes de mercado, dado las preferencias del agente económico frente a estos bienes.
-Ejemplos de funciones de [utilidad](http://gestyy.com/euLwhV):
+Ejemplos de funciones de [utilidad](https://www.investopedia.com/ask/answers/072915/what-utility-function-and-how-it-calculated.asp):
 
 * Función  de bienes sustitutos:
 
@@ -189,7 +189,7 @@ X, Y\geq 0
 \end{aligned}
 $$
 
-A   continuación   un   ejemplo  mostraremos la maximización  de una función [Cobb-Dougglas](http://gestyy.com/euLw8P) con su respectivo código en Pyhton.
+A   continuación   un   ejemplo  mostraremos la maximización  de una función [Cobb-Dougglas](https://inomics.com/terms/cobb-douglas-production-function-1456726#:~:text=A%20Cobb%2DDouglas%20production%20function,technological%20change%20in%20production%20methods.) con su respectivo código en Pyhton.
 
 $$
 \begin{aligned}
