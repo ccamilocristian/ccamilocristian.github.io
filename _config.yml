@@ -10,10 +10,10 @@
 
 title: Cristian Camilo Moreno Narvaez                          # the main title
 tagline: >- # it will display as the sub-title
-  Economista con interes en ciencia de datos, programación y visualización de datos.
+  Economista con interes en Data Science, Programación y Visualización de Datos.
 
 description: >-                        # used by seo meta and the atom feed
-  Página personal para divulgación de conocimiento en manipulación y visualización de datos.
+ Blog para divulgación de conocimiento en Data Science, Analytics, Economía y Visualización de Datos.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ccamilocristian.github.io/'
