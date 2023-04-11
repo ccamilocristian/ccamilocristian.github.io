@@ -108,19 +108,19 @@ fig.write_html("graph_sep.html",full_html=False,
 In this tutorial, we learned how to create interactive scatter plots and animated plots using Plotly in Python. We also learned how to customize our plots by changing the colors, size, and shape of the markers, and how to add labels and titles to our plots. With these tools, we can create beautiful and informative visualizations that can help us gain insights from our data.
 
 <h2 style="font-size: 20px; font-weight: bold;">Frequently Asked Questions</h2>
-<h3 style="font-size: 18px; font-weight: bold;">Q1: What is Plotly?</h3>
+<h3 style="font-size: 18px; font-weight: bold;">Q: What is Plotly?</h3>
 A1: Plotly is a data visualization library that allows users to create interactive and informative visualizations in Python, R, and JavaScript.
 
-<h3 style="font-size: 18px; font-weight: bold;">Q2: What is a scatter plot?</h3>
+<h3 style="font-size: 18px; font-weight: bold;">Q: What is a scatter plot?</h3>
 A2: A scatter plot is a type of data visualization that displays the relationship between two variables as a collection of points on a two-dimensional plane.
 
-<h3 style="font-size: 18px; font-weight: bold;">Q3: What is an animated plot?</h3>
+<h3 style="font-size: 18px; font-weight: bold;">Q: What is an animated plot?</h3>
 A3: An animated plot is a type of data visualization that displays changes over time by animating the plot.
 
-<h3 style="font-size: 18px; font-weight: bold;">Q4: Can I customize the appearance of my Plotly plots?</h3>
+<h3 style="font-size: 18px; font-weight: bold;">Q: Can I customize the appearance of my Plotly plots?</h3>
 A4: Yes, Plotly allows users to customize the appearance of their plots by changing the colors, size, and shape of the markers, adding labels and titles, and more.
 
-<h3 style="font-size: 18px; font-weight: bold;">Q5: Where can I find more information about Plotly?</h3>
+<h3 style="font-size: 18px; font-weight: bold;">Q: Where can I find more information about Plotly?</h3>
 A5: The official Plotly documentation is a great resource for learning more about Plotly and its capabilities.
 
 <h2 style="font-size: 20px; font-weight: bold;">Final Thoughts</h2>
