@@ -1,5 +1,5 @@
 ---
-title: "Introduction to PyAutoGUI: A Beginner's Guide to Understanding What PyAutoGUI is, How it Works, and Why You Might Want to Use it"
+title: "Introduction to PyAutoGUI: A Beginner's Guide to Understanding What PyAutoGUI is, and How it Works"
 author: Cristian Camilo Moreno Narvaez
 date: 2023-03-28 15:00:00 -0500
 categories: [Python,Automation]
