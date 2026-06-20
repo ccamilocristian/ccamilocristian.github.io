@@ -41,6 +41,6 @@ layout: default
 </div>
 {% endif %}
 
-{% unless stitch_dashboard %}
-  {% include adsense-unit.html slot=site.data.site_ops.adsense.slots.post_footer variant="footer" %}
-{% endunless %}
+{% if stitch_dashboard == false and site.data.site_ops.adsense.placements.post_footer %}
+  {% include adsense-unit.html variant="footer" %}
+{% endif %}

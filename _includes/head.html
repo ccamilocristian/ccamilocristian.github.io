@@ -10,6 +10,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  {% include gtm-head.html %}
+
   <title>
   {%- unless page.layout == "home" -%}
     {{ page.title | append: " | "}}
@@ -47,7 +49,16 @@
 
   {% include propeller-verification.html %}
 
-  {% include adsense-loader.html %}
+  {% include stitch-dashboard-flag.html %}
+  {% if site.data.site_ops.adsense.enabled %}
+    {% if page.layout == 'post' %}
+      {% include adsense-loader.html %}
+    {% elsif page.layout == 'page' and page.stitch_legacy %}
+      {% include adsense-loader.html %}
+    {% endif %}
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  {% endif %}
 
   <!-- jsDelivr CDN -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>

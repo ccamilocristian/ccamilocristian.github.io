@@ -29,6 +29,8 @@ layout: compress
 
   <body data-spy="scroll" data-target="#toc"{% if stitch_dashboard %} class="stitch-dashboard"{% endif %}>
 
+    {% include gtm-noscript.html %}
+
     <div id="sidebar" class="d-flex flex-column">
       {% include sidebar.html %}
     </div>
@@ -59,7 +61,10 @@ layout: compress
     </a>
 
     {% if jekyll.environment == 'production' %}
-      {% include google-analytics.html %}
+      {% assign gtm = site.data.site_ops.gtm %}
+      {% unless gtm.enabled and gtm.skip_direct_ga4 %}
+        {% include google-analytics.html %}
+      {% endunless %}
       {% include clarity.html %}
     {% endif %}
 

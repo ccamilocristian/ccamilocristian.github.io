@@ -171,6 +171,8 @@ layout: default
 
 </div>
 
+{% include adsense-post-ad.html %}
+
 <div class="row">
   <div class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
     <div id="post-extend-wrapper" class="{% if stitch_dashboard %}stitch-post-extend{% else %}pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4{% endif %}">
@@ -191,11 +193,6 @@ layout: default
 
 {% if stitch_dashboard %}
   {% include stitch-footer.html %}
-  {% if site.data.site_ops.adsense.stitch_routes %}
-    {% include adsense-unit.html slot=site.data.site_ops.adsense.slots.post_footer variant="footer" %}
-  {% endif %}
-{% else %}
-  {% include adsense-unit.html slot=site.data.site_ops.adsense.slots.post_footer variant="footer" %}
 {% endif %}
 
 {% include lozad.html %}

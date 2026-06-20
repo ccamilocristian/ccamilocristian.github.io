@@ -1,25 +1,63 @@
 .ad-slot {
-  min-height: var(--ad-min-h-mobile, 250px);
+  width: 100%;
+  max-width: var(--ds-grid-max, 1120px);
   margin: var(--ds-space-6, 1.5rem) auto;
-  max-width: 100%;
-  contain: layout style paint;
   overflow: hidden;
-  background: var(--ds-color-surface-muted, rgba(255, 255, 255, 0.02));
   border-radius: var(--ds-radius-md, 8px);
+  background: var(--ds-color-surface-muted, rgba(255, 255, 255, 0.02));
+  min-height: var(--ad-min-h-mobile, 280px);
 
   @media (min-width: 768px) {
-    min-height: var(--ad-min-h-desktop, 90px);
+    min-height: var(--ad-min-h-desktop, 250px);
   }
 }
 
-.ad-slot--failed {
+.ad-slot ins.adsbygoogle {
+  display: block;
+  width: 100%;
+  min-height: inherit;
+}
+
+.ad-slot--failed,
+.ad-slot--unfilled {
   min-height: 0;
   margin: 0;
   padding: 0;
   display: none;
 }
 
-body.stitch-dashboard .ad-slot--footer {
+.ad-slot--in-article {
+  max-width: var(--stitch-post-text-measure, 46rem);
+  margin-block: var(--ds-space-8, 2rem);
+  /* Native in-article fluid units vary in height — lighter reserve than display */
+  min-height: 240px;
+
+  @media (min-width: 768px) {
+    min-height: 200px;
+  }
+
+  ins.adsbygoogle {
+    text-align: center;
+  }
+}
+
+body.stitch-dashboard .stitch-post-ad-row {
   max-width: var(--ds-grid-max, 1120px);
+  margin-inline: auto;
   padding-inline: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .ad-slot--in-article {
+  margin-inline: auto;
+}
+
+.ad-slot__label {
+  display: block;
+  margin-bottom: var(--ds-space-2, 0.5rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+  opacity: 0.7;
 }

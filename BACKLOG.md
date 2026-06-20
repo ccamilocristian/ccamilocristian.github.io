@@ -64,7 +64,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | T5 | 9 pares EN/ES — EN canónico; ES `published: false` + redirect 301 |
 | T5b | 4 posts solo-ES traducidos a EN |
 | T9 | SEO — `description:` pulidas en 14 posts (tono humano, ~120–140 chars) |
-| T7 | AdSense + Clarity — loader diferido, anti-CLS, post footer Stitch; GA4 desde `_config.yml` |
+| T7 | AdSense + Clarity — loader diferido, anti-CLS, in-article slot, GA4 desde `_config.yml` |
 
 ### Docs + repo
 
@@ -79,6 +79,8 @@ _Last sync: 2026-06-20 (repo cleanup)_
 ## Changelog reciente
 
 - **T7** — AdSense re-enabled (post footer, deferred loader, `.ad-slot` anti-CLS); Microsoft Clarity `xa15jprgqu`; GA4 ID from `_config.yml`; removed legacy ad network includes
+- **T7b** — Monetización: slot in-article native `6874018777` (fluid), pre-related, loader solo en posts, unfilled collapse
+- **Analytics** — GTM `GTM-K8J9KSB8` (head + noscript); direct GA4 off when GTM active (`skip_direct_ga4`)
 - **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
 - **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
 - **T5** — 9 duplicados ES despublicados; redirect 301 a EN

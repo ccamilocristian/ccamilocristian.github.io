@@ -1,24 +1,71 @@
 {% assign ads = site.data.site_ops.adsense %}
-{% assign slot = include.slot | default: ads.slots.post_footer %}
-{% assign variant = include.variant | default: 'footer' %}
-{% if ads.enabled and ads.client and slot %}
+{% assign variant = include.variant | default: 'in-article' %}
+{% if variant == 'footer' %}
+  {% assign slot = include.slot | default: ads.slots.post_footer %}
+  {% assign placement_on = ads.placements.post_footer %}
+{% else %}
+  {% assign slot = include.slot | default: ads.slots.in_article %}
+  {% assign placement_on = ads.placements.in_article %}
+{% endif %}
+{% if ads.enabled and ads.client and slot and placement_on != false %}
 <aside class="ad-slot ad-slot--{{ variant }}"
        aria-label="Advertisement"
-       style="--ad-min-h-mobile: {{ ads.min_heights.mobile | default: 250 }}px;
-              --ad-min-h-desktop: {{ ads.min_heights.desktop | default: 90 }}px;">
+       style="--ad-min-h-mobile: {{ ads.min_heights.mobile | default: 280 }}px;
+              --ad-min-h-desktop: {{ ads.min_heights.desktop | default: 250 }}px;">
+  <span class="ad-slot__label" aria-hidden="true">Sponsored</span>
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block; text-align:center;"
        data-ad-client="{{ ads.client }}"
        data-ad-slot="{{ slot }}"
+       {% if variant == 'in-article' %}
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       {% else %}
        data-ad-format="horizontal"
-       data-full-width-responsive="true"></ins>
+       data-full-width-responsive="true"
+       {% endif %}></ins>
 </aside>
 <script defer>
 (function () {
   var slotEl = document.currentScript.previousElementSibling;
+  function watchFill() {
+    var ins = slotEl.querySelector('.adsbygoogle');
+    if (!ins) return;
+    function check() {
+      var status = ins.getAttribute('data-ad-status');
+      if (status === 'unfilled') slotEl.classList.add('ad-slot--unfilled');
+      if (status === 'filled') slotEl.classList.remove('ad-slot--unfilled');
+    }
+    if ('MutationObserver' in window) {
+      var mo = new MutationObserver(check);
+      mo.observe(ins, { attributes: true, attributeFilter: ['data-ad-status'] });
+    }
+    setTimeout(check, 4000);
+  }
+  function doPush() {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      watchFill();
+    } catch (e) {
+      slotEl.classList.add('ad-slot--failed');
+    }
+  }
   function pushAd() {
-    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); }
-    catch (e) { slotEl.classList.add('ad-slot--failed'); }
+    function tryPush() {
+      doPush();
+    }
+    if (window.adsbygoogle) {
+      tryPush();
+      return;
+    }
+    var attempts = 0;
+    var timer = setInterval(function () {
+      attempts += 1;
+      if (window.adsbygoogle || attempts > 50) {
+        clearInterval(timer);
+        tryPush();
+      }
+    }, 100);
   }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {

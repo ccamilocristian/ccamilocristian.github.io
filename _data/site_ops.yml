@@ -5,11 +5,15 @@ adsense:
   stitch_routes: true
   defer_until_idle: true
   min_heights:
-    mobile: 250
-    desktop: 90
+    mobile: 280
+    desktop: 250
   slots:
+    in_article: "6874018777"
     post_footer: "8047040393"
-  note: Post footer slot only on Stitch reading view; loader deferred post-LCP.
+  placements:
+    in_article: true
+    post_footer: false
+  note: In-article native unit (6874018777) before related posts; legacy display slot kept for post_footer if re-enabled.
 
 disqus:
   stitch_routes: false
@@ -19,3 +23,11 @@ clarity:
   enabled: true
   project_id: xa15jprgqu
   note: Microsoft Clarity session replay + heatmaps (production only).
+
+gtm:
+  enabled: true
+  container_id: GTM-K8J9KSB8
+  skip_direct_ga4: true
+  note: >
+    GA4 (G-4FK52MWLPP) should fire via GTM container tags — direct gtag snippet skipped
+    when skip_direct_ga4 is true to avoid duplicate pageviews.
