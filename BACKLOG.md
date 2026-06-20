@@ -10,7 +10,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | Contenido | **14 posts** publicados (EN); **9 ES** despublicados + redirect 301 |
 | SEO posts | **T9 hecho** — `description:` en 14 posts |
 | Repo hygiene | **Cleanup hecho** — gitignore, agentes, READMEs, `docs/README.md` |
-| Abierto | **T6** (Vision Lab), **T3/T4** (home opcional), **T7/T8** (off) |
+| Abierto | **T6** (Vision Lab), **T3/T4** (home opcional), **T8** (Disqus off) |
 
 ---
 
@@ -21,8 +21,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | 1 | **T6** | Media | Vision Lab → caso real | RED | `_data/vision_lab.yml` cuando exista experimento documentado |
 | 2 | **T4** | Media | Imágenes Selected Work locales | UX | `_data/portfolio_projects.yml` → `assets/img/cases/` |
 | 3 | **T3** | Media | Model performance explorer | DBG | `_data/command_center.yml` → `mock_modules.model_explorer.enabled: true` — **Deferred** |
-| 4 | **T7** | Baja | Re-enable AdSense | DBG | `_data/site_ops.yml` — **Off** |
-| 5 | **T8** | Baja | Re-enable Disqus en Stitch | DBG | `_data/site_ops.yml` — **Off** (T15 ya hecho) |
+| 4 | **T8** | Baja | Re-enable Disqus en Stitch | DBG | `_data/site_ops.yml` — **Off** (T15 ya hecho) |
 
 ---
 
@@ -65,6 +64,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | T5 | 9 pares EN/ES — EN canónico; ES `published: false` + redirect 301 |
 | T5b | 4 posts solo-ES traducidos a EN |
 | T9 | SEO — `description:` pulidas en 14 posts (tono humano, ~120–140 chars) |
+| T7 | AdSense + Clarity — loader diferido, anti-CLS, post footer Stitch; GA4 desde `_config.yml` |
 
 ### Docs + repo
 
@@ -78,7 +78,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 
 ## Changelog reciente
 
-- **Repo cleanup** — gitignore explícito; agentes alineados; READMEs + `docs/README.md` sync
+- **T7** — AdSense re-enabled (post footer, deferred loader, `.ad-slot` anti-CLS); Microsoft Clarity `xa15jprgqu`; GA4 ID from `_config.yml`; removed legacy ad network includes
 - **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
 - **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
 - **T5** — 9 duplicados ES despublicados; redirect 301 a EN

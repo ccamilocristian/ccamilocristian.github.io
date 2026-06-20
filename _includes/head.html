@@ -27,7 +27,7 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-  <!-- GA -->
+  <!-- Analytics / ads hints (production) -->
   {% if jekyll.environment == 'production' %}
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials">
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
@@ -35,20 +35,19 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
+    {% if site.data.site_ops.clarity.enabled %}
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    {% endif %}
+
     {% if site.google_analytics.pv.proxy_url and site.google_analytics.pv.enabled %}
       <link rel="preconnect" href="{{ site.google_analytics.pv.proxy_url }}" crossorigin="use-credentials">
       <link rel="dns-prefetch" href="{{ site.google_analytics.pv.proxy_url }}">
     {% endif %}
   {% endif %}
 
-  <!-- Google Adsense (optional; disabled via _data/site_ops.yml on Stitch-first site) -->
-  {% unless site.data.site_ops.adsense.enabled == false %}
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2402437399062384"
-    crossorigin="anonymous"></script>
-  {% endunless %}
+  {% include propeller-verification.html %}
 
-  <!-- {% include ads.html %} 
-  {% include ads_1.html %}    -->
+  {% include adsense-loader.html %}
 
   <!-- jsDelivr CDN -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>

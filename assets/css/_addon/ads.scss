@@ -1,0 +1,25 @@
+.ad-slot {
+  min-height: var(--ad-min-h-mobile, 250px);
+  margin: var(--ds-space-6, 1.5rem) auto;
+  max-width: 100%;
+  contain: layout style paint;
+  overflow: hidden;
+  background: var(--ds-color-surface-muted, rgba(255, 255, 255, 0.02));
+  border-radius: var(--ds-radius-md, 8px);
+
+  @media (min-width: 768px) {
+    min-height: var(--ad-min-h-desktop, 90px);
+  }
+}
+
+.ad-slot--failed {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+body.stitch-dashboard .ad-slot--footer {
+  max-width: var(--ds-grid-max, 1120px);
+  padding-inline: var(--ds-space-4, 1rem);
+}

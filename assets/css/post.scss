@@ -10,6 +10,7 @@
 {% include_relative _addon/main.scss %}
 {% include_relative _addon/stitch-shell.scss %}
 {% include_relative _addon/stitch-post.scss %}
+{% include_relative _addon/ads.scss %}
 {% include_relative _addon/syntax.scss %}
 
 $prompt-older: "{{ site.data.label.post.button.previous }}";

@@ -1,0 +1,33 @@
+{% assign ads = site.data.site_ops.adsense %}
+{% assign slot = include.slot | default: ads.slots.post_footer %}
+{% assign variant = include.variant | default: 'footer' %}
+{% if ads.enabled and ads.client and slot %}
+<aside class="ad-slot ad-slot--{{ variant }}"
+       aria-label="Advertisement"
+       style="--ad-min-h-mobile: {{ ads.min_heights.mobile | default: 250 }}px;
+              --ad-min-h-desktop: {{ ads.min_heights.desktop | default: 90 }}px;">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ ads.client }}"
+       data-ad-slot="{{ slot }}"
+       data-ad-format="horizontal"
+       data-full-width-responsive="true"></ins>
+</aside>
+<script defer>
+(function () {
+  var slotEl = document.currentScript.previousElementSibling;
+  function pushAd() {
+    try { (window.adsbygoogle = window.adsbygoogle || []).push({}); }
+    catch (e) { slotEl.classList.add('ad-slot--failed'); }
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { pushAd(); io.disconnect(); }
+    }, { rootMargin: '200px' });
+    io.observe(slotEl);
+  } else {
+    pushAd();
+  }
+})();
+</script>
+{% endif %}

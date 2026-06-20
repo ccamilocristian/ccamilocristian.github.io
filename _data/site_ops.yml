@@ -1,8 +1,21 @@
 # Site operations toggles
 adsense:
-  enabled: false
-  note: Stitch dashboard routes do not render ad units; disable global loader until re-enabled deliberately.
+  enabled: true
+  client: ca-pub-2402437399062384
+  stitch_routes: true
+  defer_until_idle: true
+  min_heights:
+    mobile: 250
+    desktop: 90
+  slots:
+    post_footer: "8047040393"
+  note: Post footer slot only on Stitch reading view; loader deferred post-LCP.
 
 disqus:
   stitch_routes: false
   note: Comments off on stitch-dashboard surfaces; legacy posts may still reference Disqus if enabled in post front matter.
+
+clarity:
+  enabled: true
+  project_id: xa15jprgqu
+  note: Microsoft Clarity session replay + heatmaps (production only).

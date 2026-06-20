@@ -1,20 +1,16 @@
 <!--
-  The GA snippet
-  v2.0
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2017-2019 Cotes Chung
-  MIT License
+  GA4 (gtag.js) — ID from _config.yml
 -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4FK52MWLPP"></script>
-<script>
+{% assign ga_id = site.google_analytics.id %}
+{% if ga_id and ga_id != '' %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_id }}"></script>
+<script defer>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-4FK52MWLPP');
+  gtag('config', '{{ ga_id }}', {
+    send_page_view: true,
+    anonymize_ip: true
+  });
 </script>
-
-{% if site.propeller_verification %}
-  <meta name="propeller" content="{{ site.propeller_verification }}" />
 {% endif %}

@@ -1,0 +1,26 @@
+{% assign ads = site.data.site_ops.adsense %}
+{% if ads.enabled and ads.client %}
+<script defer>
+(function () {
+  var client = '{{ ads.client }}';
+  function loadAdSense() {
+    if (document.querySelector('script[data-adsense-loader]')) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
+    s.crossOrigin = 'anonymous';
+    s.setAttribute('data-adsense-loader', '1');
+    document.head.appendChild(s);
+  }
+  {% if ads.defer_until_idle %}
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadAdSense, { timeout: 3000 });
+  } else {
+    window.addEventListener('load', function () { setTimeout(loadAdSense, 1500); });
+  }
+  {% else %}
+  loadAdSense();
+  {% endif %}
+})();
+</script>
+{% endif %}
