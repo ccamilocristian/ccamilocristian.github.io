@@ -1,17 +1,23 @@
 ---
+
 title: "Behavioral Economics and Data Analysis: An Introduction"
 author: Cristian Camilo Moreno Narvaez
 date: 2023-01-23 15:00:00 -0500
-categories: [Economics ,Data_analysis]
+categories: [Economics, Data_analysis]
 tags: [behavioral economics, data analysis, decision making, cognitive biases, predictive modeling]
 math: true
+domain: Economics
+technical_level: Advanced
+reading_time: 4
+business_impact: "Supports tradeoff-aware policy and business decisions under constraints."
+impact_label: "Supports tradeoff-aware policy and busines"
+description: "Cognitive biases show up in data work too—confirmation bias, availability heuristic, and a few ways to keep them from skewing your analysis."
 ---
-
 Behavioral economics is a fascinating field that studies the ways in which psychological, social, and emotional factors impact economic decisions. Unlike traditional economics, which often assumes that individuals are rational actors, behavioral economics acknowledges that people often make decisions that are irrational or inconsistent with their self-interest.
 
 One of the key factors that influence economic decision-making is cognitive biases. Cognitive biases refer to systematic errors in thinking that can affect decision-making. These biases can cause individuals to make decisions that are not rational or optimal. In data analysis, cognitive biases can significantly impact the quality of data and the effectiveness of decision-making.
 
-<img src="/assets/img/2023-01-23-behavioral-economics/behavior.jpg" alt="Behavioral Economics" width="500" height="400">
+<img src="/assets/img/2023-01-23-behavioral-economics/business-chart.jpg" alt="Dashboard charts illustrating data-driven decision review" width="500" height="350">
 
 
 According to experts in the field, there are numerous cognitive biases that can impact decision-making in data analysis and beyond. For example, "confirmation bias" refers to seeking information that confirms pre-existing beliefs while ignoring information that contradicts those beliefs. This can lead individuals to make decisions based on incomplete or inaccurate data. Another common cognitive bias is the "availability heuristic", which refers to the tendency to rely on easily available information rather than seek more reliable or comprehensive data.

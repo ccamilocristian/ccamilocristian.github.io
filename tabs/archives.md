@@ -1,56 +1,29 @@
 ---
-title: Posts
-type: archives
-# The Archives of posts.
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT License
+title: Archive
+permalink: /tabs/archives/
+tab_active: Intelligence
+stitch_legacy: true
+# Chronological post index — Stitch glass list (T16)
 ---
 
-<div id="archives" class="pl-xl-2">
-{% for post in site.posts %}
-  {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% capture pre_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-  {% if forloop.first %}
-    {% assign last_day = "" %}
-    {% assign last_month = "" %}
-  <span class="lead">{{this_year}}</span>
-  <ul class="list-unstyled">
-  {% endif %}
-    <li>
-      <div>
-        {% capture this_day %}{{ post.date | date: "%d" }}{% endcapture %}
-        {% capture this_month %}
-          {% assign m = post.date | date: "%b" %}
-          {% case m %}
-            {% when 'Jan' %}Ene
-            {% when 'Feb' %}Feb
-            {% when 'Mar' %}Mar
-            {% when 'Apr' %}Abr
-            {% when 'May' %}May
-            {% when 'Jun' %}Jun
-            {% when 'Jul' %}Jul
-            {% when 'Aug' %}Ago
-            {% when 'Sep' %}Sep
-            {% when 'Oct' %}Oct
-            {% when 'Nov' %}Nov
-            {% when 'Dec' %}Dic
-          {% endcase %}
-        {% endcapture %}
-        <span class="date day">{{ this_day }}</span>
-        <span class="date month small text-muted">{{ this_month }}</span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </div>
-    </li>
-  {% if forloop.last %}
-  </ul>
-  {% elsif this_year != pre_year %}
-  </ul>
-  <span class="lead">{{pre_year}}</span>
-  <ul class="list-unstyled">
-    {% assign last_day = "" %}
-    {% assign last_month = "" %}
-  {% endif %}
-{% endfor %}
+<div class="stitch-tab-page stitch-legacy-page stitch-archives-page dashboard-page dashboard-page--archives">
+
+  <header class="stitch-tab-hero stitch-reveal">
+    <p class="stitch-eyebrow">Archive</p>
+    <h1>Full post archive</h1>
+    <p class="stitch-lead">Chronological index of all artifacts. For domain filters and metadata, use the Intelligence feed.</p>
+  </header>
+
+  {% include stitch-legacy-primary-banner.html
+    message="Prefer curated artifacts with domain filters on"
+    target="/tabs/intelligence/"
+    label="Intelligence"
+  %}
+
+  {% include stitch-archives-list.html %}
+
+  <div class="stitch-legacy-footer-action stitch-reveal">
+    <a class="stitch-link-mono" href="{{ '/tabs/intelligence/' | relative_url }}">← Intelligence feed</a>
+  </div>
+
 </div>

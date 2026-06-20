@@ -1,0 +1,44 @@
+# Economics Lens tab — Stitch screen (economics-lens-export.html)
+# Posts filtered in tabs/economics-lens.md; copy and static panels here.
+
+hero:
+  title: Economics Lens
+  lead: >
+    Quantitative reasoning applied to tradeoffs, incentives, and constraints—
+    before a model becomes a decision. Not a finance pitch; a reasoning layer.
+
+featured:
+  slug: behavioral-economics-data-analysis-applications
+  badge: Featured reasoning
+  ref_label: "REF: behavioral-economics"
+
+frameworks:
+  - number: "01"
+    title: Expected utility & risk tradeoffs
+    subtitle: Probabilistic framing
+  - number: "02"
+    title: Incentive alignment under constraints
+    subtitle: Mechanism design lens
+  - number: "03"
+    title: Bayesian updating with new evidence
+    subtitle: Iterative learning
+
+principles:
+  - label: Marginal utility
+    accent: tertiary
+  - label: Opportunity cost
+    accent: primary
+  - label: Pareto efficiency
+    accent: secondary
+  - label: Time preference
+    accent: muted
+
+banner:
+  title: Synthesizing economic signals
+  copy: >
+    Real posts filtered through tradeoffs, incentives, and structural constraints—
+    not market hype. Each artifact maps method to decision relevance.
+
+footer_action:
+  label: Browse Intelligence feed
+  url: /tabs/intelligence/

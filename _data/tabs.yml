@@ -6,23 +6,34 @@
 
 
 -
-  name: "Inicio"
+  name: "Command Center"
   icon: "fas fa-home"
+  home: true
 -
-  name: "Hoja de vida"
-  icon: "fas fa-info"
+  name: "Profile"
+  icon: "fas fa-id-badge"
   path: tabs
-  url: Hoja de vida  
+  url: profile
 -
-  name: "Posts"
+  name: "Intelligence"
+  icon: "fas fa-brain"
   path: tabs
-  url: archives
-  icon: "fas fa-archive"  
+  url: intelligence
 -
-  name: "Etiquetas"
-  icon: "fas fa-tags"
+  name: "Stack"
+  icon: "fas fa-layer-group"
   path: tabs
-  url: tags
+  url: stack
+-
+  name: "Economics Lens"
+  icon: "fas fa-chart-line"
+  path: tabs
+  url: economics-lens
+-
+  name: "Vision Lab"
+  icon: "fas fa-eye"
+  path: tabs
+  url: vision-lab
 
 # -
 #  name: "Categorías"

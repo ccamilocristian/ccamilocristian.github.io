@@ -1,0 +1,12 @@
+<footer class="stitch-footer" aria-label="Site footer">
+  <div class="stitch-footer-inner">
+    <p class="stitch-footer-copy">
+      © {{ 'now' | date: "%Y" }} {{ site.social.name }}
+    </p>
+    <nav class="stitch-footer-nav" aria-label="Footer links">
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+      <a href="{{ site.social.links[1] | default: 'https://github.com/ccamilocristian' }}">Source</a>
+      <a href="mailto:{{ site.social.email }}">Contact</a>
+    </nav>
+  </div>
+</footer>

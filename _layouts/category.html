@@ -1,25 +1,25 @@
 ---
 layout: page
-# The Category layout
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# MIT Licensed
+# Category archive — legacy; prefer Intelligence domain filters
 ---
 
-<div id="page-category">
-  <h1 class="pl-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted pl-2">{{ site.categories[page.category] | size }}</span>
-  </h1>
+<div class="stitch-tab-page">
+  <header class="stitch-tab-hero">
+    <p class="stitch-eyebrow">Legacy archive</p>
+    <h1>{{ page.title }}</h1>
+    <p class="stitch-lead">{{ site.categories[page.category] | size }} artifacts in this category.</p>
+  </header>
 
-  <ul class="post-content pl-0">
-    {% for post in  site.categories[page.category] %}
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="dash flex-grow-1"></span>
-      <span class="text-muted small">{{ post.date | date: site.data.date_format.post.long }}</span>
-    </li>
-    {% endfor %}
-  </ul>
+  {% include stitch-archive-deprecation-banner.html %}
+
+  <div id="page-category" class="stitch-archive-list card-glass">
+    <ul class="post-content pl-0">
+      {% for post in site.categories[page.category] %}
+      <li class="stitch-archive-row">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

@@ -1,0 +1,107 @@
+/*
+ * Calm Technical — Color tokens
+ * SOURCE OF TRUTH: Stitch Web
+ *   Project: Calm Technical Portfolio Command Center
+ *   Project ID: 12642385017382224523
+ *   Screen: Portfolio - Interactive Glass Refinement (4c4e07b072854526a105f88f373d1633)
+ * designMd + designTheme.namedColors — synced 2026-06-20
+ */
+
+$ds-color-tokens: (
+  /* Material surfaces (Stitch namedColors) */
+  bg-canvas: #121318,
+  bg-elev1: #1a1b20,
+  bg-elev2: #1e1f24,
+  bg-card: #1e1f24,
+  bg-glass: rgba(30, 31, 36, 0.72),
+  bg-surface-bright: #38393e,
+  bg-surface-dim: #121318,
+  bg-surface-lowest: #0c0e12,
+  bg-surface-high: #282a2e,
+  bg-surface-highest: #333539,
+
+  /* Text (Stitch on-* ) */
+  text-primary: #e2e2e8,
+  text-secondary: #c3c6d2,
+  text-tertiary: #8d909b,
+  text-on-primary: #002f68,
+
+  /* Borders (Stitch outline) */
+  border-soft: rgba(141, 144, 155, 0.14),
+  border-strong: rgba(141, 144, 155, 0.28),
+  border-glass: rgba(141, 144, 155, 0.14),
+  border-variant: #434750,
+
+  /* Material accents (Stitch primary / secondary / tertiary) */
+  accent-primary: #acc7ff,
+  accent-primary-container: #6c90d6,
+  accent-secondary: #95d4b4,
+  accent-secondary-container: #0e5138,
+  accent-tertiary: #ccbff7,
+  accent-tertiary-container: #9589be,
+  accent-cyan: #6c90d6,
+  accent-blue: #6b8fd4,
+  accent-violet: #9b8fc4,
+  accent-green: #6ba88a,
+  accent-amber: #95d4b4,
+
+  /* Ambient washes (domain page backgrounds — Phase 4) */
+  glow-emerald: rgba(149, 212, 180, 0.14),
+  glow-amber: rgba(172, 199, 255, 0.10),
+  glow-blue: rgba(107, 143, 212, 0.12),
+  glow-violet: rgba(155, 143, 196, 0.12),
+  glow-cyan: rgba(108, 144, 214, 0.10),
+  glow-green: rgba(107, 168, 138, 0.12),
+
+  /* Five domain lanes (Stitch overridePrimary / overrideSecondary / overrideTertiary + containers) */
+  domain-analysis: #6b8fd4,
+  domain-ml: #6ba88a,
+  domain-bi: #6c90d6,
+  domain-economics: #95d4b4,
+  domain-vision: #9b8fc4,
+
+  domain-analysis-soft: rgba(107, 143, 212, 0.12),
+  domain-ml-soft: rgba(107, 168, 138, 0.12),
+  domain-bi-soft: rgba(108, 144, 214, 0.12),
+  domain-economics-soft: rgba(149, 212, 180, 0.12),
+  domain-vision-soft: rgba(155, 143, 196, 0.10),
+
+  ambient-economics: rgba(149, 212, 180, 0.12),
+  ambient-vision: rgba(184, 149, 106, 0.10),
+
+  /* Profile screen (Stitch profile-export / code.html) */
+  profile-canvas: #0c0f14,
+  profile-pillar-glow-primary: rgba(172, 199, 255, 0.12),
+  profile-pillar-glow-secondary: rgba(149, 212, 180, 0.12),
+  profile-pillar-glow-tertiary: rgba(132, 194, 163, 0.15),
+  profile-timeline-active: #acc7ff,
+  profile-timeline-line: rgba(67, 71, 80, 0.5),
+
+  intelligence-canvas: #0f141c,
+  intelligence-glow-primary: rgba(173, 198, 255, 0.12),
+  intelligence-glow-secondary: rgba(197, 192, 255, 0.12),
+  intelligence-glow-tertiary: rgba(246, 190, 52, 0.12),
+
+  stack-canvas: #0c0f14,
+  stack-accent-de: #6b8fd4,
+  stack-accent-ml: #6ba88a,
+  stack-accent-bi: #d4a36b,
+  stack-accent-econ: #a36bd4,
+
+  economics-lens-canvas: #0f141c,
+  economics-lens-glow: rgba(246, 190, 52, 0.12),
+  economics-lens-accent: #f6be34,
+
+  vision-lab-canvas: #0f141c,
+  vision-lab-glow: rgba(45, 212, 191, 0.12),
+
+  post-canvas: #0f141c,
+
+  state-error: #ffb4ab
+);
+
+@mixin emit-color-tokens {
+  @each $token, $value in $ds-color-tokens {
+    --ds-color-#{$token}: #{$value};
+  }
+}

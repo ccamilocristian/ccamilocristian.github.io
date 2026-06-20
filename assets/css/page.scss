@@ -7,4 +7,12 @@
 ---
 
 {% include_relative _addon/main.scss %}
+{% include_relative _addon/stitch-shell.scss %}
+{% include_relative _addon/stitch-components.scss %}
+{% include_relative _addon/stitch-profile.scss %}
+{% include_relative _addon/stitch-intelligence.scss %}
+{% include_relative _addon/stitch-stack.scss %}
+{% include_relative _addon/stitch-economics-lens.scss %}
+{% include_relative _addon/stitch-vision-lab.scss %}
+{% include_relative _addon/stitch-tabs.scss %}
 {% include_relative _addon/syntax.scss %}

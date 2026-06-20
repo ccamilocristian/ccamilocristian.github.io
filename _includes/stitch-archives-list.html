@@ -1,0 +1,33 @@
+{% comment %}
+  Chronological post archive — glass list grouped by year (T16)
+{% endcomment %}
+
+<div class="stitch-archives">
+  {% assign archive_years = "" | split: "" %}
+  {% for post in site.posts %}
+    {% capture y %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% unless archive_years contains y %}
+      {% assign archive_years = archive_years | push: y %}
+    {% endunless %}
+  {% endfor %}
+  {% assign archive_years = archive_years | sort | reverse %}
+
+  {% for year in archive_years %}
+  <section class="stitch-archive-year stitch-reveal">
+    <h2 class="stitch-archive-year-label">{{ year }}</h2>
+    <div class="stitch-archive-list card-glass">
+      <ul class="stitch-archive-list-inner">
+        {% for post in site.posts %}
+          {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+          {% if post_year == year %}
+          <li class="stitch-archive-row">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+          </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endfor %}
+</div>

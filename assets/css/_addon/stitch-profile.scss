@@ -1,0 +1,683 @@
+/*
+ * Profile screen — Stitch export (code.html)
+ * Executive Summary · Expertise Pillars · Career Path · CTA
+ */
+
+body.stitch-dashboard.dashboard-page--profile {
+  background-color: var(--ds-color-profile-canvas, #0c0f14);
+}
+
+body.stitch-dashboard .stitch-profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-32, 8rem);
+  padding-bottom: var(--ds-space-24, 6rem);
+}
+
+body.stitch-dashboard .stitch-profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+  max-width: none;
+
+  @media (min-width: 831px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--ds-space-12, 3rem);
+  }
+
+  .stitch-profile-eyebrow {
+    margin-bottom: var(--ds-space-4, 1rem);
+    color: var(--ds-color-accent-primary, #acc7ff);
+    letter-spacing: 0.2em;
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: var(--ds-color-text-primary, #e2e2e8);
+    max-width: 48rem;
+  }
+}
+
+body.stitch-dashboard .stitch-profile-header-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 48rem;
+}
+
+body.stitch-dashboard .stitch-profile-name {
+  margin: 0 0 var(--ds-space-2, 0.5rem);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .stitch-profile-headline {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-profile-location {
+  margin: 0;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .stitch-profile-contact-grid {
+  display: grid;
+  gap: var(--ds-space-4, 1rem);
+  align-items: start;
+
+  @media (min-width: 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+}
+
+body.stitch-dashboard .profile-credential-card {
+  padding: var(--ds-space-5, 1.25rem) var(--ds-space-6, 1.5rem);
+  border-radius: 12px;
+}
+
+body.stitch-dashboard .profile-credential-label {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .profile-credential-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2, 0.5rem);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+
+  a {
+    color: var(--ds-color-accent-primary, #acc7ff);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    color: var(--ds-color-text-primary, #e2e2e8);
+    font-weight: 500;
+  }
+}
+
+body.stitch-dashboard .profile-skills-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: justify;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .timeline-item-location {
+  margin: .25rem 0 0;
+  font-size: 12px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .timeline-item-highlights {
+  margin: var(--ds-space-4, 1rem) 0 0;
+  padding-left: 1.125rem;
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2, 0.5rem);
+
+  li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ds-color-text-secondary, #c3c6d2);
+  }
+}
+
+body.stitch-dashboard .stitch-profile-credentials-grid {
+  display: grid;
+  gap: var(--ds-space-6, 1.5rem);
+
+  @media (min-width: 831px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+body.stitch-dashboard .profile-credential-panel {
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+}
+
+body.stitch-dashboard .profile-education-list,
+body.stitch-dashboard .profile-cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .profile-education-degree {
+  margin: 0 0 var(--ds-space-1, 0.25rem);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .profile-education-school {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .profile-education-note {
+  margin: var(--ds-space-2, 0.5rem) 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .profile-cert-list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55rem;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--ds-color-accent-secondary, #95d4b4);
+  }
+}
+
+body.stitch-dashboard .stitch-profile-publications {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .profile-publication-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+
+  @media (min-width: 831px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--ds-space-10, 2.5rem);
+  }
+}
+
+body.stitch-dashboard .profile-publication-main {
+  flex: 1;
+  min-width: 0;
+}
+
+body.stitch-dashboard .profile-publication-title {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .profile-publication-meta {
+  margin: 0 0 var(--ds-space-5, 1.25rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .profile-publication-abstract {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  text-align: justify;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .profile-publication-action {
+  flex-shrink: 0;
+
+  @media (min-width: 831px) {
+    padding-top: var(--ds-space-1, 0.25rem);
+  }
+}
+
+body.stitch-dashboard .profile-publication-link {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+body.stitch-dashboard .stitch-profile-photo {
+  margin: 0;
+  flex-shrink: 0;
+  width: min(100%, 12rem);
+
+  @media (min-width: 831px) {
+    width: 14rem;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    object-fit: cover;
+  }
+}
+
+/* Executive Summary — 12-col grid */
+body.stitch-dashboard .stitch-profile-exec {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-grid-gap-desktop, 24px);
+}
+
+@media (min-width: 831px) {
+  body.stitch-dashboard .stitch-profile-exec {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  body.stitch-dashboard .stitch-profile-exec-summary {
+    grid-column: span 7;
+  }
+
+  body.stitch-dashboard .stitch-profile-exec-principles {
+    grid-column: 9 / span 4;
+  }
+}
+
+body.stitch-dashboard .stitch-profile-block-label {
+  margin: 0 0 var(--ds-space-6, 1.5rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .stitch-profile-exec-lead {
+  margin: 0;
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.65;
+  text-align: justify;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-profile-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .stitch-profile-principle {
+  display: flex;
+  align-items: baseline;
+  gap: var(--ds-space-3, 0.75rem);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ds-color-text-primary, #e2e2e8);
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    width: 4px;
+    height: 4px;
+    margin-top: .45rem;
+    border-radius: 50%;
+    background: var(--ds-color-accent-secondary, #95d4b4);
+  }
+}
+
+/* Expertise Pillars — stacked pillar-card */
+body.stitch-dashboard .stitch-profile-pillars-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-grid-gap-desktop, 24px);
+}
+
+body.stitch-dashboard .pillar-card {
+  position: relative;
+  padding: var(--ds-space-10, 2.5rem);
+  border-radius: 1rem;
+  border: 1px solid var(--ds-glass-border, rgba(255, 255, 255, 0.08));
+  background:
+    radial-gradient(circle at right top, var(--pillar-glow, rgba(172, 199, 255, 0.12)), transparent 50%),
+    var(--ds-glass-profile-card, rgba(15, 20, 28, 0.7));
+  backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  transition:
+    transform 300ms ease-out,
+    border-color 300ms ease-out,
+    box-shadow 300ms ease-out;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(172, 199, 255, 0.15);
+    border-color: rgba(172, 199, 255, 0.4);
+  }
+}
+
+body.stitch-dashboard .pillar-card--primary {
+  --pillar-glow: var(--ds-color-profile-pillar-glow-primary, rgba(172, 199, 255, 0.12));
+}
+
+body.stitch-dashboard .pillar-card--secondary {
+  --pillar-glow: var(--ds-color-profile-pillar-glow-secondary, rgba(149, 212, 180, 0.12));
+}
+
+body.stitch-dashboard .pillar-card--tertiary {
+  --pillar-glow: var(--ds-color-profile-pillar-glow-tertiary, rgba(132, 194, 163, 0.15));
+}
+
+body.stitch-dashboard .pillar-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+
+  @media (min-width: 831px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+body.stitch-dashboard .pillar-card-copy {
+  max-width: 28rem;
+}
+
+body.stitch-dashboard .pillar-card-index {
+  display: inline-block;
+  margin-bottom: var(--ds-space-4, 1rem);
+  padding: .25rem .75rem;
+  border-radius: var(--ds-radius-sm, 4px);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-accent-primary, #acc7ff);
+  background: rgba(172, 199, 255, 0.1);
+}
+
+body.stitch-dashboard .pillar-card-title {
+  margin: 0 0 var(--ds-space-2, 0.5rem);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .pillar-card-summary {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .pillar-card-highlights {
+  margin: var(--ds-space-5, 1.25rem) 0 0;
+  padding-left: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2, 0.5rem);
+
+  li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ds-color-text-secondary, #c3c6d2);
+  }
+}
+
+body.stitch-dashboard .pillar-card-meta {
+  flex: 1;
+
+  @media (min-width: 831px) {
+    padding-left: var(--ds-space-12, 3rem);
+    border-left: 1px solid rgba(67, 71, 80, 0.3);
+  }
+}
+
+body.stitch-dashboard .pillar-card-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .pillar-card-meta-label {
+  display: block;
+  margin-bottom: var(--ds-space-1, 0.25rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .pillar-card-meta-value {
+  font-size: 16px;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+/* Career Path — vertical timeline */
+body.stitch-dashboard .stitch-profile-timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 var(--ds-space-8, 2rem);
+  list-style: none;
+  border-left: 1px solid var(--ds-color-profile-timeline-line, rgba(67, 71, 80, 0.5));
+}
+
+body.stitch-dashboard .timeline-item {
+  position: relative;
+  padding-bottom: var(--ds-space-20, 5rem);
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * var(--ds-space-8, 2rem) - 9px);
+    top: .25rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--ds-color-bg-elev2, #1e1f24);
+    border: 2px solid var(--ds-color-text-tertiary, #8d909b);
+    transition: transform 300ms ease, border-color 300ms ease;
+  }
+
+  &.timeline-item--current::before {
+    border-color: var(--ds-color-profile-timeline-active, #acc7ff);
+  }
+
+  &:hover::before {
+    transform: scale(1.15);
+  }
+}
+
+body.stitch-dashboard .timeline-item-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2, 0.5rem);
+  margin-bottom: var(--ds-space-4, 1rem);
+
+  @media (min-width: 831px) {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+}
+
+body.stitch-dashboard .timeline-item-headline {
+  margin: 0;
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .timeline-item-role {
+  margin: .25rem 0 0;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-accent-primary, #acc7ff);
+}
+
+body.stitch-dashboard .timeline-item-period {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+  white-space: nowrap;
+}
+
+body.stitch-dashboard .timeline-item-summary {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+/* CTA panel */
+body.stitch-dashboard .stitch-profile-cta {
+  padding: var(--ds-space-12, 3rem);
+  border-radius: 1rem;
+  border: 1px solid var(--ds-glass-border, rgba(255, 255, 255, 0.08));
+  background: var(--ds-glass-profile-card, rgba(15, 20, 28, 0.7));
+  backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  text-align: center;
+
+  h2 {
+    margin: 0 0 var(--ds-space-6, 1.5rem);
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ds-color-text-primary, #e2e2e8);
+  }
+}
+
+body.stitch-dashboard .stitch-profile-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .stitch-profile-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3, 0.75rem);
+  padding: var(--ds-space-4, 1rem) var(--ds-space-8, 2rem);
+  border-radius: var(--ds-radius-md, 8px);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ds-color-text-on-primary, #002f68);
+  background: var(--ds-color-accent-primary, #acc7ff);
+  transition: opacity 300ms ease;
+
+  &:hover {
+    opacity: 0.9;
+    text-decoration: none;
+    color: var(--ds-color-text-on-primary, #002f68);
+  }
+}
+
+body.stitch-dashboard .stitch-profile-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3, 0.75rem);
+  padding: var(--ds-space-4, 1rem) var(--ds-space-8, 2rem);
+  border-radius: var(--ds-radius-md, 8px);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--ds-color-text-primary, #e2e2e8);
+  border: 1px solid var(--ds-color-text-tertiary, #8d909b);
+  transition: border-color 300ms ease;
+
+  &:hover {
+    border-color: var(--ds-color-accent-primary, #acc7ff);
+    text-decoration: none;
+    color: var(--ds-color-text-primary, #e2e2e8);
+  }
+}
+
+/* Scroll reveal (Stitch .reveal) */
+body.stitch-dashboard .stitch-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+body.stitch-dashboard .stitch-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.stitch-dashboard .stitch-profile-cta-more {
+  margin-top: var(--ds-space-8, 2rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .stitch-profile-pillars-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.stitch-dashboard .stitch-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  body.stitch-dashboard .pillar-card:hover {
+    transform: none;
+  }
+}

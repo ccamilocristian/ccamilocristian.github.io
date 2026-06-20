@@ -1,0 +1,51 @@
+/*
+ * Calm Technical — Spacing, radius and grid (Stitch designTheme.spacing + rounded)
+ */
+
+$ds-space-tokens: (
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  16: 4rem
+);
+
+$ds-radius-tokens: (
+  sm: 4px,
+  md: 8px,
+  button: 6px,
+  lg: 12px,
+  xl: 16px,
+  pill: 999px
+);
+
+$ds-grid-tokens: (
+  container-max: 1120px,
+  cols-desktop: 12,
+  cols-tablet: 8,
+  cols-mobile: 1,
+  gap-desktop: 24px,
+  gap-tablet: 16px,
+  gap-mobile: 16px,
+  margin-mobile: 16px,
+  margin-desktop: 40px
+);
+
+@mixin emit-space-tokens {
+  @each $token, $value in $ds-space-tokens {
+    --ds-space-#{$token}: #{$value};
+  }
+
+  @each $token, $value in $ds-radius-tokens {
+    --ds-radius-#{$token}: #{$value};
+  }
+
+  @each $token, $value in $ds-grid-tokens {
+    --ds-grid-#{$token}: #{$value};
+  }
+}

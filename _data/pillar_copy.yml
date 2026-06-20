@@ -1,0 +1,39 @@
+- key: analysis
+  label: Analysis
+  short_label: Analysis
+  lane: primary
+  badge: Foundation
+  glow: foundation
+  summary: Structure messy data into stable signals—measured, documented, ready for the next step.
+
+- key: ml
+  label: ML
+  short_label: ML
+  lane: primary
+  badge: Practice
+  glow: practice
+  summary: Estimate scenarios with models you can inspect; probability as a tool for judgment.
+
+- key: bi
+  label: BI
+  short_label: BI
+  lane: primary
+  badge: Clarity
+  glow: clarity
+  summary: Turn analytical output into views teams actually use—fewer KPIs, clearer ownership.
+
+- key: economics
+  label: Economics
+  short_label: Economics
+  lane: primary
+  badge: Lens
+  glow: lens
+  summary: Name tradeoffs and constraints before choosing—technical work connected to purpose.
+
+- key: vision
+  label: Vision Lab
+  short_label: Vision Lab
+  lane: emerging
+  badge: Growing
+  glow: growing
+  summary: Computer vision explored with honest scope—curiosity without overstated claims.

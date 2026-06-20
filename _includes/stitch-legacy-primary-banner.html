@@ -1,0 +1,6 @@
+{% assign banner_target = include.target | default: '/tabs/intelligence/' %}
+{% assign banner_label = include.label | default: 'Intelligence' %}
+<div class="stitch-legacy-banner" role="note">
+  {{ include.message | default: 'This archive index is deprecated. Browse curated artifacts on' }}
+  <a href="{{ banner_target | relative_url }}">{{ banner_label }}</a>.
+</div>

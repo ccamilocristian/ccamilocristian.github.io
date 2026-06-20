@@ -1,0 +1,51 @@
+# Command Center — home content model
+# status: live = wired to real repo data · mock = placeholder to fill later
+
+hero:
+  eyebrow: "Data Scientist · AI & Computer Vision · Data Engineering · BI & Analytics"
+  title: "Data systems for analytics, ML, and decisions that hold up"
+  lead: >
+    Economist by training, data scientist in practice—7+ years building pipelines, models, and BI
+    in banking, SaaS, and AI programs. I connect raw signals to models you can explain and views
+    teams actually use, with economic reasoning when tradeoffs matter.
+  actions:
+    - label: "Review profile"
+      url: "/tabs/profile/"
+      style: primary
+    - label: "Explore intelligence"
+      url: "/tabs/intelligence/"
+      style: glass
+
+pulse:
+  enabled: false
+  eyebrow: "Live"
+  title: "Site pulse"
+  subtitle: "Counts pulled from this repository—not aspirational KPIs."
+
+narrative:
+  title: "Analysis → ML → BI → economics"
+  body: >
+    Most projects start by stabilizing messy inputs, then estimating with models you can inspect,
+    then shipping interfaces people run week to week. When incentives or constraints shape the
+    answer, I make that explicit before anyone treats a chart as policy.
+  kicker: "Signal, model, decision"
+
+selected_work:
+  title: "Selected work"
+  subtitle: "Problem · Process · Impact"
+  action_label: "View all artifacts →"
+  action_url: "/tabs/intelligence/"
+
+recent_notes:
+  title: "Latest intelligence"
+  limit: 3
+
+mock_modules:
+  - key: model_explorer
+    enabled: false
+    eyebrow: "Placeholder"
+    title: "Model performance explorer"
+    description: >
+      Interactive accuracy / recall / F1 switching was scoped in the dashboard MVP. Re-enable when benchmark
+      telemetry or a curated model comparison set is ready (`enabled: true` in command_center.yml).
+    status_label: "Deferred · fill later"

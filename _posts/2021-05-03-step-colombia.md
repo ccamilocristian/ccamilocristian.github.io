@@ -1,30 +1,23 @@
 ---
+published: false
 title: Mercado laboral Colombiano. Caso de estudio, Programa STEP
 author: Cristian Camilo Moreno Narvaez
 date: 2021-05-03 15:00:00 -0500
-categories: [Python,Economics]
+categories: [Python, Economics]
 tags: [economics, python, regression]
 math: true
+domain: Economics
+technical_level: Advanced
+reading_time: 16
+business_impact: "Improved policy interpretation by connecting statistical outputs with economic decision logic."
+impact_label: "STEP labor-market evidence"
+description: "La automatización de trabajos corresponde al desarrollo e inclusión de nuevas tecnologías en las cadenas de valor de las empresas. Sin embargo, este cambio…"
 ---
-
 La automatización de trabajos corresponde al desarrollo e inclusión de nuevas tecnologías en las cadenas de valor de las empresas. Sin embargo, este cambio en la estructura laboral de las empresas lleva impactos negativos como positivos en el mercado laboral. La investigación titulada "El futuro del empleo: ¿Qué tan susceptible son los empleos a la computarización?" realizada por Frey & Osborne en el año 2017 es uno de los puntos de partida para muchas investigaciones a la hora de analizar el impacto futuro de los robots en el mercado laboral. En este artículo los autores desarrollaron un cálculo a nivel de ocuación en donde encontraron la probabilidad de ser automatizadas en los próximos 10 años en Estados Unidos, esto a traves de un modelo de Machine Learning.
 
 ![ ](/assets/img/2021-05-03-step-colombia/pexels-alex-knight-2599244.jpg)
 
 Con base en lo anterior, siguiendo a Bustelo et al. (2020) se desarrollará la metodología para ajustar la probabilidad de automatización de las ocupaciones en Colombia, basado en el cálculo de Frey & Osborne (2017) y los datos recolectados por el Banco Mundial en el proyecto [STEP](https://microdata.worldbank.org/index.php/catalog/2012) (Skills Toward Employment and Productivity), para así obtener medidas relacionadas a las habilidades que desempeñan los trabajadores en ciertas ocupaciones.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 Además, este resultado anterior puede ayudarnos a vislumbrar el riesgo que podrían tener las ocupaciones actuales, y los sectores económicos,  ante choques tecnológicos, específicamente la llegada de robots.
 
@@ -82,19 +75,6 @@ La gráfica anterior muestra una concentración en la cola izquierda, en donde l
 
 Por otro lado, la encuestra presenta una concentración en los estrados 2 y 3 de la población colombia; sin embargo, estos no son significativos para el total de la población del país. Para esto, es necesario empalmar los datos con encuestas como la GEIH (Gran Encuesta Integrada de Hogares) del DANE, la cual presenta factores de expasión para tener en cuenta el total de la población.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 # Construcción del modelo
 El modelo a estimar es el siguiente:
 
@@ -142,14 +122,3 @@ Por último, es de vital importancia realizar más investigaciones sobre el impa
  computerisation? Technological Forecasting and Social Change”, 114, 254–280.
 + Bustelo, M., Egana-delSol, P., Ripani, L., Nicolas, S., & Viollaz, M. (2020). "Automation in Latin America: Are Women at Higher Risk of Losing Their Jobs?" Inter-American Development Bank.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

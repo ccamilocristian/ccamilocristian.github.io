@@ -1,25 +1,21 @@
 ---
+
 title: How to interact with APIs in Python? Case of study, the ICFES's results in Colombia, 2019-2
+redirect_from:
+  - /posts/icfes-conexion-api/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-02-06 15:00:00 -0500
 categories: [Python, Economics, Data_studio]
 tags: [python, api, visualization, big-query]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 12
+business_impact: "Reduced manual extraction effort and accelerated educational performance analysis for decision support."
+impact_label: "Faster ICFES analytics pipeline"
+description: "Hook Python to datos.gov.co, pull ICFES 2019-2 scores, push them to BigQuery, and build school charts in Data Studio."
 ---
-
 Nowadays, Colombia's government dispose of a platform to check the public databases, this website calls [datos.gov.co](https://www.datos.gov.co/). Here, anyone can extract databases related to all public areas such as the information about ministries, superintendencies,  and more government entities.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 However, the manipulation and extraction of databases, sometimes, can be winding for the number of rows and columns. For that reason, the platform disposes of an [API](https://en.wikipedia.org/wiki/API) to connect different programs with the website and extract the information easily.
 
@@ -102,14 +98,3 @@ We make the graphs, the result is the following dashboard:
 - Check whether the socioeconomics aspects in the household affect statistically the student performance.
 - Make a data cleaning to improve the data performance and check the outlier.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

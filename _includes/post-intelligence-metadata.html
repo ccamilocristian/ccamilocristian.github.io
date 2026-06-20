@@ -1,0 +1,111 @@
+{% assign meta_post = include.post %}
+
+{% assign meta_domain = meta_post.domain | default: include.domain_override %}
+{% if meta_domain == nil or meta_domain == "" %}
+  {% assign meta_domain = "Data Analysis" %}
+  {% if meta_post.tags contains 'economics' or meta_post.categories contains 'Economics' %}
+    {% assign meta_domain = "Economics" %}
+  {% elsif meta_post.tags contains 'visualization' or meta_post.tags contains 'visualizaciones' or meta_post.tags contains 'big-query' or meta_post.tags contains 'data studio' %}
+    {% assign meta_domain = "Business Intelligence" %}
+  {% elsif meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' or meta_post.tags contains 'machine learning' or meta_post.tags contains 'predictive modeling' %}
+    {% assign meta_domain = "Machine Learning" %}
+  {% elsif meta_post.tags contains 'cv' or meta_post.tags contains 'computer-vision' %}
+    {% assign meta_domain = "Vision Lab" %}
+  {% endif %}
+{% endif %}
+
+{% assign meta_level = meta_post.technical_level | default: include.level_override %}
+{% if meta_level == nil or meta_level == "" %}
+  {% assign meta_level = "Intermediate" %}
+  {% if meta_post.tags contains 'big-query' or meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' %}
+    {% assign meta_level = "Advanced" %}
+  {% elsif meta_post.tags contains 'python' or meta_post.tags contains 'api' or meta_post.tags contains 'web-scraping' %}
+    {% assign meta_level = "Intermediate" %}
+  {% else %}
+    {% assign meta_level = "Foundation" %}
+  {% endif %}
+{% endif %}
+
+{% assign meta_reading = meta_post.reading_time | default: include.reading_override %}
+{% if meta_reading == nil or meta_reading == "" %}
+  {% assign _word_count = meta_post.content | markdownify | strip_html | split: ' ' | size %}
+  {% assign meta_reading = _word_count | divided_by: 200 %}
+  {% if meta_reading < 1 %}
+    {% assign meta_reading = 1 %}
+  {% endif %}
+{% endif %}
+
+{% assign meta_impact = meta_post.business_impact | default: include.impact_override %}
+{% if meta_impact == nil or meta_impact == "" %}
+  {% case meta_domain %}
+    {% when "Economics" %}
+      {% assign meta_impact = "Supports tradeoff-aware policy and business decisions under constraints." %}
+    {% when "Machine Learning" %}
+      {% assign meta_impact = "Improves prioritization and forecasting quality for operational decisions." %}
+    {% when "Business Intelligence" %}
+      {% assign meta_impact = "Strengthens KPI monitoring and executive decision cadence." %}
+    {% when "Vision Lab" %}
+      {% assign meta_impact = "Validates emerging CV use cases before production-level investment." %}
+    {% else %}
+      {% assign meta_impact = "Improves clarity, diagnosis, and actionability of analytical decisions." %}
+  {% endcase %}
+{% endif %}
+
+{% assign meta_impact_label = meta_post.impact_label | default: include.impact_label_override %}
+{% if meta_impact_label == nil or meta_impact_label == "" %}
+  {% assign meta_impact_label = meta_impact | truncate: 42, "…" %}
+{% endif %}
+
+{% assign domain_slug = "analysis" %}
+{% case meta_domain %}
+  {% when "Machine Learning" %}
+    {% assign domain_slug = "ml" %}
+  {% when "Business Intelligence" %}
+    {% assign domain_slug = "bi" %}
+  {% when "Economics" %}
+    {% assign domain_slug = "economics" %}
+  {% when "Vision Lab" %}
+    {% assign domain_slug = "vision" %}
+{% endcase %}
+
+{% if include.compact %}
+{% assign compact_label = meta_domain %}
+{% case domain_slug %}
+  {% when 'economics' %}
+    {% assign compact_label = 'Economics' %}
+  {% when 'analysis' %}
+    {% assign compact_label = 'Data Eng' %}
+  {% when 'bi' %}
+    {% assign compact_label = 'Data Eng' %}
+  {% when 'ml' %}
+    {% assign compact_label = 'Intelligence' %}
+  {% when 'vision' %}
+    {% assign compact_label = 'Intelligence' %}
+{% endcase %}
+<span class="stitch-domain-chip stitch-domain-chip--{{ domain_slug }} metadata-chip" title="Domain">{{ compact_label }}</span>
+{% else %}
+<div class="insight-meta" data-domain="{{ domain_slug }}">
+  <span class="insight-chip insight-chip--domain insight-chip--domain-{{ domain_slug }}" title="Domain">
+    <span class="insight-chip-key">Domain</span>
+    <span class="insight-chip-val">{{ meta_domain }}</span>
+  </span>
+  <span class="insight-chip insight-chip--density insight-chip--domain-{{ domain_slug }}" title="Technical density">
+    <span class="insight-chip-key">Density</span>
+    <span class="insight-chip-val">{{ meta_level }}</span>
+  </span>
+  <span class="insight-chip insight-chip--impact insight-chip--domain-{{ domain_slug }}" title="{{ meta_impact }}">
+    <span class="insight-chip-key">Impact</span>
+    <span class="insight-chip-val">{{ meta_impact_label }}</span>
+  </span>
+  {% unless include.hide_reading %}
+    <span class="insight-chip insight-chip--reading" title="Estimated reading time">
+      <span class="insight-chip-key">Read</span>
+      <span class="insight-chip-val">{{ meta_reading }} min</span>
+    </span>
+  {% endunless %}
+</div>
+{% endif %}
+
+{% if include.show_impact %}
+  <p class="insight-impact"><strong>Business impact:</strong> {{ meta_impact }}</p>
+{% endif %}

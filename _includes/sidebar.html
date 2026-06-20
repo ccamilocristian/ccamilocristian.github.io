@@ -15,7 +15,8 @@
         {% if start == '/' %}
           {% assign avatar_url = avatar_url | prepend: site.baseurl %}
         {% endif %}
-        <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
+        <img src="{{ avatar_url }}" alt="{{ site.author | default: 'Profile photo' }}" width="96" height="96" decoding="async"
+          onerror="this.style.display='none'">
       </a>
     </div>
 
@@ -43,7 +44,7 @@
     <li class="nav-item d-flex justify-content-center
       {% if item.url == page_urls.last
         or item.name == page.tab_active
-        or item.name == "Home" and page.layout == "home" %}active{% endif %}">
+        or item.home and page.layout == "home" %}active{% endif %}">
       <a href="{{ ref }}" class="nav-link d-flex justify-content-center align-items-center w-100">
         <i class="fa-fw {{ item.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
         <span>{{ item.name | upcase }}</span>

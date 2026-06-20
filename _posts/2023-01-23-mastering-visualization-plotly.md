@@ -1,14 +1,18 @@
 ---
+
 title: "Mastering Data Visualization with Plotly in Python: A Comprehensive Tutorial"
 author: Cristian Camilo Moreno Narvaez
 date: 2023-03-23 15:00:00 -0500
-categories: [Python,Visualization]
+categories: [Python, Visualization]
 tags: [plotly, python, visualization]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 5
+business_impact: "Strengthens KPI monitoring and executive decision cadence."
+impact_label: "Strengthens KPI monitoring and executive d"
+description: "Plotly in Python for scatter plots and animated charts—install, a few dataset examples, and code you can copy into your own notebook."
 ---
-
-<meta name="description" content=" In this tutorial, we will explore the basics of data visualization using Plotly in Python. We will learn how to create interactive scatter plots and animated plots to represent data in a visually appealing manner.">
-
 Data visualization is a crucial aspect of data analysis. It helps in understanding complex data and presenting it in a visually appealing way. Plotly is a popular data visualization library in Python that offers a wide range of visualization tools. In this tutorial, we will learn how to create interactive scatter plots and animated plots using Plotly in Python. We will cover the basics of Plotly and explore its features to create effective data visualizations.
 
 <h2 style="font-size: 20px; font-weight: bold;">Getting Started with Plotly</h2>

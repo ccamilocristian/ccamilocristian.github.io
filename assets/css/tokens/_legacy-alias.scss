@@ -1,0 +1,27 @@
+/*
+ * Legacy bridge: Chirpy light/dark ↔ Stitch Calm Technical tokens
+ */
+
+@mixin bridge-legacy-to-ds {
+  --ds-color-bg-canvas: var(--body-bg);
+  --ds-color-bg-card: var(--main-wrapper-bg);
+  --ds-color-text-primary: var(--text-color);
+  --ds-color-text-secondary: var(--text-muted-color);
+  --ds-color-border-soft: var(--main-border-color);
+  --ds-color-accent-blue: var(--link-color);
+  --ds-color-accent-cyan: var(--btn-active-bg);
+}
+
+@mixin bridge-light-glass {
+  --ds-glass-bg: rgba(255, 255, 255, 0.78);
+  --ds-glass-border: rgba(67, 71, 80, 0.12);
+  --ds-color-bg-glass: rgba(255, 255, 255, 0.78);
+  --ds-color-border-glass: rgba(67, 71, 80, 0.12);
+}
+
+@mixin bridge-dark-glass {
+  --ds-glass-bg: rgba(30, 31, 36, 0.72);
+  --ds-glass-border: rgba(141, 144, 155, 0.14);
+  --ds-color-bg-glass: rgba(30, 31, 36, 0.72);
+  --ds-color-border-glass: rgba(141, 144, 155, 0.14);
+}

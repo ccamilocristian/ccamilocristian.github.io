@@ -1,0 +1,32 @@
+# Selected work — Command Center
+# status: live (linked post + honest PPI) · mock (placeholder card)
+
+- key: icfes_api
+  status: live
+  title: "ICFES API · Python & BigQuery"
+  post_url: "/posts/icfes-conexion-api/"
+  problem: "Educational open data on datos.gov.co was hard to extract and reuse at scale for ICFES analysis."
+  process: "Connected the SODA API with Python (sodapy), loaded results into BigQuery, and built Data Studio views."
+  impact: "Reproducible ICFES 2019-2 pipeline—less manual extraction, faster exploration for decision support."
+  stack_tag: "API / BigQuery"
+  image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuAyMvibGAQINN7CZmt5vdEzc3K01LpEPCz9ZduD9jv5MEVwKV1aUpO5RTWrZmp2AwGK2MzYr1VefEHkaUijPXVt6NB-ZZE0miwBFs6QI8ck1vG0p4Z_pKT71Raiuxmvb6fhvUHKGbVr9IW8AMrGkUyhRQKlcc7tq4lLiBGPxPJ3rq0ETsD5b_P0VlX9W5IueEx5M3Bte84a2F19CduuLWGynNqR8-9J1eG8h2jyDtH39RsKzJENHnaHhKEcCJefGT3lTRc0a10grVxQ"
+
+- key: plebiscite_scraping
+  status: live
+  title: "Plebiscito 2016 · Web scraping"
+  post_url: "/posts/scraping-plebiscito-colombia/"
+  problem: "2016 plebiscite results were scattered across sources—hard to compare municipalities and departments consistently."
+  process: "Python scraping workflow to aggregate territorial results and publish them in Google Data Studio."
+  impact: "Reproducible municipality-level vote intelligence for political and policy analysis."
+  stack_tag: "Scraping / Python"
+  image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuDKsUOWhFP4sMCyYsd0jYuFSSiPEtGJjRIaI14ji-RULLzWRI_H10Hm3TGqPVidbcqq1QFIsSy6ZY8zu4ippmhYfUZvWS3k8rL3iuLoy1dLzUsR9hB8oJocJpty2dlNPc_RaLe86ClWCgV5zAFrGoLjPv6xDVy4gem9Rt2JF_NYtajVsgyPNSbahvMQ69MYwhs04COcu2URWGuCZNuPnLoTk_ZclAYj9pmVFjSO_HOUJTmlajlSxMS6eVNfvXOwWp0nqnPyERLT4JDF"
+
+- key: step_labor_market
+  status: live
+  title: "STEP · Labor market regression"
+  post_url: "/posts/step-colombia/"
+  problem: "Automation risk in Colombia needed local evidence beyond US-centric occupation probability studies."
+  process: "Adapted Frey & Osborne-style modeling with World Bank STEP survey data and econometric adjustment in Python."
+  impact: "Policy-relevant read on skills, automation exposure, and sector-level labor market structure."
+  stack_tag: "Econometrics / Python"
+  image_url: "https://lh3.googleusercontent.com/aida-public/AB6AXuCWebm_gw65r93ZZAg39z3y3PfT77x68j2rIJYgvSGbE4LRh5MeQmcz02tQxB4icXLIHDMu2AbSGh9Zv447FSXHwLAviN8BXr1Ie6uFuUJaHLFIZOC0coYEW4EdSIHWkDE2uFX0f7x6cMwUu__bVA9TfwCZ6Pcq277iwJPScA-Vnwlqm5hrBP6XU06tfew-dZbzoh-syXKyFybKBTide7urmEreLTyg_e4ueKYauFTun23WEnqgTnpfc9vKX3wuapCeANKUgcPyEy1C"

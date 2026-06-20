@@ -1,0 +1,21 @@
+{% comment %}
+  Sets stitch_dashboard = true for Stitch shell scope.
+  Phase 5: home + primary tabs (tabs.yml)
+  Phase 7: posts + legacy compat tabs (stitch_legacy)
+{% endcomment %}
+{% assign stitch_dashboard = false %}
+{% if page.layout == 'home' %}
+  {% assign stitch_dashboard = true %}
+{% elsif page.layout == 'post' %}
+  {% assign stitch_dashboard = true %}
+{% elsif page.layout == 'category' or page.layout == 'tag' %}
+  {% assign stitch_dashboard = true %}
+{% elsif page.stitch_legacy == true %}
+  {% assign stitch_dashboard = true %}
+{% elsif page.tab_active != nil and page.tab_active != '' %}
+  {% for item in site.data.tabs %}
+    {% if item.name == page.tab_active %}
+      {% assign stitch_dashboard = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

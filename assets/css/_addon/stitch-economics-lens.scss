@@ -1,0 +1,447 @@
+/*
+ * Economics Lens tab — Stitch export (economics-lens-export.html)
+ */
+
+body.stitch-dashboard.dashboard-page--economics {
+  background-color: var(--ds-color-economics-lens-canvas, #0f141c);
+}
+
+body.stitch-dashboard .stitch-economics-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-12, 3rem);
+  padding-bottom: var(--ds-space-24, 6rem);
+}
+
+body.stitch-dashboard .stitch-economics-header {
+  h1 {
+    margin: 0 0 var(--ds-space-2, 0.5rem);
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ds-color-text-primary, #e2e2e8);
+  }
+}
+
+body.stitch-dashboard .stitch-economics-lead {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-economics-bento {
+  position: relative;
+  display: grid;
+  gap: var(--ds-space-8, 2rem);
+
+  @media (min-width: 992px) {
+    grid-template-columns: 7fr 5fr;
+    align-items: start;
+  }
+}
+
+body.stitch-dashboard .stitch-economics-ambient {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.stitch-dashboard .stitch-economics-ambient--primary {
+  top: -4rem;
+  right: -6rem;
+  width: 28rem;
+  height: 28rem;
+  background: radial-gradient(circle, var(--ds-color-economics-lens-glow, rgba(246, 190, 52, 0.15)) 0%, transparent 70%);
+  opacity: 0.4;
+}
+
+body.stitch-dashboard .stitch-economics-ambient--secondary {
+  bottom: 0;
+  left: -4rem;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, var(--ds-color-economics-lens-glow, rgba(246, 190, 52, 0.12)) 0%, transparent 70%);
+  opacity: 0.2;
+}
+
+body.stitch-dashboard .stitch-economics-main,
+body.stitch-dashboard .stitch-economics-sidebar {
+  position: relative;
+  z-index: 1;
+}
+
+body.stitch-dashboard .stitch-economics-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .economics-featured-card {
+  position: relative;
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+body.stitch-dashboard .economics-featured-icon {
+  position: absolute;
+  top: var(--ds-space-6, 1.5rem);
+  right: var(--ds-space-6, 1.5rem);
+  font-size: 3rem;
+  opacity: 0.15;
+  line-height: 1;
+}
+
+body.stitch-dashboard .economics-featured-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-3, 0.75rem);
+  margin-bottom: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .economics-featured-badge {
+  padding: .25rem .75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(246, 190, 52, 0.2);
+  background: rgba(246, 190, 52, 0.1);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-featured-ref {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-featured-title {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ds-color-text-primary, #e2e2e8);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ds-color-economics-lens-accent, #f6be34);
+    }
+  }
+}
+
+body.stitch-dashboard .economics-featured-excerpt {
+  margin: 0 0 var(--ds-space-6, 1.5rem);
+  max-width: 40rem;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .economics-featured-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-6, 1.5rem);
+  margin-bottom: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .economics-featured-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+body.stitch-dashboard .economics-featured-meta-label {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-featured-meta-value {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 1.125rem;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-artifact-grid {
+  display: grid;
+  gap: var(--ds-space-6, 1.5rem);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .economics-artifact-card {
+  padding: var(--ds-space-6, 1.5rem);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .economics-artifact-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--ds-space-2, 0.5rem);
+}
+
+body.stitch-dashboard .economics-artifact-code {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-artifact-date {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-artifact-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ds-color-text-primary, #e2e2e8);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ds-color-economics-lens-accent, #f6be34);
+    }
+  }
+}
+
+body.stitch-dashboard .economics-artifact-excerpt {
+  margin: 0;
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .economics-artifact-link {
+  font-size: 12px;
+}
+
+body.stitch-dashboard .stitch-economics-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+}
+
+body.stitch-dashboard .economics-sidebar-title {
+  margin: 0 0 var(--ds-space-5, 1.25rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-frameworks-card {
+  padding: var(--ds-space-6, 1.5rem);
+  border-radius: 12px;
+}
+
+body.stitch-dashboard .economics-framework-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .economics-framework-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4, 1rem);
+  padding: var(--ds-space-4, 1rem);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.stitch-dashboard .economics-framework-num {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 13px;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-framework-body {
+  display: flex;
+  flex-direction: column;
+  gap: .125rem;
+}
+
+body.stitch-dashboard .economics-framework-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .economics-framework-sub {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .economics-principle-card {
+  padding: var(--ds-space-4, 1rem);
+  border-radius: 8px;
+  border-left: 4px solid transparent;
+}
+
+body.stitch-dashboard .economics-principle-card--tertiary {
+  border-left-color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-principle-card--primary {
+  border-left-color: var(--ds-color-accent-primary, #acc7ff);
+}
+
+body.stitch-dashboard .economics-principle-card--secondary {
+  border-left-color: var(--ds-color-accent-secondary, #c5c0ff);
+}
+
+body.stitch-dashboard .economics-principle-card--muted {
+  border-left-color: var(--ds-color-state-error, #ffb4ab);
+}
+
+body.stitch-dashboard .economics-principle-label {
+  display: block;
+  margin-bottom: .25rem;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-principle-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .economics-signals-card {
+  padding: var(--ds-space-6, 1.5rem);
+  border-radius: 12px;
+}
+
+body.stitch-dashboard .economics-signals-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .economics-signal-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+}
+
+body.stitch-dashboard .economics-signal-label {
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .economics-signal-value {
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .economics-signal-bar {
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+body.stitch-dashboard .economics-signal-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--ds-color-economics-lens-accent, #f6be34);
+  box-shadow: 0 0 10px rgba(246, 190, 52, 0.4);
+}
+
+body.stitch-dashboard .economics-signal-bar--primary .economics-signal-bar-fill {
+  background: var(--ds-color-accent-primary, #acc7ff);
+  box-shadow: 0 0 10px rgba(172, 199, 255, 0.35);
+}
+
+body.stitch-dashboard .economics-banner-card {
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+  text-align: center;
+}
+
+body.stitch-dashboard .economics-banner-title {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+  text-shadow: 0 0 15px rgba(246, 190, 52, 0.35);
+}
+
+body.stitch-dashboard .economics-banner-copy {
+  margin: 0 auto;
+  max-width: 36rem;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-economics-empty {
+  margin: 0;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-economics-footer-action {
+  text-align: center;
+}
+
+body.stitch-dashboard .btn-stitch--tertiary {
+  display: inline-flex;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--ds-color-economics-lens-accent, #f6be34);
+  color: #402d00;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 200ms ease;
+
+  &:hover {
+    opacity: 0.9;
+    color: #402d00;
+    text-decoration: none;
+  }
+}

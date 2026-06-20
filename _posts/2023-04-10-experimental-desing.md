@@ -1,14 +1,19 @@
 ---
+
 title: Unlocking the Power of Experimental Design in Data Analysis and Science
 author: Cristian Camilo Moreno Narvaez
 date: 2023-04-10 15:00:00 -0500
-categories: [Experiments,Data Analysis]
+categories: [Experiments, Data Analysis]
 tags: [data analysis, data science]
 math: true
+domain: Data Analysis
+technical_level: Foundation
+reading_time: 12
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "What experimental design is, why you plan controls before you collect data, and where it shows up in real analysis work."
 ---
-
 <h1 style="font-size: 22px; font-weight:bold;">Unlocking the Power of Experimental Design in Data Analysis and Science</h1>
-<meta name="description" content=" Discover the world of experimental design and how it can be used to analyze data in data science. Learn about the benefits of using experimental design and common applications for it.">
 
 <h2 style="font-size: 20px; font-weight:bold;">Introduction</h2>
 As data becomes more abundant, the need for efficient and effective analysis methods continues to grow. One approach that has proven successful in data science is experimental design. Experimental design involves planning and conducting experiments to gather data, analyze the results, and draw conclusions.

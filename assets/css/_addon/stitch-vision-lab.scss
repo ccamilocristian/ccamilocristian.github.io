@@ -1,0 +1,341 @@
+/*
+ * Vision Lab tab — Stitch export (vision-lab-export.html)
+ */
+
+body.stitch-dashboard.dashboard-page--vision {
+  background-color: var(--ds-color-vision-lab-canvas, #0f141c);
+}
+
+body.stitch-dashboard .stitch-vision-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-16, 4rem);
+  padding-bottom: var(--ds-space-24, 6rem);
+  position: relative;
+}
+
+body.stitch-dashboard .stitch-vision-page::before,
+body.stitch-dashboard .stitch-vision-page::after {
+  content: "";
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle, var(--ds-color-vision-lab-glow, rgba(45, 212, 191, 0.12)) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+body.stitch-dashboard .stitch-vision-page::before {
+  top: 0;
+  left: -8rem;
+  opacity: 0.4;
+}
+
+body.stitch-dashboard .stitch-vision-page::after {
+  bottom: 0;
+  right: -8rem;
+  opacity: 0.2;
+}
+
+body.stitch-dashboard .stitch-vision-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+body.stitch-dashboard .stitch-vision-header {
+  h1 {
+    margin: 0 0 var(--ds-space-4, 1rem);
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ds-color-text-primary, #e2e2e8);
+  }
+}
+
+body.stitch-dashboard .stitch-vision-eyebrow {
+  margin: 0 0 var(--ds-space-2, 0.5rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .stitch-vision-lead {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-vision-section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--ds-space-3, 0.75rem);
+  margin-bottom: var(--ds-space-8, 2rem);
+}
+
+body.stitch-dashboard .stitch-vision-section-title {
+  margin: 0;
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .stitch-vision-section-meta {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .stitch-vision-roadmap-grid {
+  display: grid;
+  gap: var(--ds-space-6, 1.5rem);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .vision-roadmap-card {
+  padding: var(--ds-space-6, 1.5rem);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.stitch-dashboard .vision-roadmap-card--active {
+  border-color: rgba(172, 199, 255, 0.2);
+}
+
+body.stitch-dashboard .vision-roadmap-card--backlog {
+  opacity: 0.75;
+}
+
+body.stitch-dashboard .vision-roadmap-phase {
+  display: block;
+  margin-bottom: var(--ds-space-3, 0.75rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-color-accent-primary, #acc7ff);
+}
+
+body.stitch-dashboard .vision-roadmap-card--active .vision-roadmap-phase {
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .vision-roadmap-card--backlog .vision-roadmap-phase {
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .vision-roadmap-name {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .vision-roadmap-focus,
+body.stitch-dashboard .vision-roadmap-target {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .vision-roadmap-bullets {
+  margin: var(--ds-space-4, 1rem) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-2, 0.5rem);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: var(--ds-space-2, 0.5rem);
+    font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    color: var(--ds-color-text-tertiary, #8d909b);
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ds-color-accent-primary, #acc7ff);
+    }
+  }
+}
+
+body.stitch-dashboard .vision-roadmap-card--active .vision-roadmap-bullets li::before {
+  background: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .stitch-vision-experiments-grid {
+  display: grid;
+  gap: var(--ds-space-6, 1.5rem);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .vision-experiment-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+body.stitch-dashboard .vision-experiment-media {
+  position: relative;
+  height: 10rem;
+  background:
+    linear-gradient(135deg, rgba(45, 212, 191, 0.15) 0%, rgba(172, 199, 255, 0.08) 50%, rgba(15, 20, 28, 0.9) 100%);
+}
+
+body.stitch-dashboard .vision-experiment-card--active .vision-experiment-media {
+  background:
+    linear-gradient(135deg, rgba(246, 190, 52, 0.12) 0%, rgba(172, 199, 255, 0.1) 100%);
+}
+
+body.stitch-dashboard .vision-experiment-card--backlog .vision-experiment-media {
+  filter: grayscale(0.4);
+}
+
+body.stitch-dashboard .vision-experiment-status {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  padding: .25rem .625rem;
+  border-radius: 999px;
+  border: 1px solid rgba(172, 199, 255, 0.3);
+  background: rgba(172, 199, 255, 0.15);
+  backdrop-filter: blur(8px);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  color: var(--ds-color-accent-primary, #acc7ff);
+}
+
+body.stitch-dashboard .vision-experiment-card--active .vision-experiment-status {
+  border-color: rgba(246, 190, 52, 0.3);
+  background: rgba(246, 190, 52, 0.15);
+  color: var(--ds-color-economics-lens-accent, #f6be34);
+}
+
+body.stitch-dashboard .vision-experiment-body {
+  padding: var(--ds-space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+  flex: 1;
+}
+
+body.stitch-dashboard .vision-experiment-name {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .vision-experiment-objective,
+body.stitch-dashboard .vision-experiment-impact {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .vision-experiment-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-2, 0.5rem);
+  margin-top: auto;
+  padding-top: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .vision-experiment-tool {
+  padding: .125rem .5rem;
+  border-radius: 4px;
+  background: rgba(48, 53, 62, 0.8);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .vision-philosophy-card {
+  display: grid;
+  gap: var(--ds-space-8, 2rem);
+  padding: var(--ds-space-10, 2.5rem);
+  border-radius: 16px;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+body.stitch-dashboard .vision-philosophy-paragraph {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .vision-principles-list {
+  margin: var(--ds-space-6, 1.5rem) 0 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+
+  li {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ds-color-text-secondary, #c3c6d2);
+  }
+}
+
+body.stitch-dashboard .vision-philosophy-frame {
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background:
+    linear-gradient(160deg, rgba(45, 212, 191, 0.08) 0%, rgba(15, 20, 28, 0.95) 60%),
+    radial-gradient(circle at 30% 40%, rgba(172, 199, 255, 0.12) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .vision-philosophy-frame-label {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(172, 199, 255, 0.6);
+}
+
+body.stitch-dashboard .stitch-vision-footer-action {
+  text-align: center;
+}

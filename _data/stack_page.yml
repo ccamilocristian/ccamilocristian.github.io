@@ -1,0 +1,57 @@
+# Stack tab — Stitch screen (stack-export.html)
+# Tools/domains from _data/skills_cloud.yml; copy here.
+
+hero:
+  eyebrow: Stack Inventory
+  title: Engineering Stack
+  lead: >
+    A weighted matrix of tools and domains—categorized by operational depth
+    and strategic focus across analysis, ML, BI, economics, and vision.
+
+legend:
+  - label: Data Engineering
+    domain: analysis
+  - label: Machine Learning
+    domain: ml
+  - label: Business Intelligence
+    domain: bi
+  - label: Economics & Quant
+    domain: economics
+  - label: Vision Lab
+    domain: vision
+
+proficiency_tiers:
+  - key: core
+    label: CORE
+    subtitle: Daily execution
+    accent: primary
+  - key: strong
+    label: STRONG
+    subtitle: Architecture
+    accent: secondary
+  - key: growth
+    label: GROWTH
+    subtitle: Acquisition
+    accent: tertiary
+  - key: emerging
+    label: EMERGING
+    subtitle: Horizon
+    accent: muted
+
+panels:
+  - title: Philosophy
+    copy: >
+      The stack favors explainable pipelines and decision-ready outputs over tool sprawl.
+      Mature tools handle persistence and reporting; emerging layers stay scoped and honest.
+  - title: Connectivity
+    copy: >
+      Tools connect through reproducible SQL/Python workflows, API integrations, and shared
+      metric definitions—not ad hoc spreadsheet exports.
+  - title: Automation
+    copy: >
+      Python ETL, scheduled dashboards, and validated models reduce manual handoffs.
+      Production means repeatable pipelines, not one-off heroics.
+
+explore:
+  label: Browse Intelligence feed
+  url: /tabs/intelligence/

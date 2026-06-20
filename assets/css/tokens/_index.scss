@@ -1,0 +1,25 @@
+/*
+ * Design tokens index
+ * Stitch reference: projects/12642385017382224523
+ * Screen: 4c4e07b072854526a105f88f373d1633
+ */
+
+@forward "color";
+@forward "type";
+@forward "space";
+@forward "motion";
+@forward "glass";
+
+@use "color" as color;
+@use "type" as type;
+@use "space" as space;
+@use "motion" as motion;
+@use "glass" as glass;
+
+@mixin emit-foundation-tokens {
+  @include color.emit-color-tokens;
+  @include type.emit-type-tokens;
+  @include space.emit-space-tokens;
+  @include motion.emit-motion-tokens;
+  @include glass.emit-glass-tokens;
+}

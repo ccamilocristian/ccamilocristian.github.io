@@ -1,0 +1,14 @@
+# Curated flagship slugs for Intelligence tab (edit here, not in Liquid)
+economics:
+  - behavioral-economics-data-analysis-applications
+  - step-colombia
+  - optimizacion_teoria_consumidor
+  - convertidor-IPC
+  - liquidador-intereses
+
+data_science:
+  - icfes-conexion-api
+  - scraping-plebiscito-colombia
+  - mastering-visualization-plotly
+  - experimental-desing
+  - ministerio-salud

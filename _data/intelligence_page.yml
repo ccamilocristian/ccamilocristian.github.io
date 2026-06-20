@@ -1,0 +1,33 @@
+# Intelligence tab — Stitch screen (intelligence-export.html)
+# Copy + filter labels; posts come from site.posts
+
+hero:
+  title: Intelligence
+  lead: >
+    Decision artifacts framed as signal, method, and business relevance—not generic blog posts.
+    Each piece maps domain, technical density, and measurable impact.
+
+search_placeholder: Filter research artifacts...
+
+domain_filters:
+  - label: All Domains
+    key: all
+  - label: Analysis
+    key: analysis
+  - label: Machine Learning
+    key: ml
+  - label: Business Intelligence
+    key: bi
+  - label: Economics
+    key: economics
+  - label: Vision Lab
+    key: vision
+
+featured:
+  slug: step-colombia-english
+  badge: Featured case
+  image: /assets/img/2021-05-03-step-colombia/ries_edu.png
+
+footer_action:
+  label: View full archive
+  url: /tabs/archives/

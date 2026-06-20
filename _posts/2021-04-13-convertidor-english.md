@@ -1,30 +1,26 @@
 ---
+
 title: How make an inflation calculator? Case of study, Colombia between 2003 and 2020.
+redirect_from:
+  - /posts/convertidor-IPC/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]
 tags: [economics, python]
 math: true
+domain: Economics
+technical_level: Advanced
+reading_time: 2
+business_impact: "Supports tradeoff-aware policy and business decisions under constraints."
+impact_label: "Supports tradeoff-aware policy and busines"
+description: "Convert pesos across years using Colombia's CPI (IPC)—a short Python script when you need real purchasing power, 2003–2020."
 ---
-
 In the economy, there are different forms to measure the behavior of the economic agents, specifically in the goods and services demanded and supplied in the economy. One of the macroeconomic variables with the most importance is inflation. The inflation variable needs to be controlled to have a good economic performance. 
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/descarga.png)
 
 Inflation is the generalized increase and sustained of the goods and services prices in an economy during a specific period. That means the purchasing power parity of each economic agent inflation, decrease, and for that reason, they can not acquire the same amount of goods and services as before, where everything keeps constant.
 
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 For this case, the [DANE](https://www.dane.gov.co/index.php/en/) (Departamento Administrativo Nacional de Estadística) is in charge of calculating the inflation in Colombia with the use of the ponderation price index to a basket of goods. The measure of the index can be done in two ways, [Laspeyres and Paasche](https://policonomics.com/laspeyres-paasche/) index. The DANE uses a variant of the Laspeyres index because it allows an easy actualization of the basket of goods to the price tracking.
 
@@ -122,14 +118,3 @@ This is the result of the previous function, showing the values across the time 
 
 As a future project to complements this calculator, the reader can add a function that computes the future value to present value, i.e. compute current prices to past prices. For example, the same previous $3'000.000 in 2020's prices to 2000's prices.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

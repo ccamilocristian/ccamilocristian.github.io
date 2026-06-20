@@ -1,18 +1,14 @@
 ---
 layout: page
-# The Home page layout
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT Licensed
+# Home — Command Center (Stitch-aligned, data-driven)
 ---
 
+{% assign cc = site.data.command_center %}
+{% assign vision = site.data.vision_lab.positioning %}
 
 {% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
 {% assign posts = "" | split: "" %}
-
-<!-- Get pinned posts -->
 
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
 {% assign pinned_num = pinned.size | minus: offset %}
@@ -25,11 +21,7 @@ layout: page
   {% assign pinned_num = 0 %}
 {% endif %}
 
-
-<!-- Get default posts -->
-
 {% assign default_beg = offset | minus: pinned.size %}
-
 {% if default_beg < 0 %}
   {% assign default_beg = 0 %}
 {% endif %}
@@ -43,46 +35,208 @@ layout: page
   {% endfor %}
 {% endif %}
 
-
-<div id="post-list">
-
-{% for post in posts %}
-
-  <div class="post-preview">
-    <div class="d-flex justify-content-between pr-xl-2">
-      <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
-      {% if post.pin == true %}
-        <i class="fas fa-thumbtack fa-fw text-muted mt-1 ml-2 mt-xl-2" data-toggle="tooltip" data-placement="left"
-        title="Pinned"></i>
-      {% endif %}
-    </div>
-    <div class="post-content">
-      <p>
-        {% include no-linenos.html content=post.content %}
-        {{ content | markdownify | strip_html | truncate: 200 }}
-      </p>
-    </div>
-
-    <div class="post-meta text-muted">
-      <!-- posted date -->
-      <i class="far fa-clock fa-fw"></i>
-      {% include timeago.html date=post.date tooltip=true %}
-
-      <!-- page views -->
-      {% if site.google_analytics.pv.enabled %}
-      <i class="far fa-eye fa-fw"></i>
-      <span id="pv_{{-post.title-}}" class="pageviews">
-        <i class="fas fa-spinner fa-spin fa-fw"></i>
-      </span>
-      {% endif %}
-    </div>
-  </div> <!-- .post-review -->
-
+{% assign econ_post_count = 0 %}
+{% for post in site.posts %}
+  {% if post.tags contains 'economics' or post.categories contains 'Economics' %}
+    {% assign econ_post_count = econ_post_count | plus: 1 %}
+  {% endif %}
 {% endfor %}
 
-</div> <!-- #post-list -->
+<main id="home-bento" class="bento-shell stitch-home" tabindex="-1" aria-labelledby="home-hero-title">
 
-{% if paginator.total_pages > 0 %}
-  {% include post-paginator.html %}
-{% endif %}
+  <section class="stitch-section stitch-section--hero" id="hero" aria-labelledby="home-hero-title">
+    <div class="stitch-hero-copy stitch-animate-in" style="animation-delay: 0.1s;">
+      <p class="stitch-eyebrow">{{ cc.hero.eyebrow }}</p>
+      <h1 id="home-hero-title">{{ cc.hero.title }}</h1>
+      <p id="home-hero-lead" class="stitch-lead">{{ cc.hero.lead }}</p>
+      <div class="stitch-hero-actions">
+        {% for action in cc.hero.actions %}
+        <a class="btn-stitch btn-stitch--{{ action.style | default: 'glass' }}" href="{{ action.url | relative_url }}">{{ action.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
 
+    <div class="hero-pillar-grid" aria-label="Core expertise priorities">
+      {% for pillar in site.data.pillar_copy %}
+      {% assign pillar_delay = forloop.index | times: 0.1 | plus: 0.1 %}
+      <div class="hero-pillar card-glass card-glass--interactive glow-{{ pillar.glow | default: pillar.key }} hero-pillar--{{ pillar.key }} stitch-animate-in" style="animation-delay: {{ pillar_delay }}s;">
+        <div class="hero-pillar-inner">
+          <span class="pillar-chip metadata-chip">{{ pillar.badge }}</span>
+          <h3 class="hero-pillar-label">{{ pillar.short_label | default: pillar.label }}</h3>
+          <p class="hero-pillar-copy">{{ pillar.summary }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% if cc.pulse.enabled %}
+  <section class="stitch-section stitch-section--pulse" id="pulse" aria-labelledby="home-pulse-title">
+    <div class="stitch-section-head stitch-animate-in" style="animation-delay: 0.65s;">
+      <div>
+        <p class="stitch-eyebrow">{{ cc.pulse.eyebrow }}</p>
+        <h2 id="home-pulse-title">{{ cc.pulse.title }}</h2>
+        <p class="stitch-section-sub">{{ cc.pulse.subtitle }}</p>
+      </div>
+    </div>
+    <dl class="stitch-pulse-grid stitch-animate-in" style="animation-delay: 0.7s;">
+      <div class="stitch-pulse-item card-glass">
+        <dt>Intelligence artifacts</dt>
+        <dd>{{ site.posts.size }}</dd>
+      </div>
+      <div class="stitch-pulse-item card-glass">
+        <dt>Stack tools</dt>
+        <dd>{{ site.data.skills_cloud.tools.size }}</dd>
+      </div>
+      <div class="stitch-pulse-item card-glass">
+        <dt>Priority domains</dt>
+        <dd>{{ site.data.skills_cloud.core_domains.size }}</dd>
+      </div>
+      <div class="stitch-pulse-item card-glass">
+        <dt>Economics notes</dt>
+        <dd>{{ econ_post_count }}</dd>
+      </div>
+    </dl>
+  </section>
+  {% endif %}
+
+  <section class="stitch-section stitch-section--duo" id="features" aria-label="Narrative and emerging capability">
+    <article class="stitch-duo-card card-glass card-glass--interactive stitch-animate-in" style="animation-delay: 0.75s;" aria-labelledby="home-story-title">
+      <div class="stitch-duo-glow" aria-hidden="true"></div>
+      <div class="stitch-duo-inner">
+        <h2 id="home-story-title">{{ cc.narrative.title }}</h2>
+        <p class="stitch-narrative-body">{{ cc.narrative.body }}</p>
+        <p class="stitch-duo-kicker">
+          <span class="material-symbols-outlined stitch-duo-kicker-icon" aria-hidden="true">terminal</span>
+          {{ cc.narrative.kicker }}
+        </p>
+      </div>
+    </article>
+
+    <article class="stitch-duo-card card-glass card-glass--interactive stitch-vision-teaser stitch-animate-in" style="animation-delay: 0.85s;" aria-labelledby="home-cv-title">
+      <div class="stitch-vision-hover" aria-hidden="true"></div>
+      <div class="stitch-duo-inner stitch-duo-inner--column">
+        <div class="stitch-vision-head">
+          <div>
+            <h2 id="home-cv-title">Vision Lab</h2>
+            <p class="stitch-vision-eyebrow metadata-chip">Growing track</p>
+          </div>
+          <span class="material-symbols-outlined stitch-vision-icon" aria-hidden="true">visibility</span>
+        </div>
+        <p class="stitch-vision-body">{{ vision.summary }}</p>
+        <a class="stitch-roadmap-link" href="{{ '/tabs/vision-lab/' | relative_url }}">
+          <span class="stitch-link-mono">See roadmap</span>
+          <span class="material-symbols-outlined stitch-roadmap-arrow" aria-hidden="true">arrow_forward</span>
+        </a>
+      </div>
+    </article>
+  </section>
+
+  <section class="stitch-section stitch-section--work" id="work" aria-labelledby="home-cases-title">
+    <div class="stitch-section-head stitch-animate-in" style="animation-delay: 0.9s;">
+      <div>
+        <h2 id="home-cases-title">{{ cc.selected_work.title }}</h2>
+        <p class="stitch-section-sub">{{ cc.selected_work.subtitle }}</p>
+      </div>
+      <a class="stitch-section-action" href="{{ cc.selected_work.action_url | relative_url }}">{{ cc.selected_work.action_label }}</a>
+    </div>
+
+    <div class="case-grid">
+      {% for item in site.data.portfolio_projects %}
+      {% assign case_delay = forloop.index | times: 0.1 | plus: 0.9 %}
+      {% assign is_mock = false %}
+      {% if item.status == 'mock' %}
+        {% assign is_mock = true %}
+      {% endif %}
+      <article class="case-card card-glass{% unless is_mock %} card-glass--interactive{% endunless %} stitch-animate-in{% if is_mock %} case-card--mock{% endif %}" style="animation-delay: {{ case_delay }}s;">
+        {% if is_mock %}
+        <span class="case-mock-badge">{{ item.mock_label | default: 'Mock' }}</span>
+        {% endif %}
+        {% if item.image_url and is_mock == false %}
+        <div class="case-card-media">
+          <div class="case-card-image" style="background-image: url('{{ item.image_url }}');" role="img" aria-label="{{ item.title }}"></div>
+        </div>
+        {% elsif is_mock %}
+        <div class="case-card-media case-card-media--mock" aria-hidden="true">
+          <div class="case-card-image case-card-image--mock"></div>
+        </div>
+        {% endif %}
+        <h3>{{ item.title }}</h3>
+        <div class="case-ppi">
+          <div class="case-ppi-row">
+            <span class="ppi-label">Problem:</span>
+            <p>{{ item.problem }}</p>
+          </div>
+          <div class="case-ppi-row">
+            <span class="ppi-label">Process:</span>
+            <p>{{ item.process }}</p>
+          </div>
+          <div class="case-ppi-row">
+            <span class="ppi-label">Impact:</span>
+            <p>{{ item.impact }}</p>
+          </div>
+        </div>
+        <footer class="case-card-foot">
+          {% if item.stack_tag %}
+          <span class="case-stack-chip">{{ item.stack_tag }}</span>
+          {% endif %}
+          {% if is_mock %}
+          <span class="stitch-link-mono case-mock-footnote">Placeholder</span>
+          {% else %}
+          <a class="stitch-link-mono" href="{{ item.post_url | relative_url }}">Read case →</a>
+          {% endif %}
+        </footer>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  {% for module in cc.mock_modules %}
+  {% if module.enabled %}
+  <section class="stitch-section stitch-section--mock" id="mock-{{ module.key }}" aria-labelledby="mock-title-{{ module.key }}">
+    <article class="stitch-mock-module card-glass stitch-animate-in" style="animation-delay: 1.2s;">
+      <div class="stitch-mock-module-head">
+        <div>
+          <p class="stitch-eyebrow">{{ module.eyebrow }}</p>
+          <h2 id="mock-title-{{ module.key }}">{{ module.title }}</h2>
+        </div>
+        <span class="stitch-mock-status">{{ module.status_label }}</span>
+      </div>
+      <p class="stitch-mock-copy">{{ module.description }}</p>
+      <div class="stitch-mock-shell" aria-hidden="true">
+        <div class="stitch-mock-bar" style="width: 72%;"></div>
+        <div class="stitch-mock-bar" style="width: 58%;"></div>
+        <div class="stitch-mock-bar" style="width: 84%;"></div>
+        <div class="stitch-mock-bar" style="width: 46%;"></div>
+      </div>
+    </article>
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  <section class="stitch-section stitch-section--notes" id="notes" aria-labelledby="latest-posts-title">
+    <h2 id="latest-posts-title" class="stitch-animate-in" style="animation-delay: 1.3s;">{{ cc.recent_notes.title }}</h2>
+
+    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.4s;" role="list" aria-labelledby="latest-posts-title">
+      {% for post in posts limit: cc.recent_notes.limit %}
+      <article class="stitch-note-row" role="listitem" aria-labelledby="post-title-{{ forloop.index }}">
+        <div class="stitch-note-main">
+          <div class="stitch-note-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="stitch-note-date">{{ post.date | date: "%b %Y" }}</time>
+            {% include post-intelligence-metadata.html post=post compact=true %}
+          </div>
+          <h3 id="post-title-{{ forloop.index }}">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="stitch-note-excerpt">
+            {{ post.content | markdownify | strip_html | truncate: 160 }}
+          </p>
+        </div>
+        <a class="stitch-link-mono stitch-note-cta" href="{{ post.url | relative_url }}">Read more →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+
+{% include stitch-footer.html %}

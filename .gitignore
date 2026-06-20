@@ -1,17 +1,29 @@
-# hidden files
-.*
+# Jekyll build output
+_site/
 
-# python compiled files
-*.pyc
-
-# jekyll debug
-_site
-
-# Jeykll Gemfile.lock
+# Bundler
+.bundle/
+vendor/
+/vendor/bundle/
 Gemfile.lock
+
+# Stitch design exports (local reference; sync via tools/stitch-sync.sh)
+.stitch/
+
+# Python compiled files
+*.pyc
 
 # yui-compressor
 *.jar
 
-# bundle cache
-vendor
+# OS / editor noise
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Keep Cursor project rules in git
+!.cursorrules
+!.cursor/
+!.cursor/rules/
+!.cursor/rules/**

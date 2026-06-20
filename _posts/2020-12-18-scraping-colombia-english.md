@@ -1,15 +1,23 @@
 ---
+
 title: Web Scraping, case of study plebiscite in Colombia,2016
+redirect_from:
+  - /posts/scraping-plebiscito-colombia/
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-18 01:00:00 -0500
 categories: [Python, Web_scraping, Data_studio]
 tags: [automation, python, web-scraping, colombia, visualization]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 3
+business_impact: "Strengthens KPI monitoring and executive decision cadence."
+impact_label: "Strengthens KPI monitoring and executive d"
+description: "The 2016 peace plebiscite in Colombia, scraped with Python and plotted in Data Studio—turnout, votes, and what the numbers showed."
 ---
-
 ## Description and Motivation
 
-[The plebiscite](http://gestyy.com/euL0kU) about the peace agreements of Colombia in 2016 was the mecanism of endorsement to aprove the agreements between the Colombia's goberment and the "Fuerzas Armadas Revolucionarias de Colombia" ([FARC](gestyy.com/euL0R7)). The voting was scheduled for Sunday, October 2, 2016.
+[The plebiscite](https://es.wikipedia.org/wiki/Plebiscito_de_2016_en_Colombia) about the peace agreements of Colombia in 2016 was the mecanism of endorsement to aprove the agreements between the Colombia's goberment and the "Fuerzas Armadas Revolucionarias de Colombia" ([FARC](https://es.wikipedia.org/wiki/Fuerzas_Armadas_Revolucionarias_de_Colombia)). The voting was scheduled for Sunday, October 2, 2016.
 
 This was the question made in the plebiscite:
 
@@ -17,23 +25,11 @@ This was the question made in the plebiscite:
 
 Given the preceding introduction, the current project aims to use Python scraping tools to retrieve information at the municipal and departmental levels, and then create a dashboard in Google Data Studio using the findings.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 ----
 
 ## Methodologies
 
-+  The Scraping process of the [Registraduría Nacional](http://gestyy.com/euLq03) has the following functions:
++  The Scraping process of the [Registraduría Nacional](https://www.registraduria.gov.co/) has the following functions:
 
   * Making the scraping of the principal page about the scrutiny of the votation results the previous action is to extract the access link to each Colombia's department in the votation.  Later, extracting the information by department, we extract each one of the municipal links related to that department.
   * We make the scraping of each municipal page to extract the votation results such as the participation percentage and plebiscite approval.
@@ -62,18 +58,6 @@ warnings.simplefilter('ignore',InsecureRequestWarning)
 ```
 
 Once we imported the libraries, with the library calls request, we call the code of the website intending to find out the link with the result information of the plebiscite by the department.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 ```python
 html = requests.get("https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm", verify=False).text
@@ -232,14 +216,3 @@ Once we have the database generated and refined, we go to Google Data Studio to 
 
 This process can be replicated to whatever website has no renderization. In addition, the project has not to scope to make a deep analysis of the information because we have to review more factors such as demographics, politics, and economics.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

@@ -1,0 +1,26 @@
+{% comment %}Domain slug for post accent styling (Stitch post-export){% endcomment %}
+{% assign post_domain_slug = "analysis" %}
+{% assign post_domain = page.domain | default: "" %}
+{% if post_domain == nil or post_domain == "" %}
+  {% if page.tags contains 'economics' or page.categories contains 'Economics' %}
+    {% assign post_domain = "Economics" %}
+  {% elsif page.tags contains 'visualization' or page.tags contains 'visualizaciones' or page.tags contains 'big-query' or page.tags contains 'data studio' %}
+    {% assign post_domain = "Business Intelligence" %}
+  {% elsif page.tags contains 'optimization' or page.tags contains 'regression' or page.tags contains 'machine learning' or page.tags contains 'predictive modeling' %}
+    {% assign post_domain = "Machine Learning" %}
+  {% elsif page.tags contains 'cv' or page.tags contains 'computer-vision' %}
+    {% assign post_domain = "Vision Lab" %}
+  {% else %}
+    {% assign post_domain = "Data Analysis" %}
+  {% endif %}
+{% endif %}
+{% case post_domain %}
+  {% when "Machine Learning" %}
+    {% assign post_domain_slug = "ml" %}
+  {% when "Business Intelligence" %}
+    {% assign post_domain_slug = "bi" %}
+  {% when "Economics" %}
+    {% assign post_domain_slug = "economics" %}
+  {% when "Vision Lab" %}
+    {% assign post_domain_slug = "vision" %}
+{% endcase %}

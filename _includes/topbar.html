@@ -7,6 +7,11 @@
 -->
 <div id="topbar-wrapper" class="row justify-content-center topbar-down">
   <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
+    {% assign page_urls = page.url | split: "/" %}
+    {% include stitch-dashboard-flag.html %}
+    {% if stitch_dashboard %}
+    <span class="stitch-brand" aria-label="{{ site.title }}">CCMN</span>
+    {% else %}
     <span id="breadcrumb">
       {% for item in page.breadcrumb %}
         {% if item.url %}
@@ -25,8 +30,38 @@
       {% endunless %}
 
     </span><!-- endof #breadcrumb -->
+    {% endif %}
 
-    <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
+    <button id="topbar-nav-trigger" class="btn btn-sm btn-outline-secondary" type="button"
+      aria-expanded="false" aria-controls="topbar-nav" aria-label="{{ site.data.label.navigate | default: 'Navegar' }}">
+      {{ site.data.label.navigate | default: "Navegar" }}
+    </button>
+
+    <nav id="topbar-nav" aria-label="Navegación principal">
+      {% for item in site.data.tabs %}
+        {% assign ref = site.baseurl | append: "/" %}
+        {% if item.path %}
+          {% assign ref = ref | append: item.path | append: "/" %}
+          {% if item.url %}
+            {% assign ref = ref | append: item.url | append: "/" %}
+          {% endif %}
+        {% endif %}
+
+        {% assign is_active = false %}
+        {% if item.url == page_urls.last or item.name == page.tab_active or item.home and page.layout == "home" %}
+          {% assign is_active = true %}
+        {% endif %}
+
+        <a href="{{ ref }}" class="topbar-nav-link{% if is_active %} active{% endif %}">
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <button id="sidebar-trigger" class="btn btn-link p-0" type="button"
+      aria-label="{{ site.data.label.sidebar_open | default: 'Abrir menú lateral' }}">
+      <i class="fas fa-bars fa-fw" aria-hidden="true"></i>
+    </button>
 
     <div id="topbar-title">
     {% if page.location %}
@@ -38,13 +73,34 @@
     {% endif %}
     </div>
 
-    <i id="search-trigger" class="fas fa-search fa-fw"></i>
-    <span id="search-wrapper" class="align-items-center">
-      <i class="fas fa-search fa-fw"></i>
-      <input class="form-control" id="search-input" type="search" placeholder="{{ site.data.label.search_hint }}...">
-      <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i>
+    <button id="search-trigger" class="btn btn-link p-0" type="button"
+      aria-label="{{ site.data.label.search_open | default: 'Abrir búsqueda' }}">
+      <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+    </button>
+    <span id="search-wrapper" class="align-items-center" role="search" aria-label="Búsqueda del sitio">
+      <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+      <label class="sr-only" for="search-input">{{ site.data.label.search_hint | default: "Buscar" }}</label>
+      <input class="form-control" id="search-input" type="search" placeholder="{{ site.data.label.search_hint }}..."
+        aria-label="{{ site.data.label.search_hint | default: 'Buscar' }}" aria-controls="search-results">
+      <button class="btn btn-link p-0" id="search-cleaner" type="button"
+        aria-label="{{ site.data.label.search_clear | default: 'Limpiar búsqueda' }}">
+        <i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
+      </button>
     </span>
-    <span id="search-cancel" >Cancel</span>
+    <span id="search-cancel">{{ site.data.label.search_cancel | default: "Cancelar" }}</span>
   </div>
 
 </div>
+
+<script>
+  (function() {
+    var trigger = document.getElementById("topbar-nav-trigger");
+    var wrapper = document.getElementById("topbar-wrapper");
+    if (!trigger || !wrapper) return;
+
+    trigger.addEventListener("click", function() {
+      var isOpen = wrapper.classList.toggle("nav-open");
+      trigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  })();
+</script>

@@ -8,6 +8,8 @@
 
 
 {% include_relative _addon/main.scss %}
+{% include_relative _addon/stitch-shell.scss %}
+{% include_relative _addon/stitch-tabs.scss %}
 
 .tag {
   border-radius: 0.7em;

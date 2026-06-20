@@ -1,0 +1,22 @@
+{% assign module_variant = include.variant | default: "" %}
+{% assign module_glass = include.glass | default: false %}
+
+<article class="stitch-module dashboard-module{% if module_glass %} card-glass card-glass--interactive{% endif %}{% if module_variant != '' %} dashboard-module--{{ module_variant }}{% endif %}">
+  {% if include.eyebrow %}
+    <p class="stitch-eyebrow stitch-module-eyebrow">{{ include.eyebrow }}</p>
+  {% endif %}
+
+  {% if include.title %}
+    <h2 class="stitch-module-title">{{ include.title }}</h2>
+  {% endif %}
+
+  {% if include.subtitle %}
+    <p class="stitch-module-lead">{{ include.subtitle }}</p>
+  {% endif %}
+
+  {% if include.content %}
+    <div class="stitch-module-body dashboard-module-content">
+      {{ include.content }}
+    </div>
+  {% endif %}
+</article>

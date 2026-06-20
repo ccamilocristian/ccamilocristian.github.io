@@ -1,25 +1,21 @@
 ---
+
 title: Optimization Consumer Theory in Python
+redirect_from:
+  - /posts/optimizacion_teoria_consumidor/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-23 15:00:00 -0500
-categories: [Python,Economics]
+categories: [Python, Economics]
 tags: [economics, python, optimization]
 math: true
+domain: Economics
+technical_level: Advanced
+reading_time: 4
+business_impact: "Supports tradeoff-aware policy and business decisions under constraints."
+impact_label: "Supports tradeoff-aware policy and busines"
+description: "Consumer theory in Python with scipy: budget lines, utility maximization, and plots that go beyond the textbook."
 ---
-
 Nowadays in the classrooms, in the courses of the economics' undergraduate, the professors begin teaching the consumer theory, theme with big impact in [Microeconomics](https://economictimes.indiatimes.com/definition/microeconomics). However, this theory is always taught without a pragmatic application in real life. Therefore, the article has the objective to introduce to the readers' themes about applied economics in a programming language like [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 In this article we use Python 3, also it is necessary to install the libraries numpy, matplotlib, and scipy as we show in the next code:
 
@@ -37,18 +33,6 @@ In addition, we import the matplotlib.pyplot library to make the function graphs
 The consumer theory is the branch of the economy in charge of analyzing the economic agents' behavior, specifically how they designate their wages in goods purchase to obtain the mayor welfare as possible.
 
 We take into account the neoclassic theory of the consumers based on the preferences of the economic agent and his budget constraint.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 ## Utility Function
 
@@ -202,18 +186,6 @@ X, Y\geq 0
 \end{aligned}
 $$
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 Most of the optimization programs compute only the minimization of the functions. We need to convert the objective function into a negative function as we describe as follows, to obtain the result of the maximization.
 
 ```python
@@ -274,14 +246,3 @@ As we can see, the economic theory that taught day by day in the university cloi
 <!-- /wp:list -->
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

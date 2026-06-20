@@ -1,0 +1,46 @@
+{% assign meta_post = include.post %}
+
+{% assign meta_domain = meta_post.domain | default: include.domain_override %}
+{% if meta_domain == nil or meta_domain == "" %}
+  {% assign meta_domain = "Data Analysis" %}
+  {% if meta_post.tags contains 'economics' or meta_post.categories contains 'Economics' %}
+    {% assign meta_domain = "Economics" %}
+  {% elsif meta_post.tags contains 'visualization' or meta_post.tags contains 'visualizaciones' or meta_post.tags contains 'big-query' or meta_post.tags contains 'data studio' %}
+    {% assign meta_domain = "Business Intelligence" %}
+  {% elsif meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' or meta_post.tags contains 'machine learning' or meta_post.tags contains 'predictive modeling' %}
+    {% assign meta_domain = "Machine Learning" %}
+  {% elsif meta_post.tags contains 'cv' or meta_post.tags contains 'computer-vision' %}
+    {% assign meta_domain = "Vision Lab" %}
+  {% endif %}
+{% endif %}
+
+{% assign meta_level = meta_post.technical_level | default: include.level_override %}
+{% if meta_level == nil or meta_level == "" %}
+  {% assign meta_level = "Intermediate" %}
+{% endif %}
+
+{% assign meta_reading = meta_post.reading_time | default: include.reading_override %}
+{% if meta_reading == nil or meta_reading == "" %}
+  {% assign _word_count = meta_post.content | markdownify | strip_html | split: ' ' | size %}
+  {% assign meta_reading = _word_count | divided_by: 200 %}
+  {% if meta_reading < 1 %}
+    {% assign meta_reading = 1 %}
+  {% endif %}
+{% endif %}
+
+{% assign meta_impact = meta_post.business_impact | default: include.impact_override %}
+{% if meta_impact == nil or meta_impact == "" %}
+  {% assign meta_impact = meta_post.impact_label %}
+{% endif %}
+
+<div class="stitch-post-meta-band">
+  <time class="stitch-post-date stitch-note-date" datetime="{{ meta_post.date | date_to_xmlschema }}">{{ meta_post.date | date: "%b %d, %Y" }}</time>
+  <div class="stitch-post-meta-chips">
+    <span class="metadata-chip metadata-chip--domain">{{ meta_domain }}</span>
+    <span class="metadata-chip metadata-chip--level">{{ meta_level }}</span>
+  </div>
+  <span class="stitch-post-read-time">{{ meta_reading }} min read</span>
+  {% if meta_impact != nil and meta_impact != "" %}
+  <p class="stitch-post-impact-line">{{ meta_impact }}</p>
+  {% endif %}
+</div>

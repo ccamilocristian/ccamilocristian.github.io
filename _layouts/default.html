@@ -25,7 +25,9 @@ layout: compress
 
   {% include head.html %}
 
-  <body data-spy="scroll" data-target="#toc">
+  {% include stitch-dashboard-flag.html %}
+
+  <body data-spy="scroll" data-target="#toc"{% if stitch_dashboard %} class="stitch-dashboard"{% endif %}>
 
     <div id="sidebar" class="d-flex flex-column">
       {% include sidebar.html %}
@@ -38,7 +40,9 @@ layout: compress
 
         {% include refactor-content.html content=content %}
 
+        {% unless stitch_dashboard %}
         {% include footer.html %}
+        {% endunless %}
 
       </div>
 
@@ -48,7 +52,9 @@ layout: compress
 
     <div id="mask"></div>
 
-    <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
+    <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button"
+      aria-label="{{ site.data.label.back_to_top | default: 'Volver arriba' }}"
+      title="{{ site.data.label.back_to_top | default: 'Volver arriba' }}">
       <i class="fas fa-angle-up"></i>
     </a>
 

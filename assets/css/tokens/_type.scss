@@ -1,0 +1,37 @@
+/*
+ * Calm Technical — Typography tokens (Stitch designTheme.typography)
+ */
+
+$ds-type-tokens: (
+  family-story: ("Inter", system-ui, -apple-system, sans-serif),
+  family-data: ("JetBrains Mono", ui-monospace, monospace),
+  size-xs: 0.75rem,
+  size-sm: 0.875rem,
+  size-md: 1rem,
+  size-lg: 1.125rem,
+  size-xl: 1.5rem,
+  size-2xl: 2rem,
+  size-3xl: 2.5rem,
+  size-lead: 1.125rem,
+  size-h1-min: 1.75rem,
+  size-h1-max: 2.5rem,
+  size-eyebrow: 0.8125rem,
+  size-metadata: 0.75rem,
+  weight-regular: 400,
+  weight-medium: 500,
+  weight-semibold: 600,
+  weight-bold: 700,
+  line-tight: 1.2,
+  line-normal: 1.5,
+  line-relaxed: 1.7,
+  line-lead: 1.6,
+  tracking-h1: -0.02em,
+  tracking-lead: -0.01em,
+  tracking-eyebrow: 0.05em
+);
+
+@mixin emit-type-tokens {
+  @each $token, $value in $ds-type-tokens {
+    --ds-type-#{$token}: #{$value};
+  }
+}

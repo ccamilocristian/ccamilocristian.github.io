@@ -1,12 +1,18 @@
 ---
+published: false
 title: ¿Cómo realizar un reproductor de música en Python?
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-31 11:00:00 -0500
 categories: [Python]
 tags: [python]
 math: true
+domain: Data Analysis
+technical_level: Intermediate
+reading_time: 4
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "A continuación mostraré cómo realizar un reproductor de música haciendo uso de programación con objetos en Python. El resultado del siguiente código es el …"
 ---
-
 A continuación mostraré cómo realizar un reproductor de música haciendo uso de programación con objetos en Python.
 
 ![](/assets/img/2021-01-31-reproductor-musica/reproductor.PNG)
@@ -22,30 +28,7 @@ Para este proposito, en primera instancia son necesarias las siguientes librerí
 |PIL|time|
 |threaing|
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 Para comenzar con el programa, es necesario realizar la importación de las librerías mencionadas anteriormente; y así mismo, configurar la clase de reproductor de música y la función de iniciación la cual contiene el container del programa.  
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="1836855266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 ```python
 import tkinter as tk
@@ -135,19 +118,6 @@ self.menu.grid(column=0,row=0, columnspan=1)
 
 Otra configuración que se agregó en el programa es la generación de descripción del estado de la canción, es decir el tiempo total de duración y el tiempo que ha trascurrido desde su inicio.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 ```python
 #Descripción del total de canción y tiempo transcurrido
 self.lengthlabel = tk.Label(self.container, text='Duración total de la canción: --:--')
@@ -164,17 +134,6 @@ self.barra.grid(column=1,row=0, columnspan=3)
 self.container.protocol("WM_DELETE_WINDOW", self.cierre)        
 
 ```
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="1836855266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 Finalmente, para el correcto desarrollo del programa, se empalma a funciones las anteriores configuraciones dependediendo el objetivo a desarrollar. Para eso, las funciones que se realizaron fueron:
 
@@ -314,14 +273,3 @@ app.mainloop()
 + Poder reproducir canciones de youtube a través de un enlace.
 + Agregar la función de reproducir la canción con una velocidad mayor o menor.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

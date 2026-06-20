@@ -21,8 +21,10 @@
 
   {% include favicons.html %}
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (Stitch: Inter + JetBrains Mono via fonts.scss) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
   <!-- GA -->
@@ -39,17 +41,18 @@
     {% endif %}
   {% endif %}
 
-  <!-- Google Adsense -->
+  <!-- Google Adsense (optional; disabled via _data/site_ops.yml on Stitch-first site) -->
+  {% unless site.data.site_ops.adsense.enabled == false %}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2402437399062384"
-     crossorigin="anonymous"></script>
-  <script data-ad-client="ca-pub-2402437399062384" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
+    crossorigin="anonymous"></script>
+  {% endunless %}
+
   <!-- {% include ads.html %} 
   {% include ads_1.html %}    -->
 
   <!-- jsDelivr CDN -->
-  <link rel="preconnect" href="cdn.jsdelivr.net">
-  <link rel="dns-prefetch" href="cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   <!-- Bootstrap -->
   <link rel="preload" as="style"

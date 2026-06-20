@@ -1,22 +1,89 @@
 ---
 layout: default
-# The posts' layout
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT Licensed
+# Post layout — Stitch reading view (Phase 7)
 ---
+
+{% include stitch-dashboard-flag.html %}
+{% include stitch-post-domain-slug.html %}
 
 <div class="row">
 
-  <div id="post-wrapper" class="col-12 col-lg-11 col-xl-8">
+  <div id="post-wrapper" class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
 
+    {% if stitch_dashboard %}
+    <div class="stitch-post-page stitch-post-page--{{ post_domain_slug }} dashboard-page dashboard-page--post">
+      <div class="stitch-post-ambient" aria-hidden="true"></div>
+
+      <article class="stitch-post">
+        <header class="stitch-post-header stitch-reveal">
+          <p class="stitch-post-eyebrow stitch-eyebrow">{% include stitch-artifact-label.html post=page %}</p>
+          <h1 class="stitch-post-title" data-toc-skip>{{ page.title }}</h1>
+
+          {% include stitch-post-meta-band.html post=page %}
+
+          {%- capture filename -%}
+            {{ page.url | split: "/" | last }}
+          {%- endcapture -%}
+          {% assign lastmod = nil %}
+          {% for item in site.data.updates %}
+            {% assign encode_filename = item.filename | url_encode %}
+            {% if filename == encode_filename %}
+              {% assign lastmod = item.lastmod %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% if lastmod %}
+          <p class="stitch-post-updated">
+            Updated <time datetime="{{ lastmod | date_to_xmlschema }}">{{ lastmod | date: "%b %d, %Y" }}</time>
+          </p>
+          {% endif %}
+
+        </header>
+
+        <div class="stitch-post-layout stitch-reveal">
+          {% if site.toc and page.toc %}
+          <aside class="stitch-post-toc card-glass" aria-label="Table of contents">
+            <p class="stitch-post-toc-label stitch-eyebrow">Contents</p>
+            <nav id="toc" data-toggle="toc"></nav>
+          </aside>
+          {% endif %}
+
+          <div class="stitch-post-article-wrap">
+            <div class="stitch-post-article card-glass">
+              <div class="post-content stitch-post-content">
+                {% if page.image %}
+                  <img src="{{ page.image }}" alt="">
+                {% endif %}
+                {% if content contains '<img src=' %}
+                  {{ content | replace: '<img src=', '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=' }}
+                {% else %}
+                  {{ content }}
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="stitch-post-tail">
+              <div class="stitch-post-tail-actions">
+                <a class="stitch-post-back" href="{{ '/tabs/intelligence/' | relative_url }}">
+                  <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                  Intelligence feed
+                </a>
+                <div class="stitch-post-share">
+                  {% include post-sharing.html %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    {% else %}
     <div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
 
       <h1 data-toc-skip>{{ page.title }}</h1>
 
       <div class="post-meta text-muted d-flex flex-column">
-        <!-- Published date and author -->
         <div>
           Publicado
           {% include timeago.html date=page.date tooltip=true %}
@@ -30,7 +97,6 @@ layout: default
           </span>
         </div>
 
-        <!-- lastmod -->
         {%- capture filename -%}
           {{ page.url | split: "/" | last }}
         {%- endcapture -%}
@@ -50,7 +116,6 @@ layout: default
         </div>
         {% endif %}
 
-        <!-- page views -->
         {% if site.google_analytics.pv.enabled %}
         <div>
           <span id="pv" class="pageviews"><i class="fas fa-spinner fa-spin fa-fw"></i></span>
@@ -58,13 +123,12 @@ layout: default
         </div>
         {% endif %}
 
-      </div> <!-- .post-meta -->
+      </div>
 
       <div class="post-content">
         {% if page.image %}
           <img src="{{ page.image }}">
         {% endif %}
-        <!-- Using lozad. See: <https://github.com/ApoorvSaxena/lozad.js#usage> -->
         {% if content contains '<img src=' %}
           {{ content | replace: '<img src=', '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src=' }}
         {% else %}
@@ -73,8 +137,6 @@ layout: default
       </div>
 
       <div class="post-tail-wrapper text-muted">
-
-        <!-- categories -->
         {% if page.categories.size > 0 %}
         <div class="post-meta mb-3">
           <i class="far fa-folder-open fa-fw mr-1"></i>
@@ -85,67 +147,52 @@ layout: default
         </div>
         {% endif %}
 
-        <!-- tags -->
-        {% if page.tags.size > 0 %}
-        <div class="post-tags">
-          <i class="fa fa-tags fa-fw mr-1"></i>
-          {% for tag in page.tags %}
-          <a href="{{ site.baseurl }}/tags/{{ tag | replace: ' ', '-' | downcase | url_encode }}/"
-            class="post-tag no-text-decoration" >
-            {{- tag -}}
-          </a>
-          {% endfor %}
-          </div>
-        {% endif %}
-
         <div class="post-tail-bottom
           d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
           {% if site.data.rights.license %}
           <div class="license-wrapper">
             Esta publicación está autorizada por el autor bajo
             <a href="{{ site.data.rights.license.link }}">{{ site.data.rights.license.name }}</a>
-           
           </div>
           {% endif %}
 
           {% include post-sharing.html %}
 
-        </div><!-- .post-tail-bottom -->
+        </div>
+      </div>
+    </div>
+    {% endif %}
 
-      </div><!-- div.post-tail -->
+  </div>
 
-    </div> <!-- .post -->
-
-
-  </div> <!-- #post-wrapper -->
-
+  {% unless stitch_dashboard %}
   {% include panel.html %}
+  {% endunless %}
 
-</div> <!-- .row -->
-
+</div>
 
 <div class="row">
-  <div class="col-12 col-lg-11 col-xl-8">
-    <div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4">
+  <div class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
+    <div id="post-extend-wrapper" class="{% if stitch_dashboard %}stitch-post-extend{% else %}pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4{% endif %}">
 
     {% include related-posts.html %}
 
     {% include post-nav.html %}
 
     {% if site.disqus.comments and page.comments %}
+      {% unless stitch_dashboard and site.data.site_ops.disqus.stitch_routes == false %}
       {% include disqus.html %}
+      {% endunless %}
     {% endif %}
 
-    </div> <!-- #post-extend-wrapper -->
+    </div>
+  </div>
+</div>
 
-  </div> <!-- .col-* -->
-
-</div> <!-- .row -->
-
-{% include lozad.html %}
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
+{% if stitch_dashboard %}
+  {% include stitch-footer.html %}
+{% else %}
+<!-- horizontal ad (loader in head.html) -->
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-2402437399062384"
@@ -155,3 +202,6 @@ layout: default
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+{% endif %}
+
+{% include lozad.html %}

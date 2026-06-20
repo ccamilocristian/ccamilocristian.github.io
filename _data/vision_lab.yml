@@ -1,0 +1,84 @@
+# Vision Lab tab — Stitch screen (vision-lab-export.html)
+
+hero:
+  eyebrow: Emerging Track
+  title: Vision Lab
+  lead: >
+    Computer Vision is an intentional growth lane, not a core claim yet.
+    Experiments follow the same decision standards as Analysis, ML, BI, and Economics.
+
+positioning:
+  title: "Vision Lab as Growth Track"
+  summary: "Computer Vision is an intentional growth lane, not a core claim yet; it is developed under the same decision standards used in Analysis, ML, BI, and Economics."
+  principles:
+    - "Every experiment must define a measurable decision objective before modeling starts."
+    - "Model metrics are evaluated together with operational constraints and deployment risk."
+    - "Portfolio progression is milestone-based, with transparent scope and maturity levels."
+
+philosophy:
+  title: Philosophical context
+  paragraphs:
+    - >
+      Vision Lab is not a production house—it is a scoped growth track. Breakthroughs
+      happen at the fringes of pragmatic engineering, where reproducible baselines meet
+      honest limits.
+    - >
+      Methodology prioritizes proof of concept alongside proof of operational fit.
+      Spatial and visual signals are treated as decision inputs, not demo flourishes.
+  manifesto_label: Growth track scope
+
+roadmap:
+  - phase: "Phase 1 — Foundations"
+    phase_label: Phase 01
+    status: planned
+    focus: "Reliable data pipeline and reproducible baselines."
+    target: "2 baseline pipelines with versioned datasets and evaluation protocol."
+    bullets:
+      - Versioned datasets
+      - Evaluation protocol
+  - phase: "Phase 2 — Model Comparison"
+    phase_label: Phase 02
+    status: active
+    focus: "Compare architecture tradeoffs with cost and latency constraints."
+    target: "Benchmark report linking precision/recall with decision utility."
+    bullets:
+      - Architecture benchmarks
+      - Cost/latency constraints
+  - phase: "Phase 3 — Intelligence Integration"
+    phase_label: Phase 03
+    status: backlog
+    focus: "Promote validated CV outputs into dashboard intelligence artifacts."
+    target: "At least 2 Vision Intelligence Briefs integrated into the main feed."
+    bullets:
+      - Intelligence Brief format
+      - Dashboard integration
+
+selected_experiments:
+  - name: "Visual Quality Risk Classifier"
+    status: Planned
+    status_badge: planned
+    objective: "Detect high-risk visual anomalies to prioritize manual review workload."
+    impact_hypothesis: "Reduce review time while preserving quality-control precision."
+    tools:
+      - Python
+      - OpenCV
+  - name: "Document Field Extraction Prototype"
+    status: In design
+    status_badge: active
+    objective: "Extract structured fields from semi-structured scanned records."
+    impact_hypothesis: "Accelerate ingestion for BI dashboards and reduce manual entry errors."
+    tools:
+      - PyTorch
+      - OCR
+  - name: "Vision Signal Monitoring Card"
+    status: Backlog
+    status_badge: backlog
+    objective: "Expose CV model drift and confidence bands in decision dashboards."
+    impact_hypothesis: "Improve trust and governance for future production CV use cases."
+    tools:
+      - Monitoring
+      - Dashboards
+
+footer_action:
+  label: Explore Intelligence feed
+  url: /tabs/intelligence/

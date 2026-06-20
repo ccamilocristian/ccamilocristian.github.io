@@ -1,25 +1,40 @@
 ---
-# The 404 page
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT License
+# 404 — Stitch shell (T20 orphan cleanup)
 layout: page
-title: "404: Page not found"
+title: Page not found
 permalink: /404.html
-
-redirect_from:  # part of site.sitemap_exclude
+stitch_legacy: true
+hide_panel: true
+redirect_from:
   - /norobots/
   - /assets/
-  - /tabs/
-  - /categories/
-  - /tags/
-  - /posts/
-
-dynamic_title: true
 ---
 
-<div class="lead">
-  <p>Sorry, we've misplaced that URL or it's pointing to something that doesn't exist. </p>
-  <p><a href="{{ site.baseurl }}/">Head back Home</a> to try finding it again, or search for it on the <a href="{{ site.baseurl }}/tabs/archives">Archives page</a>.</p>
+<div class="stitch-tab-page stitch-legacy-page stitch-404-page dashboard-page dashboard-page--404">
+
+  <header class="stitch-tab-hero stitch-reveal">
+    <p class="stitch-eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p class="stitch-lead">That URL doesn't exist or may have moved. Use the primary sections below to get back on track.</p>
+  </header>
+
+  <nav class="stitch-404-actions card-glass stitch-reveal" aria-label="Recovery links">
+    <a class="stitch-404-link" href="{{ '/' | relative_url }}">
+      <span class="stitch-404-link-label">Command Center</span>
+      <span class="stitch-404-link-hint">Home dashboard</span>
+    </a>
+    <a class="stitch-404-link" href="{{ '/tabs/intelligence/' | relative_url }}">
+      <span class="stitch-404-link-label">Intelligence</span>
+      <span class="stitch-404-link-hint">All artifacts</span>
+    </a>
+    <a class="stitch-404-link" href="{{ '/tabs/profile/' | relative_url }}">
+      <span class="stitch-404-link-label">Profile</span>
+      <span class="stitch-404-link-hint">Background &amp; work</span>
+    </a>
+    <a class="stitch-404-link" href="{{ '/tabs/archives/' | relative_url }}">
+      <span class="stitch-404-link-label">Archive</span>
+      <span class="stitch-404-link-hint">Chronological index</span>
+    </a>
+  </nav>
+
 </div>

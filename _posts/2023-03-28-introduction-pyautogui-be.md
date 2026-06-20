@@ -1,14 +1,18 @@
 ---
+
 title: "Introduction to PyAutoGUI: A Beginner's Guide to Understanding What PyAutoGUI is, and How it Works"
 author: Cristian Camilo Moreno Narvaez
 date: 2023-03-28 15:00:00 -0500
-categories: [Python,Automation]
+categories: [Python, Automation]
 tags: [automation, python]
 math: true
+domain: Data Analysis
+technical_level: Intermediate
+reading_time: 6
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "PyAutoGUI automates the boring clicks—mouse, keyboard, screenshots. A plain intro to what it does and when it's worth using."
 ---
-
-<meta name="description" content=" This beginner's guide will provide you with an overview of PyAutoGUI, including what it is, how it works, and why you might want to use it. Learn how to automate repetitive tasks on your computer with PyAutoGUI!">
-
 <h2 style="font-size: 20px; font-weight:bold;">Introduction</h2>
 Have you ever found yourself performing the same tedious task on your computer over and over again? Maybe you're filling out a spreadsheet, or copying and pasting text from one document to another. It can be frustrating, time-consuming, and prone to errors. That's where PyAutoGUI comes in.
 

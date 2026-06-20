@@ -1,0 +1,725 @@
+/*
+ * Stitch inner pages — Phase 6
+ * Companion layout for Profile, Intelligence, Stack, Economics, Vision Lab
+ */
+
+body.stitch-dashboard .stitch-tab-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-16, 4rem);
+  padding-bottom: var(--ds-space-8, 2rem);
+}
+
+/* Profile layout rhythm — see stitch-profile.scss for screen components */
+
+body.stitch-dashboard .stitch-tab-hero {
+  max-width: 48rem;
+
+  .stitch-eyebrow {
+    margin-bottom: var(--ds-space-3, 0.75rem);
+  }
+
+  h1 {
+    margin: 0 0 var(--ds-space-4, 1rem);
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    color: #e2e2e8;
+  }
+
+  .stitch-lead {
+    margin-bottom: 0;
+  }
+}
+
+body.stitch-dashboard .stitch-tab-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .stitch-tab-section-head {
+  max-width: 42rem;
+
+  h2 {
+    margin: 0 0 var(--ds-space-2, 0.5rem);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e2e2e8;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #c3c6d2;
+  }
+}
+
+body.stitch-dashboard .dashboard-grid,
+body.stitch-dashboard .dashboard-grid--profile,
+body.stitch-dashboard .dashboard-grid--vision {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+}
+
+body.stitch-dashboard .stitch-module {
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+  box-shadow: none;
+  transform: none;
+
+  &:hover {
+    transform: none;
+  }
+}
+
+body.stitch-dashboard .stitch-module-eyebrow {
+  margin-bottom: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .stitch-module-title {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #e2e2e8;
+}
+
+body.stitch-dashboard .stitch-module-lead {
+  margin: 0 0 var(--ds-space-6, 1.5rem);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #c3c6d2;
+  max-width: 62ch;
+}
+
+body.stitch-dashboard .profile-lead,
+body.stitch-dashboard .economics-lens-lead,
+body.stitch-dashboard .intelligence-frame-lead {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #c3c6d2;
+  max-width: 62ch;
+  margin-bottom: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .profile-pillar-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-grid-gap-desktop, 24px);
+}
+
+@media (min-width: 768px) {
+  body.stitch-dashboard .profile-pillar-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .profile-pillar {
+  min-width: 0;
+  padding: var(--ds-space-4, 1rem);
+  border-radius: 12px;
+}
+
+body.stitch-dashboard .profile-pillar-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--ds-space-2, 0.5rem);
+  margin-bottom: var(--ds-space-2, 0.5rem);
+}
+
+body.stitch-dashboard .profile-pillar-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e2e8;
+}
+
+body.stitch-dashboard .profile-pillar-meta {
+  display: inline-block;
+  padding: .125rem .5rem;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+body.stitch-dashboard .profile-pillar--analysis .profile-pillar-meta {
+  background: rgba(107, 143, 212, 0.125);
+  color: #6b8fd4;
+}
+
+body.stitch-dashboard .profile-pillar--ml .profile-pillar-meta {
+  background: rgba(107, 168, 138, 0.125);
+  color: #6ba88a;
+}
+
+body.stitch-dashboard .profile-pillar--bi .profile-pillar-meta {
+  background: rgba(107, 158, 174, 0.125);
+  color: #6b9eae;
+}
+
+body.stitch-dashboard .profile-pillar--economics .profile-pillar-meta {
+  background: rgba(184, 149, 106, 0.125);
+  color: #b8956a;
+}
+
+body.stitch-dashboard .profile-pillar--vision .profile-pillar-meta {
+  background: rgba(155, 143, 196, 0.125);
+  color: #9b8fc4;
+}
+
+body.stitch-dashboard .profile-pillar-copy {
+  margin: 0;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  line-height: 1.4;
+  color: #c3c6d2;
+}
+
+body.stitch-dashboard .profile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-3, 0.75rem);
+
+  a {
+    font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+    font-size: 13px;
+    color: #acc7ff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+body.stitch-dashboard .profile-nav-lead {
+  font-size: 14px;
+  color: #c3c6d2;
+  margin-bottom: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .flagship-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-grid-gap-desktop, 24px);
+}
+
+@media (min-width: 768px) {
+  body.stitch-dashboard .flagship-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .flagship-block {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: var(--ds-space-2, 0.5rem);
+    color: #e2e2e8;
+  }
+}
+
+body.stitch-dashboard .flagship-intro {
+  font-size: 13px;
+  color: #c3c6d2;
+  margin-bottom: var(--ds-space-4, 1rem);
+}
+
+body.stitch-dashboard .flagship-item {
+  margin-bottom: var(--ds-space-2, 0.5rem);
+  font-size: 13px;
+
+  a {
+    color: #acc7ff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .text-muted {
+    color: #8d909b !important;
+    font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+    font-size: 11px;
+  }
+}
+
+body.stitch-dashboard .intelligence-frame-points {
+  padding-left: 1.1rem;
+  margin: 0 0 var(--ds-space-6, 1.5rem);
+  color: #c3c6d2;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body.stitch-dashboard .intelligence-archives {
+  display: flex;
+  flex-direction: column;
+}
+
+body.stitch-dashboard .stitch-artifact-panel {
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
+  border: none;
+}
+
+body.stitch-dashboard .stitch-artifact-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-4, 1rem);
+  padding: var(--ds-space-6, 1.5rem) 0;
+
+  & + & {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &:hover .intelligence-artifact-title a {
+    color: #acc7ff;
+  }
+}
+
+@media (min-width: 768px) {
+  body.stitch-dashboard .stitch-artifact-row {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+body.stitch-dashboard .stitch-artifact-main {
+  flex: 1;
+  max-width: 42rem;
+}
+
+body.stitch-dashboard .intelligence-artifact-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-3, 0.75rem);
+  margin-bottom: var(--ds-space-2, 0.5rem);
+}
+
+body.stitch-dashboard .intelligence-artifact-type {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: .125rem .5rem;
+  border-radius: 4px;
+}
+
+body.stitch-dashboard .intelligence-artifact-type--analysis,
+body.stitch-dashboard .intelligence-artifact-type--ml {
+  background: rgba(108, 144, 214, 0.2);
+  color: #acc7ff;
+}
+
+body.stitch-dashboard .intelligence-artifact-type--bi {
+  background: rgba(108, 144, 214, 0.2);
+  color: #acc7ff;
+}
+
+body.stitch-dashboard .intelligence-artifact-type--economics {
+  background: rgba(14, 81, 56, 0.2);
+  color: #95d4b4;
+}
+
+body.stitch-dashboard .intelligence-artifact-type--vision {
+  background: rgba(149, 137, 190, 0.2);
+  color: #ccbff7;
+}
+
+body.stitch-dashboard .intelligence-artifact-title {
+  margin: 0 0 var(--ds-space-2, 0.5rem);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.25;
+
+  a {
+    color: #e2e2e8;
+    text-decoration: none;
+    transition: color 120ms ease;
+  }
+}
+
+body.stitch-dashboard .intelligence-artifact-excerpt {
+  margin: 0 0 var(--ds-space-3, 0.75rem);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #c3c6d2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+body.stitch-dashboard .intelligence-artifact .insight-meta {
+  margin-bottom: 0;
+}
+
+body.stitch-dashboard .intelligence-artifact .insight-impact {
+  display: none;
+}
+
+body.stitch-dashboard .stitch-artifact-cta {
+  white-space: nowrap;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 13px;
+  color: #acc7ff;
+  text-decoration: none;
+  align-self: flex-start;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+body.stitch-dashboard .intelligence-artifact::before {
+  display: none;
+}
+
+body.stitch-dashboard .intelligence-artifact {
+  border: none;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+body.stitch-dashboard .skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-2, 0.5rem);
+}
+
+body.stitch-dashboard .skill-legend {
+  margin-top: var(--ds-space-4, 1rem);
+  font-size: 12px;
+  color: #8d909b;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+}
+
+body.stitch-dashboard .vision-roadmap-list,
+body.stitch-dashboard .vision-experiment-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-4, 1rem);
+}
+
+@media (min-width: 768px) {
+  body.stitch-dashboard .vision-roadmap-list,
+  body.stitch-dashboard .vision-experiment-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .vision-roadmap-item,
+body.stitch-dashboard .vision-experiment-item {
+  padding: var(--ds-space-5, 1.25rem);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+
+  h4 {
+    font-size: 1rem;
+    margin-bottom: var(--ds-space-2, 0.5rem);
+    color: #e2e2e8;
+  }
+
+  p {
+    font-size: 14px;
+    color: #c3c6d2;
+    margin-bottom: var(--ds-space-2, 0.5rem);
+  }
+}
+
+body.stitch-dashboard .vision-experiment-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--ds-space-3, 0.75rem);
+  margin-bottom: var(--ds-space-2, 0.5rem);
+}
+
+body.stitch-dashboard .vision-experiment-status {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9589be;
+}
+
+body.stitch-dashboard .vision-principles-list {
+  padding-left: 1.1rem;
+  color: #c3c6d2;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+body.stitch-dashboard .vision-lab-links {
+  margin-top: var(--ds-space-4, 1rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 13px;
+
+  a {
+    color: #acc7ff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Profile pillar glow layers (match home) */
+body.stitch-dashboard .profile-pillar.card-glass.glow-foundation {
+  background:
+    radial-gradient(circle at top left, rgba(107, 143, 212, 0.16), transparent 70%),
+    rgba(15, 20, 28, 0.65);
+}
+
+body.stitch-dashboard .profile-pillar.card-glass.glow-practice {
+  background:
+    radial-gradient(circle at top left, rgba(107, 168, 138, 0.16), transparent 70%),
+    rgba(15, 20, 28, 0.65);
+}
+
+body.stitch-dashboard .profile-pillar.card-glass.glow-clarity {
+  background:
+    radial-gradient(circle at top left, rgba(107, 158, 174, 0.16), transparent 70%),
+    rgba(15, 20, 28, 0.65);
+}
+
+body.stitch-dashboard .profile-pillar.card-glass.glow-lens {
+  background:
+    radial-gradient(circle at top left, rgba(184, 149, 106, 0.16), transparent 70%),
+    rgba(15, 20, 28, 0.65);
+}
+
+body.stitch-dashboard .profile-pillar.card-glass.glow-growing {
+  background:
+    radial-gradient(circle at top left, rgba(155, 143, 196, 0.16), transparent 70%),
+    rgba(15, 20, 28, 0.65);
+}
+
+/* Legacy compat tabs inside Stitch shell */
+body.stitch-dashboard .stitch-legacy-banner {
+  padding: var(--ds-space-4, 1rem) var(--ds-space-5, 1.25rem);
+  border-radius: 8px;
+  border: 1px solid rgba(184, 149, 106, 0.25);
+  background: rgba(184, 149, 106, 0.08);
+  color: #c3c6d2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: var(--ds-space-8, 2rem);
+
+  a {
+    color: #acc7ff;
+    font-weight: 500;
+  }
+}
+
+body.stitch-dashboard .stitch-legacy-page {
+  gap: var(--ds-space-10, 2.5rem);
+}
+
+body.stitch-dashboard .stitch-legacy-footer-action {
+  padding-top: var(--ds-space-2, 0.5rem);
+
+  .stitch-link-mono {
+    font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+    font-size: 13px;
+    color: #c3c6d2;
+    text-decoration: none;
+
+    &:hover {
+      color: #acc7ff;
+      text-decoration: none;
+    }
+  }
+}
+
+body.stitch-dashboard .stitch-archives {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+}
+
+body.stitch-dashboard .stitch-archive-year-label {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8d909b;
+}
+
+body.stitch-dashboard #tags .tag {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(15, 20, 28, 0.65);
+  box-shadow: none;
+  color: #c3c6d2;
+
+  &:hover {
+    border-color: rgba(172, 199, 255, 0.35) !important;
+    color: #acc7ff;
+  }
+
+  span {
+    color: #8d909b !important;
+  }
+}
+
+body.stitch-dashboard .stitch-legacy-cv {
+  max-width: none;
+  padding: var(--ds-space-8, 2rem) var(--ds-space-6, 1.5rem);
+  color: #c3c6d2;
+
+  @media (min-width: 768px) {
+    padding: var(--ds-space-10, 2.5rem) var(--ds-space-8, 2rem);
+  }
+
+  h1, h2, h3, h4 {
+    color: #e2e2e8;
+    margin-top: 2rem;
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
+
+  hr, & > hr {
+    border-color: rgba(67, 71, 80, 0.5);
+  }
+
+  a {
+    color: #acc7ff;
+  }
+
+  table {
+    width: 100%;
+    font-size: 14px;
+    margin: 1rem 0 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+}
+
+body.stitch-dashboard .stitch-archive-list {
+  padding: var(--ds-space-6, 1.5rem) var(--ds-space-8, 2rem);
+  border-radius: 12px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body.stitch-dashboard .stitch-archive-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--ds-space-3, 0.75rem);
+  padding: var(--ds-space-4, 1rem) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    color: #e2e2e8;
+    text-decoration: none;
+    font-size: 15px;
+
+    &:hover {
+      color: #acc7ff;
+    }
+  }
+
+  time {
+    font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+    font-size: 11px;
+    color: #8d909b;
+    white-space: nowrap;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+
+body.stitch-dashboard .stitch-404-page {
+  max-width: 40rem;
+}
+
+body.stitch-dashboard .stitch-404-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-3, 0.75rem);
+  padding: var(--ds-space-6, 1.5rem);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .stitch-404-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-1, 0.25rem);
+  padding: var(--ds-space-4, 1rem) var(--ds-space-5, 1.25rem);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 20, 28, 0.35);
+  text-decoration: none;
+  transition: border-color 120ms ease, background 120ms ease;
+
+  &:hover {
+    border-color: rgba(172, 199, 255, 0.35);
+    background: rgba(15, 20, 28, 0.55);
+    text-decoration: none;
+  }
+}
+
+body.stitch-dashboard .stitch-404-link-label {
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #e2e2e8;
+}
+
+body.stitch-dashboard .stitch-404-link-hint {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 11px;
+  color: #8d909b;
+}

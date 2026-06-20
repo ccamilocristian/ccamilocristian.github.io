@@ -1,0 +1,27 @@
+/*
+ * Calm Technical — Motion (Stitch: 120ms border/background only, no translate)
+ */
+
+$ds-motion-tokens: (
+  fast: 120ms,
+  base: 120ms,
+  slow: 180ms,
+  ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1)
+);
+
+$ds-focus-tokens: (
+  ring-width: 1px,
+  ring-offset: 0,
+  ring-color: #6b8fd4,
+  ring-shadow: none
+);
+
+@mixin emit-motion-tokens {
+  @each $token, $value in $ds-motion-tokens {
+    --ds-motion-#{$token}: #{$value};
+  }
+
+  @each $token, $value in $ds-focus-tokens {
+    --ds-focus-#{$token}: #{$value};
+  }
+}

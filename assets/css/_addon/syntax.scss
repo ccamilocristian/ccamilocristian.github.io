@@ -4,11 +4,10 @@
 * https://github.com/cotes2020/jekyll-theme-chirpy
 * © 2018-2019 Cotes Chung
 * MIT Licensed
+*
+* Syntax color mixins are @use’d from main.scss so they appear before any
+* rules in the Jekyll-concatenated bundle (page.scss / post.scss).
 */
-
-@import "_colors/light-syntax";
-@import "_colors/dark-syntax";
-
 
 html:not([mode]), html[mode=light] {
   @include light-syntax;

@@ -1,15 +1,22 @@
 ---
+
 title: Web Scraping plebiscito 2016 Colombia
+published: false
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-18 01:00:00 -0500
 categories: [Python, Web_scraping, Data_studio]
 tags: [automatizacion, python, web-scraping, colombia, visualizaciones]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 14
+business_impact: "Enabled faster insights on voting behavior patterns and improved reproducibility of political-data studies."
+impact_label: "Reproducible vote intelligence"
+description: "Descripción y Motivación El plebiscito https://es.wikipedia.org/wiki/Plebiscito de 2016 en Colombia sobre los acuerdos de paz de Colombia de 2016 fue el me…"
 ---
-
 ## Descripción y Motivación
 
-[El plebiscito](http://gestyy.com/euL0kU) sobre los acuerdos de paz de Colombia de 2016 fue el mecanismo de refrendación para aprobar los acuerdos entre el gobierno de Colombia y la guerrilla de las Fuerzas Armadas Revolucionarias de Colombia ([FARC](gestyy.com/euL0R7)). Las votaciones fueron programadas para el domingo 2 de octubre de 2016.
+[El plebiscito](https://es.wikipedia.org/wiki/Plebiscito_de_2016_en_Colombia) sobre los acuerdos de paz de Colombia de 2016 fue el mecanismo de refrendación para aprobar los acuerdos entre el gobierno de Colombia y la guerrilla de las Fuerzas Armadas Revolucionarias de Colombia ([FARC](https://es.wikipedia.org/wiki/Fuerzas_Armadas_Revolucionarias_de_Colombia)). Las votaciones fueron programadas para el domingo 2 de octubre de 2016.
 
 Esta fue la pregunta realizada en:
 
@@ -17,24 +24,11 @@ Esta fue la pregunta realizada en:
 
 Dado lo anterior, el presente proyecto tiene como objetivo utilizar herramientas de Scraping a de Python para extraer dicha información a nivel de municipio y departamento para posteriormente mostrar dichos resultados en un panel de Google Data Studio.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 ----
 
 ## Metodologías
 
-+ El proceso de Scraping de la página de la [Registraduría Nacional](http://gestyy.com/euLq03) tiene las siguientes funciones:
++ El proceso de Scraping de la página de la [Registraduría Nacional](https://www.registraduria.gov.co/) tiene las siguientes funciones:
 
   * Realizar el scraping de la página principal del escrutinio de los resultados de la votación, esto para extraer el enlace de acceso a cada uno de los departamentos de Colombia en la votación. Luego de extraer la información por departamento, se extrae cada uno de los enlaces de los municipios relacionados a dicho departamento.
   * Realizar el scraping de la página de cada Municipio para extraer los resultados de las votaciones como es el % de participación y de aprobación al plebiscito.
@@ -63,19 +57,6 @@ warnings.simplefilter('ignore',InsecureRequestWarning)
 ```
 
 Una vez importadas las librerías, con la librería request traemos el código que se usa para la construcción de la página web con el fin de encontrar el link de la información del resultado del prebliscito por cada departamento.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 ```python
 html = requests.get("https://elecciones.registraduria.gov.co/pre_plebis_2016/99PL/DPLZZZZZZZZZZZZZZZZZ_L1.htm", verify=False).text
@@ -233,14 +214,3 @@ Ya con la base generada y depurada, nos remitimos a Google data studio para real
 
 Este proceso realizado, es replicable a cualquier pagina web en donde no haya renderización. Así mismo, este proyecto no tiene el alcance de analizar a fondo la información ya que para esto hay que revisar más factores socio-demograficos y políticos y económicos.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

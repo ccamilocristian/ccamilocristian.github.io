@@ -1,0 +1,24 @@
+/*
+ * Glass surfaces — Stitch "Interactive Glass Refinement"
+ * Derived from surface-container #1e1f24 + outline #8d909b @ 14% alpha
+ */
+
+$ds-glass-tokens: (
+  bg: rgba(15, 20, 28, 0.65),
+  border: rgba(255, 255, 255, 0.08),
+  blur: 12px,
+  profile-card: rgba(15, 20, 28, 0.7)
+);
+
+@mixin emit-glass-tokens {
+  @each $token, $value in $ds-glass-tokens {
+    --ds-glass-#{$token}: #{$value};
+  }
+}
+
+@mixin card-glass {
+  background: var(--ds-glass-bg, rgba(30, 31, 36, 0.72));
+  backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  border: 1px solid var(--ds-glass-border, rgba(141, 144, 155, 0.14));
+}

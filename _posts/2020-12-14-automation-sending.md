@@ -1,12 +1,20 @@
 ---
+
 title: How can I use Python to automate the sending of emails?
+redirect_from:
+  - /posts/automatizacion-envio-correos/
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 16:00:00 -0500
-categories: [Python,Automation]
+categories: [Python, Automation]
 tags: [automation, python, correo, windows, gmail]
 math: true
+domain: Data Analysis
+technical_level: Intermediate
+reading_time: 3
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "Automate sending a CSV by email with Python 3 and Windows Task Scheduler—Gmail setup, a .py script, and that's it."
 ---
-
 Up next, we will develop a tutorial to automate the sending of databases via email, using only Python 3 and the Windows Task Scheduler.
 
 
@@ -44,18 +52,6 @@ import os
 from datetime import date
 ```
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="1836855266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
 The following lines of code are related to the sender, receiver, subject, and body of the email.
 
 ```python
@@ -69,7 +65,7 @@ cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día d
 ```
 
 Finally, we set up the email address and the password. In addition, we set up the information that will be in the email, attachments, sender, receiver, and the subject.
-It is important to grant access to the non-secure apps [in order to use Gmail for this purpose](http://gestyy.com/euK5g2).
+It is important to grant access to the non-secure apps [in order to use Gmail for this purpose](https://support.google.com/accounts/answer/6010255).
 
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
@@ -109,7 +105,7 @@ server.quit()
 ```
 We continue to program the script that runs the code automatically after setting up the python in the.py format. To accomplish this, we must first extract the path where the python code must run.
 
-1. We go to the carpets where the files related to [Anaconda's](http://gestyy.com/euK5xM) PowerShell. <br />
+1. We go to the carpets where the files related to [Anaconda's](https://www.anaconda.com/) PowerShell. <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
 2. We go to the properties of the file "Anaconda Prompt".<br />
@@ -147,14 +143,3 @@ Potencial improves in the process:
 
 - You can develop it in a virtual machine in the cloud. It would run without any human intervention.  
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

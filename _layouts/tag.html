@@ -1,37 +1,25 @@
 ---
 layout: page
-# The layout for Tag page
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT Licensed
+# Tag archive — legacy; tags kept in front matter for internal metadata only
 ---
 
-<div id="page-tag">
-  <h1 class="pl-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    {{ page.title }}
-    <span class="lead text-muted pl-2">{{ site.tags[page.tag] | size }}</span>
-  </h1>
-  <ul class="post-content pl-0">
-    {% for post in site.tags[page.tag] %}
-    <li class="d-flex justify-content-between pl-md-3 pr-md-3">
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <span class="dash flex-grow-1"></span>
-      <span class="text-muted small">{{ post.date | date: site.data.date_format.post.long }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
+<div class="stitch-tab-page">
+  <header class="stitch-tab-hero">
+    <p class="stitch-eyebrow">Legacy archive</p>
+    <h1>{{ page.title }}</h1>
+    <p class="stitch-lead">{{ site.tags[page.tag] | size }} artifacts tagged <strong>{{ page.tag }}</strong>.</p>
+  </header>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+  {% include stitch-archive-deprecation-banner.html %}
+
+  <div id="page-tag" class="stitch-archive-list card-glass">
+    <ul class="post-content pl-0">
+      {% for post in site.tags[page.tag] %}
+      <li class="stitch-archive-row">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

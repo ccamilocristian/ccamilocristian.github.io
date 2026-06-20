@@ -1,0 +1,242 @@
+# Profile — Stitch screen + Profile.pdf (LinkedIn export)
+
+hero:
+  eyebrow: Curriculum Vitae
+  title: A narrative of rigor and purpose
+  name: Cristian Camilo Moreno Narváez
+  headline: Data Scientist · AI & Computer Vision · Data Engineering · BI & Analytics
+  location: Abu Dhabi, United Arab Emirates
+  photo: /assets/img/profile/portrait.png
+  photo_alt: Cristian Camilo Moreno Narváez
+
+executive_summary: >
+  Economist (M.Sc., Universidad del Rosario) with 7+ years building analytics and decision systems
+  in Colombian financial institutions, SaaS, and AI programs in the UAE. Career arc: credit and
+  operational risk at Banco de Bogotá, Davivienda, and Qnt (QBK machine learning, ETL automation,
+  portfolio dashboards); BI leadership at Alegra and ABATECH (customer health scoring, ML
+  segmentation, multi-channel marketing pipelines); and currently AI Data Engineer at Presight,
+  focused on computer vision datasets and the ML lifecycle. Bridges BI, data engineering, and
+  applied ML—with research published on automation and Colombia's labor market.
+
+operating_principles:
+  - Clarity over complexity
+  - Rigor over speed
+  - Automate the mundane
+  - First-principles engineering
+
+identity:
+  email: cristianmorenonarvaez@outlook.com
+  linkedin: "https://ae.linkedin.com/in/cristian-camilo-moreno-narvaez"
+
+top_skills:
+  - Data Engineering
+  - Artificial Intelligence (AI)
+  - Computer Vision / OpenCV
+  - Machine Learning
+  - Business Intelligence
+  - Python
+  - SQL
+
+languages:
+  - name: Spanish
+    level: Native or bilingual
+  - name: English
+    level: Professional working
+
+certifications:
+  - Applied Data Science II — Machine Learning & Statistical Analysis (with honors)
+  - Introduction to Data Science — Scientific Computing & Python
+  - Data Analysis with Python
+  - Bootcamp Data Science — Machine Learning Fundamentals with Python
+
+expertise_pillars:
+  - index: "01"
+    title: Data engineering & business intelligence orchestration
+    summary: >
+      End-to-end pipelines from ingestion to executive dashboards—multi-source integrations,
+      governed ETL, and reporting cadences teams use for weekly and monthly decisions.
+    focus: ETL/ELT & BI governance
+    stack: Python, SQL, BigQuery, Power BI, Tableau, Google Data Studio
+    glow: primary
+    highlights:
+      - Alegra — standardized SaaS metrics and C-level reporting; +25% ETL efficiency
+      - ABATECH — Salesforce, Google, Facebook, TikTok, and Bing Ads via Python/APIs
+      - Qnt — real-time portfolio dashboards on BigQuery and Data Studio
+      - Allianz — database homologation and renewal tracking workflows
+
+  - index: "02"
+    title: Econometrics, credit & operational risk
+    summary: >
+      Portfolio monitoring, loan-loss provisions, and operational-risk tolerance—grounded in
+      econometric training and thesis research on automation exposure in Colombia's labor market.
+    focus: Risk monitoring & causal reasoning
+    stack: Stata, Python, Econometrics, Power BI, Google Data Studio
+    glow: secondary
+    highlights:
+      - Banco de Bogotá — consumption portfolio tracking; STEM and BNPL policy design
+      - Loan-loss provision models aligned with regulatory and stability requirements
+      - Banco Davivienda — VaRO computation, operational loss dashboards (−30% response time)
+      - M.Sc. thesis linked to automation risk and wage disparities by occupation
+
+  - index: "03"
+    title: Machine learning, NLP & computer vision systems
+    summary: >
+      Models with inspectable inputs and measurable outcomes—segmentation, scoring, and today
+      large-scale video/image pipelines for computer vision at Presight.
+    focus: ML lifecycle & data-centric AI
+    stack: Scikit-learn, OpenCV, Python, Salesforce APIs
+    glow: tertiary
+    highlights:
+      - Presight — extraction, cleaning, deduplication, annotation; training and deployment support
+      - Alegra — ML segmentation for accountants (+20% loyalty program engagement)
+      - Banco de Bogotá — ML-based customer profiling for risk mitigation
+      - Qnt — QBK model data quality, pattern analysis, and automated Python extraction (−70% manual work)
+
+  - index: "04"
+    title: Advanced analytics & decision strategy
+    summary: >
+      Statistical models and funnel intelligence that connect market signals to product and
+      commercial strategy—customer health, pricing, and conversion optimization.
+    focus: Strategy metrics & experimentation
+    stack: Statistical modeling, Tableau, SaaS KPIs, geospatial analysis
+    glow: primary
+    highlights:
+      - Alegra — customer health score; team leadership (4 analysts) on sales and pricing strategy
+      - ABATECH — sales funnel boards (+12% lead conversion); georeferencing (−15% wait times)
+      - Local-economy vs. client-behavior comparative analyses for strategic planning
+      - Weekly and monthly executive reporting standards across SaaS operations
+
+career_path:
+  - headline: Computer vision & ML data pipelines
+    role: AI Data Engineer · Presight
+    period: "Feb 2025 — Present"
+    location: Abu Dhabi, UAE
+    summary: >
+      Building scalable CV data pipelines—extraction, cleaning, deduplication, and annotation
+      of large-scale video and image datasets—with automated analysis and reporting in Python.
+    highlights:
+      - Automated manual data prep, improving dataset quality and delivery speed
+      - Partnered with applied scientists on production-ready training datasets
+      - Trained, validated, and supported deployment of CV models vs. prior baselines
+      - Analyzed model outputs to drive data- and model-level improvements
+    current: true
+
+  - headline: SaaS customer health & ML segmentation
+    role: BI Senior · Alegra
+    period: "Sep 2023 — Jan 2025"
+    location: Remote
+    summary: >
+      Led a team of four on sales, pricing, and strategy analytics—standardizing SaaS metrics
+      for C-level reporting and improving ETL efficiency by 25%.
+    highlights:
+      - Customer health score improving satisfaction and loyalty signals
+      - ML segmentation for accountants (+20% loyalty program engagement)
+      - Weekly and monthly reporting standards for executive decision cadence
+
+  - headline: Multi-channel marketing intelligence
+    role: BI Senior · ABATECH
+    period: "Mar 2023 — Sep 2023"
+    location: Medellín, Colombia
+    summary: >
+      Engineered Python/API pipelines across Salesforce, Google, Facebook, TikTok, and Bing Ads;
+      Tableau funnel boards improved lead conversion by 12%.
+    highlights:
+      - Holistic customer-journey analysis from integrated ad platforms
+      - Georeferencing cut transportation wait times by 15%
+      - Marketing funnel dashboards driving strategy redesign
+
+  - headline: Consumer credit portfolio & ML profiling
+    role: Credit Risk Analyst · Banco de Bogotá
+    period: "Oct 2021 — Mar 2023"
+    location: Bogotá, Colombia
+    summary: >
+      Monitored consumption portfolios in Power BI, structured STEM and BNPL policies, and
+      optimized loan-loss provisions while increasing digital credit limits by 26%.
+    highlights:
+      - ML-based customer profiling for targeted risk mitigation
+      - Loan-loss provision computation and regulatory alignment
+      - Portfolio indicator improved—risky-profile closures down 1.3 pp
+
+  - headline: Operational risk models & VaRO
+    role: Risk Professional · Banco Davivienda
+    period: "Jun 2021 — Oct 2021"
+    location: Bogotá, Colombia
+    summary: >
+      Built Data Studio dashboards for operational losses (30% faster response), led VaRO
+      computation with real-time monitoring, and cut Type A/B event reporting time by 40%.
+    highlights:
+      - Statistical and ML analysis of operational risk tolerance by business line
+      - Cross-functional data-driven mitigation contributing to 15% loss reduction
+
+  - headline: Credit methodologies & QBK machine learning
+    role: Analyst · Qnt
+    period: "Dec 2019 — Feb 2021"
+    location: Bogotá, Colombia
+    summary: >
+      Improved QBK model data completeness, optimized ETL (+40% quality), automated five Python
+      extraction processes (−70% manual effort), and led information-systems coordination.
+    highlights:
+      - Real-time portfolio dashboards in Data Studio and BigQuery
+      - Analytical support to VP of Risk and Risk Director
+      - Standardized client reporting—response time reduced by one full day
+
+  - headline: Operational analytics & QBK model support
+    role: Analyst · Qnt
+    period: "Apr 2019 — Dec 2019"
+    location: Bogotá, Colombia
+    summary: >
+      Interpreted ally portfolio data against client profiles, analyzed QBK ML outputs, and
+      automated ETL workflows while standardizing data management protocols.
+    highlights:
+      - Salesforce incident resolution for Call Center operations
+      - Automated reporting on Qlik platform
+      - Pattern analysis to improve QBK model performance
+
+  - headline: Policy analytics & portfolio operations
+    role: Intern · Allianz Colombia
+    period: "Jul 2018 — Jan 2019"
+    location: Bogotá, Colombia
+    summary: >
+      Managed renewal tracking, Fasecolda homologation, and insurability workflows—standardizing
+      procedures to cut average response time from three days to one.
+    highlights:
+      - Monthly home-policy renewal database management
+      - Vehicle insurability and license-plate restriction analysis
+
+education:
+  - degree: "M.Sc. Economics"
+    school: Universidad del Rosario
+    period: "Nov 2020 — Mar 2023"
+    note: Thesis on automation and Colombia's labor market (2009–2017)
+  - degree: "B.A. Economics"
+    school: Universidad del Rosario
+    period: "2014 — 2018"
+
+publications:
+  - title: "Automation and the Labor Market: Evidence from Technological Change in Colombia, 2009–2017"
+    publisher: Universidad del Rosario
+    date: "Nov 15, 2022"
+    url: "https://mpra.ub.uni-muenchen.de/125414/1/MPRA_paper_125414.pdf"
+    link_label: Show publication
+    abstract: >
+      This paper studies differences in the labor markets for occupations with different automation
+      risk, and how actual automation may induce changes in wages and employment. Using data from
+      Colombia between 2009 and 2017, we compute wage disparities by automation risk. We find that
+      62% of the occupied people in Colombia are at high-risk of automation. In the same way, we
+      find that 71% of informal workers are at high-risk, while 56% of formal workers are. The
+      wage return to education is highest in the less automatable occupations. We then look at the
+      effects of actual education, measured by ICT investment. On wages and employment, automation
+      increases employment, decreases wages and the wages gap by skill. Education acts as a
+      protection mechanism against new automation technologies.
+
+cta:
+  title: Let's discuss technical precision.
+  primary:
+    label: Inquire for Collaboration
+  secondary:
+    label: LinkedIn
+
+explore:
+  links:
+    - label: Read the notes
+      url: /tabs/intelligence/

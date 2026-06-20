@@ -1,0 +1,5 @@
+{% assign archive_target = include.target | default: '/tabs/intelligence/' %}
+<div class="stitch-legacy-banner" role="note">
+  {{ include.message | default: 'This archive index is deprecated. Browse curated artifacts on' }}
+  <a href="{{ archive_target | relative_url }}">Intelligence</a>.
+</div>

@@ -1,0 +1,20 @@
+# Bilingual post pairs — English canonical; Spanish alternate unpublished (T5)
+pairs:
+  - canonical: icfes-english
+    alternate: icfes-conexion-api
+  - canonical: scraping-colombia-english
+    alternate: scraping-plebiscito-colombia
+  - canonical: optimation-consumer-english
+    alternate: optimizacion_teoria_consumidor
+  - canonical: convertidor-english
+    alternate: convertidor-IPC
+  - canonical: automation-sending
+    alternate: automatizacion-envio-correos
+  - canonical: loan-simulator-english
+    alternate: liquidador-intereses
+  - canonical: minsalud-decrees-english
+    alternate: ministerio-salud
+  - canonical: music-player-english
+    alternate: reproductor-musica
+  - canonical: step-colombia-english
+    alternate: step-colombia

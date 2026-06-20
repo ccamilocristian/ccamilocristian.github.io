@@ -1,26 +1,21 @@
 ---
+
 title: ¿Cómo interactuar con APIs en Python? Caso de estudio, resultados del Icfes en Colombia del 2019-2
+published: false
 author: Cristian Camilo Moreno Narvaez
 date: 2021-02-06 15:00:00 -0500
 categories: [Python, Economics, Data_studio]
 tags: [python, api, visualizaciones, big-query]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 12
+business_impact: "Reduced manual extraction effort and accelerated educational performance analysis for decision support."
+impact_label: "Faster ICFES analytics pipeline"
+description: "Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado datos.gov.co https://www.datos.gov.co/ en la cual se …"
 ---
-Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](http://gestyy.com/euLuHj) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-
-Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una [API](http://gestyy.com/euLir7) para conectar diferentes programas con esta página y extraer dicha información.
+Actualmente, el gobierno colombiano dispone de una plataforma para revisión de datos públicos llamado [datos.gov.co](https://www.datos.gov.co/) en la cual se puede extraer datos referentes a todas las áreas en las cuales trabajan los ministerios, superintendencias y demás entidades gubernamentales.
+Sin embargo, esta manipulación y extracción de datos en varias ocasiones se puede volver un tema tortuoso por el número de registros y columnas de las bases. Para esto, la plataforma dispone de una [API](https://www.datos.gov.co/) para conectar diferentes programas con esta página y extraer dicha información.
 
 # Extracción de datos y almacenamiento
 
@@ -100,14 +95,3 @@ Cabe aclarar que este es simplemente un análisis exploratorio de los datos, no 
 - Revisar si los temas socioeconómicos del hogar afectan estadísticamente los resultados de los estudiantes.
 - Hacer una limpieza de datos para mejorar el entendimiento de los datos y revisión de casos atípicos.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

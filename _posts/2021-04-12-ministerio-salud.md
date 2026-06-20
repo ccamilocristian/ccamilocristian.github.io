@@ -1,28 +1,21 @@
 ---
+published: false
 title: Decretos y Resoluciones del Ministerio de Salud y Protección Social de Colombia (2000-2020)
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-12 01:00:00 -0500
 categories: [Python, Web_scraping]
-tags:  [automatizacion, python, web-scraping, colombia, visualizaciones]
+tags: [automatizacion, python, web-scraping, colombia, visualizaciones]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 5
+business_impact: "Strengthens KPI monitoring and executive decision cadence."
+impact_label: "Strengthens KPI monitoring and executive d"
+description: "Según estudios de McKinsey https://www.mckinsey.com/ , el análisis del datos referente a información no estructurada como audios, textos e imagen, a futuro…"
 ---
-
 Según estudios de [McKinsey](https://www.mckinsey.com/), el análisis del datos referente a información no estructurada como audios, textos e imagen, a futuro tienen gran potencial debido a su gran cantidad de datos que almacén y su poca investigación en la actualidad.
 
 Dado lo anterior, el presente documento tiene como objetivo hacer el análisis exploratorio de los datos encontrados en la extracción de información no estructurada como los son textos en formato PDF. Así, se usarán los actos administrativos más relevantes de los entres de control como lo son los Decretos y las resoluciones, tomando el intervalo del año 2000 a mayo del 2020. En el análisis exploratorio se relacionarán indicadores macroeconómicos con el fin de dar insumos para investigaciones futuras de efectos causales y correlaciones estadísticas.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 Las siguientes son interrogantes que motivaron el análisis de los dos actos administrativos:
 
@@ -55,19 +48,6 @@ Para este último scrapping es necesario descargar el ejecutable del siguiente l
 [Chromedriver selenium](https://chromedriver.chromium.org/)
 
 La finalidad de estos scripts anteriores es obtener la ruta de cada uno de los PDFs de las resoluciones del Ministerio de salud, publicados en la página web y traer esta información en un Dataframe para exportar a excel.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 ### Descarga de PDFs y trasncripción de textos
 
@@ -139,14 +119,3 @@ Investigaciones a futuro:
 3. Revisar la dinámica de pensionados y subsidiados a lo largo del tiempo y si esto tiene significancia estadística con el aumento en cobertura en salud.
 
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

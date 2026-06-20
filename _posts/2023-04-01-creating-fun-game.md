@@ -1,14 +1,18 @@
 ---
+
 title: Creating a Fun and Simple 2D Game with Pygame
 author: Cristian Camilo Moreno Narvaez
 date: 2023-04-01 15:00:00 -0500
-categories: [Python,Automation]
+categories: [Python, Automation]
 tags: [automation, python, games]
 math: true
+domain: Data Analysis
+technical_level: Intermediate
+reading_time: 5
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "A minimal 2D Pygame project: sprites, collision, score. Small enough to finish in an afternoon if you already know a bit of Python."
 ---
-
-<meta name="description" content="Are you interested in building a simple 2D game with Pygame? Look no further! This article will guide you through the process of creating a fun and engaging game that will keep your players coming back for more.">
-
 <h2 style="font-size: 20px; font-weight:bold;">Introduction</h2>
 Building a game can be a challenging and rewarding experience. It requires a combination of creativity, technical skills, and attention to detail. With Pygame, a popular Python library for game development, creating a simple 2D game is easier than you might think. In this article, we will provide step-by-step instructions on how to build a game using Pygame. By the end of this guide, you will have a solid understanding of the game development process and be ready to start building your own games.
 

@@ -1,0 +1,97 @@
+{% assign card_post = include.post %}
+{% assign is_featured = include.featured | default: false %}
+
+{% assign post_domain = card_post.domain | default: "" %}
+{% if post_domain == nil or post_domain == "" %}
+  {% assign post_domain = "Data Analysis" %}
+  {% if card_post.tags contains 'economics' or card_post.categories contains 'Economics' %}
+    {% assign post_domain = "Economics" %}
+  {% elsif card_post.tags contains 'visualization' or card_post.tags contains 'visualizaciones' or card_post.tags contains 'big-query' or card_post.tags contains 'data studio' %}
+    {% assign post_domain = "Business Intelligence" %}
+  {% elsif card_post.tags contains 'optimization' or card_post.tags contains 'regression' or card_post.tags contains 'machine learning' or card_post.tags contains 'predictive modeling' %}
+    {% assign post_domain = "Machine Learning" %}
+  {% elsif card_post.tags contains 'cv' or card_post.tags contains 'computer-vision' %}
+    {% assign post_domain = "Vision Lab" %}
+  {% endif %}
+{% endif %}
+
+{% assign domain_slug = "analysis" %}
+{% assign domain_label = post_domain %}
+{% case post_domain %}
+  {% when "Machine Learning" %}
+    {% assign domain_slug = "ml" %}
+    {% assign domain_label = "Machine Learning" %}
+  {% when "Business Intelligence" %}
+    {% assign domain_slug = "bi" %}
+    {% assign domain_label = "Business Intelligence" %}
+  {% when "Economics" %}
+    {% assign domain_slug = "economics" %}
+    {% assign domain_label = "Economics" %}
+  {% when "Vision Lab" %}
+    {% assign domain_slug = "vision" %}
+    {% assign domain_label = "Vision Lab" %}
+  {% else %}
+    {% assign domain_label = "Analysis" %}
+{% endcase %}
+
+{% assign glow = "primary" %}
+{% if domain_slug == "ml" or domain_slug == "bi" %}
+  {% assign glow = "secondary" %}
+{% elsif domain_slug == "economics" or domain_slug == "vision" %}
+  {% assign glow = "tertiary" %}
+{% endif %}
+
+{% assign meta_level = card_post.technical_level | default: "Intermediate" %}
+{% assign meta_reading = card_post.reading_time | default: 1 %}
+{% assign meta_impact = card_post.impact_label | default: card_post.business_impact | default: "Decision relevance" | truncate: 24, "" %}
+
+{% assign card_excerpt = card_post.description %}
+{% if card_excerpt == nil or card_excerpt == "" %}
+  {% assign card_excerpt = card_post.content | markdownify | strip_html | truncate: 160 %}
+{% endif %}
+
+{% assign featured_image = include.image | default: "" %}
+
+<article class="intelligence-card card-glass intelligence-card--{{ glow }}{% if is_featured %} intelligence-card--featured{% endif %} stitch-reveal" data-domain="{{ domain_slug }}">
+  <div class="intelligence-card-glow intelligence-card-glow--{{ glow }}" aria-hidden="true"></div>
+
+  {% if is_featured and featured_image != "" %}
+  <div class="intelligence-card-featured-media">
+    <div class="intelligence-card-featured-frame">
+      <img src="{{ featured_image | relative_url }}" alt="" width="480" height="360" loading="lazy" decoding="async">
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="intelligence-card-body">
+    <div class="intelligence-card-head">
+      <span class="intelligence-card-domain intelligence-card-domain--{{ glow }}">{{ domain_label }}</span>
+      <time class="intelligence-card-date" datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: "%b %d, %Y" | upcase }}</time>
+    </div>
+
+    <h3 class="intelligence-card-title">
+      <a href="{{ card_post.url | relative_url }}">{{ card_post.title }}</a>
+    </h3>
+
+    <p class="intelligence-card-excerpt">{{ card_excerpt }}</p>
+
+    <div class="intelligence-card-meta">
+      <div class="intelligence-card-meta-item">
+        <span class="intelligence-card-meta-label">Level</span>
+        <span class="intelligence-card-meta-value">{{ meta_level }}</span>
+      </div>
+      <div class="intelligence-card-meta-item">
+        <span class="intelligence-card-meta-label">Impact</span>
+        <span class="intelligence-card-meta-value intelligence-card-meta-value--impact">{{ meta_impact }}</span>
+      </div>
+      <div class="intelligence-card-meta-item">
+        <span class="intelligence-card-meta-label">Read Time</span>
+        <span class="intelligence-card-meta-value">{{ meta_reading }} min</span>
+      </div>
+    </div>
+
+    {% if is_featured %}
+    <a class="intelligence-card-explore stitch-link-mono" href="{{ card_post.url | relative_url }}">Read artifact →</a>
+    {% endif %}
+  </div>
+</article>

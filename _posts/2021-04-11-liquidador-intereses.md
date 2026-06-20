@@ -1,30 +1,23 @@
 ---
+published: false
 title: ¿Cómo realizar un simulador de créditos para cuotas fijas en Python?
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-11 17:00:00 -0500
 categories: [Python, Riesgo]
 tags: [python, visualizaciones, credito]
 math: true
+domain: Business Intelligence
+technical_level: Advanced
+reading_time: 3
+business_impact: "Strengthens KPI monitoring and executive decision cadence."
+impact_label: "Strengthens KPI monitoring and executive d"
+description: "El solicitar préstamos es una de las operaciones bancarias más usadas por el ciudadano de a pie con el fin de tener dinero para invertir o gastar en necesi…"
 ---
-
 El solicitar préstamos es una de las operaciones bancarias más usadas por el ciudadano de a pie con el fin de tener dinero para invertir o gastar en necesidades, dinero que antes no tenía a disposición. Sin embargo, estos préstamos o crédito no son gratis, tienen un precio y este precio es la tasa de interés. Cada entidad bancaria en cada país manaje su propia tasa de interés según el producto que desean solicitar, ejemplo de esto son créditos para consumo, hipotecarios, vivienda, entre otros.
 
 Previo a solicitar estos préstamos, es necesario conocer las diferentes modalidades que existen para así no incurrir en incumplimientos de pago que conlleven a reportes negativos en los buros como [Datacrédito](https://www.datacredito.com.co/), para el caso colombiano.
 
 En primer medida, el valor del préstamo estará muy afectado por el precio en este caso, la tasa de interés, al igual que la modalidad de pago que se vaya a usar. Por ejemplo, no es lo mismo pactar realizar un pago mensual de la misma cantidad, a pactar una cuota mensual variable que dependa de los intereses a pagar; así mismo depende si se va a realizar el pago de una cuota inicial o no.
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 
 En esta ocasión, mostraremos cómo realizar un simulador de créditos con cuotas fijas a través de python, lo cual puede ser de mucha ayuda a la hora de pedir un préstamo a alguna entidad bancaria.
 
@@ -138,14 +131,3 @@ Finalmente, este código a continuación realizará la gráfica referente a la a
 
 Para finalizar, es muy importante tener en cuenta ya que como dijo Albert Einstein "El interés compuesto es la octava maravilla del mundo. Quien la entiende se beneficia de ella ...  el que no ... la paga". Como ejercicio del lector, una buena forma de practicar eso es genera el simulador para créditos con cuota variable.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>

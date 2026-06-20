@@ -1,0 +1,380 @@
+/*
+ * Intelligence tab — Stitch export (intelligence-export.html)
+ */
+
+body.stitch-dashboard.dashboard-page--intelligence {
+  background-color: var(--ds-color-intelligence-canvas, #0f141c);
+}
+
+body.stitch-dashboard .stitch-intelligence-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-16, 4rem);
+  padding-bottom: var(--ds-space-24, 6rem);
+}
+
+body.stitch-dashboard .stitch-intelligence-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-8, 2rem);
+
+  @media (min-width: 831px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  h1 {
+    margin: 0 0 var(--ds-space-2, 0.5rem);
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--ds-color-text-primary, #e2e2e8);
+  }
+}
+
+body.stitch-dashboard .stitch-intelligence-lead {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .stitch-intelligence-search-wrap {
+  min-width: 0;
+  width: 100%;
+
+  @media (min-width: 831px) {
+    max-width: 20rem;
+    flex-shrink: 0;
+  }
+}
+
+body.stitch-dashboard .stitch-intelligence-search {
+  width: 100%;
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--ds-color-text-primary, #e2e2e8);
+  font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+  font-size: 14px;
+  transition: border-color 200ms ease;
+
+  &::placeholder {
+    color: var(--ds-color-text-tertiary, #8d909b);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(172, 199, 255, 0.5);
+  }
+}
+
+body.stitch-dashboard .stitch-intelligence-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-3, 0.75rem);
+}
+
+body.stitch-dashboard .stitch-intelligence-filter {
+  padding: .375rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--ds-glass-border, rgba(255, 255, 255, 0.08));
+  background: var(--ds-glass-profile-card, rgba(15, 20, 28, 0.7));
+  backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--ds-glass-blur, 12px));
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+  cursor: pointer;
+  transition: color 200ms ease, border-color 200ms ease, background 200ms ease;
+
+  &:hover {
+    border-color: rgba(172, 199, 255, 0.35);
+    color: var(--ds-color-accent-primary, #acc7ff);
+  }
+
+  &.is-active {
+    border-color: var(--ds-color-accent-primary, #acc7ff);
+    background: rgba(172, 199, 255, 0.1);
+    color: var(--ds-color-accent-primary, #acc7ff);
+  }
+}
+
+body.stitch-dashboard .stitch-intelligence-grid-wrap {
+  position: relative;
+}
+
+body.stitch-dashboard .stitch-intelligence-ambient {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 200ms ease-out;
+}
+
+body.stitch-dashboard .stitch-intelligence-ambient--primary {
+  top: -10rem;
+  left: -10rem;
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-primary, rgba(173, 198, 255, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .stitch-intelligence-ambient--secondary {
+  top: 40%;
+  right: -10rem;
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-secondary, rgba(197, 192, 255, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .stitch-intelligence-ambient--tertiary {
+  bottom: 0;
+  left: 33%;
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-tertiary, rgba(246, 190, 52, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .stitch-intelligence-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--ds-space-8, 2rem);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body.stitch-dashboard .intelligence-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--ds-space-8, 2rem);
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 100%;
+  transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
+
+  &:hover .intelligence-card-title a {
+    color: var(--ds-color-accent-primary, #acc7ff);
+  }
+}
+
+body.stitch-dashboard .intelligence-card--featured {
+  @media (min-width: 768px) {
+    grid-column: span 2;
+    flex-direction: row;
+    gap: var(--ds-space-8, 2rem);
+  }
+}
+
+body.stitch-dashboard .intelligence-card-glow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+body.stitch-dashboard .intelligence-card:hover .intelligence-card-glow {
+  opacity: 1;
+}
+
+body.stitch-dashboard .intelligence-card-glow--primary {
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-primary, rgba(173, 198, 255, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .intelligence-card-glow--secondary {
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-secondary, rgba(197, 192, 255, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .intelligence-card-glow--tertiary {
+  background: radial-gradient(circle at center, var(--ds-color-intelligence-glow-tertiary, rgba(246, 190, 52, 0.12)) 0%, transparent 70%);
+}
+
+body.stitch-dashboard .intelligence-card-featured-media {
+  flex-shrink: 0;
+
+  @media (min-width: 768px) {
+    width: 33%;
+  }
+}
+
+body.stitch-dashboard .intelligence-card-featured-frame {
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 700ms ease, opacity 700ms ease;
+  }
+}
+
+body.stitch-dashboard .intelligence-card--featured:hover .intelligence-card-featured-frame img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+body.stitch-dashboard .intelligence-card-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+body.stitch-dashboard .intelligence-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-2, 0.5rem);
+  margin-bottom: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .intelligence-card-domain {
+  display: inline-block;
+  padding: .25rem .75rem;
+  border-radius: 999px;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.stitch-dashboard .intelligence-card-domain--primary {
+  color: var(--ds-color-accent-primary, #acc7ff);
+  background: rgba(172, 199, 255, 0.1);
+  border: 1px solid rgba(172, 199, 255, 0.2);
+}
+
+body.stitch-dashboard .intelligence-card-domain--secondary {
+  color: #c5c0ff;
+  background: rgba(197, 192, 255, 0.1);
+  border: 1px solid rgba(197, 192, 255, 0.2);
+}
+
+body.stitch-dashboard .intelligence-card-domain--tertiary {
+  color: #f6be34;
+  background: rgba(246, 190, 52, 0.1);
+  border: 1px solid rgba(246, 190, 52, 0.2);
+}
+
+body.stitch-dashboard .intelligence-card-date {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .intelligence-card-title {
+  margin: 0 0 var(--ds-space-4, 1rem);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.25;
+
+  a {
+    color: var(--ds-color-text-primary, #e2e2e8);
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+}
+
+body.stitch-dashboard .intelligence-card-excerpt {
+  margin: 0 0 var(--ds-space-8, 2rem);
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+}
+
+body.stitch-dashboard .intelligence-card-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ds-space-4, 1rem);
+  padding-top: var(--ds-space-6, 1.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.stitch-dashboard .intelligence-card-meta-label {
+  display: block;
+  margin-bottom: .25rem;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--ds-color-text-tertiary, #8d909b);
+}
+
+body.stitch-dashboard .intelligence-card-meta-value {
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .intelligence-card-meta-value--impact {
+  color: #f6be34;
+}
+
+body.stitch-dashboard .intelligence-card-explore {
+  margin-top: var(--ds-space-6, 1.5rem);
+}
+
+body.stitch-dashboard .intelligence-card.is-hidden {
+  display: none;
+}
+
+body.stitch-dashboard .stitch-intelligence-footer-action {
+  display: flex;
+  justify-content: center;
+}
+
+body.stitch-dashboard .stitch-intelligence-load-more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ds-space-3, 0.75rem);
+  padding: var(--ds-space-4, 1rem) var(--ds-space-12, 3rem);
+  border-radius: 12px;
+  border: 1px solid var(--ds-glass-border, rgba(255, 255, 255, 0.08));
+  background: var(--ds-glass-profile-card, rgba(15, 20, 28, 0.7));
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+  text-decoration: none;
+  transition: color 200ms ease, border-color 200ms ease;
+
+  &:hover {
+    color: var(--ds-color-accent-primary, #acc7ff);
+    border-color: rgba(172, 199, 255, 0.35);
+    text-decoration: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.stitch-dashboard .intelligence-card:hover {
+    transform: none;
+  }
+}

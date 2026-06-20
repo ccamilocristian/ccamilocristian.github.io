@@ -1,0 +1,63 @@
+core_domains:
+  - name: Data Analysis
+    weight: core
+    domain: analysis
+  - name: Machine Learning
+    weight: core
+    domain: ml
+  - name: Business Intelligence
+    weight: core
+    domain: bi
+  - name: Economics
+    weight: core
+    domain: economics
+  - name: Vision Lab
+    weight: emerging
+    domain: vision
+
+tools:
+  - name: Python
+    weight: core
+    domain: analysis
+  - name: SQL
+    weight: core
+    domain: bi
+  - name: Power BI
+    weight: strong
+    domain: bi
+  - name: Google Data Studio
+    weight: strong
+    domain: bi
+  - name: BigQuery
+    weight: strong
+    domain: bi
+  - name: Scikit-learn
+    weight: strong
+    domain: ml
+  - name: Statistical Modeling
+    weight: strong
+    domain: economics
+  - name: Experimental Design
+    weight: growth
+    domain: analysis
+  - name: Plotly
+    weight: growth
+    domain: analysis
+  - name: Web Scraping
+    weight: growth
+    domain: analysis
+  - name: Tableau
+    weight: strong
+    domain: bi
+  - name: Salesforce
+    weight: strong
+    domain: bi
+  - name: Stata
+    weight: strong
+    domain: economics
+  - name: OpenCV
+    weight: emerging
+    domain: vision
+  - name: Computer Vision Pipelines
+    weight: emerging
+    domain: vision

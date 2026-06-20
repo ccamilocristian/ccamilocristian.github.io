@@ -15,5 +15,12 @@ post:
   button:
     next: Siguiente
     previous: Anterior
+    read_more: "Leer más"
 
 search_hint: "Buscar"   # text show on search bar
+search_cancel: "Cancelar"
+search_open: "Abrir búsqueda"
+search_clear: "Limpiar búsqueda"
+sidebar_open: "Abrir menú lateral"
+back_to_top: "Volver arriba"
+navigate: "Navegar"

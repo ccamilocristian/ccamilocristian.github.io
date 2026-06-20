@@ -9,18 +9,19 @@
 #--------------------------
 
 title: Cristian Camilo Moreno Narvaez                          # the main title
-tagline: >- # it will display as the sub-title
-  Economista con interes en Data Science, Programación y Visualización de Datos.
+tagline: >-
+  Data Scientist · AI & Computer Vision · Data Engineering · BI & Analytics.
 
-description: >-                        # used by seo meta and the atom feed
- Blog para divulgación de conocimiento en Data Science, Analytics, Economía y Visualización de Datos.
+description: >-
+  Portfolio by Cristian Camilo Moreno Narváez — data science, ML, BI, and economics-grounded
+  analytics. Pipelines, models, and decision artifacts from banking, SaaS, and AI programs.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ccamilocristian.github.io/'
 
 author: Cristian Camilo Moreno Narvaez                  # change to your full name
 
-avatar: /assets/img/sample/ciencia_datos.jfif   # support internet resources
+avatar: /assets/img/profile/avatar.png
 
 github:
   username: ccamilocristian              # change to your github username
@@ -37,7 +38,7 @@ social:
     - https://github.com/ccamilocristian       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/cristian-camilo-moreno-narváez-8522177b
+    - https://ae.linkedin.com/in/cristian-camilo-moreno-narvaez
 
 google_site_verification: TSIu4nBsBUHH-pUCdVOYhocBekpfaqUWb-LQB5hKn4A # change to your verification string
 
@@ -78,7 +79,7 @@ disqus:
 #
 #     dark   - Use the dark color scheme
 #
-theme_mode: dual
+theme_mode: dark
 
 # boolean type, global switch for ToC in posts.
 toc: true
@@ -128,28 +129,28 @@ defaults:
     scope:
       path: tags
     values:
-      tab_active: Tags
-      location: Etiqueta
+      tab_active: Intelligence
+      location: Tag archive
       breadcrumb:
         -
-          label: Inicio
+          label: Command Center
           url: /
         -
-          label: Etiquetas
-          url: /tabs/tags/
+          label: Intelligence
+          url: /tabs/intelligence/
   -
     scope:
       path: categories
     values:
-      tab_active: Categories
-      location: Categoría
+      tab_active: Intelligence
+      location: Category archive
       breadcrumb:
         -
-          label: Inicio
+          label: Command Center
           url: /
         -
-          label: Categorías
-          url: /tabs/categories/
+          label: Intelligence
+          url: /tabs/intelligence/
   -
     scope:
       path: tabs
@@ -158,7 +159,7 @@ defaults:
       dynamic_title: true    # Hide title in mobile screens.
       breadcrumb:
         -
-          label: Inicio
+          label: Command Center
           url: /
 
 

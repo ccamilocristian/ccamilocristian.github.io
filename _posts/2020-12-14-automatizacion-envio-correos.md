@@ -1,12 +1,19 @@
 ---
+
 title: ¿Cómo programar el envío automático de correos con Python?
+published: false
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 15:00:00 -0500
-categories: [Python,Automatizacion]
+categories: [Python, Automatizacion]
 tags: [automatizacion, python, correo, windows, gmail]
 math: true
+domain: Data Analysis
+technical_level: Intermediate
+reading_time: 3
+business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
+impact_label: "Improves clarity, diagnosis, and actionabi"
+description: "A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el…"
 ---
-
 A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el programador de tareas de Windows.
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/descar.jpg)
@@ -58,7 +65,7 @@ cuerpo = 'Buen día,'+'\n'+'\n'+'En el adjunto se encuentran las base del día d
 ```
 
 Finalmente, se configura la dirección del correo y la contraseña. Así mismo, se configura la información que irá en el correo, adjuntos, remitentes, destinatarios y asunto.
-Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](http://gestyy.com/euK5g2).
+Para poder usar gmail para este fin, es necesario [dar acceso a aplicaciones no segura](https://support.google.com/accounts/answer/6010255).
 
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_gmail.PNG)
 
@@ -95,20 +102,9 @@ server.login(username,password)
 server.sendmail(remitente, destinatarios, texto)
 server.quit()
 ```
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="1836855266"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
 Luego de tener configurado el python en formato .py, se procede a programar el script que corra automaticamente dicho código. Para esto, se deben seguir los siguientes pasos para extaer la ruta donde se debe correr el código de python
 
-1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de [Anaconda](http://gestyy.com/euK5xM). <br />
+1. Se debe dirigir a la carpeta donde se encuentran los archivos relacionados a powershell de [Anaconda](https://www.anaconda.com/). <br />
 ![ ](/assets/img/2020-12-14-automatizacion-envio-correos/paso_1_link_python.png)
 
 2. Se entra a las propiedades del archivo "Anaconda Prompt". <br />
@@ -146,14 +142,3 @@ Mejoras al proceso:
 
 - Hacer este mismo proceso en alguna máquina virtual en la nube para que se corra sin ninguna intervención humana.
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2402437399062384"
-     data-ad-slot="8047040393"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
