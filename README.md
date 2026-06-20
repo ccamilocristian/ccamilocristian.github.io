@@ -62,4 +62,16 @@ Abre [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 
 ## Despliegue
 
-Push a la rama principal de `ccamilocristian.github.io` → GitHub Pages publica automáticamente.
+Push a la rama principal → el workflow **「Build and deploy Jekyll site to Pages」** (`/.github/workflows/pages.yml`) compila con **Jekyll 4** y publica.
+
+### GitHub Pages (obligatorio)
+
+1. **Settings → Pages → Build and deployment**
+2. **Source:** `GitHub Actions` (no “Deploy from a branch”)
+3. Desactiva o elimina cualquier workflow que use `actions/jekyll-build-pages` (Jekyll 3.10 — incompatible con este sitio)
+
+Si el log muestra `jekyll v3.10.0` o `github-pages v232`, estás viendo el build **viejo**, no `pages.yml`.
+
+```bash
+git push origin master
+```

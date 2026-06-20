@@ -27,11 +27,16 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Verify Jekyll 4 (not github-pages gem)
+        run: |
+          bundle exec jekyll -v
+          bundle exec jekyll -v | grep -E 'jekyll 4\.' || (echo "::error::Wrong Jekyll version — expected 4.x from Gemfile.lock" && exit 1)
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Build with Jekyll
+      - name: Build site (Bundler + Jekyll 4)
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
