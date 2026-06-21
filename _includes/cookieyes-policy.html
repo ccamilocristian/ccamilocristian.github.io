@@ -1,0 +1,6 @@
+{% assign cc = site.data.site_ops.cookie_consent %}
+{% if jekyll.environment == 'production' and cc.enabled and cc.provider == 'cookieyes' and cc.cookieyes_id != '' %}
+<script id="cky-cookie-policy" type="text/javascript" src="https://cdn-cookieyes.com/client_data/{{ cc.cookieyes_id }}/cookie-policy/script.js"></script>
+{% else %}
+<p class="text-muted">Cookie policy is available on the live site.</p>
+{% endif %}

@@ -37,7 +37,7 @@ cookie_consent:
   provider: cookieyes
   cookieyes_id: "a401608462717e040ba074866d4fdf32"
   cookiebot_id: ""
-  policy_url: ""
+  policy_url: "https://ccamilocristian.github.io/tabs/cookie-policy/"
   note: >
     Consent Mode v2 via CMP (Option B). Paste cookieyes_id from cookieyes.com → Get Code.
     Until ID is set, site behaves as today (no banner, no consent blocking).
