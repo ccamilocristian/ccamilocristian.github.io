@@ -10,7 +10,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | Contenido | **14 posts** publicados (EN); **9 ES** despublicados + redirect 301 |
 | SEO posts | **T9 hecho** — `description:` en 14 posts |
 | Repo hygiene | **Cleanup hecho** — gitignore, agentes, READMEs, `docs/README.md` |
-| Abierto | **T6** (Vision Lab), **T3/T4** (home opcional), **T8** (Disqus off) |
+| Abierto | **T6** (Vision Lab), **T3/T4** (home opcional), **T8** (Disqus off), **T21** (CMP CookieYes ID + GTM consent) |
 
 ---
 
@@ -22,6 +22,58 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | 2 | **T4** | Media | Imágenes Selected Work locales | UX | `_data/portfolio_projects.yml` → `assets/img/cases/` |
 | 3 | **T3** | Media | Model performance explorer | DBG | `_data/command_center.yml` → `mock_modules.model_explorer.enabled: true` — **Deferred** |
 | 4 | **T8** | Baja | Re-enable Disqus en Stitch | DBG | `_data/site_ops.yml` — **Off** (T15 ya hecho) |
+| 5 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | Código listo — falta `cookieyes_id` + config GTM (ver abajo) |
+
+---
+
+## T21 — CookieYes + Consent Mode v2 (acción manual)
+
+Código en repo: `consent-defaults`, `cookie-consent`, `consent-gate.js`; AdSense/Clarity gated por categoría.
+
+### Paso 1 — Cuenta CookieYes (gratis ≤25k pageviews/mes)
+
+1. [cookieyes.com](https://www.cookieyes.com) → Sign up
+2. **Add website** → `https://ccamilocristian.github.io`
+3. **Banner customization** → idioma EN (+ ES opcional)
+4. **Cookie policy** → generar → copiar URL → pegar en `_data/site_ops.yml` → `policy_url`
+
+### Paso 2 — ID en el repo
+
+En `_data/site_ops.yml`:
+
+```yaml
+cookie_consent:
+  enabled: true
+  provider: cookieyes
+  cookieyes_id: "TU_ID_AQUI"   # Dashboard → Get Code → segmento del URL
+  policy_url: "https://..."    # URL política generada por CookieYes
+```
+
+Commit + push → deploy.
+
+### Paso 3 — CookieYes dashboard
+
+1. **Integrations → Google Consent Mode v2** → Enable
+2. Categorías: Analytics = GA4 + Clarity; Advertisement = AdSense + GTM ads
+3. **Scan website** → clasificar scripts detectados
+
+### Paso 4 — GTM (`GTM-K8J9KSB8`)
+
+1. **Tags → Google Tag** → **Consent Settings** → *Require additional consent for tag to fire*
+   - `analytics_storage` (Analytics)
+2. Si añades tags de ads: también `ad_storage`, `ad_user_data`, `ad_personalization`
+3. **Admin → Container Settings → Enable consent overview** (si no está)
+4. Publish
+
+### Paso 5 — QA producción
+
+- Banner visible en primera visita (modo incógnito)
+- Rechazar → no hits GA4 en Network; AdSense no carga
+- Aceptar analytics → GA4 Realtime + Clarity OK
+- Aceptar ads → `adsbygoogle.js` en Network
+- DevTools: `gtag('consent','update',...)` tras clic en banner
+
+**Alternativa:** `provider: cookiebot` + `cookiebot_id` (misma arquitectura).
 
 ---
 
@@ -81,6 +133,7 @@ _Last sync: 2026-06-20 (repo cleanup)_
 - **T7** — AdSense re-enabled (post footer, deferred loader, `.ad-slot` anti-CLS); Microsoft Clarity `xa15jprgqu`; GA4 ID from `_config.yml`; removed legacy ad network includes
 - **T7b** — Monetización: slot in-article native `6874018777` (fluid), pre-related, loader solo en posts, unfilled collapse
 - **Analytics** — GTM `GTM-K8J9KSB8` (head + noscript); direct GA4 off when GTM active (`skip_direct_ga4`)
+- **T21 (código)** — Consent Mode v2 scaffold: CookieYes/Cookiebot hook, consent defaults, AdSense + Clarity gated; pending `cookieyes_id`
 - **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
 - **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
 - **T5** — 9 duplicados ES despublicados; redirect 301 a EN

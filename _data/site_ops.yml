@@ -31,3 +31,14 @@ gtm:
   note: >
     GA4 (G-4FK52MWLPP) should fire via GTM container tags — direct gtag snippet skipped
     when skip_direct_ga4 is true to avoid duplicate pageviews.
+
+cookie_consent:
+  enabled: true
+  provider: cookieyes
+  cookieyes_id: "a401608462717e040ba074866d4fdf32"
+  cookiebot_id: ""
+  policy_url: ""
+  note: >
+    Consent Mode v2 via CMP (Option B). Paste cookieyes_id from cookieyes.com → Get Code.
+    Until ID is set, site behaves as today (no banner, no consent blocking).
+    After ID: enable Google Consent Mode v2 in CookieYes dashboard + GTM consent settings.

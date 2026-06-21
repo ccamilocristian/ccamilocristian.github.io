@@ -1,0 +1,12 @@
+{% comment %}
+  True when a CMP is configured for production (CookieYes or Cookiebot ID present).
+{% endcomment %}
+{% assign cc = site.data.site_ops.cookie_consent %}
+{% assign consent_cmp_active = false %}
+{% if jekyll.environment == 'production' and cc.enabled %}
+  {% if cc.provider == 'cookieyes' and cc.cookieyes_id != '' %}
+    {% assign consent_cmp_active = true %}
+  {% elsif cc.provider == 'cookiebot' and cc.cookiebot_id != '' %}
+    {% assign consent_cmp_active = true %}
+  {% endif %}
+{% endif %}

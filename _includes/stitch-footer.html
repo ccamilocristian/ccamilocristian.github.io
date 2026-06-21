@@ -7,6 +7,10 @@
       <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
       <a href="{{ site.social.links[1] | default: 'https://github.com/ccamilocristian' }}">Source</a>
       <a href="mailto:{{ site.social.email }}">Contact</a>
+      {% assign cc = site.data.site_ops.cookie_consent %}
+      {% if cc.policy_url != '' %}
+      <a href="{{ cc.policy_url }}" rel="noopener">Privacy</a>
+      {% endif %}
     </nav>
   </div>
 </footer>

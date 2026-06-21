@@ -21,7 +21,9 @@ layout: compress
   {% endif %}
 {% endcapture %}
 
-<html lang="{{ lang }}" {{ prefer_mode }} >
+{% include consent-flag.html %}
+
+<html lang="{{ lang }}" {{ prefer_mode }}{% if consent_cmp_active %} data-cmp-active="true"{% endif %} >
 
   {% include head.html %}
 
