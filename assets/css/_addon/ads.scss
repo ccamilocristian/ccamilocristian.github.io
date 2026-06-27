@@ -1,3 +1,14 @@
+/*
+ * Compact horizontal bars — narrow centered strip (home, in-feed, footer).
+ */
+:root {
+  --ad-horizontal-max: min(20rem, calc(100% - 2rem));
+
+  @media (min-width: 768px) {
+    --ad-horizontal-max: min(30rem, calc(100% - 2rem));
+  }
+}
+
 .ad-slot {
   width: 100%;
   max-width: var(--ds-grid-max, 1120px);
@@ -40,6 +51,12 @@
   min-height: inherit;
 }
 
+.ad-slot--home ins.adsbygoogle,
+.ad-slot--in-feed ins.adsbygoogle,
+.ad-slot--footer ins.adsbygoogle {
+  min-height: 0;
+}
+
 .ad-slot--failed,
 .ad-slot--unfilled {
   min-height: 0;
@@ -68,20 +85,59 @@
 }
 
 .ad-slot--footer {
-  max-width: var(--stitch-post-text-measure, 46rem);
-  margin-block: var(--ds-space-8, 2rem) var(--ds-space-6, 1.5rem);
-  min-height: var(--ad-min-h-mobile, 120px);
-  max-height: 140px;
+  margin-block: var(--ds-space-6, 1.5rem) var(--ds-space-4, 1rem);
+}
+
+.ad-slot--horizontal-bar,
+.ad-slot--home,
+.ad-slot--in-feed,
+.ad-slot--footer {
+  width: 100%;
+  max-width: var(--ad-horizontal-max-mobile, var(--ad-horizontal-max));
+  margin-inline: auto;
+  background: transparent;
+  border-radius: var(--ds-radius-sm, 6px);
+  min-height: var(--ad-min-h-mobile, 50px);
+  max-height: var(--ad-max-h-mobile, 50px);
 
   @media (min-width: 768px) {
-    min-height: var(--ad-min-h-desktop, 90px);
-    max-height: 100px;
+    max-width: var(--ad-horizontal-max-desktop, var(--ad-horizontal-max));
+    min-height: var(--ad-min-h-desktop, 60px);
+    max-height: var(--ad-max-h-desktop, 60px);
+  }
+
+  .ad-slot__label {
+    margin-bottom: var(--ds-space-1, 0.25rem);
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 0.55;
+  }
+
+  &.ad-slot--filled {
+    background: transparent;
   }
 
   ins.adsbygoogle {
-    max-height: 100px;
+    height: var(--ad-max-h-mobile, 50px);
+    max-height: var(--ad-max-h-mobile, 50px);
+    min-height: 0;
     overflow: hidden;
+    margin-inline: auto;
+
+    @media (min-width: 768px) {
+      height: var(--ad-max-h-desktop, 60px);
+      max-height: var(--ad-max-h-desktop, 60px);
+    }
   }
+}
+
+.ad-slot--home {
+  margin-block: var(--ds-space-2, 0.5rem);
+}
+
+.ad-slot--in-feed {
+  margin-block: var(--ds-space-3, 0.75rem);
 }
 
 .ad-slot--sidebar {
@@ -153,28 +209,6 @@ body.stitch-dashboard .ad-slot--footer {
   margin-inline: auto;
 }
 
-.ad-slot--home,
-.ad-slot--in-feed {
-  max-width: var(--ds-grid-container-max, 1120px);
-  margin-block: var(--ds-space-4, 1rem);
-  min-height: var(--ad-min-h-mobile, 90px);
-  max-height: 120px;
-
-  @media (min-width: 768px) {
-    min-height: var(--ad-min-h-desktop, 72px);
-    max-height: 100px;
-  }
-
-  ins.adsbygoogle {
-    max-height: 100px;
-    overflow: hidden;
-  }
-}
-
-.ad-slot--home {
-  margin-block: var(--ds-space-3, 0.75rem);
-}
-
 /* Backup: hide intrusive Auto ad overlays if still injected by AdSense account settings */
 ins.adsbygoogle[data-ad-format="anchor"],
 ins.adsbygoogle[data-ad-format="autorelaxed"][data-anchor-status],
@@ -190,6 +224,8 @@ body.stitch-dashboard .stitch-section--ad-bridge {
 }
 
 body.stitch-dashboard .stitch-ad-bridge-inner {
+  display: flex;
+  justify-content: center;
   max-width: var(--ds-grid-container-max, 1120px);
   margin-inline: auto;
   padding-inline: var(--ds-space-4, 1rem);
@@ -197,10 +233,12 @@ body.stitch-dashboard .stitch-ad-bridge-inner {
 
 body.stitch-dashboard .stitch-intelligence-ad-row {
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
 }
 
 body.stitch-dashboard .stitch-intelligence-ad-row .ad-slot--in-feed {
-  margin: 0;
+  margin-block: var(--ds-space-3, 0.75rem);
 }
 
 .ad-slot__label {

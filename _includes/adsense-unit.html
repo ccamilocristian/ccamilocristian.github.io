@@ -3,8 +3,10 @@
 {% if variant == 'footer' %}
   {% assign slot = include.slot | default: ads.slots.post_footer %}
   {% assign placement_on = ads.placements.post_footer %}
-  {% assign min_h_mobile = ads.min_heights.footer.mobile | default: ads.min_heights.mobile | default: 250 %}
-  {% assign min_h_desktop = ads.min_heights.footer.desktop | default: ads.min_heights.desktop | default: 90 %}
+  {% assign min_h_mobile = ads.min_heights.footer.mobile | default: ads.min_heights.mobile | default: 50 %}
+  {% assign min_h_desktop = ads.min_heights.footer.desktop | default: ads.min_heights.desktop | default: 60 %}
+  {% assign max_h_mobile = ads.min_heights.footer.mobile | default: 50 %}
+  {% assign max_h_desktop = ads.min_heights.footer.desktop | default: 60 %}
 {% elsif variant == 'sidebar' %}
   {% assign slot = include.slot | default: ads.slots.sidebar %}
   {% assign placement_on = ads.placements.sidebar %}
@@ -18,13 +20,17 @@
 {% elsif variant == 'home' %}
   {% assign slot = include.slot | default: ads.slots.home_bridge %}
   {% assign placement_on = ads.placements.home_bridge %}
-  {% assign min_h_mobile = ads.min_heights.home.mobile | default: 250 %}
-  {% assign min_h_desktop = ads.min_heights.home.desktop | default: 120 %}
+  {% assign min_h_mobile = ads.min_heights.home.mobile | default: 50 %}
+  {% assign min_h_desktop = ads.min_heights.home.desktop | default: 60 %}
+  {% assign max_h_mobile = ads.min_heights.home.mobile | default: 50 %}
+  {% assign max_h_desktop = ads.min_heights.home.desktop | default: 60 %}
 {% elsif variant == 'in-feed' %}
   {% assign slot = include.slot | default: ads.slots.in_feed %}
   {% assign placement_on = ads.placements.in_feed %}
-  {% assign min_h_mobile = ads.min_heights.in_feed.mobile | default: 250 %}
-  {% assign min_h_desktop = ads.min_heights.in_feed.desktop | default: 120 %}
+  {% assign min_h_mobile = ads.min_heights.in_feed.mobile | default: 50 %}
+  {% assign min_h_desktop = ads.min_heights.in_feed.desktop | default: 60 %}
+  {% assign max_h_mobile = ads.min_heights.in_feed.mobile | default: 50 %}
+  {% assign max_h_desktop = ads.min_heights.in_feed.desktop | default: 60 %}
 {% else %}
   {% assign slot = include.slot | default: ads.slots.in_article %}
   {% assign placement_on = ads.placements.in_article %}
@@ -32,14 +38,16 @@
   {% assign min_h_desktop = ads.min_heights.desktop | default: 250 %}
 {% endif %}
 {% assign defer_push = include.defer_push %}
+{% assign h_bar_m = ads.horizontal_max_rem.mobile | default: 20 %}
+{% assign h_bar_d = ads.horizontal_max_rem.desktop | default: 30 %}
 {% if ads.enabled and ads.client and slot and slot != '' and placement_on != false %}
 <aside class="ad-slot ad-slot--{{ variant }}"
        aria-label="Advertisement"
        style="--ad-min-h-mobile: {{ min_h_mobile }}px;
-              --ad-min-h-desktop: {{ min_h_desktop }}px;">
+              --ad-min-h-desktop: {{ min_h_desktop }}px;{% if max_h_mobile %} --ad-max-h-mobile: {{ max_h_mobile }}px; --ad-max-h-desktop: {{ max_h_desktop }}px; --ad-horizontal-max-mobile: min({{ h_bar_m }}rem, calc(100% - 2rem)); --ad-horizontal-max-desktop: min({{ h_bar_d }}rem, calc(100% - 2rem));{% endif %}">
   <span class="ad-slot__label" aria-hidden="true">Sponsored</span>
   <ins class="adsbygoogle"
-       style="{% if variant == 'sidebar' %}display:inline-block;width:300px;height:250px;{% else %}display:block;text-align:center;{% endif %}"
+       style="{% if variant == 'sidebar' %}display:inline-block;width:300px;height:250px;{% elsif max_h_mobile %}display:block;text-align:center;height:var(--ad-max-h-mobile, 50px);max-height:var(--ad-max-h-mobile, 50px);{% else %}display:block;text-align:center;{% endif %}"
        data-ad-client="{{ ads.client }}"
        data-ad-slot="{{ slot }}"
        {% if variant == 'in-article' or variant == 'mid-article' %}

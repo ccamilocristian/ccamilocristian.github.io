@@ -34,22 +34,26 @@ adsense:
     - automation-sending
   mid_article_priority_min_reading_time: 4
   in_feed_interval: 10
+  # Compact horizontal bar width (rem) — centered strip, less visual noise
+  horizontal_max_rem:
+    mobile: 20
+    desktop: 30
   # Manual units only — disable Auto ads overlays (anchor ↑↓, vignette full-page) via loader push
   suppress_auto_overlays: true
   min_heights:
     mobile: 280
     desktop: 250
     footer:
-      mobile: 120
-      desktop: 90
+      mobile: 50
+      desktop: 60
     sidebar:
       desktop: 250
     home:
-      mobile: 90
-      desktop: 72
+      mobile: 50
+      desktop: 60
     in_feed:
-      mobile: 90
-      desktop: 72
+      mobile: 50
+      desktop: 60
   note: >
     Fase 1–4: in_article 6874018777, footer 8047040393, sidebar 9362724975,
     mid 6813985623, home 5343588914, in_feed 9226993605.
