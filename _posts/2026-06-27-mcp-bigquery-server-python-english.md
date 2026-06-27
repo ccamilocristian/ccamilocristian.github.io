@@ -289,7 +289,11 @@ Replace table and column names with yours.
 
 ## How this fits the rest of the site
 
-The [ICFES + BigQuery post](/posts/icfes-english/) shows how to load data. This post is the read path when an **LLM** (large language model) in Cursor, Claude, or Codex sits on top of the warehouse.
+This site already has a post that **loads** Colombian ICFES data into BigQuery ([ICFES + BigQuery](/posts/icfes-english/)). That is step one: get tables into the warehouse.
+
+This MCP post is **step two**: let an assistant in Cursor, Claude, or Codex **read** those tables through fixed tools—without you copying SQL from chat into the BigQuery console.
+
+Same data, two moments: **load** (ICFES tutorial) → **query with guardrails** (this post).
 
 ## Limits
 
