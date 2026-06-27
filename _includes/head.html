@@ -12,11 +12,11 @@
 
   {% include consent-flag.html %}
   {% include consent-defaults.html %}
+  {% include gtm-head.html %}
   {% include cookie-consent.html %}
   {% if consent_cmp_active %}
   <script src="{{ '/assets/js/consent-gate.js' | relative_url }}" defer></script>
   {% endif %}
-  {% include gtm-head.html %}
 
   <title>
   {%- unless page.layout == "home" -%}

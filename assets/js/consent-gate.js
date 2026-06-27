@@ -6,8 +6,19 @@
   var queues = { analytics: [], advertisement: [] };
 
   function cookieYesGranted(category) {
-    if (typeof cookieyes === 'undefined' || !cookieyes.consent) return false;
-    return !!cookieyes.consent[category];
+    if (typeof getCkyConsent === 'function') {
+      try {
+        var data = getCkyConsent();
+        if (data && data.categories) {
+          if (category === 'analytics') return !!data.categories.analytics;
+          if (category === 'advertisement') return !!data.categories.advertisement;
+        }
+      } catch (e) { /* noop */ }
+    }
+    if (typeof cookieyes !== 'undefined' && cookieyes.consent) {
+      return !!cookieyes.consent[category];
+    }
+    return false;
   }
 
   function cookiebotGranted(category) {
@@ -46,6 +57,7 @@
   }
 
   document.addEventListener('cookieyes_consent_update', sync);
+  document.addEventListener('cookieyes_banner_loaded', sync);
   window.addEventListener('CookiebotOnAccept', sync);
   window.addEventListener('CookiebotOnDecline', sync);
   window.addEventListener('CookiebotOnLoad', sync);
@@ -55,9 +67,9 @@
     var timer = setInterval(function () {
       attempts += 1;
       sync();
-      if (attempts > 40) clearInterval(timer);
+      if (attempts > 120) clearInterval(timer);
     }, 250);
   }
 
-  window.siteConsentGate = { on: on, cmpActive: cmpActive };
+  window.siteConsentGate = { on: on, cmpActive: cmpActive, sync: sync };
 })();
