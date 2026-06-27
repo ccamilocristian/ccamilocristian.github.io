@@ -20,11 +20,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ### Hacer hoy (top 5)
 
-1. **T21** — Publish GTM con consent (`GTM-K8J9KSB8`)
-2. **T25b** — QA consent GA4 en incógnito
-3. **T23b** — Push deploy sitemap T23 → reenviar en GSC
-4. **T24** — Solicitar indexación en GSC (URLs completas en `_data/gsc_index_urls.yml`)
-5. **T25c** — Filtro bots Singapore en GA4 (UI o habilitar Admin API)
+1. **T25b** — QA consent GA4 en incógnito
+2. **T24** — Solicitar indexación en GSC (`gsc_index_urls.yml`)
+3. **T23b** — Reenviar sitemap en GSC post-deploy
+4. **T25c** — Filtro bots Singapore en GA4
+5. **T25d** — Asociar GSC ↔ GA4
 
 ---
 
@@ -34,8 +34,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
-| **T21** | Publish GTM con consent settings | manual GTM | Lun |
-| **T25a** | Consent en tags GA4 + ads en GTM | manual GTM | Lun |
+| **T21** | Publish GTM con consent settings | ~~API~~ ✅ v5 Live 27-jun |
+| **T25a** | Consent en tags GA4 + ads en GTM | parcial — GA4 ✅; ads en sitio (no GTM) |
 | **T25b** | QA consent: rechazar/aceptar → GA4 Realtime | manual QA | Lun |
 | **T25d** | Asociar GSC ↔ GA4 (`356406631`) | manual GSC | Lun |
 | **T26d** | QA ads tras consent `advertisement` | manual QA | Lun |
@@ -128,7 +128,7 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 ### GA4
 | Acción | Estado |
 |--------|--------|
-| GTM publish + consent QA | ⏳ |
+| GTM publish + consent QA | ✅ v5 API 27-jun — falta QA incógnito |
 | Filtro bots Singapore | ⏳ |
 | GSC ↔ GA4 asociación | ⏳ |
 
@@ -162,7 +162,7 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 | ID | Entrega |
 |----|---------|
 | T7–T7d | AdSense 6 slots, Clarity, GTM, anti-CLS |
-| T21† | Consent scaffold + CookieYes ID — **falta publish GTM** |
+| T21† | Consent scaffold + CookieYes ID — **GTM v5 publicado vía API** |
 
 ### Auditorías (27-jun)
 | Doc | Contenido |
