@@ -3,26 +3,35 @@
 <script defer>
 (function () {
   var client = '{{ ads.client }}';
+  var loading = false;
+
   function loadAdSense() {
-    if (document.querySelector('script[data-adsense-loader]')) return;
+    if (loading || document.querySelector('script[data-adsense-loader]')) return;
+    loading = true;
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
-    s.crossOrigin = 'anonymous';
     s.setAttribute('data-adsense-loader', '1');
     document.head.appendChild(s);
   }
+
   function scheduleLoad() {
-    {% if ads.defer_until_idle %}
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadAdSense, { timeout: 3000 });
-    } else {
-      window.addEventListener('load', function () { setTimeout(loadAdSense, 1500); });
-    }
-    {% else %}
     loadAdSense();
-    {% endif %}
   }
+
+  function detailHasAdsConsent(detail) {
+    if (!detail || !detail.categories) return false;
+    return !!detail.categories.advertisement;
+  }
+
+  function onConsentEvent(e) {
+    if (detailHasAdsConsent(e.detail)) scheduleLoad();
+    if (window.siteConsentGate && window.siteConsentGate.sync) window.siteConsentGate.sync();
+  }
+
+  document.addEventListener('cookieyes_banner_load', onConsentEvent);
+  document.addEventListener('cookieyes_consent_update', onConsentEvent);
+
   function start() {
     function tryGate() {
       if (window.siteConsentGate) {
@@ -37,6 +46,7 @@
     }
     tryGate();
   }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', start);
   } else {

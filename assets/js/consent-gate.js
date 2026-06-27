@@ -4,16 +4,53 @@
   var root = document.documentElement;
   var cmpActive = root.getAttribute('data-cmp-active') === 'true';
   var queues = { analytics: [], advertisement: [] };
+  var adStorageGranted = false;
+
+  function consentEntryGrantsAds(entry) {
+    if (!entry) return false;
+    if (entry[0] === 'consent' && entry[1] === 'update' && entry[2] && entry[2].ad_storage === 'granted') {
+      return true;
+    }
+    if (entry.ad_storage === 'granted') return true;
+    if (entry['gtm.consentMode'] && entry['gtm.consentMode'].ad_storage === 'granted') return true;
+    return false;
+  }
+
+  function scanDataLayerForAdStorage() {
+    var dl = window.dataLayer || [];
+    for (var i = dl.length - 1; i >= 0; i--) {
+      if (consentEntryGrantsAds(dl[i])) return true;
+    }
+    return false;
+  }
+
+  function installDataLayerWatcher() {
+    var dl = window.dataLayer = window.dataLayer || [];
+    if (dl.__siteConsentWatcher) return;
+    dl.__siteConsentWatcher = true;
+    var push = dl.push;
+    dl.push = function () {
+      var result = push.apply(dl, arguments);
+      for (var i = 0; i < arguments.length; i++) {
+        if (consentEntryGrantsAds(arguments[i])) {
+          adStorageGranted = true;
+          sync();
+        }
+      }
+      return result;
+    };
+    if (scanDataLayerForAdStorage()) adStorageGranted = true;
+  }
 
   function readCategories() {
-    if (window.__ckyConsentSnapshot && window.__ckyConsentSnapshot.categories) {
-      return window.__ckyConsentSnapshot.categories;
-    }
     if (typeof getCkyConsent === 'function') {
       try {
-        var data = getCkyConsent();
-        if (data && data.categories) return data.categories;
+        var live = getCkyConsent();
+        if (live && live.categories) return live.categories;
       } catch (e) { /* noop */ }
+    }
+    if (window.__ckyConsentSnapshot && window.__ckyConsentSnapshot.categories) {
+      return window.__ckyConsentSnapshot.categories;
     }
     return null;
   }
@@ -51,6 +88,9 @@
 
   function granted(category) {
     if (!cmpActive) return true;
+    if (category === 'advertisement' && (adStorageGranted || scanDataLayerForAdStorage())) {
+      return true;
+    }
     return cookieYesGranted(category) || cookiebotGranted(category);
   }
 
@@ -77,8 +117,16 @@
     queues[category].push(fn);
   }
 
-  document.addEventListener('cookieyes_banner_load', sync);
-  document.addEventListener('cookieyes_consent_update', sync);
+  function onConsentEvent(e) {
+    if (e && e.detail && e.detail.categories) {
+      window.__ckyConsentSnapshot = e.detail;
+    }
+    sync();
+  }
+
+  installDataLayerWatcher();
+  document.addEventListener('cookieyes_banner_load', onConsentEvent);
+  document.addEventListener('cookieyes_consent_update', onConsentEvent);
   window.addEventListener('CookiebotOnAccept', sync);
   window.addEventListener('CookiebotOnDecline', sync);
   window.addEventListener('CookiebotOnLoad', sync);
