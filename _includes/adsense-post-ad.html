@@ -1,16 +1,9 @@
 {% comment %}
-  Single in-article ad row for post layout (Stitch + legacy).
+  In-article row after post body. Hidden on desktop when mid-article is active (XOR).
 {% endcomment %}
-{% assign show_post_ad = false %}
-{% if site.data.site_ops.adsense.enabled and site.data.site_ops.adsense.placements.in_article != false %}
-  {% if stitch_dashboard and site.data.site_ops.adsense.stitch_routes %}
-    {% assign show_post_ad = true %}
-  {% elsif stitch_dashboard == false %}
-    {% assign show_post_ad = true %}
-  {% endif %}
-{% endif %}
-{% if show_post_ad %}
-<div class="row stitch-post-ad-row">
+{% include adsense-slot-plan.html %}
+{% if ads_show_in_article %}
+<div class="row stitch-post-ad-row{% if ads_show_mid %} ad-row--fallback-mobile{% endif %}">
   <div class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
     {% include adsense-unit.html variant="in-article" %}
   </div>

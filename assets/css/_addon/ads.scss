@@ -186,16 +186,23 @@ body.stitch-dashboard .stitch-intelligence-ad-row .ad-slot--in-feed {
   opacity: 0.7;
 }
 
-/* T26f calm mobile — max 1 ad on posts (footer); no home bridge / in-feed */
+/* T26f balanced density — see site_ops ad_density note */
 @media (max-width: 767px) {
-  body.stitch-dashboard .stitch-post-ad-row,
-  body.stitch-dashboard .ad-slot--mid-article,
-  body.stitch-dashboard #ad-mid-article-mount {
+  /* Mobile post: in-article + footer (2). No mid, no feed. */
+  body.stitch-dashboard .ad-slot-mount--mid,
+  body.stitch-dashboard #ad-mid-article-mount,
+  body.stitch-dashboard .ad-slot--mid-article {
     display: none !important;
   }
 
-  body.stitch-dashboard .stitch-section--ad-bridge,
   body.stitch-dashboard .stitch-intelligence-ad-row {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Desktop md+: mid XOR in-article — hide in-article row when mid is eligible */
+  body.stitch-dashboard .ad-row--fallback-mobile {
     display: none !important;
   }
 }

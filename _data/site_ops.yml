@@ -18,20 +18,21 @@ adsense:
     mid_article: true
     home_bridge: true
     in_feed: true
-  # Mobile density (T26f calm): CSS in ads.scss — post = footer only; no home/in-feed
+  # Balanced density (T26f): mobile post 2 (in-article+footer); desktop 2–3 (XOR mid/in-article + footer + sidebar ≥1500px)
+  ad_density:
+    mobile_post: 2
+    desktop_post: 2
+    desktop_post_wide: 3
   placements_mobile:
-    in_article: false
     mid_article: false
-    post_footer: true
-    home_bridge: false
     in_feed: false
-  mid_article_min_reading_time: 4
+  mid_article_min_reading_time: 5
   mid_article_priority_slugs:
     - music-player-english
     - convertidor-english
     - optimation-consumer-english
     - automation-sending
-  mid_article_priority_min_reading_time: 3
+  mid_article_priority_min_reading_time: 4
   in_feed_interval: 10
   min_heights:
     mobile: 280

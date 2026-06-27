@@ -1,0 +1,35 @@
+{% comment %}
+  Post ad slot plan (T26f balanced density).
+  Sets ads_show_mid / ads_show_in_article for the current post.
+  Desktop ≥768: mid XOR in-article (not both). Mobile: in-article + footer (mid hidden via CSS).
+{% endcomment %}
+{% assign ads = site.data.site_ops.adsense %}
+{% assign ads_show_mid = false %}
+{% assign ads_show_in_article = false %}
+{% assign ads_mid_min_rt = ads.mid_article_min_reading_time | default: 4 %}
+{% assign slug = page.slug | default: '' %}
+
+{% if ads.mid_article_priority_slugs and slug != '' %}
+  {% for priority_slug in ads.mid_article_priority_slugs %}
+    {% if priority_slug == slug %}
+      {% assign ads_mid_min_rt = ads.mid_article_priority_min_reading_time | default: 4 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+  {% if ads.enabled and ads.placements.mid_article != false and ads.slots.mid_article != '' %}
+  {% if stitch_dashboard and page.reading_time >= ads_mid_min_rt %}
+    {% assign ads_show_mid = true %}
+  {% elsif stitch_dashboard == false and page.reading_time >= ads_mid_min_rt %}
+    {% assign ads_show_mid = true %}
+  {% endif %}
+{% endif %}
+
+{% if ads.enabled and ads.placements.in_article != false %}
+  {% if stitch_dashboard and ads.stitch_routes %}
+    {% assign ads_show_in_article = true %}
+  {% elsif stitch_dashboard == false %}
+    {% assign ads_show_in_article = true %}
+  {% endif %}
+{% endif %}

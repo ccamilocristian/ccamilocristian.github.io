@@ -1,27 +1,9 @@
 {% comment %}
-  Mid-article native unit — inserted after 2nd H2 via JS (posts with reading_time >= min).
+  Mid-article native — after 2nd H2 via JS. Desktop only (CSS); XOR with in-article on md+.
 {% endcomment %}
-{% assign ads = site.data.site_ops.adsense %}
-{% assign min_rt = ads.mid_article_min_reading_time | default: 4 %}
-{% assign slug = page.slug | default: '' %}
-{% if ads.mid_article_priority_slugs and slug != '' %}
-  {% for priority_slug in ads.mid_article_priority_slugs %}
-    {% if priority_slug == slug %}
-      {% assign min_rt = ads.mid_article_priority_min_reading_time | default: 2 %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-{% assign show_mid = false %}
-{% if ads.enabled and ads.placements.mid_article != false and ads.slots.mid_article != '' %}
-  {% if stitch_dashboard and page.reading_time >= min_rt %}
-    {% assign show_mid = true %}
-  {% elsif stitch_dashboard == false and page.reading_time >= min_rt %}
-    {% assign show_mid = true %}
-  {% endif %}
-{% endif %}
-{% if show_mid %}
-<div id="ad-mid-article-mount" hidden>
+{% include adsense-slot-plan.html %}
+{% if ads_show_mid %}
+<div id="ad-mid-article-mount" class="ad-slot-mount--mid" hidden>
   {% include adsense-unit.html variant="mid-article" defer_push=true %}
 </div>
 <script defer src="{{ '/assets/js/adsense-mid-article.js' | relative_url }}"></script>
