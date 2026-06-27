@@ -73,6 +73,14 @@ gtm:
     GA4 (G-4FK52MWLPP) should fire via GTM container tags — direct gtag snippet skipped
     when skip_direct_ga4 is true to avoid duplicate pageviews.
 
+indexnow:
+  enabled: true
+  key: a4f8e2c91b6d4037a1e5f9c0d8b2e6f4
+  host: ccamilocristian.github.io
+  note: >
+    Key file at /{key}.txt (IndexNow). Run tools/indexnow-ping.sh after deploy.
+    Covers Bing, Yandex, and partners.
+
 cookie_consent:
   enabled: true
   provider: cookieyes

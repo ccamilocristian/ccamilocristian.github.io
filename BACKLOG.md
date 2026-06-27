@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-06-27 (post GTM v5)_
+_Last sync: 2026-06-27 (post push + GSC resubmit)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -15,20 +15,16 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **7/7** completo |
 | Posts | **14 EN** + 9 ES redirect |
-| Tareas abiertas | **~12** (manual + 2 API pendientes) |
+| Tareas abiertas | **~10** (manual QA + indexación) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
 ### Hacer hoy (top 5)
 
-1. **T25b** — QA consent GA4 en incógnito
-2. **T24** — Solicitar indexación en GSC (`gsc_index_urls.yml`)
-3. **T23b** — Reenviar sitemap en GSC post-deploy
-4. **T25c** — Filtro bots Singapore en GA4
-5. **T25d** — Asociar GSC ↔ GA4
-
----
-
-5. **T28** — Habilitar Analytics Admin API en GCP → filtro Singapore vía bot
+1. **T24** — Solicitar indexación GSC (`gsc_index_urls.yml`, URLs con `/posts/`)
+2. **T25b** — QA consent GA4 en incógnito (post GTM v5)
+3. **T25d** — Asociar GSC ↔ GA4 en UI
+4. **T25c** — Filtro Singapore (GA4 UI o Admin API — **API habilitada** ✅)
+5. **T23f** — Bing Webmaster Tools + mismo sitemap
 
 ---
 
@@ -44,11 +40,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **Clarity** | ✅ | Tras consent analytics |
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
 | **GSC orgánico** | ⚠️ | 98% tráfico en URLs ES legacy; EN casi sin indexar |
-| **Sitemap GSC** | ⏳ | `isPending`; reenviar post-deploy |
+| **Sitemap GSC** | ⏳ | Reenviado API 27-jun; `isPending`; live ~73 URLs (sin assets) |
 | **GA4 datos limpios** | ❌ | Bots Singapore ~65%; filtro pendiente |
 | **GSC ↔ GA4 link** | ⏳ | Manual UI |
 | **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |
-| **Bing / Yahoo / IndexNow** | ❌ | T23f pendiente |
+| **Bing / IndexNow** | ⚠️ | T32 código listo; ping tras deploy key file |
 
 **Veredicto:** medición **casi alineada** — GTM y código coinciden. Datos aún **no son confiables** para decisiones hasta filtro bots + QA consent + indexación EN.
 
@@ -79,7 +75,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
-| **T23b** | Deploy sitemap T23 + reenviar GSC | deploy | Mar |
+| **T23b** | Deploy sitemap T23 + reenviar GSC | ~~deploy~~ ✅ push; reenviado API | Mar |
 | **T24** | Solicitar indexación URLs EN | manual GSC | Mar |
 | **T23d** | Vigilar sitemap `isPending` → procesado | manual GSC | Mar–Mié |
 
@@ -130,7 +126,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **T26h** | Priorizar ads en slugs EN cuando indexen | código |
 | **T26i** | Evaluar Auto ads AdSense | decisión |
 | **T26j** | Meta: 1.000 pageviews/mes para RPM estable | meta |
-| **T28** | Habilitar Analytics Admin API en GCP | manual GCP |
+| ~~**T28**~~ | ~~Habilitar Analytics Admin API~~ | ✅ GCP 27-jun | — |
+| ~~**T32**~~ | ~~IndexNow key + ping script~~ | ✅ código | — |
 
 ---
 
@@ -161,7 +158,7 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 | Acción | Estado |
 |--------|--------|
 | Eliminar sitemap `/sitemap` | ✅ API 27-jun |
-| Reenviar `sitemap.xml` post-deploy T23 | ⏳ (API bloqueada hasta deploy) |
+| Reenviar `sitemap.xml` post-deploy T23 | ✅ API 27-jun (aún `isPending`) |
 | Indexación EN (T24) — inspección API | ✅ 6 URLs “unknown”; **solicitar en UI** |
 
 ### GA4
@@ -195,7 +192,9 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 | T23e | Snapshot GSC páginas + 14 inspecciones EN ✅ |
 | T25h | `analytics-events.js` (outbound_click, site_search) ✅ |
 | T26g | `mid_article_priority_slugs` en posts alto tráfico ✅ |
-| T24† | Inspección API 6 URLs EN — pendiente indexación manual |
+| T32 | IndexNow key + `tools/indexnow-ping.sh` ✅ |
+| T24† | Inspección API 14 URLs EN — pendiente indexación manual |
+| T23b† | Sitemap reenviado GSC API post-push |
 
 ### Analytics / monetización (código)
 | ID | Entrega |
@@ -250,7 +249,8 @@ Crear en GA4 → Explore (semanal):
 ### Changelog reciente
 | Fecha | Entrega |
 |-------|---------|
-| 2026-06-27 | GTM v5 API publish; matriz alineación; T28–T33 |
+| 2026-06-27 | T32 IndexNow; T23b GSC resubmit; T28 Admin API; push SSH |
+| 2026-06-27 | GTM v5 API publish; matriz alineación |
 | 2026-06-27 | Commit `51b24b8` GTM docs + `0142acd` URL redirects |
 | 2026-06-27 | T23 sitemap limpio (commit `ded08b0`) |
 | 2026-06 | T22 SEO infra |
