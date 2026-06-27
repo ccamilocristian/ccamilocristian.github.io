@@ -3,6 +3,15 @@
 {% endcomment %}
 {% assign ads = site.data.site_ops.adsense %}
 {% assign min_rt = ads.mid_article_min_reading_time | default: 4 %}
+{% assign slug = page.slug | default: '' %}
+{% if ads.mid_article_priority_slugs and slug != '' %}
+  {% for priority_slug in ads.mid_article_priority_slugs %}
+    {% if priority_slug == slug %}
+      {% assign min_rt = ads.mid_article_priority_min_reading_time | default: 2 %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 {% assign show_mid = false %}
 {% if ads.enabled and ads.placements.mid_article != false and ads.slots.mid_article != '' %}
   {% if stitch_dashboard and page.reading_time >= min_rt %}

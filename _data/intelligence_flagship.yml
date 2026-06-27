@@ -8,6 +8,8 @@ economics:
   - loan-simulator-english
 
 data_science:
+  - music-player-english
+  - automation-sending
   - icfes-english
   - scraping-colombia-english
   - mastering-visualization-plotly

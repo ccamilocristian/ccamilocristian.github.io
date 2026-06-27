@@ -1,0 +1,5 @@
+{% comment %}
+  Collapse duplicate slashes after the origin (e.g. .io//posts → .io/posts).
+  Usage: {% include normalize-url.html url=some_absolute_url %}
+{% endcomment %}
+{% assign normalized = include.url | replace: 'http://', 'http:_ORIGIN_' | replace: 'https://', 'https:_ORIGIN_' | replace: '//', '/' | replace: 'http:_ORIGIN_', 'http://' | replace: 'https:_ORIGIN_', 'https://' %}

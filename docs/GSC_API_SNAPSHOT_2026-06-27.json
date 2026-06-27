@@ -1,0 +1,165 @@
+{
+  "generated": "2026-06-27T14:05:49.595232",
+  "period": "2026-05-27 to 2026-06-24",
+  "sitemaps": [
+    {
+      "path": "https://ccamilocristian.github.io/sitemap.xml",
+      "lastSubmitted": "2026-06-27T09:57:50.129Z",
+      "isPending": true,
+      "isSitemapsIndex": false,
+      "type": "sitemap",
+      "lastDownloaded": "2024-10-16T02:42:41.606Z",
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "73",
+          "indexed": "0"
+        }
+      ]
+    }
+  ],
+  "top_pages": [
+    {
+      "page": "https://ccamilocristian.github.io/posts/reproductor-musica/",
+      "clicks": 17,
+      "impressions": 388,
+      "position": 5.9
+    },
+    {
+      "page": "https://ccamilocristian.github.io/",
+      "clicks": 3,
+      "impressions": 6,
+      "position": 4.5
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/liquidador-intereses/",
+      "clicks": 3,
+      "impressions": 61,
+      "position": 5.1
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/automatizacion-envio-correos/",
+      "clicks": 2,
+      "impressions": 121,
+      "position": 19.7
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/convertidor-IPC/",
+      "clicks": 0,
+      "impressions": 139,
+      "position": 10.7
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/icfes-conexion-api/",
+      "clicks": 0,
+      "impressions": 11,
+      "position": 8.9
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/optimation-consumer-english/",
+      "clicks": 0,
+      "impressions": 6,
+      "position": 9.3
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/optimizacion_teoria_consumidor/",
+      "clicks": 0,
+      "impressions": 8,
+      "position": 8.4
+    },
+    {
+      "page": "https://ccamilocristian.github.io/posts/scraping-plebiscito-colombia/",
+      "clicks": 0,
+      "impressions": 4,
+      "position": 4.8
+    }
+  ],
+  "inspections": [
+    {
+      "url": "/posts/music-player-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/convertidor-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/automation-sending/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/optimation-consumer-english/",
+      "verdict": "PASS",
+      "coverage": "Submitted and indexed",
+      "indexing": "INDEXING_ALLOWED"
+    },
+    {
+      "url": "/posts/icfes-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/scraping-colombia-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/loan-simulator-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/minsalud-decrees-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/step-colombia-english/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/creating-fun-game/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/experimental-desing/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/mastering-visualization-plotly/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/behavioral-economics-data-analysis-applications/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/tabs/intelligence/",
+      "verdict": "NEUTRAL",
+      "coverage": "URL is unknown to Google",
+      "indexing": "INDEXING_STATE_UNSPECIFIED"
+    }
+  ]
+}

@@ -1,175 +1,195 @@
 # Backlog
 
-_Last sync: 2026-06-27 (GSC audit + T23 sitemap)_
+_Last sync: 2026-06-27_
 
-## Estado rápido
+Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
-| Área | Estado |
-|------|--------|
-| Stitch shell | **7/7** superficies migradas |
-| Contenido | **14 posts** publicados (EN); **9 ES** despublicados + redirect 301 |
-| SEO posts | **T9 hecho** — `description:` en 14 posts |
-| SEO infra | **T22 hecho** — URL canonical, redirects GTM, hreflang, flagship EN |
-| SEO GSC | **T23 en curso** — sitemap limpio en repo; acciones manuales GSC pendientes |
-| Repo hygiene | **Cleanup hecho** — gitignore, agentes, READMEs, `docs/README.md` |
-| Abierto | **T6** (Vision Lab), **T3** (deferred), **T24** (indexación EN) |
+**Horizonte semanal:** [`docs/WEEK_PLAN_2026-06-27.md`](docs/WEEK_PLAN_2026-06-27.md)  
+**Auditorías:** [GSC](docs/GSC_AUDIT_2026-06-27.md) · [GA4](docs/GA4_AUDIT_2026-06-27.md) · [AdSense](docs/ADSENSE_AUDIT_2026-06-27.md) · [API run](docs/API_RUN_2026-06-27.md)
 
 ---
 
-## Acciones manuales post-deploy (T22 / T23)
+## Vista rápida
 
-| Acción | Dónde | Estado |
-|--------|-------|--------|
-| Reenviar sitemap | Search Console → Sitemaps → `https://ccamilocristian.github.io/sitemap.xml` | Reenviado 27-jun; **repetir tras deploy T23** |
-| Eliminar sitemap legacy | GSC → Sitemaps → quitar `…/sitemap` (sin `.xml`) | **Hecho vía API** 27-jun |
-| Solicitar indexación EN | GSC → Inspección URL → top slugs EN + `/tabs/intelligence/` | **Pendiente** |
-| Vincular GSC ↔ GA4 | GSC → Configuración → Asociaciones | **Verificar** |
-| 301 legacy ES (opcional) | Cloudflare Rules si usas dominio custom | Opcional |
-| CookieYes + GTM consent | Pasos T21 abajo | Pendiente publish GTM |
+| Métrica | Estado |
+|---------|--------|
+| Stitch shell | **7/7** completo |
+| Posts | **14 EN** + 9 ES redirect |
+| Tareas abiertas | **~14** (solo manual / decisión) |
+| Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
-**Informe completo:** [`docs/GSC_AUDIT_2026-06-27.md`](docs/GSC_AUDIT_2026-06-27.md)
+### Hacer hoy (top 5)
 
----
-
-## Pendiente — priorizado
-
-| # | ID | Pri | Tarea | Resp | Archivo / acción |
-|---|-----|-----|-------|------|------------------|
-| 1 | **T23b** | Alta | Deploy sitemap T23 + reenviar en GSC | DBG | Push → GSC Sitemaps → `sitemap.xml` |
-| 2 | **T23c** | Alta | ~~Eliminar sitemap legacy `/sitemap` en GSC~~ | DBG | ✅ Hecho vía API 27-jun |
-| 3 | **T24** | Alta | Solicitar indexación URLs EN prioritarias | RED | GSC manual: `music-player-english`, `convertidor-english`, `automation-sending`, `intelligence` |
-| 4 | **T24b** | Media | Internal linking EN → hub Intelligence | RED | Posts EN + `_data/intelligence_flagship.yml` |
-| 5 | **T23d** | Media | Vigilar procesamiento sitemap (`isPending`) | DBG | 48–72 h post reenvío; ver informe GSC |
-| 6 | **T23e** | Media | Revisar informe Páginas en GSC | DBG | Cobertura, duplicados, “rastreada no indexada” |
-| 7 | **T23f** | Baja | Bing Webmaster Tools + mismo sitemap | RED | bing.com/webmasters |
-| 8 | **T23g** | Baja | Asociar GSC con GA4 (`356406631`) | DBG | GSC → Asociaciones |
-| 9 | **T6** | Media | Vision Lab → caso real | RED | `_data/vision_lab.yml` |
-| 10 | **T3** | Media | Model performance explorer | DBG | **Deferred** |
-| 11 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | GTM consent publish (ver abajo) |
+1. **T21** — Publish GTM con consent (`GTM-K8J9KSB8`)
+2. **T25b** — QA consent GA4 en incógnito
+3. **T23b** — Push deploy sitemap T23 → reenviar en GSC
+4. **T24** — Solicitar indexación 6 URLs EN en GSC (manual UI)
+5. **T25c** — Filtro bots Singapore en GA4 (UI o habilitar Admin API)
 
 ---
 
-## T21 — CookieYes + Consent Mode v2 (acción manual)
+## Por hacer — Alta (esta semana)
 
-Código en repo: `consent-defaults`, `cookie-consent`, `consent-gate.js`; AdSense/Clarity gated por categoría.
+### Medición y consent (T21, T25)
 
-### Paso 1 — Cuenta CookieYes (gratis ≤25k pageviews/mes)
+| ID | Tarea | Tipo | Día |
+|----|-------|------|-----|
+| **T21** | Publish GTM con consent settings | manual GTM | Lun |
+| **T25a** | Consent en tags GA4 + ads en GTM | manual GTM | Lun |
+| **T25b** | QA consent: rechazar/aceptar → GA4 Realtime | manual QA | Lun |
+| **T25d** | Asociar GSC ↔ GA4 (`356406631`) | manual GSC | Lun |
+| **T26d** | QA ads tras consent `advertisement` | manual QA | Lun |
 
-1. [cookieyes.com](https://www.cookieyes.com) → Sign up
-2. **Add website** → `https://ccamilocristian.github.io`
-3. **Banner customization** → idioma EN (+ ES opcional)
-4. **Cookie policy** → generar → copiar URL → pegar en `_data/site_ops.yml` → `policy_url`
+### Search Console (T23–T24)
 
-### Paso 2 — ID en el repo
+| ID | Tarea | Tipo | Día |
+|----|-------|------|-----|
+| **T23b** | Deploy sitemap T23 + reenviar GSC | deploy | Mar |
+| **T24** | Solicitar indexación URLs EN | manual GSC | Mar |
+| **T23d** | Vigilar sitemap `isPending` → procesado | manual GSC | Mar–Mié |
 
-En `_data/site_ops.yml`:
+### Calidad GA4 (T25)
 
-```yaml
-cookie_consent:
-  enabled: true
-  provider: cookieyes
-  cookieyes_id: "TU_ID_AQUI"   # Dashboard → Get Code → segmento del URL
-  policy_url: "https://..."    # URL política generada por CookieYes
-```
+| ID | Tarea | Tipo | Día |
+|----|-------|------|-----|
+| **T25c** | Filtro/exclusión tráfico Singapore (bots) | manual GA4 | Mié |
+| ~~**T25f**~~ | ~~Corregir URLs `//` en pagePath~~ | ✅ código | — |
 
-Commit + push → deploy.
+### AdSense (T26)
 
-### Paso 3 — CookieYes dashboard
-
-1. **Integrations → Google Consent Mode v2** → Enable
-2. Categorías: Analytics = GA4 + Clarity; Advertisement = AdSense + GTM ads
-3. **Scan website** → clasificar scripts detectados
-
-### Paso 4 — GTM (`GTM-K8J9KSB8`)
-
-1. **Tags → Google Tag** → **Consent Settings** → *Require additional consent for tag to fire*
-   - `analytics_storage` (Analytics)
-2. Si añades tags de ads: también `ad_storage`, `ad_user_data`, `ad_personalization`
-3. **Admin → Container Settings → Enable consent overview** (si no está)
-4. Publish
-
-### Paso 5 — QA producción
-
-- Banner visible en primera visita (modo incógnito)
-- Rechazar → no hits GA4 en Network; AdSense no carga
-- Aceptar analytics → GA4 Realtime + Clarity OK
-- Aceptar ads → `adsbygoogle.js` en Network
-- DevTools: `gtag('consent','update',...)` tras clic en banner
-
-**Alternativa:** `provider: cookiebot` + `cookiebot_id` (misma arquitectura).
+| ID | Tarea | Tipo | Día |
+|----|-------|------|-----|
+| ~~**T26a**~~ | ~~Mapear 6 slot IDs ↔ ad units dashboard~~ | ✅ API AdSense | — |
+| **T26b** | Renombrar ad units en AdSense | manual AdSense | Jue |
+| **T26c** | QA visual 6 placements | manual QA | Jue |
 
 ---
 
-## Stitch migration — cobertura
+## Por hacer — Media (esta semana si hay tiempo)
 
-| Superficie | Export (`.stitch/`) | Jekyll | Notas |
-|------------|---------------------|--------|-------|
-| Command Center | `stitch-export.html` | ✅ | `_layouts/home.html` |
-| Profile | `profile-export.html` | ✅ | `tabs/profile.md` |
-| Intelligence | `intelligence-export.html` | ✅ | `tabs/intelligence.md` |
-| Stack | `stack-export.html` | ✅ | `tabs/stack.md` |
-| Economics Lens | `economics-lens-export.html` | ✅ | `tabs/economics-lens.md` |
-| Vision Lab | `vision-lab-export.html` | ✅ | `tabs/vision-lab.md` |
-| Post individual | `post-export.html` | ✅ | `_layouts/post.html` + `stitch-post.scss` |
+| ID | Tarea | Tipo | Día |
+|----|-------|------|-----|
+| ~~**T24b**~~ | ~~Internal linking EN → Intelligence~~ | ✅ código | — |
+| ~~**T23e**~~ | ~~Informe Páginas GSC (cobertura)~~ | ✅ API → `GSC_API_SNAPSHOT` | — |
+| ~~**T25e**~~ | ~~Investigar pico tráfico 20-jun~~ | ✅ API GA4 | — |
+| **T25g** | Revisar Enhanced Measurement GA4 | manual GA4 | Mié |
+| **T25i** | Segmento “Tráfico humano LATAM” | manual GA4 | Mié |
+| **T26e** | AdSense Policy + invalid traffic | manual AdSense | Jue |
+| **T26f** | Evaluar densidad ads home vs post | decisión | Jue |
+| ~~**T26g**~~ | ~~Ads en posts con más tráfico~~ | ✅ código | — |
+| ~~**T25h**~~ | ~~2 eventos custom GA4 (outbound, search)~~ | ✅ código | — |
+| **T25j** | Snapshot baseline 7d post-fix | docs | Vie |
+| **T6** | Vision Lab — caso real | contenido | Vie |
 
 ---
 
-## Completado
+## Por hacer — Baja
+
+| ID | Tarea | Tipo |
+|----|-------|------|
+| **T23f** | Bing Webmaster Tools + sitemap | manual |
+| **T23g** | GSC ↔ GA4 (si no hecho en T25d) | manual |
+| **T26h** | Priorizar ads en slugs EN cuando indexen | código |
+| **T26i** | Evaluar Auto ads AdSense | decisión |
+| **T26j** | Meta: 1.000 pageviews/mes para RPM estable | meta |
+
+---
+
+## Aparcamiento (deferred)
+
+| ID | Tarea | Notas |
+|----|-------|-------|
+| **T3** | Model performance explorer | Sin datos reales aún |
+| **T27** | Google Ads (campanas de pago) | No hay cuenta; ver `ADSENSE_AUDIT` §8 |
+
+---
+
+## Solo manual — por permisos del bot
+
+| Área | El bot puede | Solo tú (UI humana) |
+|------|--------------|---------------------|
+| **GSC** | Leer keywords/páginas, inspeccionar URL, submit sitemap | **Solicitar indexación**, vigilar cobertura visual |
+| **GA4** | Leer reportes Data API | **Filtros**, segmentos, Enhanced Measurement, **vincular GSC** |
+| **GTM** | — | **Publish** container + consent en tags |
+| **AdSense** | Leer earnings (OAuth) | **Renombrar units**, Policy center, QA visual |
+| **Google Ads** | — | No hay cuenta (solo AdSense publisher) |
+
+Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-06-27.md) § manual.
+
+---
+
+### GSC
+| Acción | Estado |
+|--------|--------|
+| Eliminar sitemap `/sitemap` | ✅ API 27-jun |
+| Reenviar `sitemap.xml` post-deploy T23 | ⏳ (API bloqueada hasta deploy) |
+| Indexación EN (T24) — inspección API | ✅ 6 URLs “unknown”; **solicitar en UI** |
+
+### GA4
+| Acción | Estado |
+|--------|--------|
+| GTM publish + consent QA | ⏳ |
+| Filtro bots Singapore | ⏳ |
+| GSC ↔ GA4 asociación | ⏳ |
+
+### AdSense
+| Acción | Estado |
+|--------|--------|
+| Mapear 6 slots ↔ dashboard | ✅ API 27-jun (`site_ops.yml`) |
+| QA placements post-consent | ⏳ |
+| Policy center limpio | ⏳ |
+
+---
+
+## Hecho
 
 ### SEO / Search Console
+| ID | Entrega |
+|----|---------|
+| T22 | Canonical, redirects, hreflang, flagship EN |
+| T23 | `sitemap_exclude`, filtro redirects, informe GSC |
+| T23c | Sitemap legacy eliminado en GSC ✅ |
+| T25e | Pico 20-jun: 17 sesiones Singapore (bots) ✅ |
+| T25f | `normalize-url.html` + redirect + hreflang ✅ |
+| T26a | Mapa 6 slots ↔ AdSense (API) ✅ |
+| T24b | `music-player-english`, `automation-sending` en flagship ✅ |
+| T23e | Snapshot GSC páginas + 14 inspecciones EN ✅ |
+| T25h | `analytics-events.js` (outbound_click, site_search) ✅ |
+| T26g | `mid_article_priority_slugs` en posts alto tráfico ✅ |
+| T24† | Inspección API 6 URLs EN — pendiente indexación manual |
 
-| ID | Tarea |
-|----|-------|
-| T23 | Sitemap: `sitemap_exclude` en `_config.yml`; filtro `page.redirect` en `sitemap.xml`; informe `docs/GSC_AUDIT_2026-06-27.md` |
+### Analytics / monetización (código)
+| ID | Entrega |
+|----|---------|
+| T7–T7d | AdSense 6 slots, Clarity, GTM, anti-CLS |
+| T21† | Consent scaffold + CookieYes ID — **falta publish GTM** |
 
-### Stitch + shell
+### Auditorías (27-jun)
+| Doc | Contenido |
+|-----|-----------|
+| `GSC_AUDIT_2026-06-27.md` | Indexación, sitemap, EN vs ES |
+| `GA4_AUDIT_2026-06-27.md` | Bots SG, bounce 84%, fuentes |
+| `ADSENSE_AUDIT_2026-06-27.md` | $0.02/30d, slots vs dashboard |
+| `API_RUN_2026-06-27.md` | Batch API GSC/GA4/AdSense + límites |
 
-| ID | Tarea |
-|----|-------|
-| T11 | Intelligence → `stitch-intelligence.scss` + fix `type: archives` |
-| T12 | Stack → `stitch-stack.scss` + fix `type: tags` |
-| T13 | Economics Lens → `stitch-economics-lens.scss` |
-| T14 | Vision Lab → `stitch-vision-lab.scss` |
-| T15 | Post → `post-export.html` + `stitch-post.scss` |
-| T16 | Legacy tabs → glass archives; `Hoja de vida` removed → redirect Profile |
-| T18 | Post layout — columna, TOC, line-height, drop cap |
-| T19 | Deprecar tags en UI — sin Topics; Stack → Intelligence; redirect `/tabs/tags/` |
-| T20 | Orphan cleanup — about/categories/404/root redirects |
-
-### Contenido + perfil
-
-| ID | Tarea |
-|----|-------|
-| T1 | Foto real de perfil → `assets/img/profile/{avatar,portrait}.png` |
-| T2 | Copy Profile vs LinkedIn — `_data/profile.yml` |
-| T5 | 9 pares EN/ES — EN canónico; ES `published: false` + redirect 301 |
-| T5b | 4 posts solo-ES traducidos a EN |
-| T9 | SEO — `description:` pulidas en 14 posts (tono humano, ~120–140 chars) |
-| T7 | AdSense + Clarity — loader diferido, anti-CLS, in-article slot, GA4 desde `_config.yml` |
-
-### Docs + repo
-
-| ID | Tarea |
-|----|-------|
-| T10 | `README_UX_EVOLUTION.md` sync |
-| T17 | `docs/STITCH_MIGRATION_GAP.md` sync |
-| — | **Repo cleanup** — `.gitignore`, `.cursor/rules/`, READMEs, `docs/README.md` (stubs `categories/` conservados — mismo patrón que `tags/`) |
+### Stitch + contenido + docs
+Stitch **7/7** (T11–T20) · Perfil T1–T2 · EN/ES T5/T5b · SEO descriptions T9 · Repo cleanup · `README_UX_EVOLUTION` T10 · `STITCH_MIGRATION_GAP` T17
 
 ---
 
-## Changelog reciente
+## Referencias
 
-- **T23** — GSC audit (`docs/GSC_AUDIT_2026-06-27.md`); `sitemap_exclude` (assets, 404, 9 slugs ES legacy); skip redirect stubs en `sitemap.xml`
-- **T7** — AdSense re-enabled (post footer, deferred loader, `.ad-slot` anti-CLS); Microsoft Clarity `xa15jprgqu`; GA4 ID from `_config.yml`; removed legacy ad network includes
-- **T7b** — Monetización: slot in-article native `6874018777` (fluid), pre-related, loader solo en posts, unfilled collapse
-- **Analytics** — GTM `GTM-K8J9KSB8` (head + noscript); direct GA4 off when GTM active (`skip_direct_ga4`)
-- **T21 (código)** — Consent Mode v2 scaffold: CookieYes/Cookiebot hook, consent defaults, AdSense + Clarity gated; pending `cookieyes_id`
-- **T7c** — Ad Fase 1–2: post footer `8047040393` + sidebar sticky `9362724975`
-- **T7d** — Ad Fase 3–4: mid `6813985623`, home `5343588914`, in-feed `9226993605`
-- **T22** — SEO/infra: URL sin trailing slash, redirect layout + GTM, portfolio EN links, search absolute_url; Propeller meta removed; hreflang EN; intelligence_flagship EN slugs; Disqus off (T8); ad pending UX (hide Sponsored until filled); portfolio imágenes locales; preconnect cleanup
-- **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
-- **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
-- **T5** — 9 duplicados ES despublicados; redirect 301 a EN
-- **T20** — páginas huérfanas, redirects raíz, 404 Stitch
-- **T19** — footer Topics removido; tag archives con banner deprecación
-- **T18** — post footer fuera de glass; fix conflicto Chirpy `footer {}`
+### T21 — CookieYes + GTM (resumen)
+1. CookieYes → Consent Mode v2 ON  
+2. GTM → tags con consent requerido → **Publish**  
+3. QA incógnito: rechazar / aceptar analytics / aceptar ads  
+
+### IDs
+`~/mcp_servers/.env` — GA4 `356406631`, AdSense `pub-2402437399062384`, GTM `GTM-K8J9KSB8`
+
+### Changelog reciente
+| Fecha | Entrega |
+|-------|---------|
+| 2026-06-27 | Batch API: T25e, T26a, T24 inspección, T25f, T24b; `API_RUN` |
+| 2026-06-27 | T23 sitemap limpio (commit `ded08b0`) |
+| 2026-06 | T22 SEO infra |

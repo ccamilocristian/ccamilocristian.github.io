@@ -19,6 +19,12 @@ adsense:
     home_bridge: true
     in_feed: true
   mid_article_min_reading_time: 4
+  mid_article_priority_slugs:
+    - music-player-english
+    - convertidor-english
+    - optimation-consumer-english
+    - automation-sending
+  mid_article_priority_min_reading_time: 2
   in_feed_interval: 6
   min_heights:
     mobile: 280
@@ -37,6 +43,10 @@ adsense:
   note: >
     Fase 1–4: in_article 6874018777, footer 8047040393, sidebar 9362724975,
     mid 6813985623, home 5343588914, in_feed 9226993605.
+    Slot map (API 2026-06-27): 6874018777=en article, 8047040393=horizontal ad,
+    9362724975=Post sidebar 300x250, 6813985623=Post mid-article native,
+    5343588914=Home bridge horizontal, 9226993605=Intelligence feed horizontal.
+    Legacy units still ACTIVE: 1778404697=bloque, 1836855266=articulo.
 
 disqus:
   stitch_routes: false
@@ -52,6 +62,9 @@ gtm:
   enabled: true
   container_id: GTM-K8J9KSB8
   skip_direct_ga4: true
+  custom_events:
+    - outbound_click
+    - site_search
   note: >
     GA4 (G-4FK52MWLPP) should fire via GTM container tags — direct gtag snippet skipped
     when skip_direct_ga4 is true to avoid duplicate pageviews.

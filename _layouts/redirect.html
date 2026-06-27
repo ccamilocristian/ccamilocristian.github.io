@@ -6,12 +6,14 @@
 <head>
   <meta charset="utf-8">
   <title>Redirecting&hellip;</title>
-  <link rel="canonical" href="{{ page.redirect.to | absolute_url }}">
+  {% capture redirect_target %}{{ page.redirect.to | absolute_url }}{% endcapture %}
+  {% include normalize-url.html url=redirect_target %}
+  <link rel="canonical" href="{{ normalized }}">
   {% if jekyll.environment == 'production' %}
     {% include gtm-head.html %}
   {% endif %}
-  <script>location="{{ page.redirect.to | absolute_url | xml_escape }}"</script>
-  <meta http-equiv="refresh" content="0; url={{ page.redirect.to | absolute_url | xml_escape }}">
+  <script>location="{{ normalized | xml_escape }}"</script>
+  <meta http-equiv="refresh" content="0; url={{ normalized | xml_escape }}">
   <meta name="robots" content="noindex">
 </head>
 <body>
@@ -19,6 +21,6 @@
     {% include gtm-noscript.html %}
   {% endif %}
   <h1>Redirecting&hellip;</h1>
-  <p><a href="{{ page.redirect.to | absolute_url }}">Continue</a></p>
+  <p><a href="{{ normalized }}">Continue</a></p>
 </body>
 </html>
