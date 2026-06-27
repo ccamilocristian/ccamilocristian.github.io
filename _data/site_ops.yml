@@ -63,7 +63,7 @@ gtm:
   container_id: GTM-K8J9KSB8
   account_id: "6361961802"
   container_numeric_id: "256082250"
-  workspace_id: "5"
+  workspace_id: "6"
   measurement_id: G-4FK52MWLPP
   skip_direct_ga4: true
   custom_events:

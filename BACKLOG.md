@@ -20,7 +20,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ### Hacer hoy (top 5)
 
-1. **T24** — GSC indexación → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md) §1
+1. **T24** — GSC: 13 URLs → [`docs/T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md)
 2. **T25b** — QA consent incógnito → checklist §2
 3. **T25c** — Filtro Singapore → checklist §3
 4. **T25d** — GSC ↔ GA4 link → checklist §3
@@ -32,11 +32,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | Capa | Estado | Notas |
 |------|--------|-------|
-| **GTM Live v5** | ✅ | 3 tags, consent `analytics_storage`, eventos custom |
+| **GTM Live v6** | ✅ | config tag + DLV (`link_url`, `search_term`, `page_path`) |
 | **GA4 pageviews** | ✅ | `G-4FK52MWLPP` vía GTM; `skip_direct_ga4: true` (sin duplicados) |
 | **Consent site** | ✅ | CookieYes ID activo + `consent-defaults.html` deny-by-default |
 | **Consent QA** | ⏳ | Falta prueba incógnito post-v5 |
-| **Eventos custom** | ⚠️ | Código + GTM OK; parámetros (`link_url`) aún no en tags GTM |
+| **Eventos custom** | ✅ | GTM v6: DLV + `eventSettingsTable` |
 | **Clarity** | ✅ | Tras consent analytics |
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
 | **GSC orgánico** | ⚠️ | 98% tráfico en URLs ES legacy; EN casi sin indexar |
@@ -70,14 +70,14 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **T25b** | QA consent: rechazar/aceptar → GA4 Realtime | manual QA | Lun |
 | **T25d** | Asociar GSC ↔ GA4 (`356406631`) | manual GSC | Lun |
 | **T26d** | QA ads tras consent `advertisement` | manual QA | Lun |
-| **T31** | GTM warnings: config tag + DLV event params | API GTM | Lun |
+| ~~**T31**~~ | ~~GTM warnings: config tag + DLV~~ | ✅ API v6 Live | — |
 
 ### Search Console (T23–T24)
 
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
 | **T23b** | Deploy sitemap T23 + reenviar GSC | ~~deploy~~ ✅ push; reenviado API | Mar |
-| **T24** | Solicitar indexación URLs EN | manual GSC | Mar |
+| **T24** | Solicitar indexación URLs EN | manual GSC | 13/15 pendientes → [`T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md) |
 | **T23d** | Vigilar sitemap `isPending` → procesado | manual GSC | Mar–Mié |
 
 ### Calidad GA4 (T25)
@@ -146,7 +146,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |------|--------------|---------------------|
 | **GSC** | Leer keywords/páginas, inspeccionar URL, submit sitemap | **Solicitar indexación**, vigilar cobertura visual |
 | **GA4** | Leer reportes Data API | **Filtros**, segmentos, Enhanced Measurement, **vincular GSC** |
-| **GTM** | Editar + publish vía API (hecho v5) | **T31** warnings tras workspace Sync |
+| **GTM** | Editar + publish vía API | ✅ v6 Live (T31) |
 | **AdSense** | Leer earnings (OAuth) | **Renombrar units**, Policy center, QA visual |
 | **Google Ads** | — | No hay cuenta (solo AdSense publisher) |
 
@@ -159,7 +159,7 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 |--------|--------|
 | Eliminar sitemap `/sitemap` | ✅ API 27-jun |
 | Reenviar `sitemap.xml` post-deploy T23 | ✅ API 27-jun (aún `isPending`) |
-| Indexación EN (T24) — inspección API | ✅ 6 URLs “unknown”; **solicitar en UI** |
+| Indexación EN (T24) | ⏳ 2/15 indexadas; **13 solicitudes manuales** → `docs/T24_GSC_INDEX_NOW.md` |
 
 ### GA4
 | Acción | Estado |
@@ -193,14 +193,9 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 | T25h | `analytics-events.js` (outbound_click, site_search) ✅ |
 | T26g | `mid_article_priority_slugs` en posts alto tráfico ✅ |
 | T32 | IndexNow key + `tools/indexnow-ping.sh` ✅ |
-| T24† | Inspección API 14 URLs EN — pendiente indexación manual |
-| T23b† | Sitemap reenviado GSC API post-push |
-
-### Analytics / monetización (código)
-| ID | Entrega |
-|----|---------|
-| T7–T7d | AdSense 6 slots, Clarity, GTM, anti-CLS |
-| T21 | GTM v5 publicado API — consent + 2 eventos GA4 ✅ |
+| T21 | GTM v6 — consent + eventos + DLV ✅ |
+| T31 | Config tag + DLV publicado v6 ✅ |
+| T24† | 2/15 indexadas; 13 pendientes → `T24_GSC_INDEX_NOW.md` |
 | T34 | Excluir `BACKLOG.md` + `README_UX_EVOLUTION.md` del build ✅ |
 | T32† | IndexNow ping ejecutado post-deploy ✅ |
 

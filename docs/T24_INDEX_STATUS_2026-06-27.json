@@ -1,0 +1,110 @@
+{
+  "generated": "2026-06-27T10:57:44.030180Z",
+  "results": [
+    {
+      "url": "/posts/music-player-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/convertidor-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/automation-sending/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/optimation-consumer-english/",
+      "coverage": "Submitted and indexed",
+      "verdict": "PASS",
+      "indexing": "INDEXING_ALLOWED",
+      "needs_manual_request": false
+    },
+    {
+      "url": "/posts/icfes-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/scraping-colombia-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/loan-simulator-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/minsalud-decrees-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/step-colombia-english/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/creating-fun-game/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/experimental-desing/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/mastering-visualization-plotly/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/behavioral-economics-data-analysis-applications/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/posts/introduction-pyautogui-be/",
+      "coverage": "URL is unknown to Google",
+      "verdict": "NEUTRAL",
+      "indexing": "INDEXING_STATE_UNSPECIFIED",
+      "needs_manual_request": true
+    },
+    {
+      "url": "/tabs/intelligence/",
+      "coverage": "Submitted and indexed",
+      "verdict": "PASS",
+      "indexing": "INDEXING_ALLOWED",
+      "needs_manual_request": false
+    }
+  ]
+}
