@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-06-20 (repo cleanup)_
+_Last sync: 2026-06-27 (GSC audit + T23 sitemap)_
 
 ## Estado rápido
 
@@ -10,18 +10,24 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | Contenido | **14 posts** publicados (EN); **9 ES** despublicados + redirect 301 |
 | SEO posts | **T9 hecho** — `description:` en 14 posts |
 | SEO infra | **T22 hecho** — URL canonical, redirects GTM, hreflang, flagship EN |
+| SEO GSC | **T23 en curso** — sitemap limpio en repo; acciones manuales GSC pendientes |
 | Repo hygiene | **Cleanup hecho** — gitignore, agentes, READMEs, `docs/README.md` |
-| Abierto | **T6** (Vision Lab contenido), **T3** (model explorer deferred) |
+| Abierto | **T6** (Vision Lab), **T3** (deferred), **T24** (indexación EN) |
 
 ---
 
-## Acciones manuales post-deploy (T22)
+## Acciones manuales post-deploy (T22 / T23)
 
-| Acción | Dónde |
-|--------|-------|
-| Reenviar sitemap | Search Console → Sitemaps → `https://ccamilocristian.github.io/sitemap.xml` |
-| 301 legacy ES (opcional) | Cloudflare Rules si usas dominio custom |
-| CookieYes + GTM consent | Pasos T21 abajo si aún no publicaste container |
+| Acción | Dónde | Estado |
+|--------|-------|--------|
+| Reenviar sitemap | Search Console → Sitemaps → `https://ccamilocristian.github.io/sitemap.xml` | Reenviado 27-jun; **repetir tras deploy T23** |
+| Eliminar sitemap legacy | GSC → Sitemaps → quitar `…/sitemap` (sin `.xml`) | **Hecho vía API** 27-jun |
+| Solicitar indexación EN | GSC → Inspección URL → top slugs EN + `/tabs/intelligence/` | **Pendiente** |
+| Vincular GSC ↔ GA4 | GSC → Configuración → Asociaciones | **Verificar** |
+| 301 legacy ES (opcional) | Cloudflare Rules si usas dominio custom | Opcional |
+| CookieYes + GTM consent | Pasos T21 abajo | Pendiente publish GTM |
+
+**Informe completo:** [`docs/GSC_AUDIT_2026-06-27.md`](docs/GSC_AUDIT_2026-06-27.md)
 
 ---
 
@@ -29,9 +35,17 @@ _Last sync: 2026-06-20 (repo cleanup)_
 
 | # | ID | Pri | Tarea | Resp | Archivo / acción |
 |---|-----|-----|-------|------|------------------|
-| 1 | **T6** | Media | Vision Lab → caso real | RED | `_data/vision_lab.yml` cuando exista experimento documentado |
-| 2 | **T3** | Media | Model performance explorer | DBG | `_data/command_center.yml` → `mock_modules.model_explorer.enabled: true` — **Deferred** |
-| 3 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | Código listo — verificar GTM consent publish (ver abajo) |
+| 1 | **T23b** | Alta | Deploy sitemap T23 + reenviar en GSC | DBG | Push → GSC Sitemaps → `sitemap.xml` |
+| 2 | **T23c** | Alta | ~~Eliminar sitemap legacy `/sitemap` en GSC~~ | DBG | ✅ Hecho vía API 27-jun |
+| 3 | **T24** | Alta | Solicitar indexación URLs EN prioritarias | RED | GSC manual: `music-player-english`, `convertidor-english`, `automation-sending`, `intelligence` |
+| 4 | **T24b** | Media | Internal linking EN → hub Intelligence | RED | Posts EN + `_data/intelligence_flagship.yml` |
+| 5 | **T23d** | Media | Vigilar procesamiento sitemap (`isPending`) | DBG | 48–72 h post reenvío; ver informe GSC |
+| 6 | **T23e** | Media | Revisar informe Páginas en GSC | DBG | Cobertura, duplicados, “rastreada no indexada” |
+| 7 | **T23f** | Baja | Bing Webmaster Tools + mismo sitemap | RED | bing.com/webmasters |
+| 8 | **T23g** | Baja | Asociar GSC con GA4 (`356406631`) | DBG | GSC → Asociaciones |
+| 9 | **T6** | Media | Vision Lab → caso real | RED | `_data/vision_lab.yml` |
+| 10 | **T3** | Media | Model performance explorer | DBG | **Deferred** |
+| 11 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | GTM consent publish (ver abajo) |
 
 ---
 
@@ -102,6 +116,12 @@ Commit + push → deploy.
 
 ## Completado
 
+### SEO / Search Console
+
+| ID | Tarea |
+|----|-------|
+| T23 | Sitemap: `sitemap_exclude` en `_config.yml`; filtro `page.redirect` en `sitemap.xml`; informe `docs/GSC_AUDIT_2026-06-27.md` |
+
 ### Stitch + shell
 
 | ID | Tarea |
@@ -139,6 +159,7 @@ Commit + push → deploy.
 
 ## Changelog reciente
 
+- **T23** — GSC audit (`docs/GSC_AUDIT_2026-06-27.md`); `sitemap_exclude` (assets, 404, 9 slugs ES legacy); skip redirect stubs en `sitemap.xml`
 - **T7** — AdSense re-enabled (post footer, deferred loader, `.ad-slot` anti-CLS); Microsoft Clarity `xa15jprgqu`; GA4 ID from `_config.yml`; removed legacy ad network includes
 - **T7b** — Monetización: slot in-article native `6874018777` (fluid), pre-related, loader solo en posts, unfilled collapse
 - **Analytics** — GTM `GTM-K8J9KSB8` (head + noscript); direct GA4 off when GTM active (`skip_direct_ga4`)

@@ -34,6 +34,14 @@ layout: compress
 
   {% assign pass = false %}
 
+  {% if page.redirect %}
+    {% continue %}
+  {% endif %}
+
+  {% if page.sitemap == false %}
+    {% continue %}
+  {% endif %}
+
   {% for fuzzy in site.sitemap_exclude.fuzzy %}
     {% if page.url contains fuzzy %}
       {% assign pass = true %}

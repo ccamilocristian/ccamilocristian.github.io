@@ -6,6 +6,7 @@ Design and migration specs for the Calm Technical dashboard. These files are **e
 
 | Doc | Purpose |
 |-----|---------|
+| [`GSC_AUDIT_2026-06-27.md`](GSC_AUDIT_2026-06-27.md) | Search Console audit — indexación, sitemap, acciones |
 | [`STITCH_MIGRATION_GAP.md`](STITCH_MIGRATION_GAP.md) | Stitch 7/7 status, dual shell, open gaps |
 | [`../README_UX_EVOLUTION.md`](../README_UX_EVOLUTION.md) | Vision, stack, routes, content policy |
 | [`../BACKLOG.md`](../BACKLOG.md) | Task queue |

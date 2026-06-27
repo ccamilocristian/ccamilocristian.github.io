@@ -184,6 +184,28 @@ exclude:
   - README.md
   - LICENSE
 
+# Chirpy sitemap — exclude assets, tech files, legacy ES redirect stubs (T23)
+sitemap_exclude:
+  fuzzy:
+    - /assets/
+    - /norobots/
+    - /tabs/tags/
+  accurate:
+    - /404.html
+    - /robots.txt
+    - /sitemap.xml
+    - /app.js
+    - /sw_old.js
+    - /posts/icfes-conexion-api/
+    - /posts/scraping-plebiscito-colombia/
+    - /posts/optimizacion_teoria_consumidor/
+    - /posts/convertidor-IPC/
+    - /posts/automatizacion-envio-correos/
+    - /posts/liquidador-intereses/
+    - /posts/ministerio-salud/
+    - /posts/reproductor-musica/
+    - /posts/step-colombia/
+
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
