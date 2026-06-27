@@ -13,9 +13,14 @@ Focus: English copy, SEO, and narrative tone for a senior data engineer portfoli
 
 ## Content policy
 - **UI language**: English on Stitch surfaces.
-- **Posts**: 14 published EN; 9 ES unpublished with EN canonical + redirect (`_data/post_pairs.yml`).
+- **Posts**: 15 published EN; 9 ES unpublished with EN canonical + redirect (`_data/post_pairs.yml`).
 - YAML copy lives in `_data/*.yml` (profile, tabs, pillars, intelligence, etc.).
 
 ## Hooks
 - Lead with the problem or dataset, not generic intros.
 - Problem → process → impact for case studies and portfolio cards.
+
+## MCP / AI agent tutorials
+- Name **Cursor**, **Claude Desktop**, and **Codex** when the flow applies to all three—not Cursor alone.
+- One `server.py` (or shared tool code); separate config paths per client.
+- Tags: include `cursor-ide`, `claude`, `codex` where relevant for search.
