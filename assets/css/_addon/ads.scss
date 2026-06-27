@@ -185,3 +185,17 @@ body.stitch-dashboard .stitch-intelligence-ad-row .ad-slot--in-feed {
   color: var(--ds-color-text-secondary, #c3c6d2);
   opacity: 0.7;
 }
+
+/* T26f calm mobile — max 1 ad on posts (footer); no home bridge / in-feed */
+@media (max-width: 767px) {
+  body.stitch-dashboard .stitch-post-ad-row,
+  body.stitch-dashboard .ad-slot--mid-article,
+  body.stitch-dashboard #ad-mid-article-mount {
+    display: none !important;
+  }
+
+  body.stitch-dashboard .stitch-section--ad-bridge,
+  body.stitch-dashboard .stitch-intelligence-ad-row {
+    display: none !important;
+  }
+}

@@ -107,7 +107,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **T25i** | Segmento “Tráfico humano LATAM” | manual GA4 | Mié |
 | **T29** | GA4 Explorations + Looker storytelling | manual GA4 | Mié |
 | **T26e** | AdSense Policy + invalid traffic | manual AdSense | → [`T26_ADSENSE_MANUAL.md`](docs/T26_ADSENSE_MANUAL.md) §3 |
-| ~~**T26f**~~ | ~~Evaluar densidad ads home vs post~~ | ✅ decisión | Mantener 6 placements |
+| ~~**T26f**~~ | ~~Evaluar densidad ads home vs post~~ | ✅ calm mobile | Post móvil = 1 ad (footer) |
 | ~~**T26h**~~ | ~~Priorizar ads en slugs EN~~ | ✅ código | 14 slugs EN mid-article |
 | ~~**T26i**~~ | ~~Evaluar Auto ads~~ | ✅ decisión | OFF |
 | ~~**T25h**~~ | ~~2 eventos custom GA4~~ | ✅ GTM+código | — |
@@ -192,7 +192,7 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 | T23e | Snapshot GSC páginas + 14 inspecciones EN ✅ |
 | T25h | `analytics-events.js` (outbound_click, site_search) ✅ |
 | T26h | 14 slugs EN en `mid_article_priority_slugs` ✅ |
-| T26f/i | Densidad mantenida; Auto ads OFF ✅ |
+| T26f/i | Densidad calm: móvil 1 ad/post; desktop hasta 3 |
 | T32 | IndexNow key + `tools/indexnow-ping.sh` ✅ |
 | T21 | GTM v6 — consent + eventos + DLV ✅ |
 | T31 | Config tag + DLV publicado v6 ✅ |
