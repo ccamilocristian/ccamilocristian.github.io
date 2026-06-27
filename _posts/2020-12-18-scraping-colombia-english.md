@@ -3,6 +3,7 @@
 title: Web Scraping, case of study plebiscite in Colombia,2016
 redirect_from:
   - /posts/scraping-plebiscito-colombia/
+  - /scraping-colombia-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-18 01:00:00 -0500
 categories: [Python, Web_scraping, Data_studio]

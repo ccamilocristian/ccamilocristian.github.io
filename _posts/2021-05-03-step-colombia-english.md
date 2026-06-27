@@ -2,6 +2,7 @@
 title: Colombian labor market — STEP program case study
 redirect_from:
   - /posts/step-colombia/
+  - /step-colombia-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-05-03 15:00:00 -0500
 categories: [Python, Economics]

@@ -3,6 +3,7 @@
 title: How to interact with APIs in Python? Case of study, the ICFES's results in Colombia, 2019-2
 redirect_from:
   - /posts/icfes-conexion-api/
+  - /icfes-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-02-06 15:00:00 -0500
 categories: [Python, Economics, Data_studio]

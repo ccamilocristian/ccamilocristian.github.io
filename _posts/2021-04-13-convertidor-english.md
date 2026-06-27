@@ -3,6 +3,7 @@
 title: How make an inflation calculator? Case of study, Colombia between 2003 and 2020.
 redirect_from:
   - /posts/convertidor-IPC/
+  - /convertidor-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]

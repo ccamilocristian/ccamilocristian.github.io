@@ -1,6 +1,8 @@
 ---
 
 title: Unlocking the Power of Experimental Design in Data Analysis and Science
+redirect_from:
+  - /experimental-desing/
 author: Cristian Camilo Moreno Narvaez
 date: 2023-04-10 15:00:00 -0500
 categories: [Experiments, Data Analysis]

@@ -1,0 +1,31 @@
+# Canonical URLs for GSC "Request indexing" — copy/paste exactly
+# Permalink pattern: /posts/:title/ (see _config.yml)
+# Short paths like /music-player-english/ redirect via redirect_from (noindex).
+
+site: https://ccamilocristian.github.io
+
+priority:
+  - https://ccamilocristian.github.io/posts/music-player-english/
+  - https://ccamilocristian.github.io/posts/convertidor-english/
+  - https://ccamilocristian.github.io/posts/automation-sending/
+  - https://ccamilocristian.github.io/tabs/intelligence/
+
+all_en_posts:
+  - https://ccamilocristian.github.io/posts/music-player-english/
+  - https://ccamilocristian.github.io/posts/convertidor-english/
+  - https://ccamilocristian.github.io/posts/automation-sending/
+  - https://ccamilocristian.github.io/posts/icfes-english/
+  - https://ccamilocristian.github.io/posts/scraping-colombia-english/
+  - https://ccamilocristian.github.io/posts/loan-simulator-english/
+  - https://ccamilocristian.github.io/posts/minsalud-decrees-english/
+  - https://ccamilocristian.github.io/posts/step-colombia-english/
+  - https://ccamilocristian.github.io/posts/optimation-consumer-english/
+  - https://ccamilocristian.github.io/posts/creating-fun-game/
+  - https://ccamilocristian.github.io/posts/experimental-desing/
+  - https://ccamilocristian.github.io/posts/mastering-visualization-plotly/
+  - https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/
+  - https://ccamilocristian.github.io/posts/introduction-pyautogui-be/
+
+note: >
+  Do NOT inspect /slug without /posts/ — returns 404 until redirect deploy.
+  After deploy, /music-player-english/ redirects (noindex) to /posts/music-player-english/.

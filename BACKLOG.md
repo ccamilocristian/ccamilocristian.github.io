@@ -23,7 +23,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 1. **T21** — Publish GTM con consent (`GTM-K8J9KSB8`)
 2. **T25b** — QA consent GA4 en incógnito
 3. **T23b** — Push deploy sitemap T23 → reenviar en GSC
-4. **T24** — Solicitar indexación 6 URLs EN en GSC (manual UI)
+4. **T24** — Solicitar indexación en GSC (URLs completas en `_data/gsc_index_urls.yml`)
 5. **T25c** — Filtro bots Singapore en GA4 (UI o habilitar Admin API)
 
 ---

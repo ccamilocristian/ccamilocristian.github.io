@@ -3,6 +3,7 @@
 title: Optimization Consumer Theory in Python
 redirect_from:
   - /posts/optimizacion_teoria_consumidor/
+  - /optimation-consumer-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-23 15:00:00 -0500
 categories: [Python, Economics]

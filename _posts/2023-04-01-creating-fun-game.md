@@ -1,6 +1,8 @@
 ---
 
 title: Creating a Fun and Simple 2D Game with Pygame
+redirect_from:
+  - /creating-fun-game/
 author: Cristian Camilo Moreno Narvaez
 date: 2023-04-01 15:00:00 -0500
 categories: [Python, Automation]

@@ -1,6 +1,8 @@
 ---
 
 title: "Mastering Data Visualization with Plotly in Python: A Comprehensive Tutorial"
+redirect_from:
+  - /mastering-visualization-plotly/
 author: Cristian Camilo Moreno Narvaez
 date: 2023-03-23 15:00:00 -0500
 categories: [Python, Visualization]
