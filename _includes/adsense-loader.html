@@ -8,6 +8,13 @@
   function loadAdSense() {
     if (loading || document.querySelector('script[data-adsense-loader]')) return;
     loading = true;
+    window.adsbygoogle = window.adsbygoogle || [];
+    /* Manual placements only — no anchor (sticky ↑↓) or vignette (full-page) Auto ads */
+    window.adsbygoogle.push({
+      google_ad_client: client,
+      enable_page_level_ads: false,
+      overlays: { bottom: false, top: false, vignette: false }
+    });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;

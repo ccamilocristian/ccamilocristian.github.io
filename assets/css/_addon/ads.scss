@@ -70,10 +70,17 @@
 .ad-slot--footer {
   max-width: var(--stitch-post-text-measure, 46rem);
   margin-block: var(--ds-space-8, 2rem) var(--ds-space-6, 1.5rem);
-  min-height: var(--ad-min-h-mobile, 250px);
+  min-height: var(--ad-min-h-mobile, 120px);
+  max-height: 140px;
 
   @media (min-width: 768px) {
     min-height: var(--ad-min-h-desktop, 90px);
+    max-height: 100px;
+  }
+
+  ins.adsbygoogle {
+    max-height: 100px;
+    overflow: hidden;
   }
 }
 
@@ -149,12 +156,33 @@ body.stitch-dashboard .ad-slot--footer {
 .ad-slot--home,
 .ad-slot--in-feed {
   max-width: var(--ds-grid-container-max, 1120px);
-  margin-block: var(--ds-space-6, 1.5rem);
-  min-height: var(--ad-min-h-mobile, 250px);
+  margin-block: var(--ds-space-4, 1rem);
+  min-height: var(--ad-min-h-mobile, 90px);
+  max-height: 120px;
 
   @media (min-width: 768px) {
-    min-height: var(--ad-min-h-desktop, 120px);
+    min-height: var(--ad-min-h-desktop, 72px);
+    max-height: 100px;
   }
+
+  ins.adsbygoogle {
+    max-height: 100px;
+    overflow: hidden;
+  }
+}
+
+.ad-slot--home {
+  margin-block: var(--ds-space-3, 0.75rem);
+}
+
+/* Backup: hide intrusive Auto ad overlays if still injected by AdSense account settings */
+ins.adsbygoogle[data-ad-format="anchor"],
+ins.adsbygoogle[data-ad-format="autorelaxed"][data-anchor-status],
+body.stitch-dashboard .google-auto-placed.ap_container,
+body.stitch-dashboard .as_ads_anchor {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 body.stitch-dashboard .stitch-section--ad-bridge {

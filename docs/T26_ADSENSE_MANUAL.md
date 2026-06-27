@@ -82,8 +82,12 @@ Si `data-ad-status="unfilled"` → normal con poco tráfico; si nunca carga scri
 
 - [ ] Sin violaciones activas
 - [ ] Sitio `ccamilocristian.github.io` aprobado
-- [ ] **Auto ads = OFF** (evita duplicar unidades manuales)
+- [ ] **Auto ads = OFF** (evita anchor ↑↓, vignette pantalla completa y duplicar unidades manuales)
+  - AdSense → **Ads** → **By site** → `ccamilocristian.github.io` → **Auto ads** → desactivar
+  - Si mantienes Auto ads: desactiva al menos **Anchor ads** y **Vignette ads**
 - [ ] Blocking controls razonables (no bloquear demasiadas categorías)
+
+El código ya envía `enable_page_level_ads: false` y `overlays: { bottom, top, vignette: false }` antes de cargar `adsbygoogle.js`. Si aún ves el banner sticky o la pantalla completa, es configuración de cuenta — apágala en el panel.
 
 Tras **T25c** filtro Singapore: menos riesgo de invalid traffic.
 
@@ -91,13 +95,14 @@ Tras **T25c** filtro Singapore: menos riesgo de invalid traffic.
 
 ## 4. Decisión densidad (T26f) · registrada
 
-**Mantener configuración actual:**
+**Configuración actual (2026-06-27):**
 
-- Home: **1** placement (bridge)
-- Post EN: hasta **4** (in-article, mid, sidebar desktop, footer)
-- Intelligence: in-feed cada 6
+- Home: **1** placement compacto (horizontal ~90px móvil / ~72px desktop)
+- Post EN: **2** móvil (in-article + footer); desktop mid **XOR** in-article + footer (+ sidebar ≥1500px)
+- Intelligence: in-feed cada **10**
+- **Sin** Auto ads intrusivos (anchor, vignette) — solo unidades manuales
 
-Rationale: tráfico bajo (~114 imp/mes); reducir slots no sube RPM con este volumen. Reevaluar cuando EN indexe y pageviews >500/mes.
+Rationale: tráfico bajo; priorizar UX Calm Technical sobre impresiones agresivas. Reevaluar cuando pageviews >500/mes.
 
 ---
 

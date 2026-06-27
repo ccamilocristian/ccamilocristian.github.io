@@ -34,20 +34,22 @@ adsense:
     - automation-sending
   mid_article_priority_min_reading_time: 4
   in_feed_interval: 10
+  # Manual units only — disable Auto ads overlays (anchor ↑↓, vignette full-page) via loader push
+  suppress_auto_overlays: true
   min_heights:
     mobile: 280
     desktop: 250
     footer:
-      mobile: 250
+      mobile: 120
       desktop: 90
     sidebar:
       desktop: 250
     home:
-      mobile: 250
-      desktop: 120
+      mobile: 90
+      desktop: 72
     in_feed:
-      mobile: 250
-      desktop: 120
+      mobile: 90
+      desktop: 72
   note: >
     Fase 1–4: in_article 6874018777, footer 8047040393, sidebar 9362724975,
     mid 6813985623, home 5343588914, in_feed 9226993605.
