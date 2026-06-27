@@ -12,6 +12,28 @@
   }
 }
 
+/* Pending: hide label + reserve no space until AdSense reports filled */
+.ad-slot:not(.ad-slot--filled):not(.ad-slot--failed):not(.ad-slot--unfilled) {
+  min-height: 0;
+  margin-block: 0;
+  padding: 0;
+  background: transparent;
+
+  .ad-slot__label {
+    display: none;
+  }
+
+  ins.adsbygoogle {
+    min-height: 0;
+  }
+}
+
+.ad-slot--filled {
+  .ad-slot__label {
+    display: block;
+  }
+}
+
 .ad-slot ins.adsbygoogle {
   display: block;
   width: 100%;
@@ -65,10 +87,19 @@
   background: transparent;
   border-radius: var(--ds-radius-md, 8px);
 
+  &:not(.ad-slot--filled):not(.ad-slot--unfilled):not(.ad-slot--failed) {
+    padding: 0;
+  }
+
   ins.adsbygoogle {
     width: 300px;
     height: 250px;
     min-height: 250px;
+  }
+
+  &:not(.ad-slot--filled):not(.ad-slot--unfilled):not(.ad-slot--failed) ins.adsbygoogle {
+    height: 0;
+    min-height: 0;
   }
 }
 

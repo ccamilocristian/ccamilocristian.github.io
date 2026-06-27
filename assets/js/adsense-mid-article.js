@@ -37,14 +37,21 @@
     if (!ins) return;
     function check() {
       var status = ins.getAttribute('data-ad-status');
-      if (status === 'unfilled') slotEl.classList.add('ad-slot--unfilled');
-      if (status === 'filled') slotEl.classList.remove('ad-slot--unfilled');
+      if (status === 'unfilled') {
+        slotEl.classList.add('ad-slot--unfilled');
+        slotEl.classList.remove('ad-slot--filled');
+      }
+      if (status === 'filled') {
+        slotEl.classList.add('ad-slot--filled');
+        slotEl.classList.remove('ad-slot--unfilled');
+      }
     }
+    check();
     if ('MutationObserver' in window) {
       var mo = new MutationObserver(check);
       mo.observe(ins, { attributes: true, attributeFilter: ['data-ad-status'] });
     }
-    setTimeout(check, 4000);
+    setTimeout(check, 2500);
   }
 
   function doPush() {

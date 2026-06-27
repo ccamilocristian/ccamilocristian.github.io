@@ -40,7 +40,8 @@ adsense:
 
 disqus:
   stitch_routes: false
-  note: Comments off on stitch-dashboard surfaces; legacy posts may still reference Disqus if enabled in post front matter.
+  comments: false
+  note: Comments off site-wide (_config.yml disqus.comments false, T8).
 
 clarity:
   enabled: true

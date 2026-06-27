@@ -9,8 +9,19 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | Stitch shell | **7/7** superficies migradas |
 | Contenido | **14 posts** publicados (EN); **9 ES** despublicados + redirect 301 |
 | SEO posts | **T9 hecho** — `description:` en 14 posts |
+| SEO infra | **T22 hecho** — URL canonical, redirects GTM, hreflang, flagship EN |
 | Repo hygiene | **Cleanup hecho** — gitignore, agentes, READMEs, `docs/README.md` |
-| Abierto | **T6** (Vision Lab), **T3/T4** (home opcional), **T8** (Disqus off), **T21** (CMP CookieYes ID + GTM consent) |
+| Abierto | **T6** (Vision Lab contenido), **T3** (model explorer deferred) |
+
+---
+
+## Acciones manuales post-deploy (T22)
+
+| Acción | Dónde |
+|--------|-------|
+| Reenviar sitemap | Search Console → Sitemaps → `https://ccamilocristian.github.io/sitemap.xml` |
+| 301 legacy ES (opcional) | Cloudflare Rules si usas dominio custom |
+| CookieYes + GTM consent | Pasos T21 abajo si aún no publicaste container |
 
 ---
 
@@ -19,10 +30,8 @@ _Last sync: 2026-06-20 (repo cleanup)_
 | # | ID | Pri | Tarea | Resp | Archivo / acción |
 |---|-----|-----|-------|------|------------------|
 | 1 | **T6** | Media | Vision Lab → caso real | RED | `_data/vision_lab.yml` cuando exista experimento documentado |
-| 2 | **T4** | Media | Imágenes Selected Work locales | UX | `_data/portfolio_projects.yml` → `assets/img/cases/` |
-| 3 | **T3** | Media | Model performance explorer | DBG | `_data/command_center.yml` → `mock_modules.model_explorer.enabled: true` — **Deferred** |
-| 4 | **T8** | Baja | Re-enable Disqus en Stitch | DBG | `_data/site_ops.yml` — **Off** (T15 ya hecho) |
-| 5 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | Código listo — falta `cookieyes_id` + config GTM (ver abajo) |
+| 2 | **T3** | Media | Model performance explorer | DBG | `_data/command_center.yml` → `mock_modules.model_explorer.enabled: true` — **Deferred** |
+| 3 | **T21** | Alta | CMP Consent Mode v2 (CookieYes) | UX | Código listo — verificar GTM consent publish (ver abajo) |
 
 ---
 
@@ -136,6 +145,7 @@ Commit + push → deploy.
 - **T21 (código)** — Consent Mode v2 scaffold: CookieYes/Cookiebot hook, consent defaults, AdSense + Clarity gated; pending `cookieyes_id`
 - **T7c** — Ad Fase 1–2: post footer `8047040393` + sidebar sticky `9362724975`
 - **T7d** — Ad Fase 3–4: mid `6813985623`, home `5343588914`, in-feed `9226993605`
+- **T22** — SEO/infra: URL sin trailing slash, redirect layout + GTM, portfolio EN links, search absolute_url; Propeller meta removed; hreflang EN; intelligence_flagship EN slugs; Disqus off (T8); ad pending UX (hide Sponsored until filled); portfolio imágenes locales; preconnect cleanup
 - **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
 - **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
 - **T5** — 9 duplicados ES despublicados; redirect 301 a EN

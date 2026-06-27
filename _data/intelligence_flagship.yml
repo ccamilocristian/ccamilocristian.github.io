@@ -1,14 +1,15 @@
 # Curated flagship slugs for Intelligence tab (edit here, not in Liquid)
+# Use EN canonical slugs — ES posts are unpublished with redirect_from.
 economics:
   - behavioral-economics-data-analysis-applications
-  - step-colombia
-  - optimizacion_teoria_consumidor
-  - convertidor-IPC
-  - liquidador-intereses
+  - step-colombia-english
+  - optimation-consumer-english
+  - convertidor-english
+  - loan-simulator-english
 
 data_science:
-  - icfes-conexion-api
-  - scraping-plebiscito-colombia
+  - icfes-english
+  - scraping-colombia-english
   - mastering-visualization-plotly
   - experimental-desing
-  - ministerio-salud
+  - minsalud-decrees-english
