@@ -2,6 +2,21 @@
 {% if consent_cmp_active %}
   {% assign cc = site.data.site_ops.cookie_consent %}
   {% if cc.provider == 'cookieyes' %}
+<script>
+(function () {
+  window.__ckyConsentSnapshot = null;
+  function capture(e) {
+    if (e && e.detail && e.detail.categories) {
+      window.__ckyConsentSnapshot = e.detail;
+    }
+    if (window.siteConsentGate && window.siteConsentGate.sync) {
+      window.siteConsentGate.sync();
+    }
+  }
+  document.addEventListener('cookieyes_banner_load', capture);
+  document.addEventListener('cookieyes_consent_update', capture);
+})();
+</script>
 <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/{{ cc.cookieyes_id }}/script.js"></script>
   {% elsif cc.provider == 'cookiebot' %}
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="{{ cc.cookiebot_id }}" data-blockingmode="auto" type="text/javascript"></script>

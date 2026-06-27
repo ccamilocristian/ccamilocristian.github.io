@@ -5,16 +5,37 @@
   var cmpActive = root.getAttribute('data-cmp-active') === 'true';
   var queues = { analytics: [], advertisement: [] };
 
-  function cookieYesGranted(category) {
+  function readCategories() {
+    if (window.__ckyConsentSnapshot && window.__ckyConsentSnapshot.categories) {
+      return window.__ckyConsentSnapshot.categories;
+    }
     if (typeof getCkyConsent === 'function') {
       try {
         var data = getCkyConsent();
-        if (data && data.categories) {
-          if (category === 'analytics') return !!data.categories.analytics;
-          if (category === 'advertisement') return !!data.categories.advertisement;
-        }
+        if (data && data.categories) return data.categories;
       } catch (e) { /* noop */ }
     }
+    return null;
+  }
+
+  function cookieYesGrantedFromCookie(category) {
+    var raw = document.cookie || '';
+    if (category === 'advertisement') {
+      return /advertisement:\s*yes/i.test(raw) || /"advertisement"\s*:\s*true/.test(raw);
+    }
+    if (category === 'analytics') {
+      return /analytics:\s*yes/i.test(raw) || /"analytics"\s*:\s*true/.test(raw);
+    }
+    return false;
+  }
+
+  function cookieYesGranted(category) {
+    var cats = readCategories();
+    if (cats) {
+      if (category === 'analytics') return !!cats.analytics;
+      if (category === 'advertisement') return !!cats.advertisement;
+    }
+    if (cookieYesGrantedFromCookie(category)) return true;
     if (typeof cookieyes !== 'undefined' && cookieyes.consent) {
       return !!cookieyes.consent[category];
     }
@@ -56,8 +77,8 @@
     queues[category].push(fn);
   }
 
+  document.addEventListener('cookieyes_banner_load', sync);
   document.addEventListener('cookieyes_consent_update', sync);
-  document.addEventListener('cookieyes_banner_loaded', sync);
   window.addEventListener('CookiebotOnAccept', sync);
   window.addEventListener('CookiebotOnDecline', sync);
   window.addEventListener('CookiebotOnLoad', sync);
@@ -72,4 +93,5 @@
   }
 
   window.siteConsentGate = { on: on, cmpActive: cmpActive, sync: sync };
+  sync();
 })();
