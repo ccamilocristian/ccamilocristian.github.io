@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-06-27 (post push + GSC resubmit)_
+_Last sync: 2026-06-27 (baseline + IndexNow ping)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -15,16 +15,16 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **7/7** completo |
 | Posts | **14 EN** + 9 ES redirect |
-| Tareas abiertas | **~10** (manual QA + indexación) |
+| Tareas abiertas | **~8** (manual UI) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
 ### Hacer hoy (top 5)
 
-1. **T24** — Solicitar indexación GSC (`gsc_index_urls.yml`, URLs con `/posts/`)
-2. **T25b** — QA consent GA4 en incógnito (post GTM v5)
-3. **T25d** — Asociar GSC ↔ GA4 en UI
-4. **T25c** — Filtro Singapore (GA4 UI o Admin API — **API habilitada** ✅)
-5. **T23f** — Bing Webmaster Tools + mismo sitemap
+1. **T24** — GSC indexación → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md) §1
+2. **T25b** — QA consent incógnito → checklist §2
+3. **T25c** — Filtro Singapore → checklist §3
+4. **T25d** — GSC ↔ GA4 link → checklist §3
+5. **T23f** — Bing Webmaster → checklist §4
 
 ---
 
@@ -44,7 +44,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **GA4 datos limpios** | ❌ | Bots Singapore ~65%; filtro pendiente |
 | **GSC ↔ GA4 link** | ⏳ | Manual UI |
 | **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |
-| **Bing / IndexNow** | ⚠️ | T32 código listo; ping tras deploy key file |
+| **Bing / IndexNow** | ✅ ping | T32 key live + `indexnow-ping.sh` ejecutado |
+| **Docs internos** | ✅ | `BACKLOG.md` excluido del build (`d0dcf76`) |
 
 **Veredicto:** medición **casi alineada** — GTM y código coinciden. Datos aún **no son confiables** para decisiones hasta filtro bots + QA consent + indexación EN.
 
@@ -103,14 +104,14 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | ~~**T24b**~~ | ~~Internal linking EN → Intelligence~~ | ✅ código | — |
 | ~~**T23e**~~ | ~~Informe Páginas GSC~~ | ✅ API | — |
 | ~~**T25e**~~ | ~~Investigar pico 20-jun~~ | ✅ API GA4 | — |
-| **T25g** | Revisar Enhanced Measurement GA4 | manual GA4 | Mié |
+| **T25g** | Revisar Enhanced Measurement GA4 | ~~API~~ scroll/outbound/search ON ✅ | Mié |
 | **T25i** | Segmento “Tráfico humano LATAM” | manual GA4 | Mié |
 | **T29** | GA4 Explorations + Looker storytelling | manual GA4 | Mié |
 | **T26e** | AdSense Policy + invalid traffic | manual AdSense | Jue |
 | **T26f** | Evaluar densidad ads home vs post | decisión | Jue |
 | ~~**T26g**~~ | ~~Ads en posts con más tráfico~~ | ✅ código | — |
 | ~~**T25h**~~ | ~~2 eventos custom GA4~~ | ✅ GTM+código | — |
-| **T25j** | Snapshot baseline 7d post-fix | docs | Vie |
+| ~~**T25j**†~~ | ~~Baseline pre-filtro~~ | ✅ `GA4_BASELINE_2026-06-27.md` | — |
 | **T6** | Vision Lab — caso real | contenido | Vie |
 
 ---
@@ -120,7 +121,6 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | ID | Tarea | Tipo |
 |----|-------|------|
 | **T23f** | Bing Webmaster Tools + mismo sitemap | manual |
-| **T32** | IndexNow (`key` + ping en deploy) | código |
 | **T33** | Yandex Webmaster (opcional, mercado RU) | manual |
 | **T23g** | GSC ↔ GA4 (si no hecho en T25d) | manual |
 | **T26h** | Priorizar ads en slugs EN cuando indexen | código |
@@ -146,11 +146,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |------|--------------|---------------------|
 | **GSC** | Leer keywords/páginas, inspeccionar URL, submit sitemap | **Solicitar indexación**, vigilar cobertura visual |
 | **GA4** | Leer reportes Data API | **Filtros**, segmentos, Enhanced Measurement, **vincular GSC** |
-| **GTM** | — | **Publish** container + consent en tags |
+| **GTM** | Editar + publish vía API (hecho v5) | **T31** warnings tras workspace Sync |
 | **AdSense** | Leer earnings (OAuth) | **Renombrar units**, Policy center, QA visual |
 | **Google Ads** | — | No hay cuenta (solo AdSense publisher) |
 
-Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-06-27.md) § manual.
+Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 
 ---
 
@@ -201,6 +201,8 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 |----|---------|
 | T7–T7d | AdSense 6 slots, Clarity, GTM, anti-CLS |
 | T21 | GTM v5 publicado API — consent + 2 eventos GA4 ✅ |
+| T34 | Excluir `BACKLOG.md` + `README_UX_EVOLUTION.md` del build ✅ |
+| T32† | IndexNow ping ejecutado post-deploy ✅ |
 
 ### Auditorías (27-jun)
 | Doc | Contenido |
@@ -208,7 +210,8 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 | `GSC_AUDIT_2026-06-27.md` | Indexación, sitemap, EN vs ES |
 | `GA4_AUDIT_2026-06-27.md` | Bots SG, bounce 84%, fuentes |
 | `ADSENSE_AUDIT_2026-06-27.md` | $0.02/30d, slots vs dashboard |
-| `API_RUN_2026-06-27.md` | Batch API GSC/GA4/AdSense + límites |
+| `GA4_BASELINE_2026-06-27.md` | Baseline pre-filtro (T25j) |
+| `MANUAL_CHECKLIST.md` | Checklist UI copiable |
 
 ### Stitch + contenido + docs
 Stitch **7/7** (T11–T20) · Perfil T1–T2 · EN/ES T5/T5b · SEO descriptions T9 · Repo cleanup · `README_UX_EVOLUTION` T10 · `STITCH_MIGRATION_GAP` T17
@@ -249,7 +252,7 @@ Crear en GA4 → Explore (semanal):
 ### Changelog reciente
 | Fecha | Entrega |
 |-------|---------|
-| 2026-06-27 | T32 IndexNow; T23b GSC resubmit; T28 Admin API; push SSH |
+| 2026-06-27 | T25j baseline, MANUAL_CHECKLIST, IndexNow ping, exclude docs |
 | 2026-06-27 | GTM v5 API publish; matriz alineación |
 | 2026-06-27 | Commit `51b24b8` GTM docs + `0142acd` URL redirects |
 | 2026-06-27 | T23 sitemap limpio (commit `ded08b0`) |

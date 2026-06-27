@@ -9,7 +9,9 @@ Design and migration specs for the Calm Technical dashboard. These files are **e
 | [`GSC_AUDIT_2026-06-27.md`](GSC_AUDIT_2026-06-27.md) | Search Console — indexación, sitemap, EN vs ES |
 | [`GA4_AUDIT_2026-06-27.md`](GA4_AUDIT_2026-06-27.md) | Google Analytics 4 — tráfico, bots, consent |
 | [`ADSENSE_AUDIT_2026-06-27.md`](ADSENSE_AUDIT_2026-06-27.md) | AdSense — ingresos, slots, dashboard |
-| [`API_RUN_2026-06-27.md`](API_RUN_2026-06-27.md) | Batch APIs + tareas solo manual |
+| [`MANUAL_CHECKLIST.md`](MANUAL_CHECKLIST.md) | Checklist manual UI (T24–T26) |
+| [`API_RUN_2026-06-27.md`](API_RUN_2026-06-27.md) | Batch APIs + límites del bot |
+| [`GA4_BASELINE_2026-06-27.md`](GA4_BASELINE_2026-06-27.md) | Baseline GA4 pre-filtro |
 | [`GSC_API_SNAPSHOT_2026-06-27.json`](GSC_API_SNAPSHOT_2026-06-27.json) | Páginas GSC + inspección 14 URLs EN |
 | [`WEEK_PLAN_2026-06-27.md`](WEEK_PLAN_2026-06-27.md) | Horizonte semanal lun–vie |
 | [`STITCH_MIGRATION_GAP.md`](STITCH_MIGRATION_GAP.md) | Stitch 7/7 status, dual shell, open gaps |
