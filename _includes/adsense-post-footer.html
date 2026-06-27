@@ -1,0 +1,18 @@
+{% comment %}
+  Horizontal display unit after related posts / post nav.
+{% endcomment %}
+{% assign show_footer_ad = false %}
+{% if site.data.site_ops.adsense.enabled and site.data.site_ops.adsense.placements.post_footer != false %}
+  {% if stitch_dashboard and site.data.site_ops.adsense.stitch_routes %}
+    {% assign show_footer_ad = true %}
+  {% elsif stitch_dashboard == false %}
+    {% assign show_footer_ad = true %}
+  {% endif %}
+{% endif %}
+{% if show_footer_ad %}
+<div class="row stitch-post-ad-footer-row">
+  <div class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
+    {% include adsense-unit.html variant="footer" %}
+  </div>
+</div>
+{% endif %}

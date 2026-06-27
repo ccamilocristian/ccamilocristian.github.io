@@ -3,23 +3,33 @@
 {% if variant == 'footer' %}
   {% assign slot = include.slot | default: ads.slots.post_footer %}
   {% assign placement_on = ads.placements.post_footer %}
+  {% assign min_h_mobile = ads.min_heights.footer.mobile | default: ads.min_heights.mobile | default: 250 %}
+  {% assign min_h_desktop = ads.min_heights.footer.desktop | default: ads.min_heights.desktop | default: 90 %}
+{% elsif variant == 'sidebar' %}
+  {% assign slot = include.slot | default: ads.slots.sidebar %}
+  {% assign placement_on = ads.placements.sidebar %}
+  {% assign min_h_mobile = 0 %}
+  {% assign min_h_desktop = ads.min_heights.sidebar.desktop | default: 250 %}
 {% else %}
   {% assign slot = include.slot | default: ads.slots.in_article %}
   {% assign placement_on = ads.placements.in_article %}
+  {% assign min_h_mobile = ads.min_heights.mobile | default: 280 %}
+  {% assign min_h_desktop = ads.min_heights.desktop | default: 250 %}
 {% endif %}
-{% if ads.enabled and ads.client and slot and placement_on != false %}
+{% if ads.enabled and ads.client and slot and slot != '' and placement_on != false %}
 <aside class="ad-slot ad-slot--{{ variant }}"
        aria-label="Advertisement"
-       style="--ad-min-h-mobile: {{ ads.min_heights.mobile | default: 280 }}px;
-              --ad-min-h-desktop: {{ ads.min_heights.desktop | default: 250 }}px;">
+       style="--ad-min-h-mobile: {{ min_h_mobile }}px;
+              --ad-min-h-desktop: {{ min_h_desktop }}px;">
   <span class="ad-slot__label" aria-hidden="true">Sponsored</span>
   <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
+       style="{% if variant == 'sidebar' %}display:inline-block;width:300px;height:250px;{% else %}display:block;text-align:center;{% endif %}"
        data-ad-client="{{ ads.client }}"
        data-ad-slot="{{ slot }}"
        {% if variant == 'in-article' %}
        data-ad-layout="in-article"
        data-ad-format="fluid"
+       {% elsif variant == 'sidebar' %}
        {% else %}
        data-ad-format="horizontal"
        data-full-width-responsive="true"

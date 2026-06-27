@@ -4,16 +4,25 @@ adsense:
   client: ca-pub-2402437399062384
   stitch_routes: true
   defer_until_idle: true
-  min_heights:
-    mobile: 280
-    desktop: 250
   slots:
     in_article: "6874018777"
     post_footer: "8047040393"
+    sidebar: "9362724975"
   placements:
     in_article: true
-    post_footer: false
-  note: In-article native unit (6874018777) before related posts; legacy display slot kept for post_footer if re-enabled.
+    post_footer: true
+    sidebar: true
+  min_heights:
+    mobile: 280
+    desktop: 250
+    footer:
+      mobile: 250
+      desktop: 90
+    sidebar:
+      desktop: 250
+  note: >
+    in_article (6874018777) before related; post_footer (8047040393) after related/nav;
+    sidebar (9362724975) 300×250 sticky desktop ≥1280px.
 
 disqus:
   stitch_routes: false

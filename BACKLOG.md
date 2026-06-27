@@ -134,6 +134,7 @@ Commit + push → deploy.
 - **T7b** — Monetización: slot in-article native `6874018777` (fluid), pre-related, loader solo en posts, unfilled collapse
 - **Analytics** — GTM `GTM-K8J9KSB8` (head + noscript); direct GA4 off when GTM active (`skip_direct_ga4`)
 - **T21 (código)** — Consent Mode v2 scaffold: CookieYes/Cookiebot hook, consent defaults, AdSense + Clarity gated; pending `cookieyes_id`
+- **T7c** — Ad Fase 1+2: post footer `8047040393` + sidebar sticky `9362724975` (300×250, desktop ≥1280px)
 - **T9** — 14 `description:` reescritas; meta duplicado eliminado en posts 2023
 - **T5b** — `loan-simulator`, `minsalud-decrees`, `music-player`, `step-colombia-english`
 - **T5** — 9 duplicados ES despublicados; redirect 301 a EN

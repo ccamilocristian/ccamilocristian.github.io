@@ -1,0 +1,14 @@
+{% comment %}
+  Sticky right-rail display unit for Stitch post layout (desktop only).
+{% endcomment %}
+{% assign show_sidebar_ad = false %}
+{% if site.data.site_ops.adsense.enabled and site.data.site_ops.adsense.placements.sidebar != false %}
+  {% if stitch_dashboard and site.data.site_ops.adsense.stitch_routes and site.data.site_ops.adsense.slots.sidebar != '' %}
+    {% assign show_sidebar_ad = true %}
+  {% endif %}
+{% endif %}
+{% if show_sidebar_ad %}
+<aside class="stitch-post-ad-rail" aria-label="Advertisement">
+  {% include adsense-unit.html variant="sidebar" %}
+</aside>
+{% endif %}
