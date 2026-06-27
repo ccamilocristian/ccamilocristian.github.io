@@ -11,6 +11,7 @@ layout: default
   <div id="post-wrapper" class="col-12{% unless stitch_dashboard %} col-lg-11 col-xl-8{% endunless %}">
 
     {% if stitch_dashboard %}
+    <div class="stitch-post-shell">
     <div class="stitch-post-page stitch-post-page--{{ post_domain_slug }} dashboard-page dashboard-page--post">
       <div class="stitch-post-ambient" aria-hidden="true"></div>
 
@@ -76,10 +77,10 @@ layout: default
               </div>
             </div>
           </div>
-
-          {% include adsense-sidebar.html %}
         </div>
       </article>
+    </div>
+    {% include adsense-sidebar.html %}
     </div>
 
     {% else %}

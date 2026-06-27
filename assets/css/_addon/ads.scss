@@ -61,20 +61,40 @@
   max-width: 300px;
   margin: 0;
   min-height: 0;
-  padding: var(--ds-space-4, 1rem);
-  align-self: flex-start;
-
-  @media (min-width: 1280px) {
-    display: block;
-    position: sticky;
-    top: 5.5rem;
-  }
+  padding: var(--ds-space-3, 0.75rem);
+  background: transparent;
+  border-radius: var(--ds-radius-md, 8px);
 
   ins.adsbygoogle {
     width: 300px;
     height: 250px;
     min-height: 250px;
   }
+}
+
+/* Fixed in viewport gutter — outside 1120px content shell */
+body.stitch-dashboard .stitch-post-ad-rail {
+  display: none;
+  pointer-events: none;
+
+  .ad-slot {
+    pointer-events: auto;
+  }
+
+  @media (min-width: 1500px) {
+    display: block;
+    position: fixed;
+    top: 5.5rem;
+    left: calc(50% + (var(--ds-grid-container-max, 1120px) / 2) + var(--ds-space-6, 1.5rem));
+    width: 300px;
+    z-index: 20;
+  }
+}
+
+body.stitch-dashboard .stitch-post-shell {
+  position: relative;
+  max-width: var(--ds-grid-container-max, 1120px);
+  margin-inline: auto;
 }
 
 body.stitch-dashboard .stitch-post-ad-rail:has(.ad-slot--unfilled),
