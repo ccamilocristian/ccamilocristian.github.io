@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-06-27_
+_Last sync: 2026-06-27 (post GTM v5)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -15,7 +15,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **7/7** completo |
 | Posts | **14 EN** + 9 ES redirect |
-| Tareas abiertas | **~14** (solo manual / decisión) |
+| Tareas abiertas | **~12** (manual + 2 API pendientes) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
 ### Hacer hoy (top 5)
@@ -28,17 +28,52 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ---
 
+5. **T28** — Habilitar Analytics Admin API en GCP → filtro Singapore vía bot
+
+---
+
+## Estado de alineación (¿estamos midiendo bien?)
+
+| Capa | Estado | Notas |
+|------|--------|-------|
+| **GTM Live v5** | ✅ | 3 tags, consent `analytics_storage`, eventos custom |
+| **GA4 pageviews** | ✅ | `G-4FK52MWLPP` vía GTM; `skip_direct_ga4: true` (sin duplicados) |
+| **Consent site** | ✅ | CookieYes ID activo + `consent-defaults.html` deny-by-default |
+| **Consent QA** | ⏳ | Falta prueba incógnito post-v5 |
+| **Eventos custom** | ⚠️ | Código + GTM OK; parámetros (`link_url`) aún no en tags GTM |
+| **Clarity** | ✅ | Tras consent analytics |
+| **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
+| **GSC orgánico** | ⚠️ | 98% tráfico en URLs ES legacy; EN casi sin indexar |
+| **Sitemap GSC** | ⏳ | `isPending`; reenviar post-deploy |
+| **GA4 datos limpios** | ❌ | Bots Singapore ~65%; filtro pendiente |
+| **GSC ↔ GA4 link** | ⏳ | Manual UI |
+| **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |
+| **Bing / Yahoo / IndexNow** | ❌ | T23f pendiente |
+
+**Veredicto:** medición **casi alineada** — GTM y código coinciden. Datos aún **no son confiables** para decisiones hasta filtro bots + QA consent + indexación EN.
+
+### GTM — warnings típicos (T31)
+
+| Warning UI | Causa | Fix |
+|------------|-------|-----|
+| GA4 Event sin “Configuration tag” | `gaawe` usa `measurementIdOverride` suelto | Vincular al Google Tag (API) |
+| Eventos sin parámetros | Tags solo envían nombre | Añadir DLV `link_url`, `search_term` |
+| Consent overview | CookieYes update no en GTM | Opcional: tag Consent Update en GTM |
+
+---
+
 ## Por hacer — Alta (esta semana)
 
 ### Medición y consent (T21, T25)
 
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
-| **T21** | Publish GTM con consent settings | ~~API~~ ✅ v5 Live 27-jun |
-| **T25a** | Consent en tags GA4 + ads en GTM | parcial — GA4 ✅; ads en sitio (no GTM) |
+| ~~**T21**~~ | ~~Publish GTM con consent~~ | ✅ API v5 | — |
+| **T25a** | Consent ads (AdSense vía sitio, no GTM) | verificar QA | Lun |
 | **T25b** | QA consent: rechazar/aceptar → GA4 Realtime | manual QA | Lun |
 | **T25d** | Asociar GSC ↔ GA4 (`356406631`) | manual GSC | Lun |
 | **T26d** | QA ads tras consent `advertisement` | manual QA | Lun |
+| **T31** | GTM warnings: config tag + DLV event params | API GTM | Lun |
 
 ### Search Console (T23–T24)
 
@@ -70,28 +105,32 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
 | ~~**T24b**~~ | ~~Internal linking EN → Intelligence~~ | ✅ código | — |
-| ~~**T23e**~~ | ~~Informe Páginas GSC (cobertura)~~ | ✅ API → `GSC_API_SNAPSHOT` | — |
-| ~~**T25e**~~ | ~~Investigar pico tráfico 20-jun~~ | ✅ API GA4 | — |
+| ~~**T23e**~~ | ~~Informe Páginas GSC~~ | ✅ API | — |
+| ~~**T25e**~~ | ~~Investigar pico 20-jun~~ | ✅ API GA4 | — |
 | **T25g** | Revisar Enhanced Measurement GA4 | manual GA4 | Mié |
 | **T25i** | Segmento “Tráfico humano LATAM” | manual GA4 | Mié |
+| **T29** | GA4 Explorations + Looker storytelling | manual GA4 | Mié |
 | **T26e** | AdSense Policy + invalid traffic | manual AdSense | Jue |
 | **T26f** | Evaluar densidad ads home vs post | decisión | Jue |
 | ~~**T26g**~~ | ~~Ads en posts con más tráfico~~ | ✅ código | — |
-| ~~**T25h**~~ | ~~2 eventos custom GA4 (outbound, search)~~ | ✅ código | — |
+| ~~**T25h**~~ | ~~2 eventos custom GA4~~ | ✅ GTM+código | — |
 | **T25j** | Snapshot baseline 7d post-fix | docs | Vie |
 | **T6** | Vision Lab — caso real | contenido | Vie |
 
 ---
 
-## Por hacer — Baja
+## Por hacer — Baja / pensar en grande
 
 | ID | Tarea | Tipo |
 |----|-------|------|
-| **T23f** | Bing Webmaster Tools + sitemap | manual |
+| **T23f** | Bing Webmaster Tools + mismo sitemap | manual |
+| **T32** | IndexNow (`key` + ping en deploy) | código |
+| **T33** | Yandex Webmaster (opcional, mercado RU) | manual |
 | **T23g** | GSC ↔ GA4 (si no hecho en T25d) | manual |
 | **T26h** | Priorizar ads en slugs EN cuando indexen | código |
 | **T26i** | Evaluar Auto ads AdSense | decisión |
 | **T26j** | Meta: 1.000 pageviews/mes para RPM estable | meta |
+| **T28** | Habilitar Analytics Admin API en GCP | manual GCP |
 
 ---
 
@@ -162,7 +201,7 @@ Lista accionable post-deploy: [`docs/API_RUN_2026-06-27.md`](docs/API_RUN_2026-0
 | ID | Entrega |
 |----|---------|
 | T7–T7d | AdSense 6 slots, Clarity, GTM, anti-CLS |
-| T21† | Consent scaffold + CookieYes ID — **GTM v5 publicado vía API** |
+| T21 | GTM v5 publicado API — consent + 2 eventos GA4 ✅ |
 
 ### Auditorías (27-jun)
 | Doc | Contenido |
@@ -184,12 +223,34 @@ Stitch **7/7** (T11–T20) · Perfil T1–T2 · EN/ES T5/T5b · SEO descriptions
 2. GTM → tags con consent requerido → **Publish**  
 3. QA incógnito: rechazar / aceptar analytics / aceptar ads  
 
+### T29 — GA4 storytelling (plantilla)
+
+Crear en GA4 → Explore (semanal):
+
+1. **Funnel:** Home → Post EN → Intelligence tab  
+2. **Path exploration:** entradas orgánicas GSC vs Direct  
+3. **Segmento comparativo:** Human LATAM vs All traffic  
+4. **Eventos:** `outbound_click`, `site_search` post-v5  
+5. **Looker Studio** (opcional): 1 página con KPIs — users, engagement, top posts EN, AdSense RPM
+
+### T29 — KPIs narrativa semanal
+
+| Pregunta | Fuente |
+|----------|--------|
+| ¿Crece tráfico EN indexado? | GSC páginas + GA4 `/posts/*-english/` |
+| ¿Bounce baja post-filtro SG? | GA4 segmento humano |
+| ¿Ads generan impresiones reales? | AdSense + GA4 tras consent ads |
+| ¿Keywords suben posición? | GSC queries (IPC, reproductor, email python) |
+
 ### IDs
-`~/mcp_servers/.env` — GA4 `356406631`, AdSense `pub-2402437399062384`, GTM `GTM-K8J9KSB8`
+`~/mcp_servers/.env` — GA4 `356406631` · GTM `6361961802/256082250` · AdSense `pub-2402437399062384`
+
+**Google Ads:** no aplica — solo **AdSense publisher**. Campañas de pago = T27 aparcado.
 
 ### Changelog reciente
 | Fecha | Entrega |
 |-------|---------|
-| 2026-06-27 | Batch API: T25e, T26a, T24 inspección, T25f, T24b; `API_RUN` |
+| 2026-06-27 | GTM v5 API publish; matriz alineación; T28–T33 |
+| 2026-06-27 | Commit `51b24b8` GTM docs + `0142acd` URL redirects |
 | 2026-06-27 | T23 sitemap limpio (commit `ded08b0`) |
 | 2026-06 | T22 SEO infra |
