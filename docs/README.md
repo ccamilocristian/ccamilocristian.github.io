@@ -9,6 +9,8 @@ Design and migration specs for the Calm Technical dashboard. These files are **e
 | [`GSC_AUDIT_2026-06-27.md`](GSC_AUDIT_2026-06-27.md) | Search Console — indexación, sitemap, EN vs ES |
 | [`GA4_AUDIT_2026-06-27.md`](GA4_AUDIT_2026-06-27.md) | Google Analytics 4 — tráfico, bots, consent |
 | [`ADSENSE_AUDIT_2026-06-27.md`](ADSENSE_AUDIT_2026-06-27.md) | AdSense — ingresos, slots, dashboard |
+| [`TU_TURNO_MANUAL.md`](TU_TURNO_MANUAL.md) | Checklist manual priorizado (T24–T26) |
+| [`T26_ADSENSE_MANUAL.md`](T26_ADSENSE_MANUAL.md) | AdSense T26b–e checklist |
 | [`T24_GSC_INDEX_NOW.md`](T24_GSC_INDEX_NOW.md) | 13 URLs para solicitar indexación |
 | [`MANUAL_CHECKLIST.md`](MANUAL_CHECKLIST.md) | Checklist manual UI (T24–T26) |
 | [`API_RUN_2026-06-27.md`](API_RUN_2026-06-27.md) | Batch APIs + límites del bot |

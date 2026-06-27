@@ -1,0 +1,51 @@
+{
+  "generated": "2026-06-27T11:05:33.444996+00:00",
+  "tasks": {
+    "T25c": {
+      "status": "blocked_api",
+      "note": "dataFilters/audiences return 404 via Admin API; use GA4 UI (see TU_TURNO_MANUAL.md §2)"
+    },
+    "T23d": {
+      "status": "ok",
+      "feedpath": "https://ccamilocristian.github.io/sitemap.xml",
+      "lastSubmitted": "2026-06-27T11:09:02.514Z",
+      "lastDownloaded": "2024-10-16T02:42:41.606Z",
+      "isPending": true,
+      "warnings": "0",
+      "errors": "0",
+      "contents": [{"type": "web", "submitted": "73", "indexed": "0"}]
+    },
+    "T24": {
+      "status": "ok",
+      "indexed": 2,
+      "pending": 13,
+      "total": 15,
+      "results": [
+        {"url": "/posts/music-player-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/convertidor-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/automation-sending/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/icfes-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/scraping-colombia-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/loan-simulator-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/minsalud-decrees-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/step-colombia-english/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/optimation-consumer-english/", "coverage": "Submitted and indexed", "needs_manual_request": false},
+        {"url": "/posts/creating-fun-game/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/experimental-desing/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/mastering-visualization-plotly/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/behavioral-economics-data-analysis-applications/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/posts/introduction-pyautogui-be/", "coverage": "URL is unknown to Google", "needs_manual_request": true},
+        {"url": "/tabs/intelligence/", "coverage": "Submitted and indexed", "needs_manual_request": false}
+      ]
+    },
+    "GTM": {
+      "status": "ok",
+      "live_version": "6",
+      "tags": ["Google Tag", "GA4 Event - outbound_click", "GA4 Event - site_search"]
+    },
+    "IndexNow": {
+      "status": "ok",
+      "urls_pinged": 18
+    }
+  }
+}

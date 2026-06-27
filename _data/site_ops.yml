@@ -24,6 +24,16 @@ adsense:
     - convertidor-english
     - optimation-consumer-english
     - automation-sending
+    - icfes-english
+    - scraping-colombia-english
+    - loan-simulator-english
+    - minsalud-decrees-english
+    - step-colombia-english
+    - creating-fun-game
+    - experimental-desing
+    - mastering-visualization-plotly
+    - behavioral-economics-data-analysis-applications
+    - introduction-pyautogui-be
   mid_article_priority_min_reading_time: 2
   in_feed_interval: 6
   min_heights:
@@ -46,7 +56,8 @@ adsense:
     Slot map (API 2026-06-27): 6874018777=en article, 8047040393=horizontal ad,
     9362724975=Post sidebar 300x250, 6813985623=Post mid-article native,
     5343588914=Home bridge horizontal, 9226993605=Intelligence feed horizontal.
-    Legacy units still ACTIVE: 1778404697=bloque, 1836855266=articulo.
+    Legacy units still ACTIVE: 1778404697=bloque, 1836855266=articulo — archive in dashboard (T26b).
+    Display names target: site-in-article, site-post-footer, etc. → docs/T26_ADSENSE_MANUAL.md
 
 disqus:
   stitch_routes: false

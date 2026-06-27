@@ -15,16 +15,15 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **7/7** completo |
 | Posts | **14 EN** + 9 ES redirect |
-| Tareas abiertas | **~8** (manual UI) |
+| Tareas abiertas | **~7** (manual UI; T25c filtro en GA4) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
 ### Hacer hoy (top 5)
 
 1. **T24** — GSC: 13 URLs → [`docs/T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md)
-2. **T25b** — QA consent incógnito → checklist §2
-3. **T25c** — Filtro Singapore → checklist §3
-4. **T25d** — GSC ↔ GA4 link → checklist §3
-5. **T23f** — Bing Webmaster → checklist §4
+2. **T25c** — Filtro Singapore → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §2
+3. **T25b** — QA consent incógnito → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §4
+4. **T23f** — Bing Webmaster → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §6
 
 ---
 
@@ -41,8 +40,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
 | **GSC orgánico** | ⚠️ | 98% tráfico en URLs ES legacy; EN casi sin indexar |
 | **Sitemap GSC** | ⏳ | Reenviado API 27-jun; `isPending`; live ~73 URLs (sin assets) |
-| **GA4 datos limpios** | ❌ | Bots Singapore ~65%; filtro pendiente |
-| **GSC ↔ GA4 link** | ⏳ | Manual UI |
+| **GA4 datos limpios** | ⏳ | Filtro Singapore — **manual UI** (API 404 en dataFilters) |
+| **GSC ↔ GA4 link** | ✅ | Vinculado manual 27-jun |
 | **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |
 | **Bing / IndexNow** | ✅ ping | T32 key live + `indexnow-ping.sh` ejecutado |
 | **Docs internos** | ✅ | `BACKLOG.md` excluido del build (`d0dcf76`) |
@@ -68,7 +67,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | ~~**T21**~~ | ~~Publish GTM con consent~~ | ✅ API v5 | — |
 | **T25a** | Consent ads (AdSense vía sitio, no GTM) | verificar QA | Lun |
 | **T25b** | QA consent: rechazar/aceptar → GA4 Realtime | manual QA | Lun |
-| **T25d** | Asociar GSC ↔ GA4 (`356406631`) | manual GSC | Lun |
+| ~~**T25d**~~ | ~~Asociar GSC ↔ GA4~~ | ✅ manual | — |
 | **T26d** | QA ads tras consent `advertisement` | manual QA | Lun |
 | ~~**T31**~~ | ~~GTM warnings: config tag + DLV~~ | ✅ API v6 Live | — |
 
@@ -84,7 +83,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
-| **T25c** | Filtro/exclusión tráfico Singapore (bots) | manual GA4 | Mié |
+| **T25c** | Filtro/exclusión tráfico Singapore (bots) | **manual GA4** (API bloqueada) | Mié |
 | ~~**T25f**~~ | ~~Corregir URLs `//` en pagePath~~ | ✅ código | — |
 
 ### AdSense (T26)
@@ -92,8 +91,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | ID | Tarea | Tipo | Día |
 |----|-------|------|-----|
 | ~~**T26a**~~ | ~~Mapear 6 slot IDs ↔ ad units dashboard~~ | ✅ API AdSense | — |
-| **T26b** | Renombrar ad units en AdSense | manual AdSense | Jue |
-| **T26c** | QA visual 6 placements | manual QA | Jue |
+| **T26b** | Renombrar ad units | manual AdSense | → [`T26_ADSENSE_MANUAL.md`](docs/T26_ADSENSE_MANUAL.md) §1 |
+| **T26c** | QA visual 6 placements | manual QA | → [`T26_ADSENSE_MANUAL.md`](docs/T26_ADSENSE_MANUAL.md) §2 |
 
 ---
 
@@ -107,9 +106,10 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **T25g** | Revisar Enhanced Measurement GA4 | ~~API~~ scroll/outbound/search ON ✅ | Mié |
 | **T25i** | Segmento “Tráfico humano LATAM” | manual GA4 | Mié |
 | **T29** | GA4 Explorations + Looker storytelling | manual GA4 | Mié |
-| **T26e** | AdSense Policy + invalid traffic | manual AdSense | Jue |
-| **T26f** | Evaluar densidad ads home vs post | decisión | Jue |
-| ~~**T26g**~~ | ~~Ads en posts con más tráfico~~ | ✅ código | — |
+| **T26e** | AdSense Policy + invalid traffic | manual AdSense | → [`T26_ADSENSE_MANUAL.md`](docs/T26_ADSENSE_MANUAL.md) §3 |
+| ~~**T26f**~~ | ~~Evaluar densidad ads home vs post~~ | ✅ decisión | Mantener 6 placements |
+| ~~**T26h**~~ | ~~Priorizar ads en slugs EN~~ | ✅ código | 14 slugs EN mid-article |
+| ~~**T26i**~~ | ~~Evaluar Auto ads~~ | ✅ decisión | OFF |
 | ~~**T25h**~~ | ~~2 eventos custom GA4~~ | ✅ GTM+código | — |
 | ~~**T25j**†~~ | ~~Baseline pre-filtro~~ | ✅ `GA4_BASELINE_2026-06-27.md` | — |
 | **T6** | Vision Lab — caso real | contenido | Vie |
@@ -123,8 +123,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **T23f** | Bing Webmaster Tools + mismo sitemap | manual |
 | **T33** | Yandex Webmaster (opcional, mercado RU) | manual |
 | **T23g** | GSC ↔ GA4 (si no hecho en T25d) | manual |
-| **T26h** | Priorizar ads en slugs EN cuando indexen | código |
-| **T26i** | Evaluar Auto ads AdSense | decisión |
+| ~~**T26h**~~ | ~~Priorizar ads en slugs EN cuando indexen~~ | ✅ código | 14 slugs EN |
+| ~~**T26i**~~ | ~~Evaluar Auto ads AdSense~~ | ✅ decisión | OFF |
 | **T26j** | Meta: 1.000 pageviews/mes para RPM estable | meta |
 | ~~**T28**~~ | ~~Habilitar Analytics Admin API~~ | ✅ GCP 27-jun | — |
 | ~~**T32**~~ | ~~IndexNow key + ping script~~ | ✅ código | — |
@@ -166,7 +166,7 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 |--------|--------|
 | GTM publish + consent QA | ✅ v5 API 27-jun — falta QA incógnito |
 | Filtro bots Singapore | ⏳ |
-| GSC ↔ GA4 asociación | ⏳ |
+| GSC ↔ GA4 asociación | ✅ 27-jun |
 
 ### AdSense
 | Acción | Estado |
@@ -191,11 +191,14 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 | T24b | `music-player-english`, `automation-sending` en flagship ✅ |
 | T23e | Snapshot GSC páginas + 14 inspecciones EN ✅ |
 | T25h | `analytics-events.js` (outbound_click, site_search) ✅ |
-| T26g | `mid_article_priority_slugs` en posts alto tráfico ✅ |
+| T26h | 14 slugs EN en `mid_article_priority_slugs` ✅ |
+| T26f/i | Densidad mantenida; Auto ads OFF ✅ |
 | T32 | IndexNow key + `tools/indexnow-ping.sh` ✅ |
 | T21 | GTM v6 — consent + eventos + DLV ✅ |
 | T31 | Config tag + DLV publicado v6 ✅ |
-| T24† | 2/15 indexadas; 13 pendientes → `T24_GSC_INDEX_NOW.md` |
+| T24† | Batch inspección 2/15 indexadas; IndexNow 18 URLs ✅ |
+| T23d† | Sitemap reenviado API; `isPending`, `lastDownloaded` 2024-10-16 |
+| T25c† | Filtro SG — API 404; pasos UI en `TU_TURNO_MANUAL.md` |
 | T34 | Excluir `BACKLOG.md` + `README_UX_EVOLUTION.md` del build ✅ |
 | T32† | IndexNow ping ejecutado post-deploy ✅ |
 
