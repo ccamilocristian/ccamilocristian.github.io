@@ -1,0 +1,9 @@
+{% comment %}
+  Full-width in-feed style row for Intelligence artifact grid.
+{% endcomment %}
+{% assign ads = site.data.site_ops.adsense %}
+{% if ads.enabled and ads.placements.in_feed != false and ads.slots.in_feed != '' %}
+<div class="stitch-intelligence-ad-row">
+  {% include adsense-unit.html variant="in-feed" %}
+</div>
+{% endif %}

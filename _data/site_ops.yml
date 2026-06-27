@@ -8,10 +8,18 @@ adsense:
     in_article: "6874018777"
     post_footer: "8047040393"
     sidebar: "9362724975"
+    mid_article: "6813985623"
+    home_bridge: "5343588914"
+    in_feed: "9226993605"
   placements:
     in_article: true
     post_footer: true
     sidebar: true
+    mid_article: true
+    home_bridge: true
+    in_feed: true
+  mid_article_min_reading_time: 4
+  in_feed_interval: 6
   min_heights:
     mobile: 280
     desktop: 250
@@ -20,9 +28,15 @@ adsense:
       desktop: 90
     sidebar:
       desktop: 250
+    home:
+      mobile: 250
+      desktop: 120
+    in_feed:
+      mobile: 250
+      desktop: 120
   note: >
-    in_article (6874018777) before related; post_footer (8047040393) after related/nav;
-    sidebar (9362724975) 300×250 sticky desktop ≥1280px.
+    Fase 1–4: in_article 6874018777, footer 8047040393, sidebar 9362724975,
+    mid 6813985623, home 5343588914, in_feed 9226993605.
 
 disqus:
   stitch_routes: false

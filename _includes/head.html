@@ -57,9 +57,15 @@
 
   {% include stitch-dashboard-flag.html %}
   {% if site.data.site_ops.adsense.enabled %}
-    {% if page.layout == 'post' %}
-      {% include adsense-loader.html %}
+    {% assign load_adsense = false %}
+    {% if page.layout == 'post' or page.layout == 'home' %}
+      {% assign load_adsense = true %}
     {% elsif page.layout == 'page' and page.stitch_legacy %}
+      {% assign load_adsense = true %}
+    {% elsif page.tab_active == 'Intelligence' %}
+      {% assign load_adsense = true %}
+    {% endif %}
+    {% if load_adsense %}
       {% include adsense-loader.html %}
     {% endif %}
     <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous">

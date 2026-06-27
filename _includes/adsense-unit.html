@@ -10,12 +10,28 @@
   {% assign placement_on = ads.placements.sidebar %}
   {% assign min_h_mobile = 0 %}
   {% assign min_h_desktop = ads.min_heights.sidebar.desktop | default: 250 %}
+{% elsif variant == 'mid-article' %}
+  {% assign slot = include.slot | default: ads.slots.mid_article %}
+  {% assign placement_on = ads.placements.mid_article %}
+  {% assign min_h_mobile = ads.min_heights.mobile | default: 280 %}
+  {% assign min_h_desktop = ads.min_heights.desktop | default: 250 %}
+{% elsif variant == 'home' %}
+  {% assign slot = include.slot | default: ads.slots.home_bridge %}
+  {% assign placement_on = ads.placements.home_bridge %}
+  {% assign min_h_mobile = ads.min_heights.home.mobile | default: 250 %}
+  {% assign min_h_desktop = ads.min_heights.home.desktop | default: 120 %}
+{% elsif variant == 'in-feed' %}
+  {% assign slot = include.slot | default: ads.slots.in_feed %}
+  {% assign placement_on = ads.placements.in_feed %}
+  {% assign min_h_mobile = ads.min_heights.in_feed.mobile | default: 250 %}
+  {% assign min_h_desktop = ads.min_heights.in_feed.desktop | default: 120 %}
 {% else %}
   {% assign slot = include.slot | default: ads.slots.in_article %}
   {% assign placement_on = ads.placements.in_article %}
   {% assign min_h_mobile = ads.min_heights.mobile | default: 280 %}
   {% assign min_h_desktop = ads.min_heights.desktop | default: 250 %}
 {% endif %}
+{% assign defer_push = include.defer_push %}
 {% if ads.enabled and ads.client and slot and slot != '' and placement_on != false %}
 <aside class="ad-slot ad-slot--{{ variant }}"
        aria-label="Advertisement"
@@ -26,15 +42,19 @@
        style="{% if variant == 'sidebar' %}display:inline-block;width:300px;height:250px;{% else %}display:block;text-align:center;{% endif %}"
        data-ad-client="{{ ads.client }}"
        data-ad-slot="{{ slot }}"
-       {% if variant == 'in-article' %}
+       {% if variant == 'in-article' or variant == 'mid-article' %}
        data-ad-layout="in-article"
        data-ad-format="fluid"
        {% elsif variant == 'sidebar' %}
+       {% elsif variant == 'home' or variant == 'in-feed' %}
+       data-ad-format="auto"
+       data-full-width-responsive="true"
        {% else %}
        data-ad-format="horizontal"
        data-full-width-responsive="true"
        {% endif %}></ins>
 </aside>
+{% unless defer_push %}
 <script defer>
 (function () {
   var slotEl = document.currentScript.previousElementSibling;
@@ -61,11 +81,8 @@
     }
   }
   function pushAd() {
-    function tryPush() {
-      doPush();
-    }
     if (window.adsbygoogle) {
-      tryPush();
+      doPush();
       return;
     }
     var attempts = 0;
@@ -73,18 +90,33 @@
       attempts += 1;
       if (window.adsbygoogle || attempts > 50) {
         clearInterval(timer);
-        tryPush();
+        doPush();
       }
     }, 100);
   }
+  function start() {
+    function tryGate() {
+      if (window.siteConsentGate) {
+        window.siteConsentGate.on('advertisement', pushAd);
+        return;
+      }
+      if (document.documentElement.getAttribute('data-cmp-active') === 'true') {
+        setTimeout(tryGate, 50);
+        return;
+      }
+      pushAd();
+    }
+    tryGate();
+  }
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) { pushAd(); io.disconnect(); }
+      if (entries[0].isIntersecting) { start(); io.disconnect(); }
     }, { rootMargin: '200px' });
     io.observe(slotEl);
   } else {
-    pushAd();
+    start();
   }
 })();
 </script>
+{% endunless %}
 {% endif %}

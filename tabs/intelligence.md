@@ -16,6 +16,8 @@ breadcrumb:
 
 {% assign ip = site.data.intelligence_page %}
 {% assign featured_slug = ip.featured.slug %}
+{% assign feed_interval = site.data.site_ops.adsense.in_feed_interval | default: 6 %}
+{% assign feed_index = 0 %}
 
 <div class="stitch-tab-page stitch-intelligence-page dashboard-page dashboard-page--intelligence">
 
@@ -45,12 +47,18 @@ breadcrumb:
       {% for post in site.posts %}
         {% if post.slug == featured_slug %}
           {% include intelligence-artifact-card.html post=post featured=true image=ip.featured.image %}
+          {% assign feed_index = feed_index | plus: 1 %}
         {% endif %}
       {% endfor %}
 
       {% for post in site.posts %}
         {% unless post.slug == featured_slug %}
           {% include intelligence-artifact-card.html post=post %}
+          {% assign feed_index = feed_index | plus: 1 %}
+          {% assign feed_mod = feed_index | modulo: feed_interval %}
+          {% if feed_mod == 0 %}
+            {% include adsense-in-feed-row.html %}
+          {% endif %}
         {% endunless %}
       {% endfor %}
     </div>

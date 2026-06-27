@@ -1,0 +1,11 @@
+{% comment %}
+  Display unit between Selected Work and Latest intelligence on home.
+{% endcomment %}
+{% assign ads = site.data.site_ops.adsense %}
+{% if ads.enabled and ads.placements.home_bridge != false and ads.slots.home_bridge != '' and page.layout == 'home' %}
+<section class="stitch-section stitch-section--ad-bridge stitch-reveal" aria-label="Sponsored">
+  <div class="stitch-ad-bridge-inner">
+    {% include adsense-unit.html variant="home" %}
+  </div>
+</section>
+{% endif %}
