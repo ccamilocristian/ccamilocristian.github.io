@@ -578,6 +578,30 @@ body.stitch-dashboard .post-navigation {
   }
 }
 
+body.stitch-dashboard .stitch-post-content .mermaid {
+  margin: var(--ds-space-8, 2rem) auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+body.stitch-dashboard .stitch-post-content details {
+  margin: var(--ds-space-6, 1.5rem) 0;
+  padding: var(--ds-space-4, 1rem) var(--ds-space-5, 1.25rem);
+  border: 1px solid rgba(172, 199, 255, 0.18);
+  border-radius: var(--ds-radius-md, 8px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+body.stitch-dashboard .stitch-post-content details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ds-color-text-primary, #e2e2e8);
+}
+
+body.stitch-dashboard .stitch-post-content details[open] summary {
+  margin-bottom: var(--ds-space-3, 0.75rem);
+}
+
 @media (prefers-reduced-motion: reduce) {
   body.stitch-dashboard .stitch-post-content > p:first-of-type::first-letter {
     float: none;

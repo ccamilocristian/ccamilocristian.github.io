@@ -13,7 +13,7 @@ Focus: English copy, SEO, and narrative tone for a senior data engineer portfoli
 
 ## Content policy
 - **UI language**: English on Stitch surfaces.
-- **Posts**: 15 published EN; 9 ES unpublished with EN canonical + redirect (`_data/post_pairs.yml`).
+- **Posts**: 16 published EN; 9 ES unpublished with EN canonical + redirect (`_data/post_pairs.yml`).
 - YAML copy lives in `_data/*.yml` (profile, tabs, pillars, intelligence, etc.).
 
 ## Hooks

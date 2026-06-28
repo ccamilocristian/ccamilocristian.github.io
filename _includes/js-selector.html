@@ -28,6 +28,10 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
   {% endif %}
 
+  {% if page.mermaid %}
+    {% include mermaid-loader.html %}
+  {% endif %}
+
 {% elsif page.layout == 'page' %}
 
   {% if page.type == 'categories' %}

@@ -1,0 +1,32 @@
+{% if page.mermaid %}
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js" defer></script>
+<script defer>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof mermaid === 'undefined') return;
+
+    document.querySelectorAll('pre > code.language-mermaid, pre > code.highlighter-mermaid').forEach(function (block) {
+      var pre = block.parentElement;
+      if (!pre || !pre.parentNode) return;
+      var div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = block.textContent.trim();
+      pre.parentNode.replaceChild(div, pre);
+    });
+
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'dark',
+      securityLevel: 'loose',
+      themeVariables: {
+        primaryColor: '#1a1d24',
+        primaryTextColor: '#e2e2e8',
+        primaryBorderColor: '#acc7ff',
+        lineColor: '#8d909b',
+        secondaryColor: '#121318',
+        tertiaryColor: '#0c0e12'
+      }
+    });
+    mermaid.run({ querySelector: '.mermaid' });
+  });
+</script>
+{% endif %}
