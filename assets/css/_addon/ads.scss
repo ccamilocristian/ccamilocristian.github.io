@@ -209,14 +209,40 @@ body.stitch-dashboard .ad-slot--footer {
   margin-inline: auto;
 }
 
-/* Backup: hide intrusive Auto ad overlays if still injected by AdSense account settings */
+/* Block anchor (sticky ↑↓ minimize) + vignette; keep side rails + manual units */
 ins.adsbygoogle[data-ad-format="anchor"],
 ins.adsbygoogle[data-ad-format="autorelaxed"][data-anchor-status],
+ins.adsbygoogle[data-anchor-status],
+ins.adsbygoogle[data-vignette-loaded],
 body.stitch-dashboard .google-auto-placed.ap_container,
-body.stitch-dashboard .as_ads_anchor {
+body.stitch-dashboard .as_ads_anchor,
+body.stitch-dashboard #google_bottom_anchor,
+body.stitch-dashboard #google_top_anchor,
+body.stitch-dashboard .google-vignette,
+body.stitch-dashboard .vignette-overlay,
+body.stitch-dashboard [id^="google_vignette"],
+body.stitch-dashboard iframe[id*="vignette"],
+body.stitch-dashboard [id*="aswift"][id*="anchor"] {
   display: none !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Auto ads injected into the reading column while scrolling */
+body.stitch-dashboard .stitch-post-content .google-auto-placed,
+body.stitch-dashboard .stitch-post-article .google-auto-placed,
+body.stitch-dashboard .stitch-post-article-wrap .google-auto-placed,
+body.stitch-dashboard .stitch-post-content ins.adsbygoogle:not([data-ad-slot]),
+body.stitch-dashboard .stitch-post-article ins.adsbygoogle:not([data-ad-slot]) {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
 }
 
 body.stitch-dashboard .stitch-section--ad-bridge {
@@ -252,23 +278,9 @@ body.stitch-dashboard .stitch-intelligence-ad-row .ad-slot--in-feed {
   opacity: 0.7;
 }
 
-/* T26f balanced density — see site_ops ad_density note */
+/* T26h — in-feed off; no in-scroll manual units */
 @media (max-width: 767px) {
-  /* Mobile post: in-article + footer (2). No mid, no feed. */
-  body.stitch-dashboard .ad-slot-mount--mid,
-  body.stitch-dashboard #ad-mid-article-mount,
-  body.stitch-dashboard .ad-slot--mid-article {
-    display: none !important;
-  }
-
   body.stitch-dashboard .stitch-intelligence-ad-row {
-    display: none !important;
-  }
-}
-
-@media (min-width: 768px) {
-  /* Desktop md+: mid XOR in-article — hide in-article row when mid is eligible */
-  body.stitch-dashboard .ad-row--fallback-mobile {
     display: none !important;
   }
 }

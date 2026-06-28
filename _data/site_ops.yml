@@ -12,17 +12,17 @@ adsense:
     home_bridge: "5343588914"
     in_feed: "9226993605"
   placements:
-    in_article: true
+    in_article: false
     post_footer: true
     sidebar: true
-    mid_article: true
+    mid_article: false
     home_bridge: true
-    in_feed: true
-  # Balanced density (T26f): mobile post 2 (in-article+footer); desktop 2–3 (XOR mid/in-article + footer + sidebar ≥1500px)
+    in_feed: false
+  # T26h: side rails + footer only; no in-scroll units (in-article/mid/in-feed)
   ad_density:
-    mobile_post: 2
-    desktop_post: 2
-    desktop_post_wide: 3
+    mobile_post: 1
+    desktop_post: 1
+    desktop_post_wide: 2
   placements_mobile:
     mid_article: false
     in_feed: false
@@ -55,7 +55,10 @@ adsense:
       mobile: 50
       desktop: 60
   note: >
-    Fase 1–4: in_article 6874018777, footer 8047040393, sidebar 9362724975,
+    T26h: post = footer + right rail (≥1500px); no in-article/mid/in-feed.
+    Anchor (flecha minimizar) bloqueado en código; apagar en AdSense → Overlay → Anchor.
+    Side rails Auto ads OK en panel si quieres izq+der (docs/T26_ADSENSE_MANUAL.md).
+    Fase 1–4 slots: in_article 6874018777, footer 8047040393, sidebar 9362724975,
     mid 6813985623, home 5343588914, in_feed 9226993605.
     Slot map (API 2026-06-27): 6874018777=en article, 8047040393=horizontal ad,
     9362724975=Post sidebar 300x250, 6813985623=Post mid-article native,

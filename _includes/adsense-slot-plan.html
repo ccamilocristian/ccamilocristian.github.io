@@ -1,7 +1,5 @@
 {% comment %}
-  Post ad slot plan (T26f balanced density).
-  Sets ads_show_mid / ads_show_in_article for the current post.
-  Desktop ≥768: mid XOR in-article (not both). Mobile: in-article + footer (mid hidden via CSS).
+  Post ad slot plan. T26h: placements in site_ops (side rail + footer; no in-scroll).
 {% endcomment %}
 {% assign ads = site.data.site_ops.adsense %}
 {% assign ads_show_mid = false %}

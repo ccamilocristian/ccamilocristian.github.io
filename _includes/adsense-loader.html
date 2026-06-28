@@ -19,7 +19,46 @@
     s.async = true;
     s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + client;
     s.setAttribute('data-adsense-loader', '1');
+    s.setAttribute('crossorigin', 'anonymous');
     document.head.appendChild(s);
+
+    if ({{ ads.suppress_auto_overlays | default: true }}) {
+      var anchorSel = [
+        'ins.adsbygoogle[data-ad-format="anchor"]',
+        'ins[data-anchor-status]',
+        '.as_ads_anchor',
+        '#google_bottom_anchor',
+        '#google_top_anchor',
+        '[id*="aswift"][id*="anchor"]'
+      ].join(',');
+
+      function stripAnchorOverlays() {
+        document.querySelectorAll(anchorSel).forEach(function (node) {
+          var root = node.closest('.as_ads_anchor') || node;
+          if (root && root.parentNode) root.parentNode.removeChild(root);
+        });
+        document.querySelectorAll('ins.adsbygoogle[data-vignette-loaded]').forEach(function (node) {
+          if (node.parentNode) node.parentNode.removeChild(node);
+        });
+      }
+
+      var stripTimer;
+      function scheduleStrip() {
+        if (stripTimer) return;
+        stripTimer = window.setTimeout(function () {
+          stripTimer = 0;
+          stripAnchorOverlays();
+        }, 120);
+      }
+
+      stripAnchorOverlays();
+      if (window.MutationObserver) {
+        new MutationObserver(scheduleStrip).observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+      }
+    }
   }
 
   function scheduleLoad() {
