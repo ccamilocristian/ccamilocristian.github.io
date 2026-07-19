@@ -38,14 +38,9 @@ La API no expone `dataFilters` en esta propiedad (404). Hazlo en UI:
 
 ### 4a — Pausar Google Tag en GTM (evitar page_view ×2)
 
-El sitio vuelve a enviar `page_view` por **gtag directo**. En GTM Live:
+**Hecho vía API 19-jul:** GTM Live **v7** — Google Tag `G-4FK52MWLPP` **paused**. Eventos `outbound_click` / `site_search` activos. Page_view = gtag directo del sitio.
 
-1. [GTM](https://tagmanager.google.com/) → `GTM-K8J9KSB8`
-2. Tags → **Google Tag** / `G-4FK52MWLPP` → **Pause**
-3. Dejar activos: `outbound_click`, `site_search`
-4. **Submit → Publish**
-
-### 4b — QA incógnito
+### 4b — QA incógnito (T25b — aún manual)
 
 Ventana **incógnito** → `https://ccamilocristian.github.io/`
 
@@ -54,8 +49,11 @@ Ventana **incógnito** → `https://ccamilocristian.github.io/`
 | Sin interactuar / rechazar | Network: hit `g/collect` (cookieless) o Realtime con usuario limitado |
 | Aceptar analytics | [GA4 Realtime](https://analytics.google.com/) muestra `page_view` |
 | Aceptar ads | DevTools Network: `adsbygoogle.js` carga |
+| Debug consent | Añadir `?debug_consent=1` → Console `[siteConsentGate]` + `window.__siteConsentDebug` |
 
 CookieYes → **Google Consent Mode v2 = ON**
+
+**Smoke live (bot 19-jul):** home incluye `gtag/js?id=G-4FK52MWLPP`, consent defaults denied, CookieYes + GTM presentes.
 
 ---
 

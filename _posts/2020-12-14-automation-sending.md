@@ -142,5 +142,13 @@ Disadvantages: of the process:
 
 Potencial improves in the process:
 
-- You can develop it in a virtual machine in the cloud. It would run without any human intervention.  
+- You can develop it in a virtual machine in the cloud. It would run without any human intervention.
+
+## Related on this site
+
+Useful if you searched for *enviar correo con Python* / *automatizar envío de email*:
+
+- [Music player with tkinter & pygame](/posts/music-player-english/) — another desktop Python build.
+- [ICFES API → BigQuery](/posts/icfes-english/) — from script to data pipeline.
+- [Intelligence](/tabs/intelligence/) — full artifact grid.
 

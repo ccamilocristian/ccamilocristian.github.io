@@ -238,6 +238,13 @@ plt.savefig("optimo.png")
 
 As we can see, the economic theory that taught day by day in the university cloisters can be didactic with a new point of view related to computer programming. Thus, this article invites readers to delve into the world of programming, which will help make professional training more comprehensive to the labor market.
 
+## Related on this site
+
+- [Colombia CPI / IPC inflation calculator in Python](/posts/convertidor-english/) — convert pesos across years with Banrep/DANE series.
+- [Loan interest simulator](/posts/loan-simulator-english/) — amortization tables for credit tradeoffs.
+- [STEP labor market regression](/posts/step-colombia-english/) — automation risk with survey microdata.
+- Browse more artifacts in [Intelligence](/tabs/intelligence/).
+
 <!-- wp:heading -->
 <h2>References:</h2>
 <!-- /wp:heading -->

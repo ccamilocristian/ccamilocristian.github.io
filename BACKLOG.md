@@ -32,15 +32,15 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | Capa | Estado | Notas |
 |------|--------|-------|
-| **GTM Live v6** | ✅ | config tag + DLV (`link_url`, `search_term`, `page_path`) |
-| **GA4 pageviews** | 🔧 | Direct gtag ON (`skip_direct_ga4: false`) + Consent Mode; puente CookieYes→gtag |
-| **Consent site** | ✅ | CookieYes + `consent-gate.js` sync a `gtag('consent','update')` |
-| **Consent QA** | ⏳ | Incógnito post-deploy: Accept → Realtime; pausar Google Tag GTM (evitar 2×) |
-| **Eventos custom** | ✅ | GTM v6: DLV + `eventSettingsTable` |
+| **GTM Live v7** | ✅ | Google Tag **paused** (anti-doble page_view); eventos + DLV activos |
+| **GA4 pageviews** | ✅ código | Direct gtag ON + Consent Mode; live smoke OK 19-jul |
+| **Consent site** | ✅ | CookieYes → `gtag('consent','update')`; `?debug_consent=1` |
+| **Consent QA** | ⏳ | Incógnito Accept → Realtime (T25b manual) |
+| **Eventos custom** | ✅ | Dual path: `dataLayer` + `gtag('event')` en `analytics-events.js` |
 | **Clarity** | ✅ | Tras consent analytics |
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
-| **GSC orgánico** | ⚠️ | 98% tráfico en URLs ES legacy; EN casi sin indexar |
-| **Sitemap GSC** | ⏳ | Reenviado API 27-jun; `isPending`; live ~73 URLs (sin assets) |
+| **GSC orgánico** | ⚠️ | Impresiones aún en ES legacy; EN 3 indexadas / 16 unknown (19-jul) |
+| **Sitemap GSC** | ⏳ | Reenviado 19-jul; `isPending`; `lastDownloaded` 2024-10-16 |
 | **GA4 datos limpios** | ⏳ | Filtro Singapore — **manual UI** (API 404 en dataFilters) |
 | **GSC ↔ GA4 link** | ✅ | Vinculado manual 27-jun |
 | **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |

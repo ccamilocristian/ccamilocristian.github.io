@@ -135,3 +135,9 @@ Finally, this code plots cumulative principal amortization for each period.
 ![ ](/assets/img/2021-04-11-liquidador-intereses/capital.PNG)
 
 As Albert Einstein reportedly said, compound interest is the eighth wonder of the world: those who understand it benefit; those who do not pay it. As a reader exercise, try extending the simulator to variable-payment loans.
+
+## Related on this site
+
+- [Colombia CPI / IPC inflation calculator](/posts/convertidor-english/) — real purchasing power across years.
+- [Consumer optimization in Python](/posts/optimation-consumer-english/) — budget constraints and indifference curves.
+- [Intelligence](/tabs/intelligence/) — economics + Python cases.

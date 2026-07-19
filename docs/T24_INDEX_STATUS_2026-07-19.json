@@ -1,0 +1,113 @@
+{
+  "generated": "2026-07-19T10:26:32.463365+00:00",
+  "counts": {
+    "indexed": 3,
+    "unknown": 16,
+    "other": 0
+  },
+  "indexed": [
+    {
+      "url": "/",
+      "full": "https://ccamilocristian.github.io/",
+      "coverage": "Submitted and indexed"
+    },
+    {
+      "url": "/tabs/intelligence/",
+      "full": "https://ccamilocristian.github.io/tabs/intelligence/",
+      "coverage": "Submitted and indexed"
+    },
+    {
+      "url": "/posts/optimation-consumer-english/",
+      "full": "https://ccamilocristian.github.io/posts/optimation-consumer-english/",
+      "coverage": "Submitted and indexed"
+    }
+  ],
+  "unknown": [
+    {
+      "url": "/tabs/profile/",
+      "full": "https://ccamilocristian.github.io/tabs/profile/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/music-player-english/",
+      "full": "https://ccamilocristian.github.io/posts/music-player-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/convertidor-english/",
+      "full": "https://ccamilocristian.github.io/posts/convertidor-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/automation-sending/",
+      "full": "https://ccamilocristian.github.io/posts/automation-sending/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/icfes-english/",
+      "full": "https://ccamilocristian.github.io/posts/icfes-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/scraping-colombia-english/",
+      "full": "https://ccamilocristian.github.io/posts/scraping-colombia-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/loan-simulator-english/",
+      "full": "https://ccamilocristian.github.io/posts/loan-simulator-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/minsalud-decrees-english/",
+      "full": "https://ccamilocristian.github.io/posts/minsalud-decrees-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/step-colombia-english/",
+      "full": "https://ccamilocristian.github.io/posts/step-colombia-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/creating-fun-game/",
+      "full": "https://ccamilocristian.github.io/posts/creating-fun-game/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/experimental-desing/",
+      "full": "https://ccamilocristian.github.io/posts/experimental-desing/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/mastering-visualization-plotly/",
+      "full": "https://ccamilocristian.github.io/posts/mastering-visualization-plotly/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/behavioral-economics-data-analysis-applications/",
+      "full": "https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/introduction-pyautogui-be/",
+      "full": "https://ccamilocristian.github.io/posts/introduction-pyautogui-be/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/mcp-bigquery-server-python-english/",
+      "full": "https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/",
+      "coverage": "URL is unknown to Google"
+    },
+    {
+      "url": "/posts/local-rag-ollama-python-english/",
+      "full": "https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/",
+      "coverage": "URL is unknown to Google"
+    }
+  ],
+  "other": [],
+  "sitemap": {
+    "lastSubmitted": "2026-07-19T10:26:32.110Z",
+    "lastDownloaded": "2024-10-16T02:42:41.606Z",
+    "isPending": true
+  }
+}

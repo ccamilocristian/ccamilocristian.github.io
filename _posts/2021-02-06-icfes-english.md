@@ -99,3 +99,9 @@ We make the graphs, the result is the following dashboard:
 - Check whether the socioeconomics aspects in the household affect statistically the student performance.
 - Make a data cleaning to improve the data performance and check the outlier.
 
+## Related on this site
+
+- [Plebiscito 2016 scraping](/posts/scraping-colombia-english/) — open data from the web into analysis-ready tables.
+- [MCP server for BigQuery](/posts/mcp-bigquery-server-python-english/) — query warehouses safely from AI tools.
+- [Intelligence](/tabs/intelligence/) — more data engineering artifacts.
+

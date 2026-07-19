@@ -1,14 +1,23 @@
 /**
- * GA4-ready custom events via dataLayer (GTM picks these up after publish).
- * outbound_click — external links from post/page content
+ * GA4 custom events — dual path:
+ * 1) dataLayer push (GTM custom-event tags)
+ * 2) gtag('event', …) when available (direct GA4; survives paused Google Tag)
+ *
+ * outbound_click — external links
  * site_search — SimpleJekyllSearch result selection
  */
 (function () {
   'use strict';
 
   function pushEvent(name, params) {
+    var payload = params || {};
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(Object.assign({ event: name }, params || {}));
+    window.dataLayer.push(Object.assign({ event: name }, payload));
+    if (typeof window.gtag === 'function') {
+      try {
+        window.gtag('event', name, payload);
+      } catch (e) { /* noop */ }
+    }
   }
 
   function isExternal(href) {

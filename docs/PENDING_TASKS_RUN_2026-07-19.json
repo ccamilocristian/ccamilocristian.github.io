@@ -1,0 +1,177 @@
+{
+  "generated": "2026-07-19T10:10:13.890840+00:00",
+  "T23d_submit": "ok",
+  "T23d": {
+    "lastSubmitted": "2026-07-19T10:10:14.713Z",
+    "lastDownloaded": "2024-10-16T02:42:41.606Z",
+    "isPending": true,
+    "warnings": "0",
+    "errors": "0",
+    "contents": [
+      {
+        "type": "web",
+        "submitted": "73",
+        "indexed": "0"
+      }
+    ]
+  },
+  "T24_inspect": [
+    {
+      "url": "/",
+      "coverage": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawl": "2026-07-09T23:39:12Z",
+      "pageFetch": "SUCCESSFUL"
+    },
+    {
+      "url": "/posts/music-player-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/convertidor-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/automation-sending/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/icfes-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/scraping-colombia-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/loan-simulator-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/minsalud-decrees-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/step-colombia-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/creating-fun-game/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/experimental-desing/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/mastering-visualization-plotly/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/behavioral-economics-data-analysis-applications/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/introduction-pyautogui-be/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/optimation-consumer-english/",
+      "coverage": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawl": "2026-07-09T18:49:34Z",
+      "pageFetch": "SUCCESSFUL"
+    },
+    {
+      "url": "/tabs/intelligence/",
+      "coverage": "Submitted and indexed",
+      "robots": "ALLOWED",
+      "indexingState": "INDEXING_ALLOWED",
+      "lastCrawl": "2026-06-27T10:19:38Z",
+      "pageFetch": "SUCCESSFUL"
+    },
+    {
+      "url": "/posts/mcp-bigquery-server-python-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    },
+    {
+      "url": "/posts/local-rag-ollama-python-english/",
+      "coverage": "URL is unknown to Google",
+      "robots": "ROBOTS_TXT_STATE_UNSPECIFIED",
+      "indexingState": "INDEXING_STATE_UNSPECIFIED",
+      "lastCrawl": null,
+      "pageFetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+    }
+  ],
+  "T25c_list": {
+    "error": "'Resource' object has no attribute 'dataFilters'"
+  },
+  "T25c_create_attempt1": "'Resource' object has no attribute 'dataFilters'",
+  "T25c_create": {
+    "error": "'Resource' object has no attribute 'dataFilters'"
+  },
+  "T25b_smoke": {
+    "has_direct_ga4": true,
+    "has_consent_denied_default": true,
+    "has_gtm": true,
+    "has_cookieyes": true
+  }
+}

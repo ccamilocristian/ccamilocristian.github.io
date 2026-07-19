@@ -11,12 +11,15 @@ Design and migration specs for the Calm Technical dashboard. These files are **e
 | [`ADSENSE_AUDIT_2026-06-27.md`](ADSENSE_AUDIT_2026-06-27.md) | AdSense — ingresos, slots, dashboard |
 | [`TU_TURNO_MANUAL.md`](TU_TURNO_MANUAL.md) | Checklist manual priorizado (T24–T26) |
 | [`T26_ADSENSE_MANUAL.md`](T26_ADSENSE_MANUAL.md) | AdSense T26b–e checklist |
-| [`T24_GSC_INDEX_NOW.md`](T24_GSC_INDEX_NOW.md) | 13 URLs para solicitar indexación |
+| [`T24_GSC_INDEX_NOW.md`](T24_GSC_INDEX_NOW.md) | URLs GSC unknown → solicitar indexación |
+| [`T24_INDEX_STATUS_2026-07-19.json`](T24_INDEX_STATUS_2026-07-19.json) | Inspección API 19-jul (3 indexed / 16 unknown) |
+| [`METRICS_SMOKE_2026-07-19.md`](METRICS_SMOKE_2026-07-19.md) | Smoke GA4/consent live + QA checklist |
 | [`MANUAL_CHECKLIST.md`](MANUAL_CHECKLIST.md) | Checklist manual UI (T24–T26) |
 | [`API_RUN_2026-06-27.md`](API_RUN_2026-06-27.md) | Batch APIs + límites del bot |
 | [`GA4_BASELINE_2026-06-27.md`](GA4_BASELINE_2026-06-27.md) | Baseline GA4 pre-filtro |
 | [`GSC_API_SNAPSHOT_2026-06-27.json`](GSC_API_SNAPSHOT_2026-06-27.json) | Páginas GSC + inspección 14 URLs EN |
 | [`WEEK_PLAN_2026-06-27.md`](WEEK_PLAN_2026-06-27.md) | Horizonte semanal lun–vie |
+| [`CONTENT_PIPELINE.md`](CONTENT_PIPELINE.md) | Ideas de posts (Outside-In): publicados vs pendientes |
 | [`STITCH_MIGRATION_GAP.md`](STITCH_MIGRATION_GAP.md) | Stitch 7/7 status, dual shell, open gaps |
 | [`../README_UX_EVOLUTION.md`](../README_UX_EVOLUTION.md) | Vision, stack, routes, content policy |
 | [`../BACKLOG.md`](../BACKLOG.md) | Task queue |

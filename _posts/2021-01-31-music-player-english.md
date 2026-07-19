@@ -274,3 +274,11 @@ app.mainloop()
 + Improve styling—colors and typography.
 + Support YouTube playback via URL.
 + Add playback speed control (faster or slower).
+
+## Related on this site
+
+If you landed here looking for a *reproductor de música en Python* (tkinter + pygame), this English walkthrough is the canonical version of that project.
+
+- [Automate sending email with Python](/posts/automation-sending/) — schedule scripts on Windows.
+- [Introduction to PyAutoGUI](/posts/introduction-pyautogui-be/) — desktop automation next door.
+- More Python artifacts in [Intelligence](/tabs/intelligence/).

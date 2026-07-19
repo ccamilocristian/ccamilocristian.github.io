@@ -723,3 +723,35 @@ body.stitch-dashboard .stitch-404-link-hint {
   font-size: 11px;
   color: #8d909b;
 }
+
+body.stitch-dashboard .stitch-intelligence-start-here {
+  max-width: var(--ds-grid-container-max, 1120px);
+  margin: var(--ds-space-8, 2rem) auto 0;
+  padding-inline: var(--ds-space-4, 1rem);
+
+  h2 {
+    font-family: var(--ds-type-family-story, 'Inter', sans-serif);
+    font-size: 1.25rem;
+    margin-bottom: var(--ds-space-2, 0.5rem);
+  }
+}
+
+body.stitch-dashboard .stitch-intelligence-start-list {
+  margin: var(--ds-space-4, 1rem) 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: var(--ds-space-2, 0.5rem);
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  a {
+    color: var(--ds-color-accent, #acc7ff);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

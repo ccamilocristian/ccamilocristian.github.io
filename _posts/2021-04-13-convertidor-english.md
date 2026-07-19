@@ -1,21 +1,28 @@
 ---
 
-title: How make an inflation calculator? Case of study, Colombia between 2003 and 2020.
+title: Colombia CPI / IPC inflation calculator in Python (2003–2020)
 redirect_from:
   - /posts/convertidor-IPC/
   - /convertidor-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]
-tags: [economics, python]
+tags: [economics, python, ipc, inflacion, colombia]
 math: true
 domain: Economics
 technical_level: Advanced
-reading_time: 2
+reading_time: 4
 business_impact: "Supports tradeoff-aware policy and business decisions under constraints."
 impact_label: "Supports tradeoff-aware policy and busines"
-description: "Convert pesos across years using Colombia's CPI (IPC)—a short Python script when you need real purchasing power, 2003–2020."
+description: "Build a Colombia IPC (CPI) inflation calculator in Python—convert pesos across years with Banrep/DANE data. Useful as a calculadora de inflación / IPC Colombia."
 ---
+
+## What this calculator does
+
+If you need a **calculadora de inflación Colombia** or **calculadora IPC Colombia** in code: take an amount in pesos for year \(t_0\) and express it in prices of year \(t_f\) using the official CPI series (IPC). Same idea as “¿cuánto valían 3 millones de 2005 en pesos de 2019?”
+
+This English note is the canonical walkthrough; the older Spanish URL `/posts/convertidor-IPC/` redirects here.
+
 In the economy, there are different forms to measure the behavior of the economic agents, specifically in the goods and services demanded and supplied in the economy. One of the macroeconomic variables with the most importance is inflation. The inflation variable needs to be controlled to have a good economic performance. 
 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/descarga.png)
@@ -118,4 +125,18 @@ This is the result of the previous function, showing the values across the time 
 ![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
 As a future project to complements this calculator, the reader can add a function that computes the future value to present value, i.e. compute current prices to past prices. For example, the same previous $3'000.000 in 2020's prices to 2000's prices.
+
+## Quick formula (IPC Colombia)
+
+$$
+Valor_{t_f} = Valor_{t_0} \times \frac{IPC_{t_f}}{IPC_{t_0}}
+$$
+
+Pull annual IPC (base 2018) from [Banco de la República](https://www.banrep.gov.co/es) / [DANE IPC](https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc), keep one row per year, then apply the ratio. The script above also prints period inflation and average annual inflation for the window you choose.
+
+## Related on this site
+
+- [Loan interest simulator](/posts/loan-simulator-english/) — nominal cashflows vs real purchasing power.
+- [Consumer optimization in Python](/posts/optimation-consumer-english/) — budgets and indifference curves.
+- [Intelligence](/tabs/intelligence/) — economics + Python artifacts.
 

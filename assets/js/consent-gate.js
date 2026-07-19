@@ -171,6 +171,35 @@
     }, 250);
   }
 
-  window.siteConsentGate = { on: on, cmpActive: cmpActive, sync: sync };
+  function debugDump(reason) {
+    var snapshot = {
+      reason: reason || 'dump',
+      cmpActive: cmpActive,
+      analyticsGranted: granted('analytics'),
+      advertisementGranted: granted('advertisement'),
+      categories: readCategories(),
+      lastGtagConsentKey: lastGtagConsentKey,
+      dataLayerTail: (window.dataLayer || []).slice(-12)
+    };
+    try { console.info('[siteConsentGate]', snapshot); } catch (e) { /* noop */ }
+    window.__siteConsentDebug = snapshot;
+    return snapshot;
+  }
+
+  function installDebugConsent() {
+    try {
+      if (!/([?&])debug_consent=1(?:&|$)/.test(window.location.search || '')) return;
+    } catch (e) { return; }
+    debugDump('init');
+    setInterval(function () { debugDump('poll'); }, 2000);
+  }
+
+  window.siteConsentGate = {
+    on: on,
+    cmpActive: cmpActive,
+    sync: sync,
+    debugDump: debugDump
+  };
   sync();
+  installDebugConsent();
 })();
