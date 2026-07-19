@@ -5,6 +5,17 @@
   var cmpActive = root.getAttribute('data-cmp-active') === 'true';
   var queues = { analytics: [], advertisement: [] };
   var adStorageGranted = false;
+  var lastGtagConsentKey = '';
+
+  function ensureGtag() {
+    window.dataLayer = window.dataLayer || [];
+    if (typeof window.gtag !== 'function') {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    }
+    return window.gtag;
+  }
 
   function consentEntryGrantsAds(entry) {
     if (!entry) return false;
@@ -94,6 +105,25 @@
     return cookieYesGranted(category) || cookiebotGranted(category);
   }
 
+  /* Bridge CookieYes/Cookiebot → gtag Consent Mode so GTM tags that require
+     analytics_storage / ad_storage can fire after Accept. */
+  function pushGtagConsentFromCmp() {
+    if (!cmpActive) return;
+    var analyticsOn = granted('analytics');
+    var adsOn = granted('advertisement');
+    var key = (analyticsOn ? '1' : '0') + (adsOn ? '1' : '0');
+    if (key === lastGtagConsentKey) return;
+    lastGtagConsentKey = key;
+    ensureGtag()('consent', 'update', {
+      analytics_storage: analyticsOn ? 'granted' : 'denied',
+      ad_storage: adsOn ? 'granted' : 'denied',
+      ad_user_data: adsOn ? 'granted' : 'denied',
+      ad_personalization: adsOn ? 'granted' : 'denied',
+      functionality_storage: analyticsOn ? 'granted' : 'denied',
+      personalization_storage: adsOn ? 'granted' : 'denied'
+    });
+  }
+
   function runQueue(category) {
     var pending = queues[category];
     if (!pending.length) return;
@@ -104,6 +134,7 @@
   }
 
   function sync() {
+    pushGtagConsentFromCmp();
     if (granted('analytics')) runQueue('analytics');
     if (granted('advertisement')) runQueue('advertisement');
   }

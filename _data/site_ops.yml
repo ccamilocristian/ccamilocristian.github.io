@@ -83,13 +83,16 @@ gtm:
   container_numeric_id: "256082250"
   workspace_id: "6"
   measurement_id: G-4FK52MWLPP
-  skip_direct_ga4: true
+  # Direct GA4 on for Consent Mode Advanced (cookieless when denied).
+  # Pause GTM "Google Tag" (G-4FK52MWLPP) in UI to avoid double page_view; keep event tags.
+  skip_direct_ga4: false
   custom_events:
     - outbound_click
     - site_search
   note: >
-    GA4 (G-4FK52MWLPP) should fire via GTM container tags — direct gtag snippet skipped
-    when skip_direct_ga4 is true to avoid duplicate pageviews.
+    Primary page_view via direct gtag (Consent Mode). GTM still loads for custom events.
+    Pause the GTM Google Tag / googtag for G-4FK52MWLPP to prevent duplicate pageviews
+    after Accept; keep outbound_click and site_search event tags.
 
 indexnow:
   enabled: true
@@ -106,6 +109,5 @@ cookie_consent:
   cookiebot_id: ""
   policy_url: "https://ccamilocristian.github.io/tabs/cookie-policy/"
   note: >
-    Consent Mode v2 via CMP (Option B). Paste cookieyes_id from cookieyes.com → Get Code.
-    Until ID is set, site behaves as today (no banner, no consent blocking).
-    After ID: enable Google Consent Mode v2 in CookieYes dashboard + GTM consent settings.
+    Consent Mode v2. consent-gate.js bridges CookieYes categories → gtag('consent','update').
+    CookieYes dashboard: Google Consent Mode v2 must stay ON.

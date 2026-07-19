@@ -1,12 +1,16 @@
 <!--
-  GA4 (gtag.js) — ID from _config.yml
+  GA4 (gtag.js) — Consent Mode aware.
+  Defaults are set earlier in consent-defaults.html (denied).
+  Cookieless/modeled hits fire when denied; full cookies after CMP grant.
 -->
 {% assign ga_id = site.google_analytics.id %}
 {% if ga_id and ga_id != '' %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_id }}"></script>
-<script defer>
+<script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  if (typeof gtag !== 'function') {
+    function gtag(){dataLayer.push(arguments);}
+  }
   gtag('js', new Date());
   gtag('config', '{{ ga_id }}', {
     send_page_view: true,

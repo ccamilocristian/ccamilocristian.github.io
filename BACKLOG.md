@@ -5,6 +5,7 @@ _Last sync: 2026-06-27 (baseline + IndexNow ping)_
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
 **Horizonte semanal:** [`docs/WEEK_PLAN_2026-06-27.md`](docs/WEEK_PLAN_2026-06-27.md)  
+**Pipeline contenido:** [`docs/CONTENT_PIPELINE.md`](docs/CONTENT_PIPELINE.md) — posts publicados vs ideas pendientes  
 **Auditorías:** [GSC](docs/GSC_AUDIT_2026-06-27.md) · [GA4](docs/GA4_AUDIT_2026-06-27.md) · [AdSense](docs/ADSENSE_AUDIT_2026-06-27.md) · [API run](docs/API_RUN_2026-06-27.md)
 
 ---
@@ -32,9 +33,9 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Capa | Estado | Notas |
 |------|--------|-------|
 | **GTM Live v6** | ✅ | config tag + DLV (`link_url`, `search_term`, `page_path`) |
-| **GA4 pageviews** | ✅ | `G-4FK52MWLPP` vía GTM; `skip_direct_ga4: true` (sin duplicados) |
-| **Consent site** | ✅ | CookieYes ID activo + `consent-defaults.html` deny-by-default |
-| **Consent QA** | ⏳ | Falta prueba incógnito post-v5 |
+| **GA4 pageviews** | 🔧 | Direct gtag ON (`skip_direct_ga4: false`) + Consent Mode; puente CookieYes→gtag |
+| **Consent site** | ✅ | CookieYes + `consent-gate.js` sync a `gtag('consent','update')` |
+| **Consent QA** | ⏳ | Incógnito post-deploy: Accept → Realtime; pausar Google Tag GTM (evitar 2×) |
 | **Eventos custom** | ✅ | GTM v6: DLV + `eventSettingsTable` |
 | **Clarity** | ✅ | Tras consent analytics |
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
