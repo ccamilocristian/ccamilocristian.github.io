@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-06-27 (baseline + IndexNow ping)_
+_Last sync: 2026-07-19 (presence plan implementation)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -15,16 +15,17 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Métrica | Estado |
 |---------|--------|
 | Stitch shell | **7/7** completo |
-| Posts | **14 EN** + 9 ES redirect |
+| Posts | **18 EN** + 9 ES redirect |
 | Tareas abiertas | **~7** (manual UI; T25c filtro en GA4) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
 ### Hacer hoy (top 5)
 
-1. **T24** — GSC: 13 URLs → [`docs/T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md)
-2. **T25c** — Filtro Singapore → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §2
-3. **T25b** — QA consent incógnito → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §4
-4. **T23f** — Bing Webmaster → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §6
+1. **Deploy** — publicar E1/E2 + malla interna + sitemap/feed
+2. **T24** — solicitar una vez E1/E2 + prioridades → [`docs/T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md)
+3. **T23f** — verificar Bing Webmaster + sitemap → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §6
+4. **Distribución** — LinkedIn + Dev.to CPI → [`docs/DISTRIBUTION_PLAYBOOK.md`](docs/DISTRIBUTION_PLAYBOOK.md)
+5. **Scorecard** — ejecutar `tools/presence-scorecard.py` tras deploy
 
 ---
 
@@ -179,6 +180,18 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 ---
 
 ## Hecho
+
+### Presencia 30/60/90 (19-jul)
+| Entrega | Estado |
+|---------|--------|
+| Baseline EN/ES + ledger manual GSC/Bing | ✅ repo |
+| Internal linking desde Home, Intelligence y post indexado | ✅ |
+| Sitemap `lastmod` real + archivos thin fuera | ✅ |
+| Atom autodiscovery + feed ampliado | ✅ |
+| E1 CPI mensual + E2 crédito real | ✅ |
+| Refresh music-player + automation-sending | ✅ |
+| README + playbook + log de distribución | ✅ repo; publicación externa manual |
+| Scorecard semanal GSC/GA4/distribución | ✅ script |
 
 ### SEO / Search Console
 | ID | Entrega |

@@ -5,12 +5,17 @@
 site: https://ccamilocristian.github.io
 
 priority:
+  - https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/
   - https://ccamilocristian.github.io/posts/music-player-english/
   - https://ccamilocristian.github.io/posts/convertidor-english/
   - https://ccamilocristian.github.io/posts/automation-sending/
-  - https://ccamilocristian.github.io/tabs/intelligence/
+  - https://ccamilocristian.github.io/posts/loan-simulator-english/
+  - https://ccamilocristian.github.io/posts/icfes-english/
+  - https://ccamilocristian.github.io/tabs/profile/
 
 all_en_posts:
+  - https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/
+  - https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/
   - https://ccamilocristian.github.io/posts/music-player-english/
   - https://ccamilocristian.github.io/posts/convertidor-english/
   - https://ccamilocristian.github.io/posts/automation-sending/
@@ -25,7 +30,10 @@ all_en_posts:
   - https://ccamilocristian.github.io/posts/mastering-visualization-plotly/
   - https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/
   - https://ccamilocristian.github.io/posts/introduction-pyautogui-be/
+  - https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/
+  - https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/
 
 note: >
-  Do NOT inspect /slug without /posts/ — returns 404 until redirect deploy.
-  After deploy, /music-player-english/ redirects (noindex) to /posts/music-player-english/.
+  Do NOT inspect /slug without /posts/. Those short paths are noindex redirect
+  stubs, not canonical URLs. Request indexing once per materially changed
+  canonical URL, then wait 7–14 days before investigating again.

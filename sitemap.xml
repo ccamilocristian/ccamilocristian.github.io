@@ -12,9 +12,18 @@ layout: compress
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 {% for post in site.posts %}
+  {% capture post_lastmod %}
+    {% if post.lastmod %}
+      {{ post.lastmod }}
+    {% elsif post.seo.date_modified %}
+      {{ post.seo.date_modified }}
+    {% else %}
+      {{ post.date }}
+    {% endif %}
+  {% endcapture %}
   <url>
     <loc>{{ site.url | append: site.baseurl | append: post.url }}</loc>
-    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    <lastmod>{{ post_lastmod | date_to_xmlschema }}</lastmod>
 
     {% if post.sitemap.changefreq %}
       <changefreq>{{ post.sitemap.changefreq }}</changefreq>

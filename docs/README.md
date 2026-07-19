@@ -20,6 +20,10 @@ Design and migration specs for the Calm Technical dashboard. These files are **e
 | [`GSC_API_SNAPSHOT_2026-06-27.json`](GSC_API_SNAPSHOT_2026-06-27.json) | Páginas GSC + inspección 14 URLs EN |
 | [`WEEK_PLAN_2026-06-27.md`](WEEK_PLAN_2026-06-27.md) | Horizonte semanal lun–vie |
 | [`CONTENT_PIPELINE.md`](CONTENT_PIPELINE.md) | Ideas de posts (Outside-In): publicados vs pendientes |
+| [`PRESENCE_BASELINE_2026-07-19.md`](PRESENCE_BASELINE_2026-07-19.md) | Baseline indexación, queries, GA4 y ledgers manuales |
+| [`PRESENCE_SCORECARD_2026-07-19.md`](PRESENCE_SCORECARD_2026-07-19.md) | Primera ejecución semanal EN/ES + GA4 humano |
+| [`DISTRIBUTION_PLAYBOOK.md`](DISTRIBUTION_PLAYBOOK.md) | Canales, UTM, copy y guardarraíles de syndication |
+| [`distribution-log.csv`](distribution-log.csv) | Registro medible de publicaciones y menciones |
 | [`STITCH_MIGRATION_GAP.md`](STITCH_MIGRATION_GAP.md) | Stitch 7/7 status, dual shell, open gaps |
 | [`../README_UX_EVOLUTION.md`](../README_UX_EVOLUTION.md) | Vision, stack, routes, content policy |
 | [`../BACKLOG.md`](../BACKLOG.md) | Task queue |

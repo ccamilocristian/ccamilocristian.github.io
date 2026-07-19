@@ -16,8 +16,33 @@ fi
 if [[ $# -gt 0 ]]; then
   URLS=("$@")
 else
-  mapfile -t URLS < <(grep -E '^\s+- https://' "$WORK_DIR/_data/gsc_index_urls.yml" | head -4 | sed 's/^[[:space:]]*- //')
+  mapfile -t URLS < <(python3 - "$WORK_DIR/_data/gsc_index_urls.yml" <<'PY'
+from pathlib import Path
+import sys
+
+in_priority = False
+for raw_line in Path(sys.argv[1]).read_text().splitlines():
+    if raw_line.startswith("priority:"):
+        in_priority = True
+        continue
+    if in_priority and raw_line and not raw_line.startswith(" "):
+        break
+    line = raw_line.strip()
+    if in_priority and line.startswith("- https://"):
+        print(line[2:])
+PY
+)
 fi
+
+for url in "${URLS[@]}"; do
+  case "$url" in
+    "https://$HOST/"*) ;;
+    *)
+      echo "[ERROR] URL must use canonical host $HOST: $url" >&2
+      exit 1
+      ;;
+  esac
+done
 
 JSON=$(KEY="$KEY" HOST="$HOST" URLS="${URLS[*]}" python3 - <<'PY'
 import json, os

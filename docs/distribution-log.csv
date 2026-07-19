@@ -1,0 +1,4 @@
+date,channel,source_url,target_url,campaign,content,owner,status,referral_sessions,notes
+2026-07-19,github,https://github.com/ccamilocristian/ccamilocristian.github.io,https://ccamilocristian.github.io/,presence_2026q3,repo_readme,Bot,prepared,0,README updated in repository
+2026-07-19,linkedin,,https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/,presence_2026q3,cpi_launch,Human,ready,0,Copy in DISTRIBUTION_PLAYBOOK.md; publish after deploy
+2026-07-19,devto,,https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/,presence_2026q3,cpi_syndication,Human,ready,0,Set canonical before publishing

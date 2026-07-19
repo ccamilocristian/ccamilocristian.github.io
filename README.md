@@ -8,6 +8,12 @@ Built with [Jekyll](https://jekyllrb.com/) on [Chirpy v2](https://github.com/cot
 
 **Design & evolution compass:** [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md) · **Task queue:** [`BACKLOG.md`](BACKLOG.md)
 
+## Featured intelligence
+
+- [Colombia CPI indexation in Python](https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/) — official monthly IPC, validation, and an audit trail.
+- [MCP server for BigQuery](https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/) — one server flow for Cursor, Claude Desktop, and Codex.
+- [Local RAG with Ollama](https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/) — local retrieval with evaluation and reproducible scripts.
+
 ---
 
 ## Requisitos previos
@@ -41,6 +47,7 @@ Abre [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 | `bundle exec jekyll clean` | Limpia caché de build |
 | `bash tools/run.sh` | Servidor vía script del tema |
 | `bash tools/stitch-sync.sh --summary` | Sync tokens Stitch → `.stitch/` |
+| `uv run --with google-api-python-client --with google-auth --with google-analytics-data python tools/presence-scorecard.py` | Scorecard semanal read-only de presencia |
 
 ---
 
@@ -51,7 +58,7 @@ Abre [http://127.0.0.1:4000/](http://127.0.0.1:4000/)
 | `_layouts/` + `_includes/` | Shell Stitch + legacy Chirpy |
 | `_data/` | YAML — nav, profile, skills, copy de tabs |
 | `tabs/` | Páginas estáticas (Profile, Intelligence, Stack, …) |
-| `_posts/` | 14 posts publicados (EN); pares ES en `post_pairs.yml` |
+| `_posts/` | 18 posts publicados (EN); 9 pares ES despublicados en `post_pairs.yml` |
 | `categories/`, `tags/` | Stubs Chirpy para archivos (plugin `jekyll-archives` no en Gemfile) |
 | `assets/css/tokens/` | Design tokens `--ds-*` |
 | `assets/css/_addon/stitch-*.scss` | Estilos por superficie |

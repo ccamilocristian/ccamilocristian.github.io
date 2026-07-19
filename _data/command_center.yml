@@ -36,6 +36,24 @@ selected_work:
   action_label: "View all artifacts →"
   action_url: "/tabs/intelligence/"
 
+discovery_paths:
+  eyebrow: "Demand-led notes"
+  title: "Start with a working artifact"
+  subtitle: "Three practical entry points shaped by questions already reaching this site."
+  items:
+    - title: "Colombia CPI indexation"
+      summary: "Turn official IPC series into comparable peso values with an auditable Python calculation."
+      url: "/posts/colombia-cpi-indexation-engine-english/"
+      label: "Build the CPI engine →"
+    - title: "Python desktop music player"
+      summary: "Connect tkinter controls to pygame playback, track state, duration, and volume."
+      url: "/posts/music-player-english/"
+      label: "Build the player →"
+    - title: "Scheduled email delivery"
+      summary: "Send generated files with modern Gmail authentication and run the job on a schedule."
+      url: "/posts/automation-sending/"
+      label: "Automate the email →"
+
 recent_notes:
   title: "Latest intelligence"
   limit: 3

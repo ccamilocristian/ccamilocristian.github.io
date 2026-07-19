@@ -240,6 +240,7 @@ As we can see, the economic theory that taught day by day in the university cloi
 
 ## Related on this site
 
+- [Monthly Colombia CPI indexation engine](/posts/colombia-cpi-indexation-engine-english/) — official IPC observations, validation, and an audit CSV.
 - [Colombia CPI / IPC inflation calculator in Python](/posts/convertidor-english/) — convert pesos across years with Banrep/DANE series.
 - [Loan interest simulator](/posts/loan-simulator-english/) — amortization tables for credit tradeoffs.
 - [STEP labor market regression](/posts/step-colombia-english/) — automation risk with survey microdata.

@@ -94,7 +94,7 @@ _posts/*   → post  → default     (Stitch reading view when stitch_dashboard)
 | `/tags/`, `/categories/`, `/posts/` (índice raíz) | **301 redirect** → Intelligence |
 | `/tabs/` (índice) | **301 redirect** → Command Center |
 | `/404.html` | Stitch shell + recovery links |
-| `/posts/:title/` | 14 entradas publicadas (EN); 9 ES despublicados con redirect 301 |
+| `/posts/:title/` | 18 entradas publicadas (EN); 9 ES despublicados con redirect HTML noindex |
 | `/tags/:name/`, `/categories/:name/` | Archivos jekyll-archives + banner deprecación |
 
 ### Enfoque de contenido detectado hoy
@@ -115,7 +115,7 @@ Vision Lab se posiciona explícitamente como carril **emerging**, no como claim 
 
 **Contenido duro existente (conservar):**
 
-- **14 posts publicados (EN)** con metadata C5 (`domain`, `technical_level`, `reading_time`, `business_impact`); **9 alternates ES** `published: false` + redirect — ver `_data/post_pairs.yml`
+- **18 posts publicados (EN)** con metadata C5 (`domain`, `technical_level`, `reading_time`, `business_impact`); **9 alternates ES** `published: false` + redirect — ver `_data/post_pairs.yml`
 - **Profile** enriquecido desde `Profile.pdf` (pilares, carrera, publicación MPRA, foto real)
 - **3 case studies** estructurados: pipeline ICFES + BigQuery, scraping plebiscito Colombia, regresión mercado laboral STEP
 - **Career history** integrada en `_data/profile.yml` (Profile tab)
@@ -190,7 +190,7 @@ La web debe evolucionar hacia la presentación de un perfil maduro y senior. Bus
 | Datos YAML de pilares, portfolio, skills, vision, profile | `_data/*.yml` | Single source of truth del contenido estratégico |
 | IA domain-first (6 rutas primarias) | `_data/tabs.yml` | Navegación alineada con expertise real |
 | Home Bento shell | `_layouts/home.html`, `home.scss` | Stitch flow + legacy modules pendientes de decisión |
-| 14 posts (EN publicados) | `_posts/` | Evidencia técnica; metadata C5 + SEO descriptions (T9) |
+| 18 posts (EN publicados) | `_posts/` | Evidencia técnica; metadata C5 + SEO descriptions (T9) |
 | Career data | `_data/profile.yml` | Trayectoria en Profile; CV tab legacy eliminado |
 | Tags en front matter (no UI) | `_posts/` | Metadata interna: related posts, heurísticas, Economics Lens |
 | Modo claro/oscuro dual | `theme_mode: dual` | Accesibilidad; light Stitch TBD |
@@ -209,7 +209,7 @@ La web debe evolucionar hacia la presentación de un perfil maduro y senior. Bus
 | Área | Estado actual | Dirección de cambio |
 |------|---------------|---------------------|
 | **Copy del hero** | Calm technical EN en home/Profile | Refinar tono balance propósito/vida (sección 2) |
-| **Posts (14 EN)** | Stitch reading view + metadata C5 | Reencuadre editorial opcional en Intelligence — **T5/T5b/T9 hecho** |
+| **Posts (18 EN)** | Stitch reading view + metadata C5 | Reencuadre editorial opcional en Intelligence — **T5/T5b/T9 hecho** |
 | **Legacy tabs** | archives glass; about/categories/hoja-de-vida removed | — |
 | **Home legacy modules** | KPI Snapshot + Model Performance Explorer | Rediseño Stitch o retirada — **T3** |
 | **Sidebar Chirpy** | Oculta en `stitch-dashboard`; visible en legacy | Deprecación total cuando legacy tabs migrados |

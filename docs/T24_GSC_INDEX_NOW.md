@@ -5,6 +5,8 @@
 Detalle JSON: [`T24_INDEX_STATUS_2026-07-19.json`](T24_INDEX_STATUS_2026-07-19.json)
 
 Si ya pulsaste “Solicitar indexación”, la cobertura puede seguir en *unknown* 1–7 días hasta el crawl.
+No repitas la solicitud para una URL sin cambios durante 7–14 días. Solo vuelve
+a solicitar tras un cambio material o si la prueba publicada falla.
 
 ---
 
@@ -28,27 +30,29 @@ En [Search Console → Inspección de URLs](https://search.google.com/search-con
 
 | # | URL |
 |---|-----|
-| 1 | `https://ccamilocristian.github.io/posts/music-player-english/` |
-| 2 | `https://ccamilocristian.github.io/posts/convertidor-english/` |
-| 3 | `https://ccamilocristian.github.io/posts/automation-sending/` |
-| 4 | `https://ccamilocristian.github.io/posts/loan-simulator-english/` |
-| 5 | `https://ccamilocristian.github.io/posts/icfes-english/` |
-| 6 | `https://ccamilocristian.github.io/tabs/profile/` |
+| 1 | `https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/` (post-deploy) |
+| 2 | `https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/` (post-deploy) |
+| 3 | `https://ccamilocristian.github.io/posts/music-player-english/` |
+| 4 | `https://ccamilocristian.github.io/posts/convertidor-english/` |
+| 5 | `https://ccamilocristian.github.io/posts/automation-sending/` |
+| 6 | `https://ccamilocristian.github.io/posts/loan-simulator-english/` |
+| 7 | `https://ccamilocristian.github.io/posts/icfes-english/` |
+| 8 | `https://ccamilocristian.github.io/tabs/profile/` |
 
 ### Resto unknown
 
 | # | URL |
 |---|-----|
-| 7 | `https://ccamilocristian.github.io/posts/scraping-colombia-english/` |
-| 8 | `https://ccamilocristian.github.io/posts/minsalud-decrees-english/` |
-| 9 | `https://ccamilocristian.github.io/posts/step-colombia-english/` |
-| 10 | `https://ccamilocristian.github.io/posts/creating-fun-game/` |
-| 11 | `https://ccamilocristian.github.io/posts/experimental-desing/` |
-| 12 | `https://ccamilocristian.github.io/posts/mastering-visualization-plotly/` |
-| 13 | `https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/` |
-| 14 | `https://ccamilocristian.github.io/posts/introduction-pyautogui-be/` |
-| 15 | `https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/` |
-| 16 | `https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/` |
+| 9 | `https://ccamilocristian.github.io/posts/scraping-colombia-english/` |
+| 10 | `https://ccamilocristian.github.io/posts/minsalud-decrees-english/` |
+| 11 | `https://ccamilocristian.github.io/posts/step-colombia-english/` |
+| 12 | `https://ccamilocristian.github.io/posts/creating-fun-game/` |
+| 13 | `https://ccamilocristian.github.io/posts/experimental-desing/` |
+| 14 | `https://ccamilocristian.github.io/posts/mastering-visualization-plotly/` |
+| 15 | `https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/` |
+| 16 | `https://ccamilocristian.github.io/posts/introduction-pyautogui-be/` |
+| 17 | `https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/` |
+| 18 | `https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/` |
 
 ---
 

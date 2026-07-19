@@ -1,0 +1,395 @@
+{
+  "generated": "2026-07-19T11:08:58.056901+00:00",
+  "inventory": {
+    "canonical_en_posts": [
+      "https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/",
+      "https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/",
+      "https://ccamilocristian.github.io/posts/music-player-english/",
+      "https://ccamilocristian.github.io/posts/convertidor-english/",
+      "https://ccamilocristian.github.io/posts/automation-sending/",
+      "https://ccamilocristian.github.io/posts/icfes-english/",
+      "https://ccamilocristian.github.io/posts/scraping-colombia-english/",
+      "https://ccamilocristian.github.io/posts/loan-simulator-english/",
+      "https://ccamilocristian.github.io/posts/minsalud-decrees-english/",
+      "https://ccamilocristian.github.io/posts/step-colombia-english/",
+      "https://ccamilocristian.github.io/posts/optimation-consumer-english/",
+      "https://ccamilocristian.github.io/posts/creating-fun-game/",
+      "https://ccamilocristian.github.io/posts/experimental-desing/",
+      "https://ccamilocristian.github.io/posts/mastering-visualization-plotly/",
+      "https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/",
+      "https://ccamilocristian.github.io/posts/introduction-pyautogui-be/",
+      "https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/",
+      "https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/"
+    ]
+  },
+  "gsc": {
+    "period": {
+      "start": "2026-06-19",
+      "end": "2026-07-16"
+    },
+    "inspections": [
+      {
+        "url": "https://ccamilocristian.github.io/",
+        "coverage": "Submitted and indexed",
+        "state": "indexed",
+        "last_crawl": "2026-07-09T23:39:12Z",
+        "fetch": "SUCCESSFUL"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/tabs/intelligence/",
+        "coverage": "Submitted and indexed",
+        "state": "indexed",
+        "last_crawl": "2026-06-27T10:19:38Z",
+        "fetch": "SUCCESSFUL"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/music-player-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/convertidor-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/automation-sending/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/icfes-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/scraping-colombia-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/loan-simulator-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/minsalud-decrees-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/step-colombia-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/optimation-consumer-english/",
+        "coverage": "Submitted and indexed",
+        "state": "indexed",
+        "last_crawl": "2026-07-09T18:49:34Z",
+        "fetch": "SUCCESSFUL"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/creating-fun-game/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/experimental-desing/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/mastering-visualization-plotly/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/behavioral-economics-data-analysis-applications/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/introduction-pyautogui-be/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      },
+      {
+        "url": "https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/",
+        "coverage": "URL is unknown to Google",
+        "state": "unknown",
+        "last_crawl": null,
+        "fetch": "PAGE_FETCH_STATE_UNSPECIFIED"
+      }
+    ],
+    "pages": [
+      {
+        "page": "https://ccamilocristian.github.io/posts/reproductor-musica/",
+        "group": "legacy_or_other",
+        "clicks": 10,
+        "impressions": 172,
+        "ctr": 0.05813953488372093,
+        "position": 5.936046511627907
+      },
+      {
+        "page": "https://ccamilocristian.github.io/",
+        "group": "hub",
+        "clicks": 2,
+        "impressions": 14,
+        "ctr": 0.14285714285714285,
+        "position": 6.142857142857143
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/automatizacion-envio-correos/",
+        "group": "legacy_or_other",
+        "clicks": 1,
+        "impressions": 26,
+        "ctr": 0.038461538461538464,
+        "position": 20.26923076923077
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/icfes-conexion-api/",
+        "group": "legacy_or_other",
+        "clicks": 1,
+        "impressions": 8,
+        "ctr": 0.125,
+        "position": 6.75
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/liquidador-intereses/",
+        "group": "legacy_or_other",
+        "clicks": 1,
+        "impressions": 37,
+        "ctr": 0.02702702702702703,
+        "position": 11.837837837837839
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/convertidor-IPC/",
+        "group": "legacy_or_other",
+        "clicks": 0,
+        "impressions": 24,
+        "ctr": 0,
+        "position": 9.958333333333334
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/optimation-consumer-english/",
+        "group": "en_canonical",
+        "clicks": 0,
+        "impressions": 25,
+        "ctr": 0,
+        "position": 22.8
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/optimizacion_teoria_consumidor/",
+        "group": "legacy_or_other",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 1
+      },
+      {
+        "page": "https://ccamilocristian.github.io/posts/scraping-plebiscito-colombia/",
+        "group": "legacy_or_other",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 5.25
+      },
+      {
+        "page": "https://ccamilocristian.github.io/tabs/intelligence/",
+        "group": "hub",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 9
+      }
+    ],
+    "keywords": [
+      {
+        "query": "automatizar envio de email python",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 38.333333333333336
+      },
+      {
+        "query": "calculadora de inflacion colombia",
+        "clicks": 0,
+        "impressions": 14,
+        "ctr": 0,
+        "position": 9.928571428571429
+      },
+      {
+        "query": "calculadora ipc colombia",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "query": "codigo python para enviar email",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 52
+      },
+      {
+        "query": "como hacer un reproductor de musica",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "como poner musica en python",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 3.5
+      },
+      {
+        "query": "consumer optimization",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "cristian camilo moreno",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 6.666666666666667
+      },
+      {
+        "query": "enviar correo con python",
+        "clicks": 0,
+        "impressions": 3,
+        "ctr": 0,
+        "position": 37.666666666666664
+      },
+      {
+        "query": "problema: sistema de cr\u00e9ditos bancarios un banco necesita desarrollar un programa en python para evaluar solicitudes de cr\u00e9dito personal de sus clientes. el programa debe solicitar la siguiente informaci\u00f3n: nombre del cliente edad sueldo mensual antig\u00fcedad laboral (en a\u00f1os) monto del cr\u00e9dito solicitado cantidad de cuotas tipo de cliente: normal premium empresarial reglas del banco el cliente debe ser mayor o igual a 18 a\u00f1os. la antig\u00fcedad laboral m\u00ednima debe ser de 1 a\u00f1o. el monto m\u00e1ximo que puede solicitar depende del sueldo: cliente normal \u2192 hasta 8 veces su sueldo. cliente premium \u2192 hasta 15 veces su sueldo. cliente empresarial \u2192 hasta 25 veces su sueldo. la tasa de inter\u00e9s depende de las cuotas: 1 a 12 cuotas \u2192 5% 13 a 24 cuotas \u2192 9% m\u00e1s de 24 cuotas \u2192 14% si el cliente tiene: m\u00e1s de 5 a\u00f1os de antig\u00fcedad laboral \u2192 descuento del 2% en el inter\u00e9s. sueldo superior a $2.000.000 \u2192 descuento adicional del 1%. si la solicitud es aprobada, el programa debe calcular: inter\u00e9s total monto final a pagar valor de cada cuota si la solicitud es rechazada, indicar claramente el motivo. el programa debe mostrar finalmente datos del cliente estado de la solicitud (aprobada/rechazada) tipo de cliente tasa aplicada inter\u00e9s total total a pagar valor por cuota ejemplo de salida esperada ========= banco central ========= nombre: juan p\u00e9rez edad: 30 tipo cliente: premium estado solicitud: aprobada tasa aplicada: 8% inter\u00e9s total: $960000 monto final: $12960000 valor cuota mensual: $540000 requisitos obligatorios el desarrollo debe incluir: uso de if, elif y else operadores l\u00f3gicos variables entrada de datos con input() conversi\u00f3n de tipos (int, float) c\u00e1lculos matem\u00e1ticos validaciones buen formato de salida usando print()",
+        "clicks": 0,
+        "impressions": 2,
+        "ctr": 0,
+        "position": 73.5
+      },
+      {
+        "query": "python enviar correo",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "query": "python enviar correo electr\u00f3nico gmail",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 45
+      },
+      {
+        "query": "python enviar email",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 44
+      }
+    ]
+  },
+  "ga4": {
+    "filter": "country != Singapore",
+    "note": "Behavior diagnostic; this is not an indexation metric.",
+    "post_landings": []
+  },
+  "distribution": {
+    "published_or_earned": 0,
+    "new_source_urls": 0,
+    "rows": [
+      {
+        "date": "2026-07-19",
+        "channel": "github",
+        "source_url": "https://github.com/ccamilocristian/ccamilocristian.github.io",
+        "target_url": "https://ccamilocristian.github.io/",
+        "campaign": "presence_2026q3",
+        "content": "repo_readme",
+        "owner": "Bot",
+        "status": "prepared",
+        "referral_sessions": "0",
+        "notes": "README updated in repository"
+      },
+      {
+        "date": "2026-07-19",
+        "channel": "linkedin",
+        "source_url": "",
+        "target_url": "https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/",
+        "campaign": "presence_2026q3",
+        "content": "cpi_launch",
+        "owner": "Human",
+        "status": "ready",
+        "referral_sessions": "0",
+        "notes": "Copy in DISTRIBUTION_PLAYBOOK.md; publish after deploy"
+      },
+      {
+        "date": "2026-07-19",
+        "channel": "devto",
+        "source_url": "",
+        "target_url": "https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/",
+        "campaign": "presence_2026q3",
+        "content": "cpi_syndication",
+        "owner": "Human",
+        "status": "ready",
+        "referral_sessions": "0",
+        "notes": "Set canonical before publishing"
+      }
+    ]
+  }
+}

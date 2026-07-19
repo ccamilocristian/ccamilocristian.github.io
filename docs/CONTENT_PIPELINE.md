@@ -3,7 +3,7 @@
 _Registro de ideas de posts generadas en conversación / pipeline Outside-In. Los archivos en `docs/` no se publican en el sitio._
 
 **Última sync:** 2026-07-19 (metrics + presence batch)  
-**Posts EN publicados:** 16 (incl. MCP + RAG)  
+**Posts EN publicados:** 18 (incl. MCP, RAG, CPI + real credit)
 **Refresh 19-jul:** `convertidor-english` — título/meta + sección IPC/ES queries + internal links (parche mientras llega E1)
 
 ---
@@ -48,6 +48,8 @@ Pipeline acordado en chat: señal externa (HN, arXiv, GSC, GA4) + hueco de compe
 |-------|------|--------------|-------|-----|
 | 2026-06-27 | `mcp-bigquery-server-python-english` | MCP + BigQuery (Cursor, Claude, Codex) | ML / DE | [/posts/mcp-bigquery-server-python-english/](https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/) |
 | 2026-06-28 | `local-rag-ollama-python-english` | RAG local Ollama + ChromaDB | ML | [/posts/local-rag-ollama-python-english/](https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/) |
+| 2026-07-19 | `colombia-cpi-indexation-engine-english` | Monthly IPC indexation + audit trail | Economics | [/posts/colombia-cpi-indexation-engine-english/](https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/) |
+| 2026-07-19 | `real-cost-of-credit-colombia-english` | Amortization + Fisher + real payments | Economics | [/posts/real-cost-of-credit-colombia-english/](https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/) |
 
 **Tesis de tráfico (cumplida):**
 - MCP: boom agents/MCP; competencia superficial; repo ya usa MCP en `tools/`.
@@ -75,41 +77,14 @@ Prioridad acordada: **dos posts nuevos solo Economics**, orientados a tráfico o
 
 ---
 
+## Economics batch — publicado 19-jul
+
+E1 and E2 are now published. E1 keeps the official DANE/Banrep source,
+validates monthly observations, and exports an audit trail. E2 reuses that
+series for realized payment burden and keeps future inflation explicitly as a
+scenario. Both remain English canonical.
+
 ## Pendiente — posts nuevos
-
-### E1. Colombia CPI indexation engine ⭐ Economics / tráfico
-
-| Campo | Valor |
-|-------|-------|
-| **Estado** | Esqueleto (refinado jun 2026) |
-| **Pilar** | Economics |
-| **Prioridad** | **Máxima** — quick win SEO |
-| **Archivo sugerido** | `_posts/2026-XX-XX-colombia-cpi-indexation-engine-english.md` |
-| **Título (draft)** | Colombia CPI indexation in Python — monthly IPC, audit trail, and real peso values (2003–2026) |
-| **Señal GSC** | 203 imp, pos 10.1, 0 clics en *calculadora de inflacion colombia*; variantes *como indexar valor ipc*, *calculadora ipc colombia* |
-| **Señal GA4** | [`convertidor-english`](/posts/convertidor-english/) ~0s retención — reemplazar, no parchear |
-| **Artefacto** | Script Python: IPC mensual Banrep/DANE → `index_value()` + export CSV audit trail; infografía nominal → real |
-| **Herramientas** | MCP GSC keywords, MCP GA4, Python/pandas, Economics Lens, T24 indexación EN |
-| **Gap vs competencia** | Calculadoras web opacas; tú = código reproducible + trazabilidad |
-| **Reemplaza** | Sustituye lógica de [`convertidor-english`](/posts/convertidor-english/) (2003–2020); redirect ES `convertidor-IPC` → EN |
-| **Enlaces sitio** | STEP, consumer theory, Economics Lens |
-
-### E2. Real cost of credit (Fisher + amortization) ⭐ Economics / tráfico
-
-| Campo | Valor |
-|-------|-------|
-| **Estado** | Esqueleto (nuevo jun 2026) |
-| **Pilar** | Economics / finanzas personales |
-| **Prioridad** | **Alta** — publicar **después** de E1 (reusa serie IPC) |
-| **Archivo sugerido** | `_posts/2026-XX-XX-real-cost-of-credit-colombia-english.md` |
-| **Título (draft)** | Real cost of credit in Colombia — Fisher equation, amortization, and CPI-adjusted payments in Python |
-| **Señal GSC** | `/posts/liquidador-intereses/` pos 5.1 (61 imp); [`loan-simulator-english`](/posts/loan-simulator-english/) unknown to Google |
-| **Señal GA4** | liquidador ~14s retención (baseline) |
-| **Artefacto** | Part A: cuota fija (`numpy_financial`); Part B: tasa real Fisher \(r \approx i - \pi\); Part C: tabla cuota nominal vs carga real + gráfico |
-| **Herramientas** | MCP GSC/GA4 pre-post, Python, serie IPC de E1, internal linking |
-| **Gap vs competencia** | Simuladores solo nominales; pocos muestran cuota en **pesos reales** con código |
-| **Enlaces sitio** | E1 (IPC), [`loan-simulator-english`](/posts/loan-simulator-english/), Economics Lens |
-| **Opcional** | MCP BigQuery — persistir amortización + IPC (stretch DE, no obligatorio) |
 
 ### Otros pendientes (Outside-In, jun 2026)
 
@@ -160,20 +135,17 @@ Generados en sesión Outside-In. **No hay `_drafts/*.md` todavía.**
 
 | Post existente | Acción | Señal |
 |----------------|--------|-------|
-| [`convertidor-english`](/posts/convertidor-english/) | **Absorbido por E1** (CPI indexation) o redirect | GA4 0s; GSC 203 imp en ES legacy |
-| [`music-player-english`](/posts/music-player-english/) | Refresh SEO / contenido | GSC: ~43 imp, pos ~8.9 (*reproductor música*) |
-| [`loan-simulator-english`](/posts/loan-simulator-english/) | Enlazar desde E2; no reescribir solo | GSC: URL unknown; liquidador ES pos 5.1 |
+| [`convertidor-english`](/posts/convertidor-english/) | Mantener como nota histórica; enlaza E1 | GSC ES legacy deriva al cluster CPI |
+| [`music-player-english`](/posts/music-player-english/) | **Refresh 19-jul hecho** | Setup, paths y manejo de errores actualizados |
+| [`loan-simulator-english`](/posts/loan-simulator-english/) | E2 publicado y enlazado | GSC: URL unknown; liquidador ES pos 5.1 |
 
 ---
 
 ## Orden de publicación sugerido
 
-1. **E1** CPI indexation engine (Economics — 203 imp GSC)
-2. **E2** Real cost of credit (Economics — cluster liquidador/loan)
-3. SAHI (Vision Lab)
-4. Optuna (ML)
-5. Warehouse lag / calibration (DE, enlaza MCP + ICFES)
-6. Refresh: music-player
+1. SAHI (Vision Lab)
+2. Optuna (ML)
+3. Warehouse lag / calibration (DE, enlaza MCP + ICFES)
 
 Calendario: **un push por post** (o `published: false` hasta fecha objetivo), mismo ritmo que MCP → RAG.
 
@@ -188,6 +160,7 @@ Calendario: **un push por post** (o `published: false` hasta fecha objetivo), mi
 | 2026-06-28 | Publicado RAG Ollama + 3 infografías + Mermaid infra |
 | 2026-06-28 | Creado este doc (`CONTENT_PIPELINE.md`) |
 | 2026-06-28 | Economics batch: E1 CPI + E2 crédito real; GSC 203 imp validado; herramientas MCP |
+| 2026-07-19 | Publicados E1/E2; refresh music-player + automation-sending |
 
 ---
 

@@ -31,6 +31,7 @@
   {% include normalize-url.html url=page_absolute %}
   <link rel="alternate" hreflang="en" href="{{ normalized }}">
   <link rel="alternate" hreflang="x-default" href="{{ normalized }}">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | absolute_url }}">
 
   {% include favicons.html %}
 

@@ -191,6 +191,27 @@ layout: page
     </div>
   </section>
 
+  <section class="stitch-section stitch-section--notes" id="start" aria-labelledby="home-start-title">
+    <div class="stitch-section-head stitch-animate-in" style="animation-delay: 1.15s;">
+      <div>
+        <p class="stitch-eyebrow">{{ cc.discovery_paths.eyebrow }}</p>
+        <h2 id="home-start-title">{{ cc.discovery_paths.title }}</h2>
+        <p class="stitch-section-sub">{{ cc.discovery_paths.subtitle }}</p>
+      </div>
+    </div>
+    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.2s;" role="list">
+      {% for item in cc.discovery_paths.items %}
+      <article class="stitch-note-row" role="listitem">
+        <div class="stitch-note-main">
+          <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+          <p class="stitch-note-excerpt">{{ item.summary }}</p>
+        </div>
+        <a class="stitch-link-mono stitch-note-cta" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
   {% for module in cc.mock_modules %}
   {% if module.enabled %}
   <section class="stitch-section stitch-section--mock" id="mock-{{ module.key }}" aria-labelledby="mock-title-{{ module.key }}">

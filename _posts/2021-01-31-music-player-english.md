@@ -5,8 +5,9 @@ redirect_from:
   - /music-player-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-31 11:00:00 -0500
+lastmod: 2026-07-19 08:00:00 -0500
 categories: [Python]
-tags: [python]
+tags: [python, tkinter, pygame, desktop-app]
 math: true
 domain: Data Analysis
 technical_level: Intermediate
@@ -15,7 +16,22 @@ business_impact: "Improves clarity, diagnosis, and actionability of analytical d
 impact_label: "Tkinter + Pygame desktop music player"
 description: "Build a small music player with tkinter and pygame: pick a track from a folder, play/pause/stop, volume slider, elapsed time."
 ---
-Below I show how to build a music player using object-oriented programming in Python.
+This walkthrough builds a small desktop music player with `tkinter` for the
+interface and `pygame.mixer` for playback. It covers track selection,
+play/pause/stop state, volume, and elapsed time—the practical intent behind
+queries such as *como hacer un reproductor de musica* and *python musica*.
+
+Use Python 3.11+ and install the non-standard packages in an isolated
+environment:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+python -m pip install pygame mutagen pillow
+```
+
+`tkinter` normally ships with Python on Windows and macOS. On Linux, install the
+Tk package supplied by the distribution.
 
 ![](/assets/img/2021-01-31-reproductor-musica/reproductor.PNG)
 
@@ -23,32 +39,26 @@ The code that follows produces the player shown above.
 
 You will need these libraries:
 
-|Library|Library|
-|---------|-----------|
-|tkinter|pygame|
-|os|mutagen|
-|PIL|time|
-|threading|
+| Standard library | Installed package |
+|---|---|
+| `tkinter`, `pathlib`, `time` | `pygame` |
+| `threading` | `mutagen` |
+|  | `Pillow` |
 
 Start by importing the libraries and configuring the music player class plus the launch function that holds the application container.
 
 ```python
 import tkinter as tk
 import pygame
-import os
-from tkinter import HORIZONTAL,SUNKEN, W
+from pathlib import Path
+from tkinter import HORIZONTAL, SUNKEN, W
 from PIL import Image, ImageTk
-try:
-    from mutagen.mp3 import MP3
-except:
-    raise ValueError('Install mutagen with: pip install mutagen')
-    
-    from mutagen.mp3 import MP3
+from mutagen.mp3 import MP3
 import threading
 import time
 from tkinter.messagebox import showinfo, showerror
 class ReproductorMusical(tk.Frame):
-    def __init__(self, scontainer, *args, **kwargs):
+    def __init__(self, container, *args, **kwargs):
         tk.Frame.__init__(self, container, *args, **kwargs)
         self.container=container
         self.cancion=""
@@ -81,35 +91,40 @@ pygame.mixer.music.set_volume(0.4)
 self.escala.grid(row=5, column=0, columnspan=1)
 ```
 
-Next, configure the play, pause, and stop buttons. Button images can be downloaded as `.png` files. Create a folder named `Canciones` in the same directory as the `.py` or `.ipynb` file.
+Next, configure the play, pause, and stop buttons. Keep the button images in the
+project directory and create a `songs` folder beside the script. Resolve paths
+from the script location so the app does not depend on the shell's current
+directory.
 
 ```python
 # Playback buttons
         
 ## Play button
-ruta=""
-self.im1=Image.open(ruta+'play.png').resize((70, 70))
+project_dir = Path(__file__).resolve().parent
+self.im1=Image.open(project_dir / "play.png").resize((70, 70))
 self.foto_play = ImageTk.PhotoImage(self.im1,master=container)
 b=self.ReproducirCancion
 self.boton=tk.Button(self.container, image=self.foto_play, command=b)
 self.boton.grid(column=1, row=2)
         
 ## Pause button
-self.im2=Image.open(ruta+'pause.png').resize((70, 70))
+self.im2=Image.open(project_dir / "pause.png").resize((70, 70))
 self.foto_pause = ImageTk.PhotoImage(self.im2,master=container)
 self.boton1=tk.Button(self.container, image=self.foto_pause, command=self.PausarCancion)
 self.boton1.grid(column=2, row=2)
 
 ## Stop button
-self.im3=Image.open(ruta+'stop.png').resize((70, 70))
+self.im3=Image.open(project_dir / "stop.png").resize((70, 70))
 self.foto_stop = ImageTk.PhotoImage(self.im3,master=container)
 self.boton2=tk.Button(self.container, image=self.foto_stop, command=self.DetenerCancion)
 self.boton2.grid(column=3, row=2)    
 
 
-# Song selection from Canciones folder
-os.chdir(ruta+"Canciones/")
-self.listaCanciones=os.listdir()
+# Song selection without changing the process working directory
+self.listaCanciones = [
+    str(path) for path in (project_dir / "songs").iterdir()
+    if path.suffix.lower() in {".mp3", ".wav", ".ogg"}
+]
         
 self.cancion=tk.StringVar(self.container)
 self.cancion.set("Select a song to play: ")
@@ -173,11 +188,10 @@ def ReproducirCancion(self):
             pygame.mixer.music.play()
             self.mostrar_detalles(nombre_cancion)
              
-            self.estado['text'] = "Now playing:" + ' - ' + os.path.basename(nombre_cancion)
+            self.estado['text'] = "Now playing:" + ' - ' + Path(nombre_cancion).name
 
-        except:
-            showerror('File not found', 'The player could not find a track at the path. Please check again.')
-            print("Error")
+        except (FileNotFoundError, pygame.error) as error:
+            showerror("Playback error", str(error))
 
 def PausarCancion(self):
     """
@@ -218,9 +232,9 @@ def mostrar_detalles(self,reproducir_cancion):
     """
     Update elapsed-time display while the track plays.
     """
-    nombre_cancion = os.path.splitext(reproducir_cancion)
+    nombre_cancion = Path(reproducir_cancion)
 
-    if nombre_cancion[1] == '.mp3':
+    if nombre_cancion.suffix.lower() == ".mp3":
         audio = MP3(reproducir_cancion)
         Duracion_total = audio.info.length
     else:
@@ -269,11 +283,14 @@ app = ReproductorMusical(container)
 app.mainloop()
 ```
 
-# Improvements
+## Production notes
 
-+ Improve styling—colors and typography.
-+ Support YouTube playback via URL.
-+ Add playback speed control (faster or slower).
+- Tk widgets must be updated on the main thread. For a longer-lived app,
+  replace the background label update with `container.after(...)`.
+- Do not busy-wait while paused; add a short sleep or model playback state with
+  a `threading.Event`.
+- Package icons and sample audio with explicit licenses.
+- Test MP3, WAV, and OGG separately because codec support varies by platform.
 
 ## Related on this site
 

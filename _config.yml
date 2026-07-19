@@ -192,6 +192,8 @@ sitemap_exclude:
     - /assets/
     - /norobots/
     - /tabs/tags/
+    - /tags/
+    - /categories/
   accurate:
     - /404.html
     - /robots.txt

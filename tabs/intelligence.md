@@ -66,14 +66,20 @@ breadcrumb:
 
   <section class="stitch-intelligence-start-here stitch-reveal" aria-labelledby="intelligence-start-here">
     <h2 id="intelligence-start-here">Start here</h2>
-    <p class="stitch-intelligence-lead">Canonical English artifacts Google should discover from this hub—Python tools with economics and data engineering roots.</p>
+    <p class="stitch-intelligence-lead">Canonical English artifacts organized by the decision or system they help build.</p>
+    <h3>Economics and Colombia</h3>
     <ul class="stitch-intelligence-start-list">
-      <li><a href="{{ '/posts/convertidor-english/' | relative_url }}">Colombia CPI / IPC inflation calculator (Python)</a></li>
+      <li><a href="{{ '/posts/colombia-cpi-indexation-engine-english/' | relative_url }}">Colombia CPI indexation engine with a monthly audit trail</a></li>
+      <li><a href="{{ '/posts/real-cost-of-credit-colombia-english/' | relative_url }}">Real cost of credit: amortization, Fisher, and CPI</a></li>
+      <li><a href="{{ '/posts/convertidor-english/' | relative_url }}">Original Colombia CPI / IPC calculator (Python)</a></li>
+      <li><a href="{{ '/posts/loan-simulator-english/' | relative_url }}">Loan interest and amortization simulator</a></li>
+      <li><a href="{{ '/posts/optimation-consumer-english/' | relative_url }}">Consumer optimization under a budget constraint</a></li>
+    </ul>
+    <h3>Python systems</h3>
+    <ul class="stitch-intelligence-start-list">
       <li><a href="{{ '/posts/music-player-english/' | relative_url }}">Music player with tkinter &amp; pygame</a></li>
-      <li><a href="{{ '/posts/automation-sending/' | relative_url }}">Automate sending email with Python</a></li>
-      <li><a href="{{ '/posts/loan-simulator-english/' | relative_url }}">Loan interest simulator</a></li>
+      <li><a href="{{ '/posts/automation-sending/' | relative_url }}">Scheduled email delivery with Python</a></li>
       <li><a href="{{ '/posts/icfes-english/' | relative_url }}">ICFES API → BigQuery pipeline</a></li>
-      <li><a href="{{ '/posts/optimation-consumer-english/' | relative_url }}">Consumer optimization in Python</a></li>
       <li><a href="{{ '/posts/mcp-bigquery-server-python-english/' | relative_url }}">MCP server for BigQuery</a></li>
       <li><a href="{{ '/posts/local-rag-ollama-python-english/' | relative_url }}">Local RAG with Ollama</a></li>
     </ul>

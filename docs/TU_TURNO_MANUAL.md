@@ -1,6 +1,6 @@
 # Tu turno — checklist manual (~25 min)
 
-_Bot ejecutó batch 2026-06-27. Esto solo tú puedes hacer en UI._
+_Bot actualizó el baseline y el contenido 2026-07-19. Esto solo tú puedes hacer en UI._
 
 ---
 
@@ -8,13 +8,16 @@ _Bot ejecutó batch 2026-06-27. Esto solo tú puedes hacer en UI._
 
 [Inspección de URLs](https://search.google.com/search-console/inspect)
 
-Para cada URL: pegar → **Probar URL publicada** (debe ser 200) → **Solicitar indexación**.
+Después del deploy, para cada URL: pegar → **Probar URL publicada** (debe ser
+200) → **Solicitar indexación una vez**. Registrar la fecha en
+`PRESENCE_BASELINE_2026-07-19.md` y esperar 7–14 días; no repetir en loop.
 
 **Ya indexadas (no repetir):**
 - `https://ccamilocristian.github.io/posts/optimation-consumer-english/`
 - `https://ccamilocristian.github.io/tabs/intelligence/`
 
-**Solicitar ahora (13):** ver [`T24_GSC_INDEX_NOW.md`](T24_GSC_INDEX_NOW.md)
+**Solicitar primero:** E1 CPI, E2 crédito real y las seis prioridades de
+[`T24_GSC_INDEX_NOW.md`](T24_GSC_INDEX_NOW.md).
 
 ---
 
@@ -71,11 +74,13 @@ Solo vigilar en GSC → **Sitemaps** hasta que `lastDownloaded` se actualice.
 
 ---
 
-## 6. Bing (T23f) · ~5 min · opcional esta semana
+## 6. Bing (T23f) · ~5 min · prioridad esta semana
 
 1. [Bing Webmaster](https://www.bing.com/webmasters) → agregar sitio
 2. Verificar (meta tag o archivo HTML)
 3. Enviar sitemap: `https://ccamilocristian.github.io/sitemap.xml`
+4. Registrar “verificado” y “sitemap aceptado” en
+   `PRESENCE_BASELINE_2026-07-19.md`
 
 IndexNow ya pingueó 18 URLs ✅
 
