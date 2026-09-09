@@ -3,6 +3,9 @@
 
 hero:
   eyebrow: "Data Scientist · AI & Computer Vision · Data Engineering · BI & Analytics"
+  name: "Cristian Camilo Moreno Narváez"
+  brand_note: "CCMN"
+  avatar: "/assets/img/profile/portrait.png"
   title: "Data systems for analytics, ML, and decisions that hold up"
   lead: >
     Economist by training, data scientist in practice—7+ years building pipelines, models, and BI
@@ -21,6 +24,33 @@ pulse:
   eyebrow: "Live"
   title: "Site pulse"
   subtitle: "Counts pulled from this repository—not aspirational KPIs."
+
+# "What you'll find here" — orientation guide so first-time visitors immediately
+# understand the site and where to go next.
+guide:
+  enabled: true
+  eyebrow: "Start here"
+  title: "What you'll find here"
+  subtitle: "A working portfolio—real projects, the reasoning behind them, and how to reach me."
+  items:
+    - icon: "id-badge"
+      accent: primary
+      title: "Profile"
+      summary: "Background, experience, and how I work—economist turned data scientist."
+      label: "See profile →"
+      url: "/tabs/profile/"
+    - icon: "brain"
+      accent: secondary
+      title: "Intelligence"
+      summary: "Every technical artifact: pipelines, models, BI, and economics case studies (EN &amp; ES)."
+      label: "Browse artifacts →"
+      url: "/tabs/intelligence/"
+    - icon: "envelope"
+      accent: tertiary
+      title: "Contact"
+      summary: "Open to data, ML, and analytics roles or collaborations—reach out anytime."
+      label: "Get in touch →"
+      url: "mailto:cristianmorenonarvaez@outlook.com"
 
 narrative:
   title: "Analysis → ML → BI → economics"

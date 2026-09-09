@@ -48,8 +48,16 @@ layout: page
 
   <section class="stitch-section stitch-section--hero" id="hero" aria-labelledby="home-hero-title">
     <div class="stitch-hero-copy stitch-animate-in" style="animation-delay: 0.1s;">
-      <p class="stitch-eyebrow">{{ cc.hero.eyebrow }}</p>
-      <h1 id="home-hero-title">{{ cc.hero.title }}</h1>
+      <div class="stitch-hero-identity">
+        {% if cc.hero.avatar %}
+        <img class="stitch-hero-avatar" src="{{ cc.hero.avatar | relative_url }}" alt="{{ cc.hero.name }}" width="72" height="72" decoding="async" onerror="this.style.display='none'">
+        {% endif %}
+        <div class="stitch-hero-identity-text">
+          <p class="stitch-eyebrow">{{ cc.hero.eyebrow }}</p>
+          <h1 id="home-hero-title">{{ cc.hero.name | default: site.title }}{% if cc.hero.brand_note %} <span class="stitch-hero-brandnote">({{ cc.hero.brand_note }})</span>{% endif %}</h1>
+        </div>
+      </div>
+      <p class="stitch-hero-tagline">{{ cc.hero.title }}</p>
       <p id="home-hero-lead" class="stitch-lead">{{ cc.hero.lead }}</p>
       <div class="stitch-hero-actions">
         {% for action in cc.hero.actions %}
@@ -71,6 +79,28 @@ layout: page
       {% endfor %}
     </div>
   </section>
+
+  {% if cc.guide.enabled %}
+  <section class="stitch-section stitch-section--guide" id="guide" aria-labelledby="home-guide-title">
+    <div class="stitch-section-head stitch-animate-in" style="animation-delay: 0.55s;">
+      <div>
+        <p class="stitch-eyebrow">{{ cc.guide.eyebrow }}</p>
+        <h2 id="home-guide-title">{{ cc.guide.title }}</h2>
+        <p class="stitch-section-sub">{{ cc.guide.subtitle }}</p>
+      </div>
+    </div>
+    <div class="stitch-guide-grid stitch-animate-in" style="animation-delay: 0.6s;">
+      {% for item in cc.guide.items %}
+      <a class="stitch-guide-card card-glass card-glass--interactive glow-{{ item.accent }} stitch-guide-card--{{ item.accent }}" href="{{ item.url | relative_url }}">
+        <span class="stitch-guide-icon stitch-guide-icon--{{ item.accent }}" aria-hidden="true"><i class="fas fa-{{ item.icon }}"></i></span>
+        <h3 class="stitch-guide-title">{{ item.title }}</h3>
+        <p class="stitch-guide-copy">{{ item.summary }}</p>
+        <span class="stitch-link-mono stitch-guide-cta">{{ item.label }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   {% if cc.pulse.enabled %}
   <section class="stitch-section stitch-section--pulse" id="pulse" aria-labelledby="home-pulse-title">
