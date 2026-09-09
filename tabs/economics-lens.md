@@ -22,6 +22,12 @@ breadcrumb:
 {% endfor %}
 {% assign posts = posts | uniq %}
 
+{% comment %} Real corpus metrics (no hardcoded values) {% endcomment %}
+{% assign adv_count = 0 %}
+{% for p in posts %}{% if p.technical_level == 'Advanced' %}{% assign adv_count = adv_count | plus: 1 %}{% endif %}{% endfor %}
+{% assign adv_pct = 0 %}
+{% if posts.size > 0 %}{% assign adv_pct = adv_count | times: 100 | divided_by: posts.size %}{% endif %}
+
 <div class="stitch-tab-page stitch-economics-page dashboard-page dashboard-page--economics">
 
   <header class="stitch-economics-header stitch-reveal">
@@ -137,11 +143,11 @@ breadcrumb:
             <span class="economics-signal-bar-fill" style="width: {% if posts.size > 0 %}100{% else %}0{% endif %}%;"></span>
           </div>
           <div class="economics-signal-row">
-            <span class="economics-signal-label">Domains covered</span>
-            <span class="economics-signal-value">Economics</span>
+            <span class="economics-signal-label">Advanced deep dives</span>
+            <span class="economics-signal-value">{{ adv_count }}</span>
           </div>
           <div class="economics-signal-bar economics-signal-bar--primary">
-            <span class="economics-signal-bar-fill" style="width: 72%;"></span>
+            <span class="economics-signal-bar-fill" style="width: {{ adv_pct }}%;"></span>
           </div>
         </div>
       </section>
