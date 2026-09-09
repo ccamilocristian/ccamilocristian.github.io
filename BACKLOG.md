@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-09 (UX refresh: nav a 3 tabs, wordmark "Cristian Moreno", Command Center con identidad+guía, paleta P1+P2, búsqueda unificada; plan SEO en [`docs/SEO_ACTION_PLAN_2026-09.md`](docs/SEO_ACTION_PLAN_2026-09.md))_
+_Last sync: 2026-09-09 (Home spacing: gap shell 2.5/3rem + section-head mb 1rem; UX refresh nav/wordmark/guía; SEO plan en [`docs/SEO_ACTION_PLAN_2026-09.md`](docs/SEO_ACTION_PLAN_2026-09.md))_
 
 _Prev sync: 2026-07-19 (presence plan implementation)_
 
@@ -182,6 +182,12 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 ---
 
 ## Hecho
+
+### Home spacing tighten (2026-09-09)
+| Entrega | Estado |
+|---------|--------|
+| `.stitch-home` gap: 3.5–4rem → **2.5rem / 3rem** (`--ds-space-10` / `--ds-space-12`) | ✅ |
+| `.stitch-section-head` margin-bottom: 1.5rem → **1rem** | ✅ |
 
 ### Auditoría: limpieza estructural + SEO bilingüe (2026-09-09)
 | Entrega | Estado |
