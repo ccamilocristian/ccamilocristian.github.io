@@ -1,6 +1,8 @@
 # Backlog
 
-_Last sync: 2026-07-19 (presence plan implementation)_
+_Last sync: 2026-09-09 (UX refresh: nav a 3 tabs, wordmark "Cristian Moreno", Command Center con identidad+guía, paleta P1+P2, búsqueda unificada; plan SEO en [`docs/SEO_ACTION_PLAN_2026-09.md`](docs/SEO_ACTION_PLAN_2026-09.md))_
+
+_Prev sync: 2026-07-19 (presence plan implementation)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -14,7 +16,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | Métrica | Estado |
 |---------|--------|
-| Stitch shell | **6 live** (Vision Lab unpublished hasta caso CV real) |
+| Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
 | Tareas abiertas | **~7** (manual UI; T25c filtro en GA4) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |

@@ -19,16 +19,20 @@
   icon: "fas fa-brain"
   path: tabs
   url: intelligence
--
-  name: "Stack"
-  icon: "fas fa-layer-group"
-  path: tabs
-  url: stack
--
-  name: "Economics Lens"
-  icon: "fas fa-chart-line"
-  path: tabs
-  url: economics-lens
+# "Stack" and "Economics Lens" removed from the primary nav (2026-09-09): thin
+# sections that don't yet earn a top-level tab. The pages stay PUBLISHED and
+# indexable (kept in the sitemap; no SEO loss) and their content is surfaced
+# inside Intelligence ("Start here"). Re-add here once each has enough depth.
+# -
+#   name: "Stack"
+#   icon: "fas fa-layer-group"
+#   path: tabs
+#   url: stack
+# -
+#   name: "Economics Lens"
+#   icon: "fas fa-chart-line"
+#   path: tabs
+#   url: economics-lens
 
 # "Vision Lab" tab unpublished (tabs/vision-lab.md published:false): it was a mock
 # roadmap with no real content. Re-add here only when backed by a real CV case study.
