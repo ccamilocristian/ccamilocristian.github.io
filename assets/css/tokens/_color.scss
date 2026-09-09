@@ -9,14 +9,14 @@
 
 $ds-color-tokens: (
   /* Material surfaces (Stitch namedColors) */
-  bg-canvas: #121318,
-  bg-elev1: #1a1b20,
-  bg-elev2: #1e1f24,
-  bg-card: #1e1f24,
-  bg-glass: rgba(30, 31, 36, 0.72),
-  bg-surface-bright: #38393e,
-  bg-surface-dim: #121318,
-  bg-surface-lowest: #0c0e12,
+  bg-canvas: #15171f,
+  bg-elev1: #1c1e26,
+  bg-elev2: #21232c,
+  bg-card: #21232c,
+  bg-glass: rgba(33, 35, 44, 0.72),
+  bg-surface-bright: #3a3b42,
+  bg-surface-dim: #15171f,
+  bg-surface-lowest: #0d0f15,
   bg-surface-high: #282a2e,
   bg-surface-highest: #333539,
 
@@ -46,12 +46,12 @@ $ds-color-tokens: (
   accent-amber: #95d4b4,
 
   /* Ambient washes (domain page backgrounds — Phase 4) */
-  glow-emerald: rgba(149, 212, 180, 0.14),
-  glow-amber: rgba(172, 199, 255, 0.10),
-  glow-blue: rgba(107, 143, 212, 0.12),
-  glow-violet: rgba(155, 143, 196, 0.12),
-  glow-cyan: rgba(108, 144, 214, 0.10),
-  glow-green: rgba(107, 168, 138, 0.12),
+  glow-emerald: rgba(149, 212, 180, 0.18),
+  glow-amber: rgba(172, 199, 255, 0.15),
+  glow-blue: rgba(107, 143, 212, 0.18),
+  glow-violet: rgba(155, 143, 196, 0.18),
+  glow-cyan: rgba(108, 144, 214, 0.15),
+  glow-green: rgba(107, 168, 138, 0.18),
 
   /* Five domain lanes (Stitch overridePrimary / overrideSecondary / overrideTertiary + containers) */
   domain-analysis: #6b8fd4,
@@ -60,11 +60,11 @@ $ds-color-tokens: (
   domain-economics: #95d4b4,
   domain-vision: #9b8fc4,
 
-  domain-analysis-soft: rgba(107, 143, 212, 0.12),
-  domain-ml-soft: rgba(107, 168, 138, 0.12),
-  domain-bi-soft: rgba(108, 144, 214, 0.12),
-  domain-economics-soft: rgba(149, 212, 180, 0.12),
-  domain-vision-soft: rgba(155, 143, 196, 0.10),
+  domain-analysis-soft: rgba(107, 143, 212, 0.16),
+  domain-ml-soft: rgba(107, 168, 138, 0.16),
+  domain-bi-soft: rgba(108, 144, 214, 0.16),
+  domain-economics-soft: rgba(149, 212, 180, 0.16),
+  domain-vision-soft: rgba(155, 143, 196, 0.16),
 
   ambient-economics: rgba(149, 212, 180, 0.12),
   ambient-vision: rgba(184, 149, 106, 0.10),
