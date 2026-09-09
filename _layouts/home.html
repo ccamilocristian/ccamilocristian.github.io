@@ -254,7 +254,12 @@ layout: page
   {% include adsense-home-bridge.html %}
 
   <section class="stitch-section stitch-section--notes" id="notes" aria-labelledby="latest-posts-title">
-    <h2 id="latest-posts-title" class="stitch-animate-in" style="animation-delay: 1.3s;">{{ cc.recent_notes.title }}</h2>
+    <div class="stitch-section-head stitch-animate-in" style="animation-delay: 1.3s;">
+      <div>
+        <h2 id="latest-posts-title">{{ cc.recent_notes.title }}</h2>
+        {% if cc.recent_notes.subtitle %}<p class="stitch-section-sub">{{ cc.recent_notes.subtitle }}</p>{% endif %}
+      </div>
+    </div>
 
     <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.4s;" role="list" aria-labelledby="latest-posts-title">
       {% assign notes_shown = 0 %}
