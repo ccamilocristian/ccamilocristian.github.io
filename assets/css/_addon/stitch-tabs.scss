@@ -6,8 +6,12 @@
 body.stitch-dashboard .stitch-tab-page {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-space-16, 4rem);
+  gap: var(--ds-space-10, 2.5rem);
   padding-bottom: var(--ds-space-8, 2rem);
+}
+
+@media (min-width: 831px) {
+  body.stitch-dashboard .stitch-tab-page { gap: var(--ds-space-12, 3rem); }
 }
 
 /* Profile layout rhythm — see stitch-profile.scss for screen components */
@@ -63,7 +67,7 @@ body.stitch-dashboard .dashboard-grid--profile,
 body.stitch-dashboard .dashboard-grid--vision {
   display: flex;
   flex-direction: column;
-  gap: var(--ds-space-8, 2rem);
+  gap: var(--ds-space-6, 1.5rem);
 }
 
 body.stitch-dashboard .stitch-module {

@@ -61,3 +61,34 @@ tools:
   - name: Computer Vision Pipelines
     weight: strong
     domain: vision
+  # Added 2026-09-09 — all evidenced in _data/profile.yml (CV) or published posts.
+  - name: ETL/ELT
+    weight: strong
+    domain: analysis
+  - name: REST APIs
+    weight: strong
+    domain: bi
+  - name: Qlik
+    weight: strong
+    domain: bi
+  - name: Econometrics
+    weight: strong
+    domain: economics
+  - name: Data Annotation
+    weight: strong
+    domain: vision
+  - name: NLP
+    weight: growth
+    domain: ml
+  - name: Geospatial Analysis
+    weight: growth
+    domain: analysis
+  - name: RAG
+    weight: growth
+    domain: ml
+  - name: Ollama
+    weight: growth
+    domain: ml
+  - name: MCP
+    weight: growth
+    domain: bi

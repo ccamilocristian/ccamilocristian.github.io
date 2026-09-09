@@ -62,7 +62,7 @@ narrative:
 
 selected_work:
   title: "Selected work"
-  subtitle: "Problem · Process · Impact"
+  subtitle: "Hand-picked case studies — Problem · Process · Impact"
   action_label: "View all artifacts →"
   action_url: "/tabs/intelligence/"
 
@@ -90,6 +90,7 @@ discovery_paths:
 
 recent_notes:
   title: "Latest from the blog"
+  subtitle: "Everything I publish, newest first."
   limit: 3
 
 mock_modules:
