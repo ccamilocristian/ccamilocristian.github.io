@@ -18,7 +18,7 @@ hide_panel: true
   </div>
 
   <div class="stitch-legacy-footer-action stitch-reveal">
-    <a class="stitch-link-mono" href="{{ '/' | relative_url }}">← Command Center</a>
+    <a class="stitch-link-mono" href="{{ '/' | relative_url }}">← Home</a>
   </div>
 
 </div>

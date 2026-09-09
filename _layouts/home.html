@@ -113,7 +113,7 @@ layout: page
     </div>
     <dl class="stitch-pulse-grid stitch-animate-in" style="animation-delay: 0.7s;">
       <div class="stitch-pulse-item card-glass">
-        <dt>Intelligence artifacts</dt>
+        <dt>Blog posts</dt>
         <dd>{{ site.posts.size }}</dd>
       </div>
       <div class="stitch-pulse-item card-glass">
@@ -205,6 +205,7 @@ layout: page
     </div>
   </section>
 
+  {% if cc.discovery_paths.enabled %}
   <section class="stitch-section stitch-section--notes" id="start" aria-labelledby="home-start-title">
     <div class="stitch-section-head stitch-animate-in" style="animation-delay: 1.15s;">
       <div>
@@ -225,6 +226,7 @@ layout: page
       {% endfor %}
     </div>
   </section>
+  {% endif %}
 
   {% for module in cc.mock_modules %}
   {% if module.enabled %}

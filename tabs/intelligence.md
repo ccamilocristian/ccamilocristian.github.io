@@ -1,5 +1,5 @@
 ---
-title: Intelligence
+title: Blog
 permalink: /tabs/intelligence/
 redirect_from:
   - /tabs/tags/
@@ -7,10 +7,10 @@ redirect_from:
   - /tags/
   - /categories/
   - /posts/
-tab_active: Intelligence
+tab_active: Blog
 breadcrumb:
   -
-    label: Command Center
+    label: Home
     url: /
 ---
 

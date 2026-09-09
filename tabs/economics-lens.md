@@ -4,7 +4,7 @@ permalink: /tabs/economics-lens/
 tab_active: Economics Lens
 breadcrumb:
   -
-    label: Command Center
+    label: Home
     url: /
 ---
 

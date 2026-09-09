@@ -4,7 +4,7 @@ permalink: /tabs/stack/
 tab_active: Stack
 breadcrumb:
   -
-    label: Command Center
+    label: Home
     url: /
 ---
 

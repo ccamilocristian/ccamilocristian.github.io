@@ -6,16 +6,16 @@ hero:
   name: "Cristian Camilo Moreno Narváez"
   brand_note: "CCMN"
   avatar: "/assets/img/profile/portrait.png"
-  title: "Data systems for analytics, ML, and decisions that hold up"
+  title: "My profile, portfolio, and blog—in one place."
   lead: >
     Economist by training, data scientist in practice—7+ years building pipelines, models, and BI
-    in banking, SaaS, and AI programs. I connect raw signals to models you can explain and views
-    teams actually use, with economic reasoning when tradeoffs matter.
+    in banking, SaaS, and AI programs. This site is my profile, a portfolio of real work, and a
+    blog where I think out loud about data, ML, and economics.
   actions:
     - label: "Review profile"
       url: "/tabs/profile/"
       style: primary
-    - label: "Explore intelligence"
+    - label: "Read the blog"
       url: "/tabs/intelligence/"
       style: glass
 
@@ -31,7 +31,7 @@ guide:
   enabled: true
   eyebrow: "Start here"
   title: "What you'll find here"
-  subtitle: "A working portfolio—real projects, the reasoning behind them, and how to reach me."
+  subtitle: "Three ways in: who I am (profile), what I've built (portfolio), and how I think (blog)."
   items:
     - icon: "id-badge"
       accent: primary
@@ -39,11 +39,11 @@ guide:
       summary: "Background, experience, and how I work—economist turned data scientist."
       label: "See profile →"
       url: "/tabs/profile/"
-    - icon: "brain"
+    - icon: "pen-nib"
       accent: secondary
-      title: "Intelligence"
-      summary: "Every technical artifact: pipelines, models, BI, and economics case studies (EN &amp; ES)."
-      label: "Browse artifacts →"
+      title: "Blog"
+      summary: "Notes, build-alongs, and case studies on data, ML, BI, and economics (EN &amp; ES)."
+      label: "Read the blog →"
       url: "/tabs/intelligence/"
     - icon: "envelope"
       accent: tertiary
@@ -66,7 +66,11 @@ selected_work:
   action_label: "View all artifacts →"
   action_url: "/tabs/intelligence/"
 
+# Disabled 2026-09-09: this "entry points" panel duplicated Selected work +
+# Latest from the blog (three post lists in a row read as noise). Kept for
+# reference; flip enabled: true to bring it back.
 discovery_paths:
+  enabled: false
   eyebrow: "Demand-led notes"
   title: "Start with a working artifact"
   subtitle: "Three practical entry points shaped by questions already reaching this site."
@@ -85,7 +89,7 @@ discovery_paths:
       label: "Automate the email →"
 
 recent_notes:
-  title: "Latest intelligence"
+  title: "Latest from the blog"
   limit: 3
 
 mock_modules:

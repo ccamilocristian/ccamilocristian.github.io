@@ -9,7 +9,7 @@ redirect_from:
 tab_active: Profile
 breadcrumb:
   -
-    label: Command Center
+    label: Home
     url: /
 ---
 
