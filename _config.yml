@@ -132,7 +132,7 @@ defaults:
       location: Tag archive
       breadcrumb:
         -
-          label: Command Center
+          label: Home
           url: /
         -
           label: Intelligence
@@ -145,7 +145,7 @@ defaults:
       location: Category archive
       breadcrumb:
         -
-          label: Command Center
+          label: Home
           url: /
         -
           label: Intelligence
@@ -158,7 +158,7 @@ defaults:
       dynamic_title: true    # Hide title in mobile screens.
       breadcrumb:
         -
-          label: Command Center
+          label: Home
           url: /
 
 

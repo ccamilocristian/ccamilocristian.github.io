@@ -6,7 +6,7 @@
 
 
 -
-  name: "Command Center"
+  name: "Home"
   icon: "fas fa-home"
   home: true
 -
@@ -15,14 +15,14 @@
   path: tabs
   url: profile
 -
-  name: "Intelligence"
-  icon: "fas fa-brain"
+  name: "Blog"
+  icon: "fas fa-pen-nib"
   path: tabs
   url: intelligence
 # "Stack" and "Economics Lens" removed from the primary nav (2026-09-09): thin
 # sections that don't yet earn a top-level tab. The pages stay PUBLISHED and
 # indexable (kept in the sitemap; no SEO loss) and their content is surfaced
-# inside Intelligence ("Start here"). Re-add here once each has enough depth.
+# inside the Blog ("Start here"). Re-add here once each has enough depth.
 # -
 #   name: "Stack"
 #   icon: "fas fa-layer-group"

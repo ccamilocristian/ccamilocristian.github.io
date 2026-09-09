@@ -2,12 +2,12 @@
 # Copy + filter labels; posts come from site.posts
 
 hero:
-  title: Intelligence
+  title: Blog
   lead: >
-    Decision artifacts framed as signal, method, and business relevance—not generic blog posts.
-    Each piece maps domain, technical density, and measurable impact.
+    Notes, build-alongs, and case studies on data, ML, BI, and economics—each one framed by
+    the problem, the method, and the measurable impact, so it's useful and not just a hot take.
 
-search_placeholder: Filter research artifacts...
+search_placeholder: Filter posts...
 
 domain_filters:
   - label: All Domains
