@@ -52,7 +52,8 @@ breadcrumb:
       {% endfor %}
 
       {% for post in site.posts %}
-        {% unless post.slug == featured_slug %}
+        {% assign post_lang = post.lang | default: 'en' %}
+        {% unless post.slug == featured_slug or post_lang == 'es' %}
           {% include intelligence-artifact-card.html post=post %}
           {% assign feed_index = feed_index | plus: 1 %}
           {% assign feed_mod = feed_index | modulo: feed_interval %}

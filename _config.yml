@@ -199,16 +199,8 @@ sitemap_exclude:
     - /robots.txt
     - /sitemap.xml
     - /app.js
-    - /sw_old.js
-    - /posts/icfes-conexion-api/
-    - /posts/scraping-plebiscito-colombia/
-    - /posts/optimizacion_teoria_consumidor/
-    - /posts/convertidor-IPC/
-    - /posts/automatizacion-envio-correos/
-    - /posts/liquidador-intereses/
-    - /posts/ministerio-salud/
-    - /posts/reproductor-musica/
-    - /posts/step-colombia/
+    # Spanish posts are now published bilingual alternates (indexable, hreflang-paired),
+    # so they are intentionally included in the sitemap.
 
 jekyll-archives:
   enabled: [categories, tags]

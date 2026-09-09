@@ -1,4 +1,6 @@
-# Bilingual post pairs — English canonical; Spanish alternate unpublished (T5)
+# Bilingual post pairs — human-readable EN<->ES map (source of truth is the
+# shared `ref:` in each post's front matter; both languages are published,
+# indexable, and reciprocally hreflang-linked).
 pairs:
   - canonical: icfes-english
     alternate: icfes-conexion-api

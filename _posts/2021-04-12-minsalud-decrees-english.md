@@ -1,8 +1,9 @@
 ---
 title: Decrees and Resolutions of Colombia's Ministry of Health and Social Protection (2000–2020)
 redirect_from:
-  - /posts/ministerio-salud/
   - /minsalud-decrees-english/
+lang: en
+ref: minsalud-decrees
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-12 01:00:00 -0500
 categories: [Python, Web_scraping]

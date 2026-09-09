@@ -1,5 +1,6 @@
 ---
-published: false
+lang: es
+ref: step-colombia
 title: Mercado laboral Colombiano. Caso de estudio, Programa STEP
 author: Cristian Camilo Moreno Narvaez
 date: 2021-05-03 15:00:00 -0500

@@ -610,3 +610,10 @@ body.stitch-dashboard .stitch-post-content details[open] summary {
     color: inherit;
   }
 }
+
+// Bilingual language switch link in the post header (EN <-> ES)
+.stitch-post-lang-switch {
+  margin: 0.4rem 0 0;
+  font-size: 13px;
+}
+

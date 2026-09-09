@@ -1,16 +1,45 @@
 <!--
   Navigation buttons at the bottom of the post.
-
-  v2.1
-  https://github.com/cotes2020/jekyll-theme-chirpy
-  © 2020 Cotes Chung
-  MIT License
+  Language-aware: previous/next stay within the same language (page.lang, default 'en')
+  so bilingual EN/ES posts do not interleave.
 -->
 
+{% assign page_lang = page.lang | default: 'en' %}
+
+{% assign lang_posts = "" | split: "" %}
+{% for p in site.posts %}
+  {% assign p_lang = p.lang | default: 'en' %}
+  {% if p_lang == page_lang %}
+    {% assign lang_posts = lang_posts | push: p %}
+  {% endif %}
+{% endfor %}
+
+{% assign cur_index = nil %}
+{% for p in lang_posts %}
+  {% if p.url == page.url %}
+    {% assign cur_index = forloop.index0 %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign nav_newer = nil %}
+{% assign nav_older = nil %}
+{% if cur_index != nil %}
+  {% assign prev_i = cur_index | minus: 1 %}
+  {% assign next_i = cur_index | plus: 1 %}
+  {% assign last_i = lang_posts.size | minus: 1 %}
+  {% if prev_i >= 0 %}
+    {% assign nav_newer = lang_posts[prev_i] %}
+  {% endif %}
+  {% if next_i <= last_i %}
+    {% assign nav_older = lang_posts[next_i] %}
+  {% endif %}
+{% endif %}
+
 <div class="post-navigation d-flex justify-content-between">
-  {% if page.previous.url %}
-  <a href="{{ site.baseurl }}{{ page.previous.url }}" class="btn btn-outline-primary">
-    <p>{{ page.previous.title }}</p>
+  {% if nav_newer %}
+  <a href="{{ nav_newer.url | relative_url }}" class="btn btn-outline-primary">
+    <p>{{ nav_newer.title }}</p>
   </a>
   {% else %}
   <span class="btn btn-outline-primary disabled">
@@ -18,9 +47,9 @@
   </span>
   {% endif %}
 
-  {% if page.next.url %}
-  <a href="{{ site.baseurl }}{{page.next.url}}" class="btn btn-outline-primary">
-    <p>{{ page.next.title }}</p>
+  {% if nav_older %}
+  <a href="{{ nav_older.url | relative_url }}" class="btn btn-outline-primary">
+    <p>{{ nav_older.title }}</p>
   </a>
   {% else %}
   <span class="btn btn-outline-primary disabled">

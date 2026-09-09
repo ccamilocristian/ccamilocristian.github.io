@@ -29,8 +29,20 @@
 
   {% capture page_absolute %}{{ page.url | absolute_url }}{% endcapture %}
   {% include normalize-url.html url=page_absolute %}
-  <link rel="alternate" hreflang="en" href="{{ normalized }}">
-  <link rel="alternate" hreflang="x-default" href="{{ normalized }}">
+  {% if page.ref %}
+    {%- comment -%} Bilingual pair: reciprocal hreflang from shared front-matter `ref` {%- endcomment -%}
+    {% assign hreflang_alts = site.posts | where: "ref", page.ref %}
+    {% for alt in hreflang_alts %}
+    <link rel="alternate" hreflang="{{ alt.lang | default: 'en' }}" href="{{ alt.url | absolute_url }}">
+    {% endfor %}
+    {% assign hreflang_default = hreflang_alts | where: "lang", "en" | first %}
+    {% if hreflang_default %}
+    <link rel="alternate" hreflang="x-default" href="{{ hreflang_default.url | absolute_url }}">
+    {% endif %}
+  {% else %}
+    <link rel="alternate" hreflang="{{ page.lang | default: 'en' }}" href="{{ normalized }}">
+    <link rel="alternate" hreflang="x-default" href="{{ normalized }}">
+  {% endif %}
   <link rel="alternate" type="application/atom+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | absolute_url }}">
 
   {% include favicons.html %}

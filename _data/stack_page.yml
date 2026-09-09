@@ -6,7 +6,7 @@ hero:
   title: Engineering Stack
   lead: >
     A weighted matrix of tools and domains—categorized by operational depth
-    and strategic focus across analysis, ML, BI, economics, and vision.
+    and strategic focus across analysis, ML, BI, economics, and computer vision.
 
 legend:
   - label: Data Engineering
@@ -17,7 +17,7 @@ legend:
     domain: bi
   - label: Economics & Quant
     domain: economics
-  - label: Vision Lab
+  - label: Computer Vision
     domain: vision
 
 proficiency_tiers:
@@ -33,10 +33,6 @@ proficiency_tiers:
     label: GROWTH
     subtitle: Acquisition
     accent: tertiary
-  - key: emerging
-    label: EMERGING
-    subtitle: Horizon
-    accent: muted
 
 panels:
   - title: Philosophy

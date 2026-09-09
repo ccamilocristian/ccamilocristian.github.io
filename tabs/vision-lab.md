@@ -2,6 +2,7 @@
 title: Vision Lab
 permalink: /tabs/vision-lab/
 tab_active: Vision Lab
+published: false   # WIP — kept for local iteration; do not publish until backed by a real CV experiment/case.
 breadcrumb:
   -
     label: Command Center

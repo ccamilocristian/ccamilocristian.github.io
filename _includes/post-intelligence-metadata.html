@@ -1,18 +1,9 @@
 {% assign meta_post = include.post %}
 
-{% assign meta_domain = meta_post.domain | default: include.domain_override %}
-{% if meta_domain == nil or meta_domain == "" %}
-  {% assign meta_domain = "Data Analysis" %}
-  {% if meta_post.tags contains 'economics' or meta_post.categories contains 'Economics' %}
-    {% assign meta_domain = "Economics" %}
-  {% elsif meta_post.tags contains 'visualization' or meta_post.tags contains 'visualizaciones' or meta_post.tags contains 'big-query' or meta_post.tags contains 'data studio' %}
-    {% assign meta_domain = "Business Intelligence" %}
-  {% elsif meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' or meta_post.tags contains 'machine learning' or meta_post.tags contains 'predictive modeling' %}
-    {% assign meta_domain = "Machine Learning" %}
-  {% elsif meta_post.tags contains 'cv' or meta_post.tags contains 'computer-vision' %}
-    {% assign meta_domain = "Vision Lab" %}
-  {% endif %}
-{% endif %}
+{%- capture _pd -%}{%- include post-domain.html post=meta_post domain_override=include.domain_override -%}{%- endcapture -%}
+{%- assign _pd = _pd | split: '|' -%}
+{%- assign meta_domain = _pd[0] -%}
+{%- assign domain_slug = _pd[1] -%}
 
 {% assign meta_level = meta_post.technical_level | default: include.level_override %}
 {% if meta_level == nil or meta_level == "" %}
@@ -44,8 +35,8 @@
       {% assign meta_impact = "Improves prioritization and forecasting quality for operational decisions." %}
     {% when "Business Intelligence" %}
       {% assign meta_impact = "Strengthens KPI monitoring and executive decision cadence." %}
-    {% when "Vision Lab" %}
-      {% assign meta_impact = "Validates emerging CV use cases before production-level investment." %}
+    {% when "Computer Vision" %}
+      {% assign meta_impact = "Turns image and video signals into inspectable, decision-ready outputs." %}
     {% else %}
       {% assign meta_impact = "Improves clarity, diagnosis, and actionability of analytical decisions." %}
   {% endcase %}
@@ -55,18 +46,6 @@
 {% if meta_impact_label == nil or meta_impact_label == "" %}
   {% assign meta_impact_label = meta_impact | truncate: 42, "…" %}
 {% endif %}
-
-{% assign domain_slug = "analysis" %}
-{% case meta_domain %}
-  {% when "Machine Learning" %}
-    {% assign domain_slug = "ml" %}
-  {% when "Business Intelligence" %}
-    {% assign domain_slug = "bi" %}
-  {% when "Economics" %}
-    {% assign domain_slug = "economics" %}
-  {% when "Vision Lab" %}
-    {% assign domain_slug = "vision" %}
-{% endcase %}
 
 {% if include.compact %}
 {% assign compact_label = meta_domain %}

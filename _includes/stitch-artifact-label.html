@@ -1,17 +1,6 @@
-{% assign label_post = include.post %}
-{% assign label_domain = label_post.domain | default: include.domain_override %}
-{% if label_domain == nil or label_domain == "" %}
-  {% assign label_domain = "Data Analysis" %}
-  {% if label_post.tags contains 'economics' or label_post.categories contains 'Economics' %}
-    {% assign label_domain = "Economics" %}
-  {% elsif label_post.tags contains 'visualization' or label_post.tags contains 'visualizaciones' or label_post.tags contains 'big-query' or label_post.tags contains 'data studio' %}
-    {% assign label_domain = "Business Intelligence" %}
-  {% elsif label_post.tags contains 'optimization' or label_post.tags contains 'regression' or label_post.tags contains 'machine learning' or label_post.tags contains 'predictive modeling' %}
-    {% assign label_domain = "Machine Learning" %}
-  {% elsif label_post.tags contains 'cv' or label_post.tags contains 'computer-vision' %}
-    {% assign label_domain = "Vision Lab" %}
-  {% endif %}
-{% endif %}
+{%- capture _pd -%}{%- include post-domain.html post=include.post domain_override=include.domain_override -%}{%- endcapture -%}
+{%- assign _pd = _pd | split: '|' -%}
+{%- assign label_domain = _pd[0] -%}
 
 {% assign label_type = "Technical Intelligence Brief" %}
 {% if label_domain == "Economics" %}
@@ -20,7 +9,7 @@
   {% assign label_type = "Model Intelligence Brief" %}
 {% elsif label_domain == "Business Intelligence" %}
   {% assign label_type = "BI Intelligence Brief" %}
-{% elsif label_domain == "Vision Lab" %}
-  {% assign label_type = "Vision Intelligence Brief" %}
+{% elsif label_domain == "Computer Vision" %}
+  {% assign label_type = "Computer Vision Intelligence Brief" %}
 {% endif %}
 {{ label_type }}

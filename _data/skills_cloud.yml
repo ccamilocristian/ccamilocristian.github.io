@@ -11,8 +11,8 @@ core_domains:
   - name: Economics
     weight: core
     domain: economics
-  - name: Vision Lab
-    weight: emerging
+  - name: Computer Vision
+    weight: core
     domain: vision
 
 tools:
@@ -56,8 +56,8 @@ tools:
     weight: strong
     domain: economics
   - name: OpenCV
-    weight: emerging
+    weight: strong
     domain: vision
   - name: Computer Vision Pipelines
-    weight: emerging
+    weight: strong
     domain: vision
