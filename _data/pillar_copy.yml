@@ -31,9 +31,9 @@
   summary: Name tradeoffs and constraints before choosing—technical work connected to purpose.
 
 - key: vision
-  label: Vision Lab
-  short_label: Vision Lab
-  lane: emerging
-  badge: Growing
+  label: Computer Vision
+  short_label: Computer Vision
+  lane: primary
+  badge: Applied
   glow: growing
-  summary: Computer vision explored with honest scope—curiosity without overstated claims.
+  summary: Production CV data pipelines—extraction, cleaning, annotation, and evaluation for image and video models.

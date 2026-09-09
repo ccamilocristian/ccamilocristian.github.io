@@ -11,7 +11,7 @@
   {% elsif card_post.tags contains 'optimization' or card_post.tags contains 'regression' or card_post.tags contains 'machine learning' or card_post.tags contains 'predictive modeling' %}
     {% assign post_domain = "Machine Learning" %}
   {% elsif card_post.tags contains 'cv' or card_post.tags contains 'computer-vision' %}
-    {% assign post_domain = "Vision Lab" %}
+    {% assign post_domain = "Computer Vision" %}
   {% endif %}
 {% endif %}
 
@@ -27,9 +27,9 @@
   {% when "Economics" %}
     {% assign domain_slug = "economics" %}
     {% assign domain_label = "Economics" %}
-  {% when "Vision Lab" %}
+  {% when "Computer Vision" %}
     {% assign domain_slug = "vision" %}
-    {% assign domain_label = "Vision Lab" %}
+    {% assign domain_label = "Computer Vision" %}
   {% else %}
     {% assign domain_label = "Analysis" %}
 {% endcase %}

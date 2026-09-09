@@ -10,7 +10,7 @@
   {% elsif meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' or meta_post.tags contains 'machine learning' or meta_post.tags contains 'predictive modeling' %}
     {% assign meta_domain = "Machine Learning" %}
   {% elsif meta_post.tags contains 'cv' or meta_post.tags contains 'computer-vision' %}
-    {% assign meta_domain = "Vision Lab" %}
+    {% assign meta_domain = "Computer Vision" %}
   {% endif %}
 {% endif %}
 
@@ -44,8 +44,8 @@
       {% assign meta_impact = "Improves prioritization and forecasting quality for operational decisions." %}
     {% when "Business Intelligence" %}
       {% assign meta_impact = "Strengthens KPI monitoring and executive decision cadence." %}
-    {% when "Vision Lab" %}
-      {% assign meta_impact = "Validates emerging CV use cases before production-level investment." %}
+    {% when "Computer Vision" %}
+      {% assign meta_impact = "Turns image and video signals into inspectable, decision-ready outputs." %}
     {% else %}
       {% assign meta_impact = "Improves clarity, diagnosis, and actionability of analytical decisions." %}
   {% endcase %}
@@ -64,7 +64,7 @@
     {% assign domain_slug = "bi" %}
   {% when "Economics" %}
     {% assign domain_slug = "economics" %}
-  {% when "Vision Lab" %}
+  {% when "Computer Vision" %}
     {% assign domain_slug = "vision" %}
 {% endcase %}
 
