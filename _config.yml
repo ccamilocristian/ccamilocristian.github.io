@@ -185,6 +185,7 @@ exclude:
   - LICENSE
   - BACKLOG.md
   - README_UX_EVOLUTION.md
+  - AGENTS.md
 
 # Chirpy sitemap — exclude assets, tech files, legacy ES redirect stubs (T23)
 sitemap_exclude:
