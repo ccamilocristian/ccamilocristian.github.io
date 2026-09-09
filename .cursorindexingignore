@@ -1,0 +1,41 @@
+# .cursorindexingignore — excludes generated/binary paths from Cursor indexing
+# to lower token/context cost, WITHOUT hiding them from the agent if ever needed.
+# Everything here is generated, vendored, or heavy binary — never needed to
+# reason about source.
+
+# Build output & caches (duplicate the source)
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Dependencies / vendored
+.bundle/
+vendor/
+node_modules/
+
+# Local design exports (synced via tools/stitch-sync.sh)
+.stitch/
+
+# Heavy binary assets (raster images, fonts) — SVGs stay indexed/editable
+assets/img/**/*.png
+assets/img/**/*.jpg
+assets/img/**/*.jpeg
+assets/img/**/*.gif
+assets/img/**/*.webp
+assets/img/**/*.ico
+assets/**/*.woff
+assets/**/*.woff2
+assets/**/*.ttf
+assets/docs/graph.html
+
+# Minified / generated bundles
+*.min.js
+*.min.css
+
+# Lockfiles
+Gemfile.lock
+package-lock.json
+
+# OS / editor noise
+.DS_Store
+*.swp
