@@ -1,8 +1,9 @@
 ---
 title: How to build a fixed-payment loan simulator in Python?
 redirect_from:
-  - /posts/liquidador-intereses/
   - /loan-simulator-english/
+lang: en
+ref: loan-simulator
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-11 17:00:00 -0500
 categories: [Python, Riesgo]

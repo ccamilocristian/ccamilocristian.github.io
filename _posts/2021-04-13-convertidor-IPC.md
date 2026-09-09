@@ -1,7 +1,8 @@
 ---
 
 title: ¿Cómo realizar una calculadora de Inflación? Caso de estudio, Colombia entre el 2003 al 2020.
-published: false
+lang: es
+ref: convertidor-ipc
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]

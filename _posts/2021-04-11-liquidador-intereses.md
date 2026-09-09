@@ -1,5 +1,6 @@
 ---
-published: false
+lang: es
+ref: loan-simulator
 title: ¿Cómo realizar un simulador de créditos para cuotas fijas en Python?
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-11 17:00:00 -0500

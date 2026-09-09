@@ -1,8 +1,9 @@
 ---
 title: How to build a music player in Python?
 redirect_from:
-  - /posts/reproductor-musica/
   - /music-player-english/
+lang: en
+ref: music-player
 author: Cristian Camilo Moreno Narvaez
 date: 2021-01-31 11:00:00 -0500
 lastmod: 2026-07-19 08:00:00 -0500

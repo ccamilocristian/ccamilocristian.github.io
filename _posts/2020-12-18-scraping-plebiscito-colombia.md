@@ -1,7 +1,8 @@
 ---
 
 title: Web Scraping plebiscito 2016 Colombia
-published: false
+lang: es
+ref: scraping-colombia
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-18 01:00:00 -0500
 categories: [Python, Web_scraping, Data_studio]

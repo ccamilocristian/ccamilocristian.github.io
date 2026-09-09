@@ -2,8 +2,9 @@
 
 title: How can I use Python to automate the sending of emails?
 redirect_from:
-  - /posts/automatizacion-envio-correos/
   - /automation-sending/
+lang: en
+ref: automation-sending
 author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 16:00:00 -0500
 lastmod: 2026-07-19 08:00:00 -0500

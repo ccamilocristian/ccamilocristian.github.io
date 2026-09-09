@@ -2,8 +2,9 @@
 
 title: Colombia CPI / IPC inflation calculator in Python (2003–2020)
 redirect_from:
-  - /posts/convertidor-IPC/
   - /convertidor-english/
+lang: en
+ref: convertidor-ipc
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-13 12:00:00 -0500
 categories: [Python, Economics]
