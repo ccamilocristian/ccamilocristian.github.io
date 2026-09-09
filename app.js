@@ -6,18 +6,35 @@ layout: compress
 # MIT Licensed
 ---
 
-/* Service worker cleanup.
+/* Service worker + cache healing — no PWA worker is shipped.
  *
- * We no longer ship a PWA/precache worker (keeps content always fresh). We only
- * touch the service worker to remove any leftover registration — this heals
- * readers who still carry the old third-party push-ad worker — and we register
- * nothing new for clean visitors. */
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(function (registrations) {
-    if (registrations && registrations.length) {
-      // Point the existing registration at the self-removing /sw.js, which
-      // clears caches, cancels push spam, and unregisters itself.
-      navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}');
-    }
-  }).catch(function () {});
-}
+ * We register NO service worker (content stays always-fresh). We only clean up
+ * after the old third-party push-ad worker some readers still carry: unregister
+ * every existing worker, cancel its push subscription, and drop any caches it
+ * left behind.
+ *
+ * Crucially this triggers NO page reload. A previous version reloaded controlled
+ * tabs from the worker while app.js re-registered it, which caused an infinite
+ * reload loop. Healing now just takes effect on the next navigation. */
+(function () {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function (registrations) {
+      registrations.forEach(function (reg) {
+        try {
+          if (reg.pushManager && reg.pushManager.getSubscription) {
+            reg.pushManager.getSubscription().then(function (sub) {
+              if (sub) { sub.unsubscribe().catch(function () {}); }
+            }).catch(function () {});
+          }
+        } catch (e) {}
+        reg.unregister().catch(function () {});
+      });
+    }).catch(function () {});
+  }
+
+  if (window.caches && caches.keys) {
+    caches.keys().then(function (keys) {
+      keys.forEach(function (k) { caches.delete(k); });
+    }).catch(function () {});
+  }
+})();
