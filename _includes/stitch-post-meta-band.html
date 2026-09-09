@@ -1,18 +1,8 @@
 {% assign meta_post = include.post %}
 
-{% assign meta_domain = meta_post.domain | default: include.domain_override %}
-{% if meta_domain == nil or meta_domain == "" %}
-  {% assign meta_domain = "Data Analysis" %}
-  {% if meta_post.tags contains 'economics' or meta_post.categories contains 'Economics' %}
-    {% assign meta_domain = "Economics" %}
-  {% elsif meta_post.tags contains 'visualization' or meta_post.tags contains 'visualizaciones' or meta_post.tags contains 'big-query' or meta_post.tags contains 'data studio' %}
-    {% assign meta_domain = "Business Intelligence" %}
-  {% elsif meta_post.tags contains 'optimization' or meta_post.tags contains 'regression' or meta_post.tags contains 'machine learning' or meta_post.tags contains 'predictive modeling' %}
-    {% assign meta_domain = "Machine Learning" %}
-  {% elsif meta_post.tags contains 'cv' or meta_post.tags contains 'computer-vision' %}
-    {% assign meta_domain = "Computer Vision" %}
-  {% endif %}
-{% endif %}
+{%- capture _pd -%}{%- include post-domain.html post=meta_post domain_override=include.domain_override -%}{%- endcapture -%}
+{%- assign _pd = _pd | split: '|' -%}
+{%- assign meta_domain = _pd[0] -%}
 
 {% assign meta_level = meta_post.technical_level | default: include.level_override %}
 {% if meta_level == nil or meta_level == "" %}

@@ -1,0 +1,39 @@
+{%- comment -%}
+Single source of truth for a post's intelligence domain + accent slug.
+
+Usage:
+  {%- capture _pd -%}{%- include post-domain.html post=page -%}{%- endcapture -%}
+  {%- assign _pd = _pd | split: '|' -%}
+  {%- assign post_domain = _pd[0] -%}   {# canonical display name, e.g. "Machine Learning" #}
+  {%- assign post_domain_slug = _pd[1] -%} {# accent slug: ml | bi | economics | vision | analysis #}
+
+Params:
+  post            (required) the post/page object to classify.
+  domain_override (optional) explicit domain name that wins over tag inference.
+
+Output: "<Domain Name>|<slug>" on a single line (pipe-delimited). Callers derive
+labels/impact copy from the domain name; keeping the tag→domain and domain→slug
+maps here avoids the drift that previously desynced these across includes.
+{%- endcomment -%}
+{%- assign _p = include.post -%}
+{%- assign _dom = _p.domain | default: include.domain_override -%}
+{%- if _dom == nil or _dom == "" -%}
+  {%- assign _dom = "Data Analysis" -%}
+  {%- if _p.tags contains 'economics' or _p.categories contains 'Economics' -%}
+    {%- assign _dom = "Economics" -%}
+  {%- elsif _p.tags contains 'visualization' or _p.tags contains 'visualizaciones' or _p.tags contains 'big-query' or _p.tags contains 'data studio' -%}
+    {%- assign _dom = "Business Intelligence" -%}
+  {%- elsif _p.tags contains 'optimization' or _p.tags contains 'regression' or _p.tags contains 'machine learning' or _p.tags contains 'predictive modeling' -%}
+    {%- assign _dom = "Machine Learning" -%}
+  {%- elsif _p.tags contains 'cv' or _p.tags contains 'computer-vision' -%}
+    {%- assign _dom = "Computer Vision" -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign _slug = "analysis" -%}
+{%- case _dom -%}
+  {%- when "Machine Learning" -%}{%- assign _slug = "ml" -%}
+  {%- when "Business Intelligence" -%}{%- assign _slug = "bi" -%}
+  {%- when "Economics" -%}{%- assign _slug = "economics" -%}
+  {%- when "Computer Vision" -%}{%- assign _slug = "vision" -%}
+{%- endcase -%}
+{{- _dom }}|{{ _slug -}}
