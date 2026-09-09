@@ -10,7 +10,10 @@
     {% assign page_urls = page.url | split: "/" %}
     {% include stitch-dashboard-flag.html %}
     {% if stitch_dashboard %}
-    <span class="stitch-brand" aria-label="{{ site.title }}">CCMN</span>
+    <a class="stitch-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — Command Center">
+      <span class="stitch-brand-mark" aria-hidden="true">CM</span>
+      <span class="stitch-brand-name">Cristian Moreno</span>
+    </a>
     {% else %}
     <span id="breadcrumb">
       {% for item in page.breadcrumb %}
