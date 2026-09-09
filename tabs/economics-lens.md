@@ -15,10 +15,12 @@ breadcrumb:
 {% assign econ_posts_es = site.posts | where_exp: "post", "post.categories contains 'Economics'" %}
 {% assign posts = "" | split: "" %}
 {% for p in econ_posts %}
-  {% assign posts = posts | push: p %}
+  {% assign p_lang = p.lang | default: 'en' %}
+  {% unless p_lang == 'es' %}{% assign posts = posts | push: p %}{% endunless %}
 {% endfor %}
 {% for p in econ_posts_es %}
-  {% assign posts = posts | push: p %}
+  {% assign p_lang = p.lang | default: 'en' %}
+  {% unless p_lang == 'es' %}{% assign posts = posts | push: p %}{% endunless %}
 {% endfor %}
 {% assign posts = posts | uniq %}
 

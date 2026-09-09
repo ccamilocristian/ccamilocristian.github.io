@@ -36,9 +36,12 @@ layout: page
 
 {% assign econ_post_count = 0 %}
 {% for post in site.posts %}
-  {% if post.tags contains 'economics' or post.categories contains 'Economics' %}
-    {% assign econ_post_count = econ_post_count | plus: 1 %}
-  {% endif %}
+  {% assign p_lang = post.lang | default: 'en' %}
+  {% unless p_lang == 'es' %}
+    {% if post.tags contains 'economics' or post.categories contains 'Economics' %}
+      {% assign econ_post_count = econ_post_count | plus: 1 %}
+    {% endif %}
+  {% endunless %}
 {% endfor %}
 
 <main id="home-bento" class="bento-shell stitch-home" tabindex="-1" aria-labelledby="home-hero-title">
@@ -222,14 +225,19 @@ layout: page
     <h2 id="latest-posts-title" class="stitch-animate-in" style="animation-delay: 1.3s;">{{ cc.recent_notes.title }}</h2>
 
     <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.4s;" role="list" aria-labelledby="latest-posts-title">
-      {% for post in posts limit: cc.recent_notes.limit %}
-      <article class="stitch-note-row" role="listitem" aria-labelledby="post-title-{{ forloop.index }}">
+      {% assign notes_shown = 0 %}
+      {% for post in posts %}
+        {% assign p_lang = post.lang | default: 'en' %}
+        {% if p_lang == 'es' %}{% continue %}{% endif %}
+        {% if notes_shown >= cc.recent_notes.limit %}{% break %}{% endif %}
+        {% assign notes_shown = notes_shown | plus: 1 %}
+      <article class="stitch-note-row" role="listitem" aria-labelledby="post-title-{{ notes_shown }}">
         <div class="stitch-note-main">
           <div class="stitch-note-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}" class="stitch-note-date">{{ post.date | date: "%b %Y" }}</time>
             {% include post-intelligence-metadata.html post=post compact=true %}
           </div>
-          <h3 id="post-title-{{ forloop.index }}">
+          <h3 id="post-title-{{ notes_shown }}">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h3>
           <p class="stitch-note-excerpt">

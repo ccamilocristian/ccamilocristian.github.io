@@ -22,6 +22,21 @@ layout: default
 
           {% include stitch-post-meta-band.html post=page %}
 
+          {% if page.ref %}
+          {% assign post_siblings = site.posts | where: "ref", page.ref %}
+          {% for sib in post_siblings %}
+            {% unless sib.url == page.url %}
+            <p class="stitch-post-lang-switch">
+              {% if sib.lang == 'es' %}
+              <a class="stitch-link-mono" href="{{ sib.url | relative_url }}" hreflang="es" lang="es" rel="alternate">Leer en español →</a>
+              {% else %}
+              <a class="stitch-link-mono" href="{{ sib.url | relative_url }}" hreflang="en" lang="en" rel="alternate">Read in English →</a>
+              {% endif %}
+            </p>
+            {% endunless %}
+          {% endfor %}
+          {% endif %}
+
           {%- capture filename -%}
             {{ page.url | split: "/" | last }}
           {%- endcapture -%}

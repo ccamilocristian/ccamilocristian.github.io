@@ -9,7 +9,9 @@ layout: compress
 
 <!DOCTYPE html>
 
-{% if site.lang %}
+{% if page.lang %}
+  {% assign lang = page.lang %}
+{% elsif site.lang %}
   {% assign lang = site.lang | split: "_" | first %}
 {% else %}
   {% assign lang = 'en' %}
