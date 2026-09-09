@@ -4,7 +4,6 @@ layout: page
 ---
 
 {% assign cc = site.data.command_center %}
-{% assign vision = site.data.vision_lab.positioning %}
 
 {% assign pinned = site.posts | where_exp: "item", "item.pin == true"  %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true"  %}
@@ -100,7 +99,7 @@ layout: page
   </section>
   {% endif %}
 
-  <section class="stitch-section stitch-section--duo" id="features" aria-label="Narrative and emerging capability">
+  <section class="stitch-section" id="features" aria-label="Narrative">
     <article class="stitch-duo-card card-glass card-glass--interactive stitch-animate-in" style="animation-delay: 0.75s;" aria-labelledby="home-story-title">
       <div class="stitch-duo-glow" aria-hidden="true"></div>
       <div class="stitch-duo-inner">
@@ -110,24 +109,6 @@ layout: page
           <span class="material-symbols-outlined stitch-duo-kicker-icon" aria-hidden="true">terminal</span>
           {{ cc.narrative.kicker }}
         </p>
-      </div>
-    </article>
-
-    <article class="stitch-duo-card card-glass card-glass--interactive stitch-vision-teaser stitch-animate-in" style="animation-delay: 0.85s;" aria-labelledby="home-cv-title">
-      <div class="stitch-vision-hover" aria-hidden="true"></div>
-      <div class="stitch-duo-inner stitch-duo-inner--column">
-        <div class="stitch-vision-head">
-          <div>
-            <h2 id="home-cv-title">Vision Lab</h2>
-            <p class="stitch-vision-eyebrow metadata-chip">Growing track</p>
-          </div>
-          <span class="material-symbols-outlined stitch-vision-icon" aria-hidden="true">visibility</span>
-        </div>
-        <p class="stitch-vision-body">{{ vision.summary }}</p>
-        <a class="stitch-roadmap-link" href="{{ '/tabs/vision-lab/' | relative_url }}">
-          <span class="stitch-link-mono">See roadmap</span>
-          <span class="material-symbols-outlined stitch-roadmap-arrow" aria-hidden="true">arrow_forward</span>
-        </a>
       </div>
     </article>
   </section>

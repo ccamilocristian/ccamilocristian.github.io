@@ -20,8 +20,6 @@ domain_filters:
     key: bi
   - label: Economics
     key: economics
-  - label: Vision Lab
-    key: vision
 
 featured:
   slug: step-colombia-english
