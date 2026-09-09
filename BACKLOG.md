@@ -14,8 +14,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 | Métrica | Estado |
 |---------|--------|
-| Stitch shell | **7/7** completo |
-| Posts | **18 EN** + 9 ES redirect |
+| Stitch shell | **6 live** (Vision Lab unpublished hasta caso CV real) |
+| Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
 | Tareas abiertas | **~7** (manual UI; T25c filtro en GA4) |
 | Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
 
@@ -180,6 +180,19 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 ---
 
 ## Hecho
+
+### Auditoría: limpieza estructural + SEO bilingüe (2026-09-09)
+| Entrega | Estado |
+|---------|--------|
+| Vision Lab despublicado (nav, teaser home, filtro Intelligence); archivos locales conservados | ✅ |
+| "Vision Lab" → "Computer Vision" (skill real, Presight) en Stack/pilares/includes; tier EMERGING vacío retirado | ✅ |
+| Código muerto eliminado: `intelligence_flagship.yml`, `dashboard-module.html`, `post-paginator.html` | ✅ |
+| Economics Lens: métrica inventada (72%) → métrica real (avanzados) | ✅ |
+| **9 posts ES republicados** como alternates indexables (`lang`/`ref`, sin colisión de redirect) | ✅ |
+| hreflang recíproco EN↔ES + `x-default`→EN + `<html lang>` por página + selector de idioma | ✅ |
+| Feeds on-site en inglés (Intelligence/Economics/Home); prev-next y related sin mezclar idioma | ✅ |
+| `sitemap_exclude` limpiado; sitemap incluye ES (38 URLs) | ✅ |
+| Docs rectores actualizados (`.cursorrules`, `README_UX_EVOLUTION`, `BACKLOG`) | ✅ |
 
 ### Presencia 30/60/90 (19-jul)
 | Entrega | Estado |

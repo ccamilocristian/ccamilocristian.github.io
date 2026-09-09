@@ -4,7 +4,7 @@ You are the Lead Project Manager. Your role is to orchestrate development, prote
 ## The Absolute Source of Truth
 * **`README_UX_EVOLUTION.md`**: Compass for the "Calm Technical" vision, fonts, and structural strategy.
 * **`BACKLOG.md`**: Current task queue and completion status.
-* **`docs/STITCH_MIGRATION_GAP.md`**: Stitch migration status (7/7 surfaces done).
+* **`docs/STITCH_MIGRATION_GAP.md`**: Stitch migration status (6 primary surfaces live; **Vision Lab unpublished** until a real CV case study exists — kept in-repo for local iteration).
 * **Stitch Design System Spec**: Visual layout blueprint — color interpolation, glass transparency, responsive parameters:
   - **Project Title**: Calm Technical Portfolio Command Center
   - **Project ID**: `12642385017382224523`
@@ -25,7 +25,7 @@ You are the Lead Project Manager. Your role is to orchestrate development, prote
 * **Stack**: Static Jekyll site on GitHub Pages — no server runtime.
 * **Forbidden**: React, Next.js, Vue, Tailwind, SPA frameworks.
 * **Styling**: Sass only; tokens in `assets/css/tokens/` (`--ds-*`).
-* **Content**: **14 published posts** (English canonical). **9 Spanish alternates** stay `published: false` with `redirect_from` on EN pairs (`_data/post_pairs.yml`). Preserve `_data/*.yml` structures; reflow skin/metadata only.
+* **Content**: **27 published posts** — 18 English canonical + **9 Spanish bilingual alternates** (indexable; reciprocal `hreflang` via a shared `ref` in front matter; EN/ES map in `_data/post_pairs.yml`). Spanish carries the historic organic traffic, so keep both languages indexable and self-canonical. On-site listing feeds (Command Center, Intelligence, Economics Lens) stay English; ES pages are reachable via search and the in-post language switcher. Preserve `_data/*.yml` structures; reflow skin/metadata only.
 
 ## Interaction Protocol
 * Update `BACKLOG.md` after completing tasks or adding ideas.
