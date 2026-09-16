@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (Person+Organization JSON-LD; tertiary contrast `#aeb1bc` on `cursor/schema-person-contrast`)_
+_Last sync: 2026-09-16 (perf: CookieYes idle + FA non-blocking + archives trim on `cursor/perf-archives-cmp`)_
 
 _Prev sync: 2026-09-16 (Frase URL list; `llms.txt` + archives H1 + sitemap; UL Perf ~79)_
 
@@ -47,10 +47,10 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ### Hacer hoy (top 5)
 
-1. **Merge** `cursor/schema-person-contrast` (Person/Org JSON-LD + a11y tertiary)
-2. **GSC** — wait re-crawl (Request indexing already sent)
+1. **Merge** `cursor/perf-archives-cmp` (CMP idle, FA defer, archives no ads/intel JS)
+2. **GSC** — wait re-crawl
 3. **Do not chase** FAQ/TL;DR/question-H2 GEO spam unless content GO
-4. **Perf next** — archives list weight; CMP render-blocking
+4. **Perf next** — Bootstrap still blocking; archives `page.css` ~163 KB
 5. **www** — ignore (GitHub user Pages)
 ### Cola reportes (no P0 — planificar con GO)
 

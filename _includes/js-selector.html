@@ -12,7 +12,8 @@
   <script src="{{ '/assets/js/stitch-glass.js' | relative_url }}" defer></script>
 {% endif %}
 
-{% if page.tab_active == 'Intelligence' %}
+{%- comment -%} Feed filters only — not archives/categories that reuse tab_active for nav. {%- endcomment -%}
+{% if page.url contains '/tabs/intelligence' %}
   <script src="{{ '/assets/js/stitch-intelligence.js' | relative_url }}" defer></script>
 {% endif %}
 

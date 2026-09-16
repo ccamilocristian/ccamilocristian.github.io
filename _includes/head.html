@@ -85,8 +85,11 @@
     {% if page.layout == 'post' or page.layout == 'home' %}
       {% assign load_adsense = true %}
     {% elsif page.layout == 'page' and page.stitch_legacy %}
-      {% assign load_adsense = true %}
-    {% elsif page.tab_active == 'Intelligence' %}
+      {%- comment -%} Skip pure index/redirect shells (archives) — no ad slots. {%- endcomment -%}
+      {% unless page.url contains '/tabs/archives' %}
+        {% assign load_adsense = true %}
+      {% endunless %}
+    {% elsif page.tab_active == 'Intelligence' and page.url contains '/tabs/intelligence' %}
       {% assign load_adsense = true %}
     {% endif %}
     {% if load_adsense %}
@@ -95,16 +98,23 @@
     {% endif %}
   {% endif %}
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap (layout grid — keep blocking to avoid FOUC) -->
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous">
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome (non-blocking — icons can paint after first content) -->
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
     integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
-    crossorigin="anonymous">
+    crossorigin="anonymous"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"
+      integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ="
+      crossorigin="anonymous">
+  </noscript>
 
   {% include css-selector.html %}
 

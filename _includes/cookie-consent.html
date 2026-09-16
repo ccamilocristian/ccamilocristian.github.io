@@ -12,10 +12,25 @@
     if (e && e.detail) window.__ckyConsentSnapshot = e.detail;
     if (window.siteConsentGate && window.siteConsentGate.sync) window.siteConsentGate.sync();
   });
+  /* Idle/async inject: consent defaults already set; avoid parser-blocking CMP. */
+  function injectCookieYes() {
+    if (document.getElementById('cookieyes')) return;
+    var s = document.createElement('script');
+    s.id = 'cookieyes';
+    s.src = 'https://cdn-cookieyes.com/client_data/{{ cc.cookieyes_id }}/script.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(injectCookieYes, { timeout: 1500 });
+  } else if (document.readyState === 'complete') {
+    injectCookieYes();
+  } else {
+    window.addEventListener('load', injectCookieYes);
+  }
 })();
 </script>
-<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/{{ cc.cookieyes_id }}/script.js"></script>
   {% elsif cc.provider == 'cookiebot' %}
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="{{ cc.cookiebot_id }}" data-blockingmode="auto" type="text/javascript"></script>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="{{ cc.cookiebot_id }}" data-blockingmode="auto" type="text/javascript" defer></script>
   {% endif %}
 {% endif %}
