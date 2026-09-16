@@ -192,7 +192,7 @@
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   margin-bottom: var(--ds-space-4, 1rem);
 }
 
@@ -471,7 +471,7 @@
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 .stitch-domain-chip {
@@ -539,7 +539,7 @@
   font-size: var(--ds-type-size-xs, 0.75rem);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   margin-bottom: var(--ds-space-5, 1.25rem);
 }
 
@@ -749,7 +749,7 @@
   letter-spacing: var(--ds-type-tracking-eyebrow, 0.05em);
   font-size: var(--ds-type-size-eyebrow, 0.8125rem);
   font-weight: var(--ds-type-weight-medium, 500);
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   margin-bottom: var(--ds-space-4, 1rem);
 }
 
@@ -1039,7 +1039,7 @@
     font-weight: 500;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #8d909b;
+    color: var(--ds-color-text-tertiary, #aeb1bc);
   }
 
   dd {
@@ -1093,7 +1093,7 @@
 }
 
 .case-mock-footnote {
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 .stitch-mock-module {
@@ -1124,7 +1124,7 @@
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   padding: .25rem .5rem;
   border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1218,7 +1218,7 @@
 }
 
 .insight-chip-key {
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   font-weight: var(--ds-type-weight-medium, 500);
 }
 
@@ -1428,7 +1428,7 @@
   font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
   font-size: 0.5em;
   font-weight: 500;
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   vertical-align: middle;
 }
 

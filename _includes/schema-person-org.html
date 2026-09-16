@@ -1,0 +1,36 @@
+{%- comment -%}
+  Person + Organization JSON-LD (E-E-A-T / thin-schema audits).
+  Complements jekyll-seo-tag WebSite/BlogPosting — does not replace it.
+{%- endcomment -%}
+{%- assign person_id = site.url | append: site.baseurl | append: '/#person' -%}
+{%- assign org_id = site.url | append: site.baseurl | append: '/#organization' -%}
+{%- assign logo_path = site.logo | default: site.avatar | default: '/assets/img/profile/portrait-sm.png' -%}
+{%- assign photo_path = site.data.profile.hero.photo | default: logo_path -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": {{ site.author | default: site.social.name | jsonify }},
+      "url": {{ site.url | append: site.baseurl | append: '/' | jsonify }},
+      "image": {{ photo_path | absolute_url | jsonify }},
+      "jobTitle": {{ site.data.profile.hero.headline | default: site.tagline | jsonify }},
+      "description": {{ site.description | strip_newlines | jsonify }},
+      "email": {{ site.social.email | jsonify }},
+      "sameAs": {{ site.social.links | jsonify }},
+      "worksFor": { "@id": {{ org_id | jsonify }} }
+    },
+    {
+      "@type": "Organization",
+      "@id": {{ org_id | jsonify }},
+      "name": {{ site.social.name | default: site.author | jsonify }},
+      "url": {{ site.url | append: site.baseurl | append: '/' | jsonify }},
+      "logo": {{ logo_path | absolute_url | jsonify }},
+      "sameAs": {{ site.social.links | jsonify }},
+      "founder": { "@id": {{ person_id | jsonify }} }
+    }
+  ]
+}
+</script>

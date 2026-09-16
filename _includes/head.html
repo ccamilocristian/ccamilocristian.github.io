@@ -26,6 +26,7 @@
   </title>
 
   {% seo title=false %}
+  {% include schema-person-org.html %}
 
   {% capture page_absolute %}{{ page.url | absolute_url }}{% endcapture %}
   {% include normalize-url.html url=page_absolute %}

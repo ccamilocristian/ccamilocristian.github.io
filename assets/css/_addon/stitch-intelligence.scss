@@ -65,7 +65,7 @@ body.stitch-dashboard .stitch-intelligence-search {
   transition: border-color 200ms ease;
 
   &::placeholder {
-    color: var(--ds-color-text-tertiary, #8d909b);
+    color: var(--ds-color-text-tertiary, #aeb1bc);
   }
 
   &:focus {
@@ -287,7 +287,7 @@ body.stitch-dashboard .intelligence-card-domain--tertiary {
 body.stitch-dashboard .intelligence-card-date {
   font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
   font-size: 10px;
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 body.stitch-dashboard .intelligence-card-title {
@@ -325,7 +325,7 @@ body.stitch-dashboard .intelligence-card-meta-label {
   font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
   font-size: 10px;
   text-transform: uppercase;
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 body.stitch-dashboard .intelligence-card-meta-value {

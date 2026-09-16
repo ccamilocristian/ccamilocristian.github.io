@@ -95,7 +95,7 @@ body.stitch-dashboard .stitch-vision-section-title {
 body.stitch-dashboard .stitch-vision-section-meta {
   font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
   font-size: 11px;
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 body.stitch-dashboard .stitch-vision-roadmap-grid {
@@ -137,7 +137,7 @@ body.stitch-dashboard .vision-roadmap-card--active .vision-roadmap-phase {
 }
 
 body.stitch-dashboard .vision-roadmap-card--backlog .vision-roadmap-phase {
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 body.stitch-dashboard .vision-roadmap-name {
@@ -169,7 +169,7 @@ body.stitch-dashboard .vision-roadmap-bullets {
     gap: var(--ds-space-2, 0.5rem);
     font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
     font-size: 11px;
-    color: var(--ds-color-text-tertiary, #8d909b);
+    color: var(--ds-color-text-tertiary, #aeb1bc);
 
     &::before {
       content: "";
