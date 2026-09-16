@@ -5,14 +5,25 @@
 <script>
 (function () {
   window.__ckyConsentSnapshot = null;
+  /* Reserve bottom space until banner paints or consent cookie exists (CLS). */
+  try {
+    if (!/(?:^|; )cookieyes-consent=/.test(document.cookie)) {
+      document.documentElement.classList.add('cky-banner-pending');
+    }
+  } catch (e) { /* noop */ }
+  function clearPending() {
+    document.documentElement.classList.remove('cky-banner-pending');
+  }
   document.addEventListener('cookieyes_banner_load', function (e) {
     if (e && e.detail) window.__ckyConsentSnapshot = e.detail;
+    clearPending();
   });
   document.addEventListener('cookieyes_consent_update', function (e) {
     if (e && e.detail) window.__ckyConsentSnapshot = e.detail;
+    clearPending();
     if (window.siteConsentGate && window.siteConsentGate.sync) window.siteConsentGate.sync();
   });
-  /* Idle/async inject: consent defaults already set; avoid parser-blocking CMP. */
+  /* Async inject: non-blocking; sooner than idle to limit CLS vs LCP tradeoff. */
   function injectCookieYes() {
     if (document.getElementById('cookieyes')) return;
     var s = document.createElement('script');
@@ -21,12 +32,10 @@
     s.async = true;
     document.head.appendChild(s);
   }
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(injectCookieYes, { timeout: 1500 });
-  } else if (document.readyState === 'complete') {
-    injectCookieYes();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectCookieYes);
   } else {
-    window.addEventListener('load', injectCookieYes);
+    injectCookieYes();
   }
 })();
 </script>

@@ -24,7 +24,7 @@ author: Cristian Camilo Moreno Narvaez                  # change to your full na
 
 avatar: /assets/img/profile/avatar.png
 # Default social preview (jekyll-seo-tag → og:image / twitter:image)
-logo: /assets/img/profile/portrait-sm.png
+logo: /assets/img/profile/portrait-sm.webp
 
 github:
   username: ccamilocristian              # change to your github username
@@ -113,7 +113,7 @@ defaults:
       path: ""
     values:
       # Site-wide social preview (jekyll-seo-tag → og:image)
-      image: /assets/img/profile/portrait-sm.png
+      image: /assets/img/profile/portrait-sm.webp
   -
     scope:
       path: ""          # An empty string here means all files in the project
