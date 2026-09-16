@@ -3,6 +3,7 @@ title: Archive
 permalink: /tabs/archives/
 tab_active: Intelligence
 stitch_legacy: true
+dynamic_title: false
 # Chronological post index — Stitch glass list (T16)
 ---
 

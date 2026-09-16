@@ -1,0 +1,39 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# Cristian Camilo Moreno Narváez (CCMN)
+
+> Personal site: profile, portfolio, and bilingual blog (EN/ES) on data science, ML, BI, computer vision, and economics. Static Jekyll on GitHub Pages. No server-side LLM calls.
+
+Preferred canonical host: https://ccamilocristian.github.io/ (no www).
+
+## Primary surfaces
+
+- [Home / Command Center](https://ccamilocristian.github.io/): profile + portfolio + blog entry
+- [Profile](https://ccamilocristian.github.io/tabs/profile/): CV narrative, experience, skills
+- [Blog / Intelligence](https://ccamilocristian.github.io/tabs/intelligence/): English listing of posts (Spanish alternates via search + in-post switcher)
+- [Sitemap](https://ccamilocristian.github.io/sitemap.xml)
+- [RSS](https://ccamilocristian.github.io/feed.xml)
+
+## Flagship posts (English)
+
+- [Colombia CPI indexation in Python](https://ccamilocristian.github.io/posts/colombia-cpi-indexation-engine-english/)
+- [Real cost of credit in Colombia (Fisher + CPI)](https://ccamilocristian.github.io/posts/real-cost-of-credit-colombia-english/)
+- [Colombia IPC inflation calculator](https://ccamilocristian.github.io/posts/convertidor-english/)
+- [Music player in Python](https://ccamilocristian.github.io/posts/music-player-english/)
+- [Email automation](https://ccamilocristian.github.io/posts/automation-sending/)
+- [Local RAG with Ollama](https://ccamilocristian.github.io/posts/local-rag-ollama-python-english/)
+- [MCP BigQuery server](https://ccamilocristian.github.io/posts/mcp-bigquery-server-python-english/)
+
+## Optional / legacy
+
+- [Archives](https://ccamilocristian.github.io/tabs/archives/): chronological list (prefer Intelligence)
+- [Stack](https://ccamilocristian.github.io/tabs/stack/)
+- [Economics Lens](https://ccamilocristian.github.io/tabs/economics-lens/)
+
+## Contact
+
+- Email: cristianmorenonarvaez@outlook.com
+- LinkedIn: https://ae.linkedin.com/in/cristian-camilo-moreno-narvaez
+- GitHub: https://github.com/ccamilocristian

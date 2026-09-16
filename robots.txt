@@ -13,3 +13,6 @@ User-agent: *
 #Disallow: /norobots/
 
 Sitemap: {{ site.url | append: site.baseurl }}/sitemap.xml
+
+# Optional discovery for AI agents (not a crawl directive)
+# https://ccamilocristian.github.io/llms.txt
