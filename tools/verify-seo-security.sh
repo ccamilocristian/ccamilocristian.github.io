@@ -76,6 +76,15 @@ while read -r canon alt; do
 done <<< "$PAIRS"
 if [ "$PAIR_OK" -eq "$PAIR_TOTAL" ] && [ "$PAIR_TOTAL" -gt 0 ]; then pass "all $PAIR_TOTAL bilingual pairs: sitemap + reciprocal hreflang + per-lang <html lang>"; fi
 
+# Hard: noindex on published posts, missing title/desc, sitemap gaps.
+# Soft (WARN): title >60 / description outside 140–160 — fail with SEO_STRICT=1.
+echo "==> On-page SEO invariants"
+if python3 "$ROOT/tools/_seo_onpage_checks.py"; then
+  :
+else
+  FAIL=1
+fi
+
 echo "==> HTML-Proofer (internal links/images/scripts)"
 if bundle exec htmlproofer "$DEST" --disable-external --allow-hash-href --ignore-empty-alt --ignore-missing-alt >/tmp/htmlproofer_guard.log 2>&1; then
   pass "html-proofer passed"

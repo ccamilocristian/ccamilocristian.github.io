@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-09 (Home spacing: gap shell 2.5/3rem + section-head mb 1rem; UX refresh nav/wordmark/guía; SEO plan en [`docs/SEO_ACTION_PLAN_2026-09.md`](docs/SEO_ACTION_PLAN_2026-09.md))_
+_Last sync: 2026-09-16 (SEO guards + Unlighthouse + seo-kickoff; GO#1 API done; manual = Request indexing + Security UI + Bing verify once — [`docs/SEO_TOOLING.md`](docs/SEO_TOOLING.md))_
 
 _Prev sync: 2026-07-19 (presence plan implementation)_
 
@@ -23,11 +23,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ### Hacer hoy (top 5)
 
-1. **Deploy** — publicar E1/E2 + malla interna + sitemap/feed
-2. **T24** — solicitar una vez E1/E2 + prioridades → [`docs/T24_GSC_INDEX_NOW.md`](docs/T24_GSC_INDEX_NOW.md)
-3. **T23f** — verificar Bing Webmaster + sitemap → [`docs/TU_TURNO_MANUAL.md`](docs/TU_TURNO_MANUAL.md) §6
-4. **Distribución** — LinkedIn + Dev.to CPI → [`docs/DISTRIBUTION_PLAYBOOK.md`](docs/DISTRIBUTION_PLAYBOOK.md)
-5. **Scorecard** — ejecutar `tools/presence-scorecard.py` tras deploy
+1. **Solo UI** — GSC Request indexing (8 URLs) + Security & Manual Actions → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
+2. **Bing once** — verificar sitio + API key → luego `bash tools/bing-submit-sitemap.sh`
+3. **Unlighthouse** — `bash tools/run-unlighthouse.sh` (tras `npm install`)
+4. **On-page batch** — titles/descriptions (WARNs del guard; `SEO_STRICT=1` when clean)
+5. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
 
 ---
 
@@ -42,8 +42,8 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | **Eventos custom** | ✅ | Dual path: `dataLayer` + `gtag('event')` en `analytics-events.js` |
 | **Clarity** | ✅ | Tras consent analytics |
 | **AdSense** | ✅ código | 6 slots alineados; **no es Google Ads** (no hay campañas) |
-| **GSC orgánico** | ⚠️ | Impresiones aún en ES legacy; EN 3 indexadas / 16 unknown (19-jul) |
-| **Sitemap GSC** | ⏳ | Reenviado 19-jul; `isPending`; `lastDownloaded` 2024-10-16 |
+| **GSC orgánico** | ⚠️ | 2026-09-16: 3 indexed (/, Blog, 1 EN); money EN **unknown**; ES IPC/música **stale noindex** |
+| **Sitemap GSC** | ⏳ | Reenviado **2026-09-16**; `isPending`; `lastDownloaded` aún **2024-10-16** (cuenta 73 stale) |
 | **GA4 datos limpios** | ⏳ | Filtro Singapore — **manual UI** (API 404 en dataFilters) |
 | **GSC ↔ GA4 link** | ✅ | Vinculado manual 27-jun |
 | **URLs `//` en GA4** | ⚠️ | Fix en repo; datos viejos hasta estabilizar |
@@ -182,6 +182,18 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 ---
 
 ## Hecho
+
+### SEO GO#1 — reindex kickoff (2026-09-16)
+| Entrega | Estado |
+|---------|--------|
+| GSC sitemap resubmit API | ✅ (re-run via `seo-kickoff.sh`) |
+| IndexNow money URLs | ✅ |
+| URL Inspection prioridad | ✅ 3 ok · 8 MANUAL Request indexing |
+| SEO on-page + noindex guards | ✅ `tools/_seo_onpage_checks.py` |
+| Unlighthouse wiring | ✅ `package.json` + `unlighthouse.config.ts` |
+| Bing SubmitFeed | ⏳ needs API key once (IndexNow already pings Bing) |
+| Solicitar indexación (UI) | ⏳ solo humano |
+| GSC Security & Manual Actions | ⏳ solo humano |
 
 ### Home spacing tighten (2026-09-09)
 | Entrega | Estado |

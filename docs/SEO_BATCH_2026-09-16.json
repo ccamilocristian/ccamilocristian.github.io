@@ -1,0 +1,164 @@
+{
+  "generated": "2026-09-16T17:43:55.671131+00:00",
+  "tasks": {
+    "T23d": {
+      "lastSubmitted": "2026-07-19T10:26:32.110Z",
+      "lastDownloaded": "2024-10-16T02:42:41.606Z",
+      "isPending": true,
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "73",
+          "indexed": "0"
+        }
+      ]
+    },
+    "T24": {
+      "indexed": 2,
+      "pending": 24,
+      "total": 26,
+      "results": [
+        {
+          "url": "/posts/colombia-cpi-indexation-engine-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/music-player-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/convertidor-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/automation-sending/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/loan-simulator-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/icfes-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/tabs/profile/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/colombia-cpi-indexation-engine-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/real-cost-of-credit-colombia-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/music-player-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/convertidor-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/automation-sending/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/icfes-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/scraping-colombia-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/loan-simulator-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/minsalud-decrees-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/step-colombia-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/optimation-consumer-english/",
+          "coverage": "Submitted and indexed",
+          "needs_manual_request": false
+        },
+        {
+          "url": "/posts/creating-fun-game/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/experimental-desing/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/mastering-visualization-plotly/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/behavioral-economics-data-analysis-applications/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/introduction-pyautogui-be/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/mcp-bigquery-server-python-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/posts/local-rag-ollama-python-english/",
+          "coverage": "URL is unknown to Google",
+          "needs_manual_request": true
+        },
+        {
+          "url": "/tabs/intelligence/",
+          "coverage": "Submitted and indexed",
+          "needs_manual_request": false
+        }
+      ]
+    },
+    "GTM": {
+      "containerVersionId": "7",
+      "tags": [
+        "Google Tag",
+        "GA4 Event - outbound_click",
+        "GA4 Event - site_search"
+      ]
+    }
+  }
+}
