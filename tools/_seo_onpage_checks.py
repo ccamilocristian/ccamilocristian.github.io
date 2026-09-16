@@ -2,7 +2,8 @@
 """On-page SEO guards for verify-seo-security.sh (stdlib only).
 
 Hard fail (exit 1): published post builds with robots noindex, missing title/description,
-or sitemap/post-page mismatch for published posts.
+sitemap/post-page mismatch, broken front-matter YAML (unquoted colon), or dated-path
+fallback builds (permalink regression like credit 404).
 
 Soft warn (exit 0 unless SEO_STRICT=1): title > 60 chars, description outside 140–160.
 """
@@ -20,6 +21,21 @@ STRICT = os.environ.get("SEO_STRICT", "").strip() in {"1", "true", "yes"}
 
 FAIL = 0
 WARN = 0
+
+# Scalars that often embed ":" (e.g. "Topic: subtitle") and must be quoted in YAML.
+_COLON_SCALAR_KEYS = (
+    "title",
+    "description",
+    "impact_label",
+    "business_impact",
+    "excerpt",
+)
+# Unquoted scalar that still contains a colon → YAML "mapping values not allowed".
+_UNQUOTED_COLON = re.compile(
+    r"^("
+    + "|".join(_COLON_SCALAR_KEYS)
+    + r"):\s+(?!['\"|>\[{])([^#\n]*:\s*[^#\n]+)\s*$"
+)
 
 
 def pass_(msg: str) -> None:
@@ -58,6 +74,15 @@ def parse_fm(text: str) -> dict[str, str]:
     return meta
 
 
+def fm_block(text: str) -> str:
+    if not text.startswith("---"):
+        return ""
+    end = text.find("\n---", 3)
+    if end < 0:
+        return ""
+    return text[3:end]
+
+
 def is_published(meta: dict[str, str]) -> bool:
     return meta.get("published", "true").lower() != "false"
 
@@ -65,6 +90,17 @@ def is_published(meta: dict[str, str]) -> bool:
 def slug_from_post(path: Path) -> str:
     name = path.stem
     return re.sub(r"^\d{4}-\d{2}-\d{2}-", "", name)
+
+
+def check_unquoted_colons(path: Path, text: str) -> None:
+    block = fm_block(text)
+    for i, line in enumerate(block.splitlines(), start=2):  # line 1 is ---
+        m = _UNQUOTED_COLON.match(line)
+        if m:
+            fail(
+                f"{path.name}:{i}: unquoted '{m.group(1)}:' contains a colon — "
+                f'quote it (e.g. {m.group(1)}: "…") or Jekyll may mis-route the permalink'
+            )
 
 
 def main() -> int:
@@ -81,7 +117,22 @@ def main() -> int:
     else:
         pass_(f"sitemap lists {len(post_locs)} post URLs ({len(sitemap_locs)} total)")
 
+    # Front-matter YAML traps (credit 404: title with unquoted ":")
+    yaml_ok = 0
+    for path in sorted(POSTS.glob("*.md")):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        meta = parse_fm(text)
+        if not is_published(meta):
+            continue
+        before = FAIL
+        check_unquoted_colons(path, text)
+        if FAIL == before:
+            yaml_ok += 1
+    if yaml_ok and FAIL == 0:
+        pass_(f"no unquoted colon traps in {yaml_ok} published post front matters")
+
     noindex_hits: list[str] = []
+    dated_fallback: list[str] = []
     published_slugs: list[str] = []
     for path in sorted(POSTS.glob("*.md")):
         meta = parse_fm(path.read_text(encoding="utf-8", errors="replace"))
@@ -90,6 +141,10 @@ def main() -> int:
         slug = slug_from_post(path)
         published_slugs.append(slug)
         html = DEST / "posts" / slug / "index.html"
+        dated_html = DEST / "posts" / path.stem / "index.html"
+        # Broken FM → Jekyll may emit /posts/<full-filename-with-date>/ instead of slug.
+        if dated_html.is_file() and not html.is_file():
+            dated_fallback.append(path.name)
         if not html.is_file():
             continue
         text = html.read_text(encoding="utf-8", errors="replace")
@@ -100,11 +155,17 @@ def main() -> int:
             re.I,
         ):
             noindex_hits.append(f"posts/{slug}/")
+    if dated_fallback:
+        fail(
+            "published posts built under dated path (likely broken YAML front matter): "
+            + ", ".join(dated_fallback[:8])
+        )
+    else:
+        pass_("no dated-path permalink fallbacks for published posts")
     if noindex_hits:
         fail(f"published post HTML has noindex: {', '.join(noindex_hits[:8])}")
     else:
         pass_(f"no robots noindex on {len(published_slugs)} published post builds")
-
     title_long = 0
     desc_bad = 0
     missing = 0

@@ -17,6 +17,18 @@ bash tools/run-unlighthouse.sh
 # or: npm install && npm run seo:unlighthouse
 ```
 
+## On-page guards (`tools/_seo_onpage_checks.py`)
+
+Hard failures include:
+
+- Published post HTML with `robots` **noindex**
+- Missing `title` / `description`
+- Sitemap gaps for published posts
+- **Unquoted colon** in `title` / `description` / impact fields (breaks YAML → wrong permalink; caused the credit 404)
+- **Dated-path fallback** builds (`/posts/YYYY-MM-DD-slug/` without the canonical slug) — same class of FM breakage
+
+Soft (WARN unless `SEO_STRICT=1`): title >60 chars, description outside 140–160.
+
 ## What the API can / cannot do
 
 | Action | Automatable? | Tool |
