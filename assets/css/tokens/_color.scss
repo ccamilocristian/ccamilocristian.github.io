@@ -23,7 +23,8 @@ $ds-color-tokens: (
   /* Text (Stitch on-* ) */
   text-primary: #e2e2e8,
   text-secondary: #c3c6d2,
-  text-tertiary: #8d909b,
+  /* Was #8d909b (~3.9:1 on canvas) — bump for WCAG AA on small/eyebrow text */
+  text-tertiary: #aeb1bc,
   text-on-primary: #002f68,
 
   /* Borders (Stitch outline) */

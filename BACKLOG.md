@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (honest Frase matrix; meta/og/profile WebP + multi-H1 + alts on `cursor/meta-og-profile-image`)_
+_Last sync: 2026-09-16 (Person+Organization JSON-LD; tertiary contrast `#aeb1bc` on `cursor/schema-person-contrast`)_
 
 _Prev sync: 2026-09-16 (Frase URL list; `llms.txt` + archives H1 + sitemap; UL Perf ~79)_
 
@@ -35,7 +35,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Missing alt (7) | Empty `![ ]` / raw `<img>` | **Fixing** | Filename-based alts on flagged posts |
 | Long meta description (4) | Site desc 180 | **Fixing** | Site ≤128; tabs get own ≤143 |
 | Missing summary / TL;DR (6) | Open | **Not done** | Content rewrite; skip unless GO |
-| Thin schema (4) | WebSite/BlogPosting only | **Not done** | Needs Person/FAQ JSON-LD design |
+| Thin schema (4) | WebSite/BlogPosting only | **Partial** | Person+Organization `@graph` live in head; FAQ still open |
 | Missing question headings (8) | Open | **Not done** | Editorial GEO |
 | Weak definitions (3) | Open | **Not done** | Editorial |
 | Poor AI structure (5) | Open | **Not done** | High effort rewrite |
@@ -47,10 +47,10 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 
 ### Hacer hoy (top 5)
 
-1. **Merge** `cursor/meta-og-profile-image` (meta, og logo, profile WebP, H1, alts)
+1. **Merge** `cursor/schema-person-contrast` (Person/Org JSON-LD + a11y tertiary)
 2. **GSC** — wait re-crawl (Request indexing already sent)
 3. **Do not chase** FAQ/TL;DR/question-H2 GEO spam unless content GO
-4. **Perf next** — profile was worst image; archives list weight; CMP render-blocking
+4. **Perf next** — archives list weight; CMP render-blocking
 5. **www** — ignore (GitHub user Pages)
 ### Cola reportes (no P0 — planificar con GO)
 

@@ -338,7 +338,7 @@ body.stitch-dashboard ::-webkit-scrollbar-thumb:hover { background: #434750; }
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   margin-bottom: var(--ds-space-3, 0.75rem);
 }
 
@@ -357,7 +357,7 @@ body.stitch-dashboard ::-webkit-scrollbar-thumb:hover { background: #434750; }
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #8d909b;
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 .stitch-domain-chip {
@@ -406,7 +406,7 @@ body.stitch-dashboard #search-wrapper {
   padding: 0 .65rem;
   transition: border-color 200ms ease, background-color 200ms ease;
 
-  i { color: #8d909b; }
+  i { color: var(--ds-color-text-tertiary, #aeb1bc); }
 
   &:focus-within {
     border-color: rgba(172, 199, 255, 0.5);
@@ -420,7 +420,7 @@ body.stitch-dashboard #search-input {
   font-size: 14px;
   padding: .4rem;
 
-  &::placeholder { color: #8d909b; }
+  &::placeholder { color: var(--ds-color-text-tertiary, #aeb1bc); }
 }
 
 body.stitch-dashboard #search-cancel { color: var(--ds-color-accent-primary, #acc7ff); }

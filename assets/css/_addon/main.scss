@@ -182,7 +182,7 @@ body {
   font-size: var(--ds-type-size-eyebrow, 0.8125rem);
   font-weight: var(--ds-type-weight-medium, 500);
   margin-bottom: var(--ds-space-3, 0.75rem);
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
 }
 
 .dashboard-module-title {
@@ -486,7 +486,7 @@ body {
 }
 
 .insight-chip-key {
-  color: var(--ds-color-text-tertiary, #8d909b);
+  color: var(--ds-color-text-tertiary, #aeb1bc);
   font-weight: var(--ds-type-weight-medium, 500);
   letter-spacing: 0.02em;
 }
@@ -773,7 +773,7 @@ body {
 }
 
 .profile-nav-legacy {
-  color: var(--ds-color-text-tertiary, #8d909b) !important;
+  color: var(--ds-color-text-tertiary, #aeb1bc) !important;
   font-size: var(--ds-type-size-sm, 0.875rem);
 }
 
