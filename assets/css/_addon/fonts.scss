@@ -1,6 +1,7 @@
 /*
  * Calm Technical — Stitch designTheme: Inter + JetBrains Mono
  * Project: Calm Technical Portfolio Command Center (12642385017382224523)
+ *
+ * Fonts load via non-blocking <link> in _includes/head.html (no CSS @import).
+ * Material Symbols removed — home uses Font Awesome instead.
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap');

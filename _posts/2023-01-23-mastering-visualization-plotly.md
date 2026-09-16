@@ -7,7 +7,6 @@ author: Cristian Camilo Moreno Narvaez
 date: 2023-03-23 15:00:00 -0500
 categories: [Python, Visualization]
 tags: [plotly, python, visualization]
-math: true
 domain: Business Intelligence
 technical_level: Advanced
 reading_time: 5

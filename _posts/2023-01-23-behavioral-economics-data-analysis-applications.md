@@ -7,7 +7,6 @@ author: Cristian Camilo Moreno Narvaez
 date: 2023-01-23 15:00:00 -0500
 categories: [Economics, Data_analysis]
 tags: [behavioral economics, data analysis, decision making, cognitive biases, predictive modeling]
-math: true
 domain: Economics
 technical_level: Advanced
 reading_time: 4

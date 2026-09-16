@@ -10,7 +10,6 @@ date: 2020-12-17 16:00:00 -0500
 lastmod: 2026-07-19 08:00:00 -0500
 categories: [Python, Automation]
 tags: [automation, python, email, windows, gmail, security]
-math: true
 domain: Data Analysis
 technical_level: Intermediate
 reading_time: 3

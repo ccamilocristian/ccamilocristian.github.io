@@ -64,7 +64,7 @@ ax.set_title("Función de bienes sustitutos", fontsize=15)
 plt.savefig('sustitutos.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/sustitutos.png)
+![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/sustitutos.webp)
 
 * Función Cuasilineal:
 
@@ -89,7 +89,7 @@ ax.set_title("Función de bienes cuasilineal", fontsize=15)
 plt.savefig('cuasilineal.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cuasilineal.png)
+![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cuasilineal.webp)
 
 * Función Cobb-Douglas:
 
@@ -117,7 +117,7 @@ ax.set_title("Función de bienes cobb-douglas", fontsize=15)
 plt.savefig('cobb.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cobb.png)
+![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cobb.webp)
 
 # Elección del consumidor:
 El consumidor debe elegir la cesta de bienes que maximiza su bienestar, en este caso utilidad,  sujeto a  la restricción  presupuestal  dado  los precios de los bienes en el mercado y sus ingresos.
@@ -158,7 +158,7 @@ plt.show()
 plt.savefig('restriccion.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/restriccion.png)
+![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/restriccion.webp)
 
 Además, dado el supuesto de no saciabilidad de las preferencias del agentes económicos, el  conjunto  presupuestal se vuelve en  una recta  presupuesta también contiene las cestas de bienes  donde el costo de las mismas es igual a la renta.
 $ p_xX+p_yY=W$
@@ -229,7 +229,7 @@ ax.set_title("Optimo", fontsize=15)
 plt.savefig("optimo.png")
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/optimo.png)
+![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/optimo.webp)
 
 Como se puede observar, la teoría económica enseñada día a día en los claustros universitarios se pueden enseñar también con la nueva corriente de enseñanza en programación computacional. Así, este artículo hace la invitación al lector a incurrir más en el mundo de la programación, la cual ayudará a la formación de profesionales más integrales para el mercado laboral. 
 

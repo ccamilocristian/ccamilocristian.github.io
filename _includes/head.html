@@ -15,7 +15,7 @@
   {% include gtm-head.html %}
   {% include cookie-consent.html %}
   {% if consent_cmp_active %}
-  <script src="{{ '/assets/js/consent-gate.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/consent-gate.js' | relative_url }}" defer></script>
   {% endif %}
 
   <title>
@@ -47,13 +47,23 @@
 
   {% include favicons.html %}
 
-  <!-- Google Fonts (Stitch: Inter + JetBrains Mono via fonts.scss) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- ≤2 preconnects: fonts + jsDelivr. Others stay dns-prefetch. -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Google Fonts (non-blocking; was CSS @import in fonts.scss) -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+  </noscript>
 
   <!-- Analytics / ads hints (production) -->
   {% if jekyll.environment == 'production' %}
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 
     {% if site.data.site_ops.clarity.enabled %}
     <link rel="dns-prefetch" href="https://www.clarity.ms">
@@ -64,7 +74,7 @@
     {% endif %}
 
     {% if site.google_analytics.pv.proxy_url and site.google_analytics.pv.enabled %}
-      <link rel="preconnect" href="{{ site.google_analytics.pv.proxy_url }}" crossorigin="use-credentials">
+      <link rel="dns-prefetch" href="{{ site.google_analytics.pv.proxy_url }}">
     {% endif %}
   {% endif %}
 
@@ -80,20 +90,11 @@
     {% endif %}
     {% if load_adsense %}
       {% include adsense-loader.html %}
-      <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous">
       <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
     {% endif %}
   {% endif %}
 
-  <!-- jsDelivr CDN -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-
   <!-- Bootstrap -->
-  <link rel="preload" as="style"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin>
-
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous">
@@ -106,15 +107,11 @@
 
   {% include css-selector.html %}
 
-  <!-- JavaScripts -->
-
-  <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/jquery@3.4.1"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-
+  <!-- JavaScripts: defer jQuery so dependents (also defer) run in order -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" async></script>
+  <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" defer></script>
 
   {% include js-selector.html %}
 
