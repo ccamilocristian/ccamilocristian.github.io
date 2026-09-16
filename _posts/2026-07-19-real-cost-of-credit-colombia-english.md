@@ -1,5 +1,5 @@
 ---
-title: Real cost of credit in Colombia — amortization, Fisher, and CPI
+title: Real cost of credit in Colombia: Fisher and CPI
 redirect_from:
   - /real-cost-of-credit-colombia-english/
 author: Cristian Camilo Moreno Narvaez
@@ -13,7 +13,7 @@ technical_level: Intermediate
 reading_time: 7
 business_impact: "Separates nominal loan payments from their inflation-adjusted burden."
 impact_label: "Nominal and real credit cost"
-description: "Build a fixed-payment amortization table in Python, estimate the real rate with Fisher, and express payments in constant pesos."
+description: "Build a fixed-payment amortization table in Python, estimate the real rate with Fisher, and restate each loan payment in constant pesos today."
 ---
 
 A quoted loan rate describes nominal cash flows. It does not show how the

@@ -14,7 +14,7 @@ technical_level: Advanced
 reading_time: 3
 business_impact: "Strengthens KPI monitoring and executive decision cadence."
 impact_label: "Fixed-payment loan amortization simulator"
-description: "Simulate a fixed-rate loan in Python with numpy_financial—monthly payment, amortization table, and charts of the declining balance."
+description: "Simulate a fixed-rate loan in Python with numpy_financial: monthly payment, full amortization table, and charts of the declining balance over time."
 ---
 Taking out loans is one of the most common banking operations for everyday borrowers who need capital to invest or cover expenses they could not otherwise afford. These loans are not free: the price is the interest rate. Each bank in each country sets its own rate depending on the product—consumer credit, mortgages, housing loans, and so on.
 

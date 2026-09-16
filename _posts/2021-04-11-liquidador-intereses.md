@@ -1,7 +1,7 @@
 ---
 lang: es
 ref: loan-simulator
-title: ¿Cómo realizar un simulador de créditos para cuotas fijas en Python?
+title: Simulador de créditos a cuotas fijas en Python
 author: Cristian Camilo Moreno Narvaez
 date: 2021-04-11 17:00:00 -0500
 categories: [Python, Riesgo]
@@ -12,7 +12,7 @@ technical_level: Advanced
 reading_time: 3
 business_impact: "Strengthens KPI monitoring and executive decision cadence."
 impact_label: "Strengthens KPI monitoring and executive d"
-description: "El solicitar préstamos es una de las operaciones bancarias más usadas por el ciudadano de a pie con el fin de tener dinero para invertir o gastar en necesi…"
+description: "Simula un crédito de cuotas fijas en Python: calcula la cuota, genera la tabla de amortización y visualiza cómo baja el saldo con el tiempo."
 ---
 El solicitar préstamos es una de las operaciones bancarias más usadas por el ciudadano de a pie con el fin de tener dinero para invertir o gastar en necesidades, dinero que antes no tenía a disposición. Sin embargo, estos préstamos o crédito no son gratis, tienen un precio y este precio es la tasa de interés. Cada entidad bancaria en cada país manaje su propia tasa de interés según el producto que desean solicitar, ejemplo de esto son créditos para consumo, hipotecarios, vivienda, entre otros.
 

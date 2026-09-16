@@ -8,6 +8,11 @@ vendor/
 
 # Gemfile.lock is committed for reproducible GitHub Actions builds
 
+# Node / Unlighthouse
+node_modules/
+.unlighthouse/
+unlighthouse-reports/
+
 # Stitch design exports (local reference; sync via tools/stitch-sync.sh)
 .stitch/
 

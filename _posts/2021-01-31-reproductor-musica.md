@@ -12,7 +12,7 @@ technical_level: Intermediate
 reading_time: 4
 business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
 impact_label: "Improves clarity, diagnosis, and actionabi"
-description: "A continuación mostraré cómo realizar un reproductor de música haciendo uso de programación con objetos en Python. El resultado del siguiente código es el …"
+description: "Tutorial en Python para un reproductor de música con POO: tkinter, pygame, carpeta de canciones, botones play/pause/stop y control de volumen."
 ---
 A continuación mostraré cómo realizar un reproductor de música haciendo uso de programación con objetos en Python.
 

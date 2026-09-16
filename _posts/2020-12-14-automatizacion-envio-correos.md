@@ -13,7 +13,7 @@ technical_level: Intermediate
 reading_time: 3
 business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
 impact_label: "Improves clarity, diagnosis, and actionabi"
-description: "A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el…"
+description: "Automatiza el envío de un archivo por correo con Python 3 y el Programador de tareas de Windows: Gmail, script .py y programación recurrente."
 ---
 A continuación, desarrollaremos un tutorial con el fin de automatizar el envío de una base de datos por correo electrónico, usando únicamente python 3 y el programador de tareas de Windows.
 

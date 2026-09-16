@@ -1,5 +1,5 @@
 ---
-title: Colombia CPI indexation in Python — monthly IPC and an audit trail
+title: Colombia CPI indexation in Python with monthly IPC
 redirect_from:
   - /colombia-cpi-indexation-engine-english/
 author: Cristian Camilo Moreno Narvaez
@@ -13,7 +13,7 @@ technical_level: Intermediate
 reading_time: 8
 business_impact: "Makes inflation adjustments reproducible, reviewable, and tied to official Colombian data."
 impact_label: "Monthly CPI indexation with an audit trail"
-description: "Index Colombian peso values with official monthly IPC data in Python, validate the series, and export a calculation audit trail."
+description: "Turn official Colombian IPC into peso indexation in Python—validate the monthly series and export an auditable calculation trail for reviews."
 ---
 
 A **calculadora de inflación Colombia** is useful only when its source, reference

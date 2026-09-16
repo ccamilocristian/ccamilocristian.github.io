@@ -1,0 +1,14 @@
+{
+  "name": "ccamilocristian-github-io",
+  "private": true,
+  "description": "Tooling for site-wide Lighthouse SEO scans (Unlighthouse). Jekyll remains the site builder.",
+  "scripts": {
+    "seo:unlighthouse": "unlighthouse --site https://ccamilocristian.github.io",
+    "seo:unlighthouse:local": "unlighthouse --site http://127.0.0.1:4000",
+    "seo:verify": "bash tools/verify-seo-security.sh",
+    "seo:kickoff": "bash tools/seo-kickoff.sh"
+  },
+  "devDependencies": {
+    "unlighthouse": "^0.17.0"
+  }
+}

@@ -1,6 +1,6 @@
 ---
 
-title: ¿Cómo realizar una calculadora de Inflación? Caso de estudio, Colombia entre el 2003 al 2020.
+title: Calculadora de inflación Colombia en Python (IPC)
 lang: es
 ref: convertidor-ipc
 author: Cristian Camilo Moreno Narvaez
@@ -13,7 +13,7 @@ technical_level: Advanced
 reading_time: 3
 business_impact: "Supports tradeoff-aware policy and business decisions under constraints."
 impact_label: "Supports tradeoff-aware policy and busines"
-description: "En la economía hay diferentes formas de medir el comportamiento de los agentes económicos, específicamente el comportamiento de los bienes y servicios que …"
+description: "Aprende a construir una calculadora de inflación con IPC de Colombia en Python: convierte pesos entre años con series Banrep/DANE y deja el cálculo auditable."
 ---
 En la economía hay diferentes formas de medir el comportamiento de los agentes económicos, específicamente el comportamiento de los bienes y servicios que oferta y demanda la economía.  Una de las variables macroeconómicas que mayor importancia se tiene y que se debe controlar para el correcto funcionamiento de la economía es la inflación.
 

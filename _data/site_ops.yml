@@ -102,6 +102,14 @@ indexnow:
     Key file at /{key}.txt (IndexNow). Run tools/indexnow-ping.sh after deploy.
     Covers Bing, Yandex, and partners.
 
+# Bing Webmaster API — set webmaster_api_key locally via env BING_WEBMASTER_API_KEY
+# (do not commit secrets). One-time: verify site in Bing UI, then tools/bing-submit-sitemap.sh
+bing:
+  site_url: "https://ccamilocristian.github.io"
+  webmaster_api_key: null
+  note: >
+    IndexNow works without this key. SubmitFeed needs API key from Bing → Settings → API Access.
+
 cookie_consent:
   enabled: true
   provider: cookieyes
