@@ -72,7 +72,7 @@ layout: page
       <div class="hero-pillar card-glass card-glass--interactive glow-{{ pillar.glow | default: pillar.key }} hero-pillar--{{ pillar.key }} stitch-animate-in" style="animation-delay: {{ pillar_delay }}s;">
         <div class="hero-pillar-inner">
           <span class="pillar-chip metadata-chip">{{ pillar.badge }}</span>
-          <h3 class="hero-pillar-label">{{ pillar.short_label | default: pillar.label }}</h3>
+          <p class="hero-pillar-label">{{ pillar.short_label | default: pillar.label }}</p>
           <p class="hero-pillar-copy">{{ pillar.summary }}</p>
         </div>
       </div>
@@ -214,14 +214,14 @@ layout: page
         <p class="stitch-section-sub">{{ cc.discovery_paths.subtitle }}</p>
       </div>
     </div>
-    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.2s;" role="list">
+    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.2s;">
       {% for item in cc.discovery_paths.items %}
-      <article class="stitch-note-row" role="listitem">
+      <article class="stitch-note-row">
         <div class="stitch-note-main">
           <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
           <p class="stitch-note-excerpt">{{ item.summary }}</p>
         </div>
-        <a class="stitch-link-mono stitch-note-cta" href="{{ item.url | relative_url }}">{{ item.label }}</a>
+        <span class="stitch-link-mono stitch-note-cta" aria-hidden="true">{{ item.label }}</span>
       </article>
       {% endfor %}
     </div>
@@ -261,14 +261,14 @@ layout: page
       </div>
     </div>
 
-    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.4s;" role="list" aria-labelledby="latest-posts-title">
+    <div class="stitch-notes-panel card-glass stitch-animate-in" style="animation-delay: 1.4s;" aria-labelledby="latest-posts-title">
       {% assign notes_shown = 0 %}
       {% for post in posts %}
         {% assign p_lang = post.lang | default: 'en' %}
         {% if p_lang == 'es' %}{% continue %}{% endif %}
         {% if notes_shown >= cc.recent_notes.limit %}{% break %}{% endif %}
         {% assign notes_shown = notes_shown | plus: 1 %}
-      <article class="stitch-note-row" role="listitem" aria-labelledby="post-title-{{ notes_shown }}">
+      <article class="stitch-note-row" aria-labelledby="post-title-{{ notes_shown }}">
         <div class="stitch-note-main">
           <div class="stitch-note-meta">
             <time datetime="{{ post.date | date_to_xmlschema }}" class="stitch-note-date">{{ post.date | date: "%b %Y" }}</time>
@@ -281,7 +281,7 @@ layout: page
             {{ post.content | markdownify | strip_html | truncate: 160 }}
           </p>
         </div>
-        <a class="stitch-link-mono stitch-note-cta" href="{{ post.url | relative_url }}">Read more →</a>
+        <span class="stitch-link-mono stitch-note-cta" aria-hidden="true">Read more →</span>
       </article>
       {% endfor %}
     </div>

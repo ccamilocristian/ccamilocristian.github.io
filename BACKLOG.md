@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (kickoff OK after credit fix; **P1 perf** in progress on `cursor/perf-p1-home`)_
+_Last sync: 2026-09-16 (P1 perf merged PR#10; **YAML colon guard + a11y P2** on `cursor/seo-yaml-guard`)_
 
 _Prev sync: 2026-09-16 (SEO tooling; money-page meta batch; Bing OK; GSC ~4 indexed)_
 
@@ -22,16 +22,16 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Unlighthouse | SEO **99** · Perf **72** · A11y **92** · BP **96** (outlier: optimation-consumer Perf **41**) |
 | PageSpeed desktop | Perf **81** · A11y **91** · BP **96** · SEO **100** |
 | SEOptimer home | Grade **B** — On-Page A- · Links A- · **Usability F** · Perf A · Social A+ |
-| Tareas abiertas | **P1 perf batch** (hero/fonts/jquery/math/optimation) |
-| Semana | indexación manual GSC + P1 perf deploy |
+| Tareas abiertas | **GSC Request indexing (manual)** · YAML guard + a11y P2 in flight |
+| Semana | indexación manual GSC + a11y/guard deploy |
 
 ### Hacer hoy (top 5)
 
-1. **P1 deploy** — hero WebP, font `@import` removed, ≤2 preconnect, defer jQuery, clear false `math:true`, optimation WebP
-2. **Solo UI** — GSC Request indexing (money EN unknown + ES noindex URLs from kickoff)
-3. **Guard** — SEO check: fail build if front matter YAML/`title:` unquoted colon
-4. **A11y** — contrast, tap targets, heading order, identical-link purpose
-5. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
+1. **Solo UI** — GSC Request indexing (money EN unknown; ES live OK, índice stale) → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
+2. **Guard + a11y** — deploy `cursor/seo-yaml-guard` (unquoted `title:` FAIL + dated-path check; home heading/ARIA/tap/contrast)
+3. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
+4. **PSI re-check** — home desktop after P1+a11y land
+5. **Consent QA** — T25b Accept/Reject → GA4 Realtime
 
 ### Cola reportes (no P0 — planificar con GO)
 
