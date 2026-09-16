@@ -1,6 +1,6 @@
 ---
 
-title: Colombia CPI / IPC inflation calculator in Python (2003–2020)
+title: Colombia IPC inflation calculator in Python (2003–2020)
 redirect_from:
   - /convertidor-english/
 lang: en
@@ -22,7 +22,7 @@ description: "Build a Colombia IPC (CPI) inflation calculator in Python—conver
 
 If you need a **calculadora de inflación Colombia** or **calculadora IPC Colombia** in code: take an amount in pesos for year \(t_0\) and express it in prices of year \(t_f\) using the official CPI series (IPC). Same idea as “¿cuánto valían 3 millones de 2005 en pesos de 2019?”
 
-This English note is the canonical walkthrough; the older Spanish URL `/posts/convertidor-IPC/` redirects here.
+This English note is the canonical walkthrough; the Spanish alternate is `/posts/convertidor-IPC/` (hreflang pair).
 
 In the economy, there are different forms to measure the behavior of the economic agents, specifically in the goods and services demanded and supplied in the economy. One of the macroeconomic variables with the most importance is inflation. The inflation variable needs to be controlled to have a good economic performance. 
 

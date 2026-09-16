@@ -15,7 +15,7 @@ technical_level: Intermediate
 reading_time: 4
 business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
 impact_label: "Tkinter + Pygame desktop music player"
-description: "Build a small music player with tkinter and pygame: pick a track from a folder, play/pause/stop, volume slider, elapsed time."
+description: "Build a desktop music player in Python with tkinter and pygame: choose a track, play/pause/stop, set volume, and show elapsed playback time."
 ---
 This walkthrough builds a small desktop music player with `tkinter` for the
 interface and `pygame.mixer` for playback. It covers track selection,

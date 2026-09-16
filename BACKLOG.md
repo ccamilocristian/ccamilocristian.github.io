@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (SEO guards + Unlighthouse + seo-kickoff; GO#1 API done; manual = Request indexing + Security UI + Bing verify once — [`docs/SEO_TOOLING.md`](docs/SEO_TOOLING.md))_
+_Last sync: 2026-09-16 (SEO tooling committed; money-page title/desc batch; Bing SubmitFeed OK; GSC still ~4 indexed — wait re-crawl — [`docs/SEO_TOOLING.md`](docs/SEO_TOOLING.md))_
 
 _Prev sync: 2026-07-19 (presence plan implementation)_
 
@@ -182,6 +182,12 @@ Lista accionable: [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
 ---
 
 ## Hecho
+
+### On-page money batch (2026-09-16)
+| Entrega | Estado |
+|---------|--------|
+| Titles ≤60 + descriptions 140–160 on CPI/credit/music/convertidor/automation/loan (+ ES pairs) | ✅ |
+| Remaining WARN posts (Plotly, Icfes, RAG, …) | ⏳ next batch |
 
 ### SEO GO#1 — reindex kickoff (2026-09-16)
 | Entrega | Estado |

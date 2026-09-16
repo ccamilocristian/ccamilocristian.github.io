@@ -16,7 +16,7 @@ technical_level: Intermediate
 reading_time: 3
 business_impact: "Improves clarity, diagnosis, and actionability of analytical decisions."
 impact_label: "Improves clarity, diagnosis, and actionabi"
-description: "Automate sending a CSV by email with Python 3 and Windows Task Scheduler—Gmail setup, a .py script, and that's it."
+description: "Automate emailing a generated CSV with Python 3 and Windows Task Scheduler using a Gmail app password, a short .py script, and a recurring job."
 ---
 This tutorial generates a dated data export, sends it with Python 3, and runs
 the job with Windows Task Scheduler. It addresses *enviar correo con Python*
