@@ -32,7 +32,7 @@ First, We have to install the library [sodapy](https://pypi.org/project/sodapy/)
 
 Later, we import the needed libraries for data manipulation. For this analysis, we have to take into account the results of the [ICFES](https://www.icfes.gov.co/) in the second semester in 2019.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
+![Extraer api](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 
 
 After we copy the last fragment of the path, in this case: ynam-yc42
@@ -58,25 +58,25 @@ results_df.to_gbq("table_name_global.table_name", "project_name", if_exists="rep
 
 In this step, the program will ask access permission to the Gmail account because Google Big Query needs these permissions, as we show as follows:
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/cuenta_gmail.PNG)
+![cuenta gmail](/assets/img/2021-02-06-icfes-conexion-api/cuenta_gmail.PNG)
 
 Finally, we copy and paste the token into the label.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/codigo.PNG)
+![codigo](/assets/img/2021-02-06-icfes-conexion-api/codigo.PNG)
 
 # Visualization
 
 Base on the information stored in Google Big Query, we open the website Google Data Studio, a new project. There, we open the resources to import the databases:
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
+![importar datos](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
 
 Then, we select "Manage added data sources". These are the options, and we have to choose Big Query.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
+![añadir](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
 
 There, we choose the Big Query table by the project name and data set.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG)
+![tabla](/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG)
 
 We make the graphs, the result is the following dashboard:
 

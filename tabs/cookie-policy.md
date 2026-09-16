@@ -1,8 +1,12 @@
 ---
 title: Cookie Policy
 permalink: /tabs/cookie-policy/
+description: >-
+  How this site uses cookies and similar technologies, managed with CookieYes
+  consent for analytics and advertising categories.
 stitch_legacy: true
 hide_panel: true
+dynamic_title: false
 ---
 
 <div class="stitch-tab-page stitch-legacy-page dashboard-page dashboard-page--legal">

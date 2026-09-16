@@ -1,12 +1,16 @@
 ---
 title: Profile
 permalink: /tabs/profile/
+description: >-
+  CV of Cristian Camilo Moreno Narváez — data science, ML, BI, and computer
+  vision across banking, SaaS, and AI programs in Colombia and the UAE.
 redirect_from:
   - /tabs/hoja-de-vida/
   - /tabs/Hoja de vida/
   - /tabs/Hoja%20de%20vida/
   - /tabs/about/
 tab_active: Profile
+dynamic_title: false
 breadcrumb:
   -
     label: Home
@@ -33,7 +37,7 @@ breadcrumb:
     </div>
     {% if p.hero.photo %}
     <figure class="stitch-profile-photo">
-      <img src="{{ p.hero.photo | relative_url }}" alt="{{ p.hero.photo_alt | default: site.author }}" width="320" height="385" loading="eager" decoding="async">
+      <img src="{{ p.hero.photo | relative_url }}" alt="{{ p.hero.photo_alt | default: site.author }}" width="144" height="173" loading="eager" decoding="async" fetchpriority="high">
     </figure>
     {% endif %}
   </header>

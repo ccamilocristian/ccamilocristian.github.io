@@ -26,14 +26,14 @@ This English note is the canonical walkthrough; the Spanish alternate is `/posts
 
 In the economy, there are different forms to measure the behavior of the economic agents, specifically in the goods and services demanded and supplied in the economy. One of the macroeconomic variables with the most importance is inflation. The inflation variable needs to be controlled to have a good economic performance. 
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/descarga.png)
+![descarga](/assets/img/2021-04-14-convertidor-IPC/descarga.png)
 
 Inflation is the generalized increase and sustained of the goods and services prices in an economy during a specific period. That means the purchasing power parity of each economic agent inflation, decrease, and for that reason, they can not acquire the same amount of goods and services as before, where everything keeps constant.
 
 
 For this case, the [DANE](https://www.dane.gov.co/index.php/en/) (Departamento Administrativo Nacional de Estadística) is in charge of calculating the inflation in Colombia with the use of the ponderation price index to a basket of goods. The measure of the index can be done in two ways, [Laspeyres and Paasche](https://policonomics.com/laspeyres-paasche/) index. The DANE uses a variant of the Laspeyres index because it allows an easy actualization of the basket of goods to the price tracking.
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
+![imagen0](/assets/img/2021-04-14-convertidor-IPC/imagen0.PNG)
 The present article pretends to show how to make an inflation calculator, in the Colombian case. with the [IPC](https://www.dane.gov.co/index.php/estadisticas-por-tema/precios-y-costos/indice-de-precios-al-consumidor-ipc) (Indice de Precios al Consumidor) information between 2003 and 2020. The calculator has the objective to measure the time valor of the goods and services in Colombia. The information was sustract from the [Banco de la República](https://www.banrep.gov.co/es)'s website.
 
 First, we import the needed libraries to compute the values and generate the graphs.
@@ -121,9 +121,9 @@ calculadora(valor0,año0, añof)
 This is the result of the previous function, showing the values across the time in the reference period according to values selected in the calculator.
 
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen2.PNG)
+![imagen2](/assets/img/2021-04-14-convertidor-IPC/imagen2.PNG)
 
-![ ](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
+![imagen1](/assets/img/2021-04-14-convertidor-IPC/imagen1.PNG)
 
 As a future project to complements this calculator, the reader can add a function that computes the future value to present value, i.e. compute current prices to past prices. For example, the same previous $3'000.000 in 2020's prices to 2000's prices.
 

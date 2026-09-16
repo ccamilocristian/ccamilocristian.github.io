@@ -40,7 +40,7 @@ Each script has two stages:
    - 558 decrees — [Decretos MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Decretos.aspx)
    - 1,406 resolutions — [Resoluciones MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx)
 
- <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/publicaciones_año.png">
+ <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/publicaciones_año.png" alt="publicaciones año">
 
 Vertical lines mark presidential transitions.
 
@@ -77,7 +77,7 @@ Using Pandas, NLTK, scikit-learn, and Matplotlib, the transcribed corpora are cl
 
 Full analysis code: [Analisis_textos.ipynb](https://github.com/ccamilocristian/MCPP_cristian.moreno/blob/master/Proyecto%20final/Analisis%20texto/Analisis_textos.ipynb)
 
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/word_cloud.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/word_cloud.png" alt="word cloud">
 
 Macro health indicators for Colombia came from:
 
@@ -85,27 +85,27 @@ Macro health indicators for Colombia came from:
 2. Coverage series — [Ministry of Health](https://www.minsalud.gov.co/proteccionsocial/Regimensubsidiado/Paginas/coberturas-del-regimen-subsidiado.aspx)
 
 Coverage:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura_año.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura_año.png" alt="cobertura año">
 Figure 1.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/gasto_salud_PIB.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/gasto_salud_PIB.png" alt="gasto salud PIB">
 Figure 2.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura.png" alt="cobertura">
 Figure 3.
 
 Each vertical line marks a change of Health Minister. Figure 1 shows a rising trend in coverage-related language, with a sharp peak under Alejandro Gaviria's tenure—consistent with the coverage percentages in Figure 3 for both subsidized and contributory regimes.
 
 Epidemics:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/epidemias.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/epidemias.png" alt="epidemias">
 Figure 4.
 
 Interventions:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/intervenciones.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/intervenciones.png" alt="intervenciones">
 Figure 5.
 
 Fraud and litigation:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/fraude.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/fraude.png" alt="fraude">
 Figure 6.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/salud_per_capita.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/salud_per_capita.png" alt="salud per capita">
 Figure 7.
 
 Despite rising coverage and document emphasis on that theme (Figures 1–3), decrees and resolutions also highlight interventions in public health institutions and fraud/litigation—especially after the *niña* phenomenon—suggesting sector inefficiencies and possible corruption. Figure 7 shows that although health spending as a share of GDP rose over 20 years, per-capita spending fell sharply in 2015.

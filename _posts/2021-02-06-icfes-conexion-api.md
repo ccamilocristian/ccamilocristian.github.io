@@ -29,7 +29,7 @@ Primero, se debe instalar la librería [sodapy](https://pypi.org/project/sodapy/
 
 Luego se debe importar las librerías necesarias para la manipulación de datos. Para este análisis se van a tener en cuenta los resultados del [ICFES](https://www.icfes.gov.co/) del segundo semestre del 2019.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
+![Extraer api](/assets/img/2021-02-06-icfes-conexion-api/Extraer_api.PNG)
 
 Después se copia el último fragmento de la ruta, en este caso sería: ynam-yc42
 
@@ -53,25 +53,25 @@ results_df.to_gbq("nombre_tabla_global.nombre_tabla", "nombre_proyecto", if_exis
 ```
 En este paso, el programa pedirá permiso para acceder a la cuenta Gmail ya que Google Big Query necesita estos permisos, como se muestra a continuación.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/cuenta_gmail.PNG)
+![cuenta gmail](/assets/img/2021-02-06-icfes-conexion-api/cuenta_gmail.PNG)
 
 Finalmente, se debe copiar y pegar el token que arroja el permitir los accesos.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/codigo.PNG)
+![codigo](/assets/img/2021-02-06-icfes-conexion-api/codigo.PNG)
 
 # Visualización 
 
 Partiendo que la información esta almacenada en Google Big query, abrimos en el navegador Google Data Studio, un proyecto nuevo. Ya allí, abrimos los recursos para importar los datos:  
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
+![importar datos](/assets/img/2021-02-06-icfes-conexion-api/importar_datos.PNG)
 
 Ahí, seleccionamos "gestionar las fuentes de datos añadidas". Saldrá las siguientes opciones, de las cuales se debe escoger BigQuery.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
+![añadir](/assets/img/2021-02-06-icfes-conexion-api/añadir.PNG)
 
 Allí, se escogerá la tabla en BigQuery según el proyecto y conjunto de datos a usar.
 
-![ ](/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG)
+![tabla](/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG)
 
 Después de realizadas las gráficas, el resultado fue el siguiente:
 

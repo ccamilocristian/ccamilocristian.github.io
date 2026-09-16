@@ -38,7 +38,7 @@ Cada código tiene dos funcionalidades:
    - 558 Decretos [Decretos MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Decretos.aspx)
    - 1406 Resoluciones [Resoluciones MinSalud](https://www.minsalud.gov.co/Paginas/Norm_Resoluciones.aspx)
 
- <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/publicaciones_año.png">
+ <img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/publicaciones_año.png" alt="publicaciones año">
 
 Las líneas verticales son las marcas de cambio de gobiernos presidencial.
 
@@ -75,7 +75,7 @@ Con ayuda de las librerías Pandas, nltk, sklearn y matplotlib, se hace la manip
 
 En el siguiente link se encuentra el código del análisis: [Código_análisis](https://github.com/ccamilocristian/MCPP_cristian.moreno/blob/master/Proyecto%20final/Analisis%20texto/Analisis_textos.ipynb)
 
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/word_cloud.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/word_cloud.png" alt="word cloud">
 
 Los Datos macro relacionados al sector salud en Colombia fueron sacados de:
 
@@ -83,27 +83,27 @@ Los Datos macro relacionados al sector salud en Colombia fueron sacados de:
 2. Los datos sobre cobertura en Colombia son sacados del [Ministerio de Salud](https://www.minsalud.gov.co/proteccionsocial/Regimensubsidiado/Paginas/coberturas-del-regimen-subsidiado.aspx)
 
 Cobertura:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura_año.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura_año.png" alt="cobertura año">
 Imagen 1.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/gasto_salud_PIB.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/gasto_salud_PIB.png" alt="gasto salud PIB">
 Imagen 2.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/cobertura.png" alt="cobertura">
 Imagen 3.
 
 Cada línea vertical relaciona el cambio de Ministro de Salud y el nombre de la persona que entró en dicho año. Se ve en la imagen 1 una tendencia creciente en el tratamiento de temas de cobertura, pero un pico muy pronunciado en el Gobierno de Alejandro Gaviria. Esto anterior, puede confirmar dicha información con los % de coberturas de la imagen 3, en donde hay un crecimiento en la cobertura en salud a nivel nacional tanto para el régimen subsidiario y el régimen contributivo.
 
 Epidemias:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/epidemias.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/epidemias.png" alt="epidemias">
 Imagen 4.
 
 Intervenciones:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/intervenciones.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/intervenciones.png" alt="intervenciones">
 Imagen 5.
 
 Fraude y demandas:
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/fraude.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/fraude.png" alt="fraude">
 Imagen 6.
-<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/salud_per_capita.png">
+<img src="/assets/img/2021-04-12-ministerio-salud/Imagenes/salud_per_capita.png" alt="salud per capita">
 Imagen 7.
 
 Dado el análisis de las imágenes 1 a la 3, aun cuando se ve un aumento en la cobertura y la relevancia de este tema en los decretos y resoluciones, estos documentos también toman mucha relevancia en temas de intervenciones a instituciones públicas de salud y los fraudes y demandas después del fenómeno de la niña, lo cual puede deberse a ineficiencias en dicho sector y un posible alto grado de corrupción. Como se observa en la imagen 7, aunque hubo un aumento creciente de gasto/PIB a lo largo de últimos 20 años, el gasto per capita sufrió una gran caída en el año 2015.

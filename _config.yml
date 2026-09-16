@@ -14,8 +14,8 @@ tagline: >-
   Data Scientist · AI & Computer Vision · Data Engineering · BI & Analytics.
 
 description: >-
-  Portfolio by Cristian Camilo Moreno Narváez — data science, ML, BI, and economics-grounded
-  analytics. Pipelines, models, and decision artifacts from banking, SaaS, and AI programs.
+  Portfolio of Cristian Camilo Moreno Narváez — data science, ML, BI, and
+  economics analytics from banking, SaaS, and AI programs.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://ccamilocristian.github.io'
@@ -23,6 +23,8 @@ url: 'https://ccamilocristian.github.io'
 author: Cristian Camilo Moreno Narvaez                  # change to your full name
 
 avatar: /assets/img/profile/avatar.png
+# Default social preview (jekyll-seo-tag → og:image / twitter:image)
+logo: /assets/img/profile/portrait-sm.png
 
 github:
   username: ccamilocristian              # change to your github username
@@ -106,6 +108,12 @@ kramdown:
 permalink: /posts/:title/
 
 defaults:
+  -
+    scope:
+      path: ""
+    values:
+      # Site-wide social preview (jekyll-seo-tag → og:image)
+      image: /assets/img/profile/portrait-sm.png
   -
     scope:
       path: ""          # An empty string here means all files in the project

@@ -1,8 +1,8 @@
 # Backlog
 
-_Last sync: 2026-09-16 (Frase audit triage; UL re-scan Perf **~79**; `llms.txt` + archives H1 + sitemap cleanup on `cursor/frase-llms-archives`)_
+_Last sync: 2026-09-16 (honest Frase matrix; meta/og/profile WebP + multi-H1 + alts on `cursor/meta-og-profile-image`)_
 
-_Prev sync: 2026-09-16 (SEO tooling; money-page meta batch; Bing OK; GSC ~4 indexed)_
+_Prev sync: 2026-09-16 (Frase URL list; `llms.txt` + archives H1 + sitemap; UL Perf ~79)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -19,32 +19,39 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
 | Live regression | ✅ credit canonical restored (PR #9) |
-| Unlighthouse | SEO **99** · Perf **~79** (re-scan post-P1) · A11y **92** · BP **100** · home Perf **75** |
-| PageSpeed desktop | Re-run pending (API quota); prior **81** pre-P1 |
-| SEOptimer home | Grade **B** — Usability **F** (unverified detail) |
-| Frase audit | **49/100** (stale credit dated URL); see triage below |
-| Tareas abiertas | GSC crawl wait · deploy Frase fixes · optional title/alt/FAQ backlog |
-| Semana | indexación + Frase P0 fixes |
+| Unlighthouse | SEO **99** · Perf **~79** · A11y **92** · BP **100** |
+| Lighthouse desktop (local) | Home **66** · Profile **65** · Archives **37** · Optimation **56** (post-P1; throttling ≠ UL) |
+| Rank Math (HotH PDF) | Home SEO: meta 180→fix pending deploy; www N/A; og:image pending |
+| Frase issue table | **Partial** — see honest matrix below (GEO FAQ/summary/structure **NOT** done) |
+| Tareas abiertas | Deploy meta/H1/alts · GSC wait · perf residual (render-blocking/CMP) |
+| Semana | indexación + close structural SEO gaps |
+
+### Frase issue table — honest status (2026-09-16)
+
+| Issue | Before | After this PR | Notes |
+|-------|--------|---------------|-------|
+| Missing H1 (1) | Credit dated URL broken | **Solved live** | Was YAML 404; canonical has H1 |
+| Multiple H1 (7) | Tabs: `dynamic_title` + hero H1 | **Fixing** | `dynamic_title: false` on stitch tabs |
+| Missing alt (7) | Empty `![ ]` / raw `<img>` | **Fixing** | Filename-based alts on flagged posts |
+| Long meta description (4) | Site desc 180 | **Fixing** | Site ≤128; tabs get own ≤143 |
+| Missing summary / TL;DR (6) | Open | **Not done** | Content rewrite; skip unless GO |
+| Thin schema (4) | WebSite/BlogPosting only | **Not done** | Needs Person/FAQ JSON-LD design |
+| Missing question headings (8) | Open | **Not done** | Editorial GEO |
+| Weak definitions (3) | Open | **Not done** | Editorial |
+| Poor AI structure (5) | Open | **Not done** | High effort rewrite |
+| Low fact density (1) | Open | **Not done** | Editorial |
+
+### Audits we actually ran
+
+1. SEOptimer home · 2. Unlighthouse (stale + fresh) · 3. PageSpeed URL (viejo) + Lighthouse local 7 URLs · 4. Frase MD · 5. Rank Math PDF (HotH) · 6. `seo-kickoff` / GSC inspect · 7. `verify-seo-security`
 
 ### Hacer hoy (top 5)
 
-1. **Deploy** — `llms.txt` + archives single H1 + sitemap exclude `feed.xml`/`redirects.json`
-2. **Ignorar** — `www.ccamilocristian.github.io` 404 (GitHub user pages no soporta `www`)
-3. **Ya OK live** — credit canónico **200** (Frase midió la URL fechada rota)
-4. **GSC** — esperar re-crawl tras Request indexing
-5. **Opcional** — titles >60 / alt text / FAQ schema (Frase WARN noise; no P0)
-
-### Frase URL list (smoke 2026-09-16)
-
-| URL | Frase | Live ahora |
-|-----|-------|------------|
-| `/tabs/archives/` | 8 issues | 200; fix H1 doble en branch |
-| `/llms.txt` | 404 | fix: publicar `llms.txt` |
-| `/robots.txt` | Healthy | 200 OK |
-| `/sitemap.xml` | 5 issues | 200; quitar noise (`feed`/`redirects`) |
-| `www.…github.io` | 404 | **no fixable** en user Pages |
-| `/posts/real-cost-of-credit-…/` | 404 | **200** (ya deployado) |
-
+1. **Merge** `cursor/meta-og-profile-image` (meta, og logo, profile WebP, H1, alts)
+2. **GSC** — wait re-crawl (Request indexing already sent)
+3. **Do not chase** FAQ/TL;DR/question-H2 GEO spam unless content GO
+4. **Perf next** — profile was worst image; archives list weight; CMP render-blocking
+5. **www** — ignore (GitHub user Pages)
 ### Cola reportes (no P0 — planificar con GO)
 
 | Fuente | Hallazgo | Acción candidata |
