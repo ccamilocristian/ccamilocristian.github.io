@@ -1,7 +1,11 @@
 ---
 title: Stack
 permalink: /tabs/stack/
+description: >-
+  Tools and skills cloud — data engineering, ML, BI, Python, SQL, and computer
+  vision used across CCMN projects.
 tab_active: Stack
+dynamic_title: false
 breadcrumb:
   -
     label: Home

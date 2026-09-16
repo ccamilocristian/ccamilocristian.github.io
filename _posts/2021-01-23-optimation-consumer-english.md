@@ -67,7 +67,7 @@ ax.set_title("Función de bienes sustitutos", fontsize=15)
 plt.savefig('sustitutos.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/sustitutos.webp)
+![sustitutos](/assets/img/2021-01-23-optimizacion_teoria_consumidor/sustitutos.webp)
 
 * Cuasi-linear function:
 
@@ -92,7 +92,7 @@ ax.set_title("Función de bienes cuasilineal", fontsize=15)
 plt.savefig('cuasilineal.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cuasilineal.webp)
+![cuasilineal](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cuasilineal.webp)
 
 * Cobb-Douglas Function:
 
@@ -120,7 +120,7 @@ ax.set_title("Función de bienes cobb-douglas", fontsize=15)
 plt.savefig('cobb.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cobb.webp)
+![cobb](/assets/img/2021-01-23-optimizacion_teoria_consumidor/cobb.webp)
 
 # Consumer choice:
 
@@ -164,7 +164,7 @@ plt.show()
 plt.savefig('restriccion.png')
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/restriccion.webp)
+![restriccion](/assets/img/2021-01-23-optimizacion_teoria_consumidor/restriccion.webp)
 
 In addition, based on the assumption of not satiability in the economic agent preferences, the budget set becomes in a budget line that also contains the basket of goods where the cost is equal to the wage.
 $ p_xX+p_yY=W$
@@ -235,7 +235,7 @@ ax.set_title("Optimo", fontsize=15)
 plt.savefig("optimo.png")
 ```
 
-![ ](/assets/img/2021-01-23-optimizacion_teoria_consumidor/optimo.webp)
+![optimo](/assets/img/2021-01-23-optimizacion_teoria_consumidor/optimo.webp)
 
 As we can see, the economic theory that taught day by day in the university cloisters can be didactic with a new point of view related to computer programming. Thus, this article invites readers to delve into the world of programming, which will help make professional training more comprehensive to the labor market.
 

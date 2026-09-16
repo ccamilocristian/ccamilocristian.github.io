@@ -22,7 +22,7 @@ description: "The 2016 peace plebiscite in Colombia, scraped with Python and plo
 
 This was the question made in the plebiscite:
 
-![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/pregunta.png)
+![pregunta](/assets/img/2020-12-18-scrapping-plebiscito-colombia/pregunta.png)
 
 Given the preceding introduction, the current project aims to use Python scraping tools to retrieve information at the municipal and departmental levels, and then create a dashboard in Google Data Studio using the findings.
 
@@ -35,7 +35,7 @@ Given the preceding introduction, the current project aims to use Python scrapin
   * Making the scraping of the principal page about the scrutiny of the votation results the previous action is to extract the access link to each Colombia's department in the votation.  Later, extracting the information by department, we extract each one of the municipal links related to that department.
   * We make the scraping of each municipal page to extract the votation results such as the participation percentage and plebiscite approval.
 
-![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
+![Pagina plebiscito](/assets/img/2020-12-18-scrapping-plebiscito-colombia/Pagina_plebiscito.JPG)
 
 In this project, we extract the information the 1.186 municipals by 34 departments (including consulates and Bogota D.C.).<br />
 
@@ -69,7 +69,7 @@ departamentos=pd.DataFrame()
 departamentos['link1']=depa
 ```
 
-![ ](/assets/img/2020-12-18-scrapping-plebiscito-colombia/municipios.PNG)
+![municipios](/assets/img/2020-12-18-scrapping-plebiscito-colombia/municipios.PNG)
 
 Later, with the links list by department, we perform a data cleaning to generate the inputs. The inputs will be the resource to the second scraping by municipal level.
 

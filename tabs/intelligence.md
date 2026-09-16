@@ -1,6 +1,9 @@
 ---
 title: Blog
 permalink: /tabs/intelligence/
+description: >-
+  Blog and case studies on data science, ML, BI, and economics — English
+  feed with Spanish alternates via search and in-post language switcher.
 redirect_from:
   - /tabs/tags/
   - /tabs/categories/
@@ -8,6 +11,7 @@ redirect_from:
   - /categories/
   - /posts/
 tab_active: Blog
+dynamic_title: false
 breadcrumb:
   -
     label: Home

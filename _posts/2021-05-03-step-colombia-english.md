@@ -18,7 +18,7 @@ description: "Colombia's STEP survey plus Frey & Osborne: regressions to adjust 
 ---
 Job automation reflects the adoption of new technologies in firm value chains. That structural shift has both positive and negative labor-market effects. Frey & Osborne's 2017 study, *The future of employment: How susceptible are jobs to computerisation?*, is a common starting point for estimating automation risk. The authors used machine learning to estimate, at the occupation level, the probability of automation within ten years in the United States.
 
-![ ](/assets/img/2021-05-03-step-colombia/pexels-alex-knight-2599244.jpg)
+![pexels alex knight 2599244](/assets/img/2021-05-03-step-colombia/pexels-alex-knight-2599244.jpg)
 
 Following Bustelo et al. (2020), this post adapts that framework to Colombia using Frey & Osborne (2017) benchmarks and microdata from the World Bank [STEP](https://microdata.worldbank.org/index.php/catalog/2012) survey (*Skills Toward Employment and Productivity*) to measure skills associated with specific occupations.
 
@@ -51,7 +51,7 @@ Model variables are defined as follows:
 
 Measures are standardized with z-scores to align scales. To merge STEP with Frey & Osborne automation risk, occupations are mapped using SOC (6-digit Standard Occupational Classification) to U.S. ISCO (3-digit International Standard Classification of Occupations).
 
-![ ](/assets/img/2021-05-03-step-colombia/correlacion.PNG)
+![correlacion](/assets/img/2021-05-03-step-colombia/correlacion.PNG)
 
 
 
@@ -70,11 +70,11 @@ Measures are standardized with z-scores to align scales. To merge STEP with Frey
 |Higher education|0.342581|0.474726|
 |Automation risk|0.628414|0.247711|
 
-![ ](/assets/img/2021-05-03-step-colombia/edad1.png)
+![edad1](/assets/img/2021-05-03-step-colombia/edad1.png)
 
 The age distribution is left-skewed with a mean of 35 years, as shown in the summary table.
 
-![ ](/assets/img/2021-05-03-step-colombia/estrato1.png)
+![estrato1](/assets/img/2021-05-03-step-colombia/estrato1.png)
 
 The sample concentrates in strata 2 and 3, which is not nationally representative. Weighting with surveys such as DANE's GEIH (*Gran Encuesta Integrada de Hogares*), which provides expansion factors, would improve external validity.
 
@@ -86,7 +86,7 @@ $$ y_i= \sum_{n=1}^{N}\beta_{n}*X_{in} + \varepsilon_{i} $$
 
 where $$y$$ is automation risk for the occupation in which worker $$i$$ is employed and $$X_n $$ captures seven skill measures, education, age group, and gender. $$N$$ is the number of regressors.
 
-![ ](/assets/img/2021-05-03-step-colombia/ModeloSTEP.PNG)
+![ModeloSTEP](/assets/img/2021-05-03-step-colombia/ModeloSTEP.PNG)
 
 # Results
 
@@ -94,25 +94,25 @@ where $$y$$ is automation risk for the occupation in which worker $$i$$ is emplo
 
 Adjusted probabilities are highest for workers aged 18–25, followed by 26–40. That may reflect task specialization and higher education among older workers.
 
-![ ](/assets/img/2021-05-03-step-colombia/ries_edad.png)
+![ries edad](/assets/img/2021-05-03-step-colombia/ries_edad.png)
 
 ## Gender
 
 Women show higher adjusted automation probability. Deeper analysis should map occupations and skill profiles by gender to inform inclusive labor policy.
 
-![ ](/assets/img/2021-05-03-step-colombia/genero.png)
+![genero](/assets/img/2021-05-03-step-colombia/genero.png)
 
 ## Education
 
 Higher education levels associate with lower automation risk—as expected. Because the sample is not nationally representative, preschool results in particular should be interpreted cautiously. Researchers such as David Autor link automation and education to [polarization](https://www.stlouisfed.org/publications/regional-economist/january-2013/job-polarization-leaves-middleskilled-workers-out-in-the-cold#:~:text=An%20important%20point%20Autor%20made,pronounced%20during%20the%20Great%20Recession.), where middle-skill workers face the largest displacement from new technologies.
 
-![ ](/assets/img/2021-05-03-step-colombia/ries_edu.png)
+![ries edu](/assets/img/2021-05-03-step-colombia/ries_edu.png)
 
 ## Overall comparison
 
 The chart below compares Frey & Osborne occupation-level risks for STEP occupations against model-adjusted probabilities.
 
-![ ](/assets/img/2021-05-03-step-colombia/vs.png)
+![vs](/assets/img/2021-05-03-step-colombia/vs.png)
 
 The gap reflects methodological differences: a **task-based** approach captures variation in tasks within occupations, while Frey & Osborne's **occupation-based** approach assigns the same risk to all workers in an occupation. Task-based models argue that specific tasks—not entire occupations—are displaced by machines.
 

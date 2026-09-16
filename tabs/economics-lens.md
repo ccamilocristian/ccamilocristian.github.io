@@ -1,7 +1,11 @@
 ---
 title: Economics Lens
 permalink: /tabs/economics-lens/
+description: >-
+  Economics-tagged notes — credit, inflation, labor markets, and decision
+  frameworks connecting models to incentives and constraints.
 tab_active: Economics Lens
+dynamic_title: false
 breadcrumb:
   -
     label: Home
