@@ -4,6 +4,7 @@ permalink: /tabs/archives/
 tab_active: Intelligence
 stitch_legacy: true
 dynamic_title: false
+description: "Chronological index of all published posts — English and Spanish."
 # Chronological post index — Stitch glass list (T16)
 ---
 
