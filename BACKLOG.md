@@ -1,8 +1,8 @@
 # Backlog
 
-_Last sync: 2026-09-16 (SEOmator follow-ups: Bootstrap defer, GTM idle, CMP CLS/contrast, og WebP)_
+_Last sync: 2026-09-17 (P-M* mobile perf on `cursor/perf-mobile-pm`; gsccli+Bing MCP diagnosis plan)_
 
-_Prev sync: 2026-09-16 (LH live post-#15; SEOmator/Frase consolidated open/closed)_
+_Prev sync: 2026-09-16 (SEOmator follow-ups merged #16)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -18,115 +18,212 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
-| Live regression | ✅ credit canonical (PR #9) · meta/og/H1/alts (#13) · Person/Org schema + tertiary (#14) · CMP idle/FA/archives (#15) |
-| Lighthouse desktop **live** (2026-09-16 post-#15) | Home **Perf 83 · Acc 96 · BP 100 · SEO 100** · Archives **Perf 98 · Acc 96 · BP 100 · SEO 100** |
-| Unlighthouse (stale pre-#15) | SEO **99** · Perf **~79** · A11y **92** — **re-run pending** |
-| SEOmator-equivalent home | On-page/schema **PASS**; residual = unused CSS trim + GEO editorial (Bootstrap/CMP/og closed in PR #16) |
-| Frase structural | **Closed** (H1/alt/meta/schema Person); GEO editorial **open** |
-| Semana | Merge #16 · GSC re-crawl · GEO only with content GO |
+| Live regression | ✅ PRs #9–#16 live; smoke HTML/CSS **44/44 PASS** (2026-09-17) |
+| Lighthouse desktop **live** (post-#16) | Home **Perf 95 · Acc 100 · BP 100 · SEO 100** · Archives **98 / 100** |
+| Lighthouse **mobile** home (post-#16) | **Perf 75** — LCP **6.9 s** (render-delay 89%); ver P-M* abajo |
+| SEOptimer home (guest, 16 Sep) | Overall **B** · On-Page **A-** · Links **A-** · **Usability F** · **Performance A** · Social **A+** |
+| Unlighthouse | Stale pre-#15 — **re-run pending** (P-UL) |
+| Frase structural | **Closed**; GEO editorial **open** (G1–G3) |
+| Semana | **P-M1** avatar.png · P-M4/P-M5 · GSC · P-U1 Usability F |
+
+### Smoke PR #16 (2026-09-17) — PASS
+
+| Check | Resultado |
+|-------|-----------|
+| Bootstrap + FA non-blocking, GTM idle, CookieYes pending/async | ✅ live |
+| og:image `.webp`, Person schema, archives sin ads/intel JS | ✅ |
+| CMP CSS `#0a58ca`, GA4 directo + consent denied default | ✅ |
+| LH desktop Acc / render-blocking | ✅ Acc **100**, RB score **1** |
+| Manual: CookieYes Accept → GA4 Realtime | ⏳ tú (incógnito) |
 
 ### Hecho esta ronda (PRs #9–#16)
 
-| PR | Qué quedó live |
-|----|----------------|
-| #9 | Credit YAML 404 → canonical + redirect + kickoff |
-| #10 | P1 home: WebP hero, fonts non-blocking, ≤2 preconnect, jQuery defer, false `math` cleared |
-| #11 | A11y home (pillars/tap/footer) + YAML colon/dated-path guards |
-| #12 | `llms.txt`, archives H1, sitemap noise |
-| #13 | Site/tab meta ≤160, og:image/logo, `dynamic_title: false`, alts |
-| #14 | Person + Organization JSON-LD; tertiary `#aeb1bc` |
-| #15 | CookieYes async; FA non-blocking; archives sin AdSense/Intelligence JS |
-| #16 | Bootstrap defer; GTM idle; CMP CLS + contrast CSS; og WebP |
+| PR | Qué |
+|----|-----|
+| #9–#13 | Credit 404, P1 WebP/fonts, a11y, llms, meta/og/H1/alts |
+| #14 | Person + Organization JSON-LD; tertiary contrast |
+| #15 | CookieYes async; FA defer; archives trim |
+| #16 | Bootstrap defer; GTM idle; CMP CLS/contrast; og WebP |
 
-### Lighthouse live (desktop, post-#15; re-measure after #16)
+### Lighthouse live
 
-| Página | Perf | Acc | BP | SEO | Notas |
-|--------|------|-----|----|-----|-------|
-| `/` | **83** | 96 | 100 | 100 | Pre-#16; CLS was CookieYes — expect Acc↑ / CLS↓ after #16 |
-| `/tabs/archives/` | **98** | 96 | 100 | 100 | Pre-#16 |
+| Página | Form | Perf | Acc | BP | SEO | Notas |
+|--------|------|------|-----|----|-----|-------|
+| `/` | desktop | **95** | **100** | 100 | 100 | Post-#16 smoke |
+| `/tabs/archives/` | desktop | **98** | **100** | 100 | 100 | Post-#16 |
+| `/` | **mobile** | **75** | — | — | — | LCP 6.9 s; unused JS 147 KiB |
 
-### SEOmator / SEOptimer / Rank Math — consolidado
+---
 
-#### Cerrado / PASS
+## SEOptimer / “SEOmator” — por qué se siente Performance bajo
 
-| Ítem | Estado |
-|------|--------|
-| Title ≤60, meta ≤160, 1× H1, canonical, HTTPS, no noindex | ✅ |
-| og:title/url/image/type + twitter:card | ✅ **`portrait-sm.webp`** (PR #16) |
-| `robots.txt` + `llms.txt` 200 | ✅ |
-| Schema WebSite + **Person** + **Organization** (`sameAs`) | ✅ |
-| Imágenes hero/optimation WebP; ≤2 preconnect | ✅ |
-| CMP non-blocking; FA + **Bootstrap** non-blocking | ✅ (#15–#16) |
-| Archives weight (intel JS / AdSense off) | ✅ |
-| CookieYes Accept/Reject contrast (CSS `#0a58ca`) | ✅ (#16) |
-| CMP CLS reserve (`cky-banner-pending`) | ✅ (#16) |
-| GTM off critical path (idle inject) | ✅ Partial (#16; direct gtag remains) |
+**Aclaración:** en SEOptimer guest la categoría **Performance = A** (no F). El **overall B** lo arrastra **Usability F**. Si viste “performance bajo”, suele ser:
 
-#### Abierto — técnico
+1. Confundir **Usability F** / overall B con Performance  
+2. **PageSpeed / Lighthouse mobile** (nuestro mobile Perf **75**, LCP 6.9 s)  
+3. Un reporte **SEOmator de pago** (sin URL pública; 404 al scrape)
 
-| # | Ítem | Acción | Estado |
-|---|------|--------|--------|
-| 2 | gtag still loads with GTM later | Optional: drop GTM if events-only via gtag | Partial |
-| 3 | Unused CSS ~44–53 KiB | Trim Chirpy/Bootstrap on stitch | Open |
-| 6 | `page.css` ~163 KB archives | CSS split | Parked (Perf 98) |
-| 7 | Optimation / MathJax | Already gated | Parked |
+### Grades SEOptimer (guest HTML, ~16 Sep)
 
-#### Abierto — editorial GEO (Frase; **no** fingir con template)
+| Categoría | Grado |
+|-----------|-------|
+| Overall | **B** |
+| Performance | **A** ← no es el problema |
+| Usability | **F** ← baja el overall |
+| On-Page / Links / Social | A- / A- / A+ |
 
-| # | Ítem | Notas |
-|---|------|-------|
-| 9 | Missing summary / TL;DR | Reescribir 2–3 money posts |
-| 10 | FAQ JSON-LD | Solo si hay FAQ real en el post |
-| 11 | Question-style H2s | Editorial |
-| 12 | Weak definitions / AI structure / fact density | Editorial |
+### Causa real mobile (LH) — LCP render-delay 89%
 
-#### No actionable / ignorar
+LCP = texto `#home-hero-lead` (no imagen). Main thread ocupado por JS/CSS/imagenes antes de pintar.
 
-| Ítem | Por qué |
-|------|---------|
-| `www.` → 404 | User `*.github.io` no soporta www redirect |
-| Cache TTL GTM/CookieYes/jsDelivr | Fuera de control en GH Pages |
-| SEOptimer Usability **F** (paywall) | Sin checklist; viewport/tap ya OK en LH a11y 96 |
-| Security headers (CSP / X-Frame) | Limitado en GH Pages; bajo ROI |
-| Minify local `consent-gate.js` | Cosmético |
+| Peso | Recurso | Tarea |
+|------|---------|-------|
+| ~375 KiB | `avatar.png` aún en home | **P-M1** |
+| ~187+120 KiB | gtag + gtm.js | **P-M2** |
+| ~45 KiB unused | Bootstrap + home.css + FA rules | **P-M3** |
+| thumbs PNG | case cards (`municipios.PNG`, `tabla.PNG`, …) | **P-M4** |
+| ~86+68 KiB | jQuery + Bootstrap JS en stitch | **P-M5** |
+| Usability F | checklist paywall | **P-U1** |
+| Cache TTL GH Pages | no controlable | ignorar |
 
-### Frase issue table — status (2026-09-16 tarde)
+### Tareas nuevas (meter a cola — necesitan GO para código)
 
-| Issue | Status | Notes |
-|-------|--------|-------|
-| Missing H1 (1) | **Done** | Credit YAML 404 fixed |
-| Multiple H1 (7) | **Done** | `dynamic_title: false` |
-| Missing alt (7) | **Done** | Flagged posts |
-| Long meta (4) | **Done** | Site 128; tabs/archives own desc |
-| Thin schema (4) | **Partial** | Person+Org done; FAQ schema still open |
-| Summary / TL;DR / question-H2 / definitions / AI structure / fact density | **Open** | Content GO only |
-
-### Audits we actually ran
-
-1. SEOptimer home · 2. Unlighthouse (stale — re-run pending) · 3. PageSpeed (viejo) + Lighthouse local + **Lighthouse live home/archives post-#15** · 4. Frase MD · 5. Rank Math PDF (HotH) · 6. SEOmator-equivalent checklist · 7. `seo-kickoff` / GSC · 8. `verify-seo-security`
+| ID | Tarea | Pri |
+|----|-------|-----|
+| **P-M1** | Home: `site.avatar` → `portrait-sm.webp` | **Done** (`cursor/perf-mobile-pm`) |
+| **P-M2** | GTM solo tras consent analytics (Clarity pattern) | **Done** (this PR) |
+| **P-M3** | Trim unused CSS (subset Bootstrap / home.css) | **Deferred** — CSS already non-blocking; low ROI vs P-M5 |
+| **P-M4** | Case-card thumbs → WebP | **Done** (tabla/municipios/ries_edu) |
+| **P-M5** | Home: lazy jQuery/Bootstrap/home.min (idle/interaction) | **Done** (this PR) |
+| **P-U1** | Login SEOptimer → anotar checks Usability F reales | **P2** manual |
+| **P-U2** | Tras P-M*: re-LH mobile + Refresh SEOptimer | **P2** |
+| **P-UL** | Re-run Unlighthouse cuando haya RAM | **P3** |
+| **G1–G3** | GEO: TL;DR / FAQ schema / question-H2 (content GO) | editorial |
 
 ### Hacer ahora (top 5)
 
-1. **Merge** PR #16 → smoke CookieYes + GA4 Realtime + FOUC check
-2. **GSC** — wait / Request indexing money URLs
-3. Re-LH home after deploy
-4. **No chase** GEO FAQ/TL;DR unless content GO
-5. Optional: unused CSS trim / Unlighthouse
+1. **Merge** `cursor/perf-mobile-pm` (P-M1/2/4/5) → re-LH mobile  
+2. **GO T-IDX1** — setup `nalyk/gsccli` + IDX-G1/G2  
+3. **GO T-IDX2** — setup `stufently/bing-webmaster-mcp` + IDX-B1/B2  
+4. **IDX-X1** matriz Google↔Bing money URLs  
+5. Request indexing solo P0 · no GEO sin content GO  
 
-### Cola reportes residual (planificar con GO)
+### Cola residual
 
-| Fuente | Hallazgo | Acción candidata | Estado |
-|--------|----------|------------------|--------|
-| LH | Bootstrap render-blocking | Non-blocking print/onload | **Done** #16 |
-| LH | Unused gtag+GTM | GTM idle; direct GA4 kept | **Partial** #16 |
-| LH | CookieYes btn contrast | CSS `#0a58ca` | **Done** #16 |
-| LH | Home CLS CMP | Banner pending padding | **Done** #16 |
-| LH | Unused CSS | Trim stitch surfaces | Open |
-| PSI (stale) | Image delivery / preconnect | WebP + ≤2 preconnect | **Done** |
-| SEOptimer | Usability F | Ignore unless new evidence | Parked |
-| Mem host | 0 swap | zram/swap | Ops |
+| Fuente | Hallazgo | Estado |
+|--------|----------|--------|
+| LH desktop #16 | RB / CMP contrast / CLS | **Done** |
+| LH mobile | LCP 6.9 s · avatar.png · gtag/GTM · jQuery | **Open** P-M* |
+| SEOptimer | Perf **A** OK; Usability **F** → overall B | **Open** P-U1 |
+| SEOmator SaaS | Sin reporte público | N/A |
 
 ---
+
+---
+
+## HotH PDF audit (`RkYHPw20No59jo_h`) — hecho vs falta
+
+Fuente: [HotH / Website Audit PDF](https://thehoth.websiteauditserver.com/download-pdf.inc/RkYHPw20No59jo_h) (27 pp., home). Grades PDF: Overall **B** · On-Page **B** · GEO **B** · Links **F** · Usability **B** · Performance **A**.
+
+| Check HotH | PDF | Live / repo ahora | Acción |
+|------------|-----|-------------------|--------|
+| Title 50–60 | WARN (30) | Home brand title **30** (intencional) | **H-T1** opcional enriquecer ≤60 sin matar marca |
+| Meta 120–160 | WARN (180) | **128** live | **Done** (#13) — PDF stale |
+| `html lang` | PASS | `en` | Done |
+| 1× H1 | PASS | 1 | Done |
+| H2–H6 presentes | PASS | sí | Done |
+| Skipped heading level | WARN (1) | revisar outline home | **H-H1** |
+| Keyword consistency | WARN | brand vs skill keywords | Parked / editorial |
+| Thin content (610 words) | WARN | home es dashboard, no article | Parked (no inflar home) |
+| Image alt (1 missing) | WARN | CookieYes `close.svg` | **H-A1** (CMP; bajo ROI) |
+| Canonical / SSL / no noindex | PASS | OK | Done |
+| robots.txt + sitemap | PASS | OK + Sitemap ref | Done |
+| Analytics GA/GTM/Clarity | PASS | OK | Done |
+| Schema JSON-LD | PASS | WebSite + **Person** (+ Org live) | Done (#14) |
+| GEO / AI structure | GEO **B** | `llms.txt` done; FAQ/TL;DR open | **G1–G3** (ya en cola) |
+| Links | **F** | suele = backlinks off-page, no on-page bug | **H-L1** documentar; outreach opcional |
+| Usability | **B** (HotH) / **F** (SEOptimer) | LH Acc **100** | **P-U1** (cruzar checks) |
+| Performance | **A** | Desktop LH **95** | OK; mobile → **P-M*** |
+| PSI desktop “poor” en PDF | WARN stale | Desktop live **95** post-#16 | Ignore / re-run PSI |
+| Inline styles | WARN | GTM noscript + stitch delays + ads vars | **H-I1** low ROI |
+| Social FB / IG / YT | WARN missing | LinkedIn + X OK | **H-S1** opcional (no inventar redes) |
+| LocalBusiness / NAP | WARN | Portfolio personal, no local biz | **Ignore** (Person schema basta) |
+| DMARC / SPF on `github.io` | WARN | DNS de user Pages; email es Outlook | **H-D1** solo si hay dominio propio |
+| og:image | PDF OG sin image listado completo | **webp** live | **Done** (#16) |
+| WWW redirect | N/A en PDF canónico | user Pages | Ignore |
+
+### Tareas nuevas desde HotH (añadidas a cola)
+
+| ID | Tarea | Pri | Notas |
+|----|-------|-----|-------|
+| **H-H1** | Arreglar skipped heading en home (outline H1→H2→H3) | P2 | UX/a11y + HotH |
+| **H-T1** | Valorar title home 50–60 con keyword sin matar marca | P3 | Tradeoff brand |
+| **H-A1** | Alt en iconos CMP si controlable; si no, documentar false positive | P3 | CookieYes |
+| **H-L1** | Aclarar Links F = backlink profile; plan mínimo (directories, guest?) | P3 | Off-page |
+| **H-I1** | Reducir inline styles stitch (animation-delay → CSS classes) | P3 | Cosmético perf |
+| **H-S1** | No crear FB/IG/YT solo por el audit; link solo si existen | — | Skip unless real |
+| **H-D1** | SPF/DMARC cuando exista dominio custom (no `github.io`) | parked | DNS |
+
+---
+
+## Tooling: auditoría de indexación Google / Bing (repos)
+
+No hay un único “oráculo” que sustituya GSC **Request indexing** (sigue siendo manual). Sí hay CLIs/MCP que **inspeccionan coverage, sitemaps, URL Inspection y Bing** sin más rodeos. Encajan encima de lo que ya tenemos (`tools/seo-kickoff.sh`, `seo-batch.py`, IndexNow, Bing SubmitFeed).
+
+### Google Search Console / indexación
+
+| Repo | Para qué | Encaje |
+|------|----------|--------|
+| [nalyk/gsccli](https://github.com/nalyk/gsccli) | CLI GSC + Indexing API + URL Inspection batch + MCP | **Top candidato** para diagnosticar indexed/unknown/noindex stale |
+| [samalyxx/gsc-seo-mcp](https://github.com/samalyxx/gsc-seo-mcp) | MCP: analytics + URL inspection + sitemaps | Si quieres chat-driven audit en Cursor |
+| [acamolese/google-search-console-mcp](https://github.com/acamolese/google-search-console-mcp) | MCP read-only + HTML audit (EN/IT) | Diagnóstico performance + indexing hints |
+| [ildrm/python-seo-auditor](https://github.com/ildrm/python-seo-auditor) (“Atlas”) | Crawler 84 checks + GSC + PSI/CrUX | Auditoría técnica sitewide (no solo index) |
+| [naphiertech/search-engine-launch](https://github.com/naphiertech/search-engine-launch) | Skill launch/troubleshoot GSC **y** Bing | Checklist unificado crawl/index |
+| [jonny-1812/seo-geo-aeo](https://github.com/jonny-1812/seo-geo-aeo) | robots vs 15 crawlers + indexability + GSC setup | Complemento GEO/AI bots |
+| Ya en repo | `seo-kickoff.sh` / `seo-batch.py` / `_seo_onpage_checks.py` | Keep; ampliar con gsccli si hace falta |
+
+**Límite real:** Google **no** expone “Request indexing” por API. URL Inspection API = leer estado; el botón UI sigue siendo humano.
+
+### Bing Webmaster / IndexNow
+
+| Repo | Para qué | Encaje |
+|------|----------|--------|
+| [stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp) | MCP/CLI: performance, **indexing status**, sitemaps, URL submit | **Top Bing** |
+| [NmadeleiDev/bing_webmaster_cli](https://github.com/NmadeleiDev/bing_webmaster_cli) | CLI token-based para agents | Alternativa ligera |
+| [btakita/webmaster](https://github.com/btakita/webmaster) | CLI unificado search engines | Multi-motor |
+| [zRelux/search-console-cli](https://github.com/zRelux/search-console-cli) | Node CLI GSC **+** Bing | Un solo binario |
+| [kilicdev/seo-indexer](https://github.com/kilicdev/seo-indexer) | Submit sitemap URLs multi-engine | Complemento IndexNow |
+| Ya en repo | `indexnow-ping.sh` + `bing-submit-sitemap.sh` | Keep |
+
+### Tarea de adopción tooling
+
+| ID | Tarea | Pri |
+|----|-------|-----|
+| **T-IDX1** | Instalar/usar **[nalyk/gsccli](https://github.com/nalyk/gsccli)** con service account actual | **P1** setup |
+| **T-IDX2** | Instalar/usar **[stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)** + `BING_WEBMASTER_API_KEY` | **P1** setup |
+| **T-IDX3** | Documentar flujo en `docs/SEO_TOOLING.md` (comandos + límites Request indexing) | **P2** docs |
+
+### Diagnóstico profundo — checklist operativo (post-setup gsccli + Bing MCP)
+
+Herramientas fijas: **gsccli** (Google) · **bing-webmaster-mcp** (Bing). Nuestro `seo-kickoff.sh` / IndexNow se quedan como ping; el diagnóstico vive aquí.
+
+| ID | Tarea | Tool | Entregable |
+|----|-------|------|------------|
+| **IDX-G1** | Inventory sitios GSC + sitemap status (`isPending`, lastDownloaded) | gsccli | Tabla sitemaps |
+| **IDX-G2** | Batch **URL Inspection** money EN+ES + hubs (/, profile, intelligence, archives) | gsccli | CSV: coverageState, robotsTxtState, indexingState, lastCrawl |
+| **IDX-G3** | Triage unknown / excluded / soft-404 / duplicate / crawled-not-indexed | gsccli | Lista P0 con causa |
+| **IDX-G4** | Diff sitemap URLs vs Inspection “URL is on Google” | gsccli + sitemap.xml | Gaps a re-pedir indexing |
+| **IDX-G5** | Search Analytics 90d: queries/pages con impress≥1 y CTR=0 (oportunidad) | gsccli | Top 20 |
+| **IDX-G6** | Confirmar ES “noindex stale” vs live (Inspection live vs indexed) | gsccli | Clear/false-alarm |
+| **IDX-B1** | Bing site verify + sitemap get + crawl stats | bing-webmaster-mcp | Snapshot Bing |
+| **IDX-B2** | Bing URL / traffic ranking vs IndexNow ping log | bing-webmaster-mcp | Indexed? submitted? |
+| **IDX-B3** | Submit URLs críticas a Bing API (si no indexadas) + re-check 7d | bing-webmaster-mcp | Queue |
+| **IDX-X1** | Matriz única Google↔Bing por URL money (una fila = una URL) | ambos | `docs/INDEXING_MATRIX_YYYY-MM-DD.md` |
+| **IDX-X2** | Automatizar reporte semanal (script wrapper en `tools/`) | ambos | `tools/indexing-diagnosis.sh` |
+| **IDX-X3** | Lo que **sigue manual**: GSC Request indexing UI + Security | — | Checklist en MANUAL |
+
+**Orden sugerido:** T-IDX1 → IDX-G1/G2 → T-IDX2 → IDX-B1/B2 → IDX-X1 → IDX-G3/G4 → Request indexing solo URLs P0.
+
 
 ## Estado de alineación (¿estamos midiendo bien?)
 
@@ -160,6 +257,18 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 ---
 
 ## Por hacer — Alta (esta semana)
+
+### Performance mobile / SEOptimer (2026-09-17)
+
+| ID | Tarea | Tipo |
+|----|-------|------|
+| ~~**P-M1**~~ | ~~avatar → webp~~ | ✅ this PR |
+| ~~**P-M4**~~ | ~~thumbs WebP~~ | ✅ this PR |
+| ~~**P-M5**~~ | ~~home lazy Chirpy JS~~ | ✅ this PR |
+| ~~**P-M2**~~ | ~~GTM post-consent~~ | ✅ this PR |
+| **P-M3** | Unused CSS trim | código (GO) |
+| **P-U1** | Anotar Usability F SEOptimer | manual |
+| **P-U2** | Re-LH mobile + SEOptimer refresh | QA post P-M* |
 
 ### Medición y consent (T21, T25)
 

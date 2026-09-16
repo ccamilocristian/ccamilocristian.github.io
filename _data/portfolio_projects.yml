@@ -9,7 +9,7 @@
   process: "Connected the SODA API with Python (sodapy), loaded results into BigQuery, and built Data Studio views."
   impact: "Reproducible ICFES 2019-2 pipeline—less manual extraction, faster exploration for decision support."
   stack_tag: "API / BigQuery"
-  image_url: "/assets/img/2021-02-06-icfes-conexion-api/tabla.PNG"
+  image_url: "/assets/img/2021-02-06-icfes-conexion-api/tabla.webp"
 
 - key: plebiscite_scraping
   status: live
@@ -19,7 +19,7 @@
   process: "Python scraping workflow to aggregate territorial results and publish them in Google Data Studio."
   impact: "Reproducible municipality-level vote intelligence for political and policy analysis."
   stack_tag: "Scraping / Python"
-  image_url: "/assets/img/2020-12-18-scrapping-plebiscito-colombia/municipios.PNG"
+  image_url: "/assets/img/2020-12-18-scrapping-plebiscito-colombia/municipios.webp"
 
 - key: step_labor_market
   status: live
@@ -29,4 +29,4 @@
   process: "Adapted Frey & Osborne-style modeling with World Bank STEP survey data and econometric adjustment in Python."
   impact: "Policy-relevant read on skills, automation exposure, and sector-level labor market structure."
   stack_tag: "Econometrics / Python"
-  image_url: "/assets/img/2021-05-03-step-colombia/ries_edu.png"
+  image_url: "/assets/img/2021-05-03-step-colombia/ries_edu.webp"

@@ -24,7 +24,7 @@ domain_filters:
 featured:
   slug: step-colombia-english
   badge: Featured case
-  image: /assets/img/2021-05-03-step-colombia/ries_edu.png
+  image: /assets/img/2021-05-03-step-colombia/ries_edu.webp
 
 footer_action:
   label: View full archive
