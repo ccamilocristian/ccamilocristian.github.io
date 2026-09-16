@@ -126,11 +126,58 @@
 
   {% include css-selector.html %}
 
+  {%- comment -%}
+    P-M5: On home, defer Chirpy jQuery/Bootstrap/home.min until idle or first input
+    so mobile LCP (hero text) is not blocked by ~150KiB of legacy JS.
+    Posts/other layouts keep sync-deferred jQuery (timeago, search UI, etc.).
+  {%- endcomment -%}
+  {% if page.layout == 'home' %}
+  <script>
+  (function () {
+    var loaded = false;
+    function loadChirpyStack() {
+      if (loaded) return;
+      loaded = true;
+      function add(src, integrity) {
+        var s = document.createElement('script');
+        s.src = src;
+        s.defer = true;
+        if (integrity) {
+          s.integrity = integrity;
+          s.crossOrigin = 'anonymous';
+        }
+        document.head.appendChild(s);
+        return s;
+      }
+      add(
+        'https://cdn.jsdelivr.net/npm/jquery@3.4.1',
+        'sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo='
+      );
+      add('https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4.0.0/dist/js/bootstrap.min.js');
+      add('{{ "/assets/js/home.min.js" | relative_url }}');
+    }
+    function arm(fn) {
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (type) {
+        window.addEventListener(type, fn, { once: true, passive: true });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(fn, { timeout: 4000 });
+      } else {
+        window.addEventListener('load', function () {
+          setTimeout(fn, 1);
+        });
+      }
+    }
+    arm(loadChirpyStack);
+  })();
+  </script>
+  {% else %}
   <!-- JavaScripts: defer jQuery so dependents (also defer) run in order -->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" defer></script>
 
   <script src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" defer></script>
+  {% endif %}
 
   {% include js-selector.html %}
 

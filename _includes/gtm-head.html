@@ -1,12 +1,13 @@
 {% assign gtm = site.data.site_ops.gtm %}
 {% if jekyll.environment == 'production' and gtm.enabled and gtm.container_id %}
-<!-- Google Tag Manager — idle/async inject (consent defaults already set; avoids competing with LCP) -->
+<!-- Google Tag Manager — load only after analytics consent (Clarity pattern); skips ~120KiB when denied -->
 <script>
 (function (w, d, s, l, i) {
   w[l] = w[l] || [];
   w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-  function inject() {
-    if (d.getElementById('gtm-js')) return;
+  function injectGtm() {
+    if (d.getElementById('gtm-js') || w.__gtmInjected) return;
+    w.__gtmInjected = true;
     var f = d.getElementsByTagName(s)[0],
       j = d.createElement(s),
       dl = l != 'dataLayer' ? '&l=' + l : '';
@@ -15,12 +16,29 @@
     j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
     f.parentNode.insertBefore(j, f);
   }
-  if ('requestIdleCallback' in w) {
-    requestIdleCallback(inject, { timeout: 2500 });
-  } else if (d.readyState === 'complete') {
-    inject();
+  function start() {
+    function tryGate() {
+      if (w.siteConsentGate) {
+        w.siteConsentGate.on('analytics', injectGtm);
+        return;
+      }
+      if (d.documentElement.getAttribute('data-cmp-active') === 'true') {
+        setTimeout(tryGate, 50);
+        return;
+      }
+      /* No CMP (local/dev) — idle inject */
+      if ('requestIdleCallback' in w) {
+        requestIdleCallback(injectGtm, { timeout: 2500 });
+      } else {
+        w.addEventListener('load', injectGtm);
+      }
+    }
+    tryGate();
+  }
+  if (d.readyState === 'loading') {
+    d.addEventListener('DOMContentLoaded', start);
   } else {
-    w.addEventListener('load', inject);
+    start();
   }
 })(window, document, 'script', 'dataLayer', '{{ gtm.container_id }}');
 </script>

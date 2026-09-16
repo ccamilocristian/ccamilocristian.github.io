@@ -90,9 +90,9 @@ gtm:
     - outbound_click
     - site_search
   note: >
-    Primary page_view via direct gtag (Consent Mode). GTM loads idle/async after first paint
-    for custom-event tags; keep GTM Google Tag / googtag for G-4FK52MWLPP paused to avoid
-    duplicate pageviews. analytics-events.js also fires gtag('event') as fallback.
+    Primary page_view via direct gtag (Consent Mode). GTM injects only after analytics
+    consent (same gate as Clarity) so denied visitors never download gtm.js. Keep GTM
+    Google Tag / googtag for G-4FK52MWLPP paused; analytics-events.js fires gtag('event').
 
 indexnow:
   enabled: true
