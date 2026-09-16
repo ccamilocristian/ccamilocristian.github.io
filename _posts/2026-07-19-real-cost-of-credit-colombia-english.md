@@ -1,7 +1,8 @@
 ---
-title: Real cost of credit in Colombia: Fisher and CPI
+title: "Real cost of credit in Colombia: Fisher and CPI"
 redirect_from:
   - /real-cost-of-credit-colombia-english/
+  - /posts/2026-07-19-real-cost-of-credit-colombia-english/
 author: Cristian Camilo Moreno Narvaez
 date: 2026-07-19 01:15:00 -0500
 lastmod: 2026-07-19 01:15:00 -0500

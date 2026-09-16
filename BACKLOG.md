@@ -1,8 +1,8 @@
 # Backlog
 
-_Last sync: 2026-09-16 (SEO tooling committed; money-page title/desc batch; Bing SubmitFeed OK; GSC still ~4 indexed — wait re-crawl — [`docs/SEO_TOOLING.md`](docs/SEO_TOOLING.md))_
+_Last sync: 2026-09-16 (PSI + Unlighthouse + SEOptimer triage; **P0 credit YAML 404** local-fixed, needs deploy; kickoff blocked on live)_
 
-_Prev sync: 2026-07-19 (presence plan implementation)_
+_Prev sync: 2026-09-16 (SEO tooling; money-page meta batch; Bing OK; GSC ~4 indexed)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -18,16 +18,35 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
-| Tareas abiertas | **~7** (manual UI; T25c filtro en GA4) |
-| Semana | **27 jun – 3 jul** — medición + indexación + AdSense |
+| Live regression | **P0** credit post YAML colon → 404 at canonical `/posts/real-cost-of-credit-colombia-english/` |
+| Unlighthouse | SEO **99** · Perf **72** · A11y **92** · BP **96** (outlier: optimation-consumer Perf **41**) |
+| PageSpeed desktop | Perf **81** · A11y **91** · BP **96** · SEO **100** |
+| SEOptimer home | Grade **B** — On-Page A- · Links A- · **Usability F** · Perf A · Social A+ |
+| Tareas abiertas | **P0 + perf/a11y batch** (ver abajo) |
+| Semana | indexación + hotfix credit + perf budget |
 
 ### Hacer hoy (top 5)
 
-1. **Solo UI** — GSC Request indexing (8 URLs) + Security & Manual Actions → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
-2. **Bing once** — verificar sitio + API key → luego `bash tools/bing-submit-sitemap.sh`
-3. **Unlighthouse** — `bash tools/run-unlighthouse.sh` (tras `npm install`)
-4. **On-page batch** — titles/descriptions (WARNs del guard; `SEO_STRICT=1` when clean)
-5. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
+1. **P0 deploy** — quote credit `title:` YAML + redirect dated URL → restore `/posts/real-cost-of-credit-colombia-english/` → `bash tools/seo-kickoff.sh`
+2. **Guard** — SEO check: fail build if front matter YAML/`title:` unquoted colon
+3. **Perf (PSI)** — render-blocking (~0.8–4s), image delivery (~667 KiB), cache TTL (~1 MiB), unused JS (~270 KiB) / CSS (~45 KiB); trim excess `preconnect`
+4. **Perf (Unlighthouse)** — triage `/posts/optimation-consumer*` Perf 41; home ~72–73
+5. **A11y** — contrast, tap targets, heading order, identical-link purpose (PSI + UL Acc ~89–95)
+
+### Cola reportes (no P0 — planificar con GO)
+
+| Fuente | Hallazgo | Acción candidata |
+|--------|----------|------------------|
+| PSI desktop | LCP 2.3s · TBT 190ms · FCP 1.0s | Defer non-critical CSS/JS; LCP image priority |
+| PSI | Render-blocking requests | Audit head: fonts, GTM/CookieYes order, critical CSS |
+| PSI | Image delivery −667 KiB | WebP/AVIF + dimensions; compress hero/assets |
+| PSI | Cache lifetime −1066 KiB | GH Pages headers / fingerprint already? document limits |
+| PSI | Unused JS −270 KiB / CSS −45 KiB | Gate analytics until consent; trim CSS surface |
+| PSI | >4 preconnect | Keep only 1–2 origins |
+| PSI a11y | Contrast, tap size, ARIA roles, heading sequence, same-link purpose | UX pass on shell + post chrome |
+| Unlighthouse | Site Perf ~72; optimation-consumer **41** | Profile that post (math/plots/images) |
+| SEOptimer | Usability **F** (home) | Mobile viewport / tap / font-size — verify vs false positive |
+| Mem host | 15 GiB, **0 swap**, Firefox ~5.6G + Cursor ~3.6G + ML ~0.8G | Close tabs / stop Unlighthouse / add zram|swap |
 
 ---
 
