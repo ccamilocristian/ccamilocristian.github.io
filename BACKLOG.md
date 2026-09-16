@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (P1 perf merged PR#10; **YAML colon guard + a11y P2** on `cursor/seo-yaml-guard`)_
+_Last sync: 2026-09-16 (Frase audit triage; UL re-scan Perf **~79**; `llms.txt` + archives H1 + sitemap cleanup on `cursor/frase-llms-archives`)_
 
 _Prev sync: 2026-09-16 (SEO tooling; money-page meta batch; Bing OK; GSC ~4 indexed)_
 
@@ -19,19 +19,31 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
 | Live regression | ✅ credit canonical restored (PR #9) |
-| Unlighthouse | SEO **99** · Perf **72** · A11y **92** · BP **96** (outlier: optimation-consumer Perf **41**) |
-| PageSpeed desktop | Perf **81** · A11y **91** · BP **96** · SEO **100** |
-| SEOptimer home | Grade **B** — On-Page A- · Links A- · **Usability F** · Perf A · Social A+ |
-| Tareas abiertas | **GSC Request indexing (manual)** · YAML guard + a11y P2 in flight |
-| Semana | indexación manual GSC + a11y/guard deploy |
+| Unlighthouse | SEO **99** · Perf **~79** (re-scan post-P1) · A11y **92** · BP **100** · home Perf **75** |
+| PageSpeed desktop | Re-run pending (API quota); prior **81** pre-P1 |
+| SEOptimer home | Grade **B** — Usability **F** (unverified detail) |
+| Frase audit | **49/100** (stale credit dated URL); see triage below |
+| Tareas abiertas | GSC crawl wait · deploy Frase fixes · optional title/alt/FAQ backlog |
+| Semana | indexación + Frase P0 fixes |
 
 ### Hacer hoy (top 5)
 
-1. **Solo UI** — GSC Request indexing (money EN unknown; ES live OK, índice stale) → [`docs/MANUAL_CHECKLIST.md`](docs/MANUAL_CHECKLIST.md)
-2. **Guard + a11y** — deploy `cursor/seo-yaml-guard` (unquoted `title:` FAIL + dated-path check; home heading/ARIA/tap/contrast)
-3. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
-4. **PSI re-check** — home desktop after P1+a11y land
-5. **Consent QA** — T25b Accept/Reject → GA4 Realtime
+1. **Deploy** — `llms.txt` + archives single H1 + sitemap exclude `feed.xml`/`redirects.json`
+2. **Ignorar** — `www.ccamilocristian.github.io` 404 (GitHub user pages no soporta `www`)
+3. **Ya OK live** — credit canónico **200** (Frase midió la URL fechada rota)
+4. **GSC** — esperar re-crawl tras Request indexing
+5. **Opcional** — titles >60 / alt text / FAQ schema (Frase WARN noise; no P0)
+
+### Frase URL list (smoke 2026-09-16)
+
+| URL | Frase | Live ahora |
+|-----|-------|------------|
+| `/tabs/archives/` | 8 issues | 200; fix H1 doble en branch |
+| `/llms.txt` | 404 | fix: publicar `llms.txt` |
+| `/robots.txt` | Healthy | 200 OK |
+| `/sitemap.xml` | 5 issues | 200; quitar noise (`feed`/`redirects`) |
+| `www.…github.io` | 404 | **no fixable** en user Pages |
+| `/posts/real-cost-of-credit-…/` | 404 | **200** (ya deployado) |
 
 ### Cola reportes (no P0 — planificar con GO)
 

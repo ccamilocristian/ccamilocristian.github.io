@@ -199,7 +199,10 @@ sitemap_exclude:
     - /404.html
     - /robots.txt
     - /sitemap.xml
+    - /llms.txt
     - /app.js
+    - /feed.xml
+    - /redirects.json
     # Spanish posts are now published bilingual alternates (indexable, hreflang-paired),
     # so they are intentionally included in the sitemap.
 
