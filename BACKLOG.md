@@ -21,11 +21,11 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Live regression | ✅ credit canonical (PR #9) · meta/og/H1/alts (#13) · Person/Org schema + tertiary (#14) · CMP idle/FA/archives (#15) |
 | Lighthouse desktop **live** (2026-09-16 post-#15) | Home **Perf 83 · Acc 96 · BP 100 · SEO 100** · Archives **Perf 98 · Acc 96 · BP 100 · SEO 100** |
 | Unlighthouse (stale pre-#15) | SEO **99** · Perf **~79** · A11y **92** — **re-run pending** |
-| SEOmator-equivalent home | On-page/schema/llms **PASS**; residual = Bootstrap block + unused GTM/gtag + CookieYes button contrast + GEO editorial |
+| SEOmator-equivalent home | On-page/schema **PASS**; residual = unused CSS trim + GEO editorial (Bootstrap/CMP/og closed in PR #16) |
 | Frase structural | **Closed** (H1/alt/meta/schema Person); GEO editorial **open** |
-| Semana | GSC re-crawl · optional Bootstrap defer · money-post GEO only with content GO |
+| Semana | Merge #16 · GSC re-crawl · GEO only with content GO |
 
-### Hecho esta ronda (PRs #9–#15)
+### Hecho esta ronda (PRs #9–#16)
 
 | PR | Qué quedó live |
 |----|----------------|
@@ -35,45 +35,41 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | #12 | `llms.txt`, archives H1, sitemap noise |
 | #13 | Site/tab meta ≤160, og:image/logo, `dynamic_title: false`, alts |
 | #14 | Person + Organization JSON-LD; tertiary `#aeb1bc` |
-| #15 | CookieYes idle inject; FA non-blocking; archives sin AdSense/Intelligence JS |
+| #15 | CookieYes async; FA non-blocking; archives sin AdSense/Intelligence JS |
+| #16 | Bootstrap defer; GTM idle; CMP CLS + contrast CSS; og WebP |
 
-### Lighthouse live (desktop, post-#15)
+### Lighthouse live (desktop, post-#15; re-measure after #16)
 
 | Página | Perf | Acc | BP | SEO | Notas |
 |--------|------|-----|----|-----|-------|
-| `/` | **83** | 96 | 100 | 100 | Was ~66–67 local pre-#15; CLS 0.273 (CookieYes banner) |
-| `/tabs/archives/` | **98** | 96 | 100 | 100 | Was **37** local; idle CMP + no ads/intel JS |
-
-Acc residual en ambas: **solo botones CookieYes** (`#fff` on `#1578f7` = 4.14:1) — dashboard CMP, no tokens del sitio.
+| `/` | **83** | 96 | 100 | 100 | Pre-#16; CLS was CookieYes — expect Acc↑ / CLS↓ after #16 |
+| `/tabs/archives/` | **98** | 96 | 100 | 100 | Pre-#16 |
 
 ### SEOmator / SEOptimer / Rank Math — consolidado
-
-Auditoría equivalente live home (2026-09-16) + hallazgos históricos de SEOptimer (grade B, Usability F) y Rank Math PDF.
 
 #### Cerrado / PASS
 
 | Ítem | Estado |
 |------|--------|
 | Title ≤60, meta ≤160, 1× H1, canonical, HTTPS, no noindex | ✅ |
-| og:title/url/image/type + twitter:card | ✅ (`portrait-sm.png` via seo-tag; WebP hero aparte) |
+| og:title/url/image/type + twitter:card | ✅ **`portrait-sm.webp`** (PR #16) |
 | `robots.txt` + `llms.txt` 200 | ✅ |
 | Schema WebSite + **Person** + **Organization** (`sameAs`) | ✅ |
 | Imágenes hero/optimation WebP; ≤2 preconnect | ✅ |
-| CMP no parser-blocking; FA non-blocking | ✅ |
+| CMP non-blocking; FA + **Bootstrap** non-blocking | ✅ (#15–#16) |
 | Archives weight (intel JS / AdSense off) | ✅ |
+| CookieYes Accept/Reject contrast (CSS `#0a58ca`) | ✅ (#16) |
+| CMP CLS reserve (`cky-banner-pending`) | ✅ (#16) |
+| GTM off critical path (idle inject) | ✅ Partial (#16; direct gtag remains) |
 
-#### Abierto — técnico (ROI medio; necesita GO)
+#### Abierto — técnico
 
-| # | Ítem | Origen | Acción |
+| # | Ítem | Acción | Estado |
 |---|------|--------|--------|
-| 1 | Render-blocking **Bootstrap CSS** (~210–240 ms) | LH / PSI / SEOmator perf | `media=print` onload **o** subset / drop on stitch-only routes (FOUC risk) |
-| 2 | Unused JS ~270 KiB (**gtag ×2 + GTM**) | LH / PSI | Decidir: `skip_direct_ga4: true` si GTM Google Tag ON, **o** mantener direct + GTM sin googtag (hoy: direct ON, GTM tag paused) — re-verificar doble carga `gtag/js` |
-| 3 | Unused CSS ~44–53 KiB | LH | Trim Chirpy/Bootstrap surface on stitch pages |
-| 4 | CLS home 0.27 | LH | Banner CookieYes late paint — reservar espacio / load earlier after LCP tradeoff |
-| 5 | CookieYes Accept/Reject contrast 4.14 | LH a11y | Cambiar colores en **CookieYes dashboard** (no repo) |
-| 6 | `page.css` ~163 KB en archives | Perf residual | CSS split / critical path (mayor esfuerzo) |
-| 7 | Optimation / MathJax posts | UL outlier | Ya WebP + math gated; residual MathJax weight |
-| 8 | og:image apunta a `.png` sm | Rank Math nit | Prefer `portrait-sm.webp` in `site.logo` / defaults if seo-tag accepts |
+| 2 | gtag still loads with GTM later | Optional: drop GTM if events-only via gtag | Partial |
+| 3 | Unused CSS ~44–53 KiB | Trim Chirpy/Bootstrap on stitch | Open |
+| 6 | `page.css` ~163 KB archives | CSS split | Parked (Perf 98) |
+| 7 | Optimation / MathJax | Already gated | Parked |
 
 #### Abierto — editorial GEO (Frase; **no** fingir con template)
 
@@ -111,24 +107,24 @@ Auditoría equivalente live home (2026-09-16) + hallazgos históricos de SEOptim
 
 ### Hacer ahora (top 5)
 
-1. **GSC** — wait / Request indexing money EN+ES si siguen unknown/stale noindex
-2. **CookieYes dashboard** — darken Accept/Reject blue (cierra Acc 96→~100)
-3. **GO candidato:** Bootstrap non-blocking **o** gtag double-load cleanup (#2 arriba)
-4. **No chase** GEO FAQ/TL;DR unless content GO on 2–3 money posts
-5. Re-run `bash tools/run-unlighthouse.sh` when RAM allows (stale scores)
+1. **Merge** PR #16 → smoke CookieYes + GA4 Realtime + FOUC check
+2. **GSC** — wait / Request indexing money URLs
+3. Re-LH home after deploy
+4. **No chase** GEO FAQ/TL;DR unless content GO
+5. Optional: unused CSS trim / Unlighthouse
 
 ### Cola reportes residual (planificar con GO)
 
 | Fuente | Hallazgo | Acción candidata | Estado |
 |--------|----------|------------------|--------|
-| LH live | Bootstrap render-blocking | Non-blocking / subset | Open |
-| LH live | Unused gtag+GTM ~270 KiB | Dedupe analytics path | Open |
-| LH live | CookieYes btn contrast | CMP dashboard colors | Open (manual) |
-| LH live | Home CLS 0.27 | Banner layout reserve | Open |
-| PSI (stale) | Image delivery 667 KiB | Fixed hero WebP | **Done** |
-| PSI (stale) | >4 preconnect | Fixed ≤2 | **Done** |
-| SEOptimer | Usability F | Likely FP; ignore unless new evidence | Parked |
-| Mem host | 0 swap | zram/swap / close Chrome piles | Ops |
+| LH | Bootstrap render-blocking | Non-blocking print/onload | **Done** #16 |
+| LH | Unused gtag+GTM | GTM idle; direct GA4 kept | **Partial** #16 |
+| LH | CookieYes btn contrast | CSS `#0a58ca` | **Done** #16 |
+| LH | Home CLS CMP | Banner pending padding | **Done** #16 |
+| LH | Unused CSS | Trim stitch surfaces | Open |
+| PSI (stale) | Image delivery / preconnect | WebP + ≤2 preconnect | **Done** |
+| SEOptimer | Usability F | Ignore unless new evidence | Parked |
+| Mem host | 0 swap | zram/swap | Ops |
 
 ---
 
