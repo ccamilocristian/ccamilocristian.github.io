@@ -7,7 +7,6 @@ author: Cristian Camilo Moreno Narvaez
 date: 2023-04-01 15:00:00 -0500
 categories: [Python, Automation]
 tags: [automation, python, games]
-math: true
 domain: Data Analysis
 technical_level: Intermediate
 reading_time: 5

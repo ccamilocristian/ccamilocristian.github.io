@@ -7,7 +7,6 @@ author: Cristian Camilo Moreno Narvaez
 date: 2020-12-17 15:00:00 -0500
 categories: [Python, Automatizacion]
 tags: [automatizacion, python, correo, windows, gmail]
-math: true
 domain: Data Analysis
 technical_level: Intermediate
 reading_time: 3

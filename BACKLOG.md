@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-16 (PSI + Unlighthouse + SEOptimer triage; **P0 credit YAML 404** local-fixed, needs deploy; kickoff blocked on live)_
+_Last sync: 2026-09-16 (kickoff OK after credit fix; **P1 perf** in progress on `cursor/perf-p1-home`)_
 
 _Prev sync: 2026-09-16 (SEO tooling; money-page meta batch; Bing OK; GSC ~4 indexed)_
 
@@ -18,20 +18,20 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
-| Live regression | **P0** credit post YAML colon → 404 at canonical `/posts/real-cost-of-credit-colombia-english/` |
+| Live regression | ✅ credit canonical restored (PR #9) |
 | Unlighthouse | SEO **99** · Perf **72** · A11y **92** · BP **96** (outlier: optimation-consumer Perf **41**) |
 | PageSpeed desktop | Perf **81** · A11y **91** · BP **96** · SEO **100** |
 | SEOptimer home | Grade **B** — On-Page A- · Links A- · **Usability F** · Perf A · Social A+ |
-| Tareas abiertas | **P0 + perf/a11y batch** (ver abajo) |
-| Semana | indexación + hotfix credit + perf budget |
+| Tareas abiertas | **P1 perf batch** (hero/fonts/jquery/math/optimation) |
+| Semana | indexación manual GSC + P1 perf deploy |
 
 ### Hacer hoy (top 5)
 
-1. **P0 deploy** — quote credit `title:` YAML + redirect dated URL → restore `/posts/real-cost-of-credit-colombia-english/` → `bash tools/seo-kickoff.sh`
-2. **Guard** — SEO check: fail build if front matter YAML/`title:` unquoted colon
-3. **Perf (PSI)** — render-blocking (~0.8–4s), image delivery (~667 KiB), cache TTL (~1 MiB), unused JS (~270 KiB) / CSS (~45 KiB); trim excess `preconnect`
-4. **Perf (Unlighthouse)** — triage `/posts/optimation-consumer*` Perf 41; home ~72–73
-5. **A11y** — contrast, tap targets, heading order, identical-link purpose (PSI + UL Acc ~89–95)
+1. **P1 deploy** — hero WebP, font `@import` removed, ≤2 preconnect, defer jQuery, clear false `math:true`, optimation WebP
+2. **Solo UI** — GSC Request indexing (money EN unknown + ES noindex URLs from kickoff)
+3. **Guard** — SEO check: fail build if front matter YAML/`title:` unquoted colon
+4. **A11y** — contrast, tap targets, heading order, identical-link purpose
+5. **T23d** — vigilar sitemap `lastDownloaded` > 2024-10-16
 
 ### Cola reportes (no P0 — planificar con GO)
 

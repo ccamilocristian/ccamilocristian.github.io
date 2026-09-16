@@ -50,7 +50,7 @@ layout: page
     <div class="stitch-hero-copy stitch-animate-in" style="animation-delay: 0.1s;">
       <div class="stitch-hero-identity">
         {% if cc.hero.avatar %}
-        <img class="stitch-hero-avatar" src="{{ cc.hero.avatar | relative_url }}" alt="{{ cc.hero.name }}" width="72" height="72" decoding="async" onerror="this.style.display='none'">
+        <img class="stitch-hero-avatar" src="{{ cc.hero.avatar | relative_url }}" alt="{{ cc.hero.name }}" width="72" height="72" decoding="async" fetchpriority="high" onerror="this.style.display='none'">
         {% endif %}
         <div class="stitch-hero-identity-text">
           <p class="stitch-eyebrow">{{ cc.hero.eyebrow }}</p>
@@ -139,7 +139,7 @@ layout: page
         <h2 id="home-story-title">{{ cc.narrative.title }}</h2>
         <p class="stitch-narrative-body">{{ cc.narrative.body }}</p>
         <p class="stitch-duo-kicker">
-          <span class="material-symbols-outlined stitch-duo-kicker-icon" aria-hidden="true">terminal</span>
+          <i class="fas fa-terminal stitch-duo-kicker-icon" aria-hidden="true"></i>
           {{ cc.narrative.kicker }}
         </p>
       </div>

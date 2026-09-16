@@ -111,8 +111,10 @@
 
   let toggle = new ModeToggle();
 
-  $(".mode-toggle").click(function() {
-    toggle.flipMode();
+  document.addEventListener('DOMContentLoaded', function () {
+    $(".mode-toggle").click(function() {
+      toggle.flipMode();
+    });
   });
 
 </script>

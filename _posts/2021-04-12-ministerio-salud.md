@@ -6,7 +6,6 @@ author: Cristian Camilo Moreno Narvaez
 date: 2021-04-12 01:00:00 -0500
 categories: [Python, Web_scraping]
 tags: [automatizacion, python, web-scraping, colombia, visualizaciones]
-math: true
 domain: Business Intelligence
 technical_level: Advanced
 reading_time: 5
