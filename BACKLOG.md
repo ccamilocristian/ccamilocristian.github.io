@@ -1,8 +1,8 @@
 # Backlog
 
-_Last sync: 2026-09-16 (perf: CookieYes idle + FA non-blocking + archives trim on `cursor/perf-archives-cmp`)_
+_Last sync: 2026-09-16 (SEOmator follow-ups: Bootstrap defer, GTM idle, CMP CLS/contrast, og WebP)_
 
-_Prev sync: 2026-09-16 (Frase URL list; `llms.txt` + archives H1 + sitemap; UL Perf ~79)_
+_Prev sync: 2026-09-16 (LH live post-#15; SEOmator/Frase consolidated open/closed)_
 
 Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](README_UX_EVOLUTION.md). Para migración Stitch → [`docs/STITCH_MIGRATION_GAP.md`](docs/STITCH_MIGRATION_GAP.md).
 
@@ -18,54 +18,113 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 |---------|--------|
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
 | Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
-| Live regression | ✅ credit canonical restored (PR #9) |
-| Unlighthouse | SEO **99** · Perf **~79** · A11y **92** · BP **100** |
-| Lighthouse desktop (local) | Home **66** · Profile **65** · Archives **37** · Optimation **56** (post-P1; throttling ≠ UL) |
-| Rank Math (HotH PDF) | Home SEO: meta 180→fix pending deploy; www N/A; og:image pending |
-| Frase issue table | **Partial** — see honest matrix below (GEO FAQ/summary/structure **NOT** done) |
-| Tareas abiertas | Deploy meta/H1/alts · GSC wait · perf residual (render-blocking/CMP) |
-| Semana | indexación + close structural SEO gaps |
+| Live regression | ✅ credit canonical (PR #9) · meta/og/H1/alts (#13) · Person/Org schema + tertiary (#14) · CMP idle/FA/archives (#15) |
+| Lighthouse desktop **live** (2026-09-16 post-#15) | Home **Perf 83 · Acc 96 · BP 100 · SEO 100** · Archives **Perf 98 · Acc 96 · BP 100 · SEO 100** |
+| Unlighthouse (stale pre-#15) | SEO **99** · Perf **~79** · A11y **92** — **re-run pending** |
+| SEOmator-equivalent home | On-page/schema **PASS**; residual = unused CSS trim + GEO editorial (Bootstrap/CMP/og closed in PR #16) |
+| Frase structural | **Closed** (H1/alt/meta/schema Person); GEO editorial **open** |
+| Semana | Merge #16 · GSC re-crawl · GEO only with content GO |
 
-### Frase issue table — honest status (2026-09-16)
+### Hecho esta ronda (PRs #9–#16)
 
-| Issue | Before | After this PR | Notes |
-|-------|--------|---------------|-------|
-| Missing H1 (1) | Credit dated URL broken | **Solved live** | Was YAML 404; canonical has H1 |
-| Multiple H1 (7) | Tabs: `dynamic_title` + hero H1 | **Fixing** | `dynamic_title: false` on stitch tabs |
-| Missing alt (7) | Empty `![ ]` / raw `<img>` | **Fixing** | Filename-based alts on flagged posts |
-| Long meta description (4) | Site desc 180 | **Fixing** | Site ≤128; tabs get own ≤143 |
-| Missing summary / TL;DR (6) | Open | **Not done** | Content rewrite; skip unless GO |
-| Thin schema (4) | WebSite/BlogPosting only | **Partial** | Person+Organization `@graph` live in head; FAQ still open |
-| Missing question headings (8) | Open | **Not done** | Editorial GEO |
-| Weak definitions (3) | Open | **Not done** | Editorial |
-| Poor AI structure (5) | Open | **Not done** | High effort rewrite |
-| Low fact density (1) | Open | **Not done** | Editorial |
+| PR | Qué quedó live |
+|----|----------------|
+| #9 | Credit YAML 404 → canonical + redirect + kickoff |
+| #10 | P1 home: WebP hero, fonts non-blocking, ≤2 preconnect, jQuery defer, false `math` cleared |
+| #11 | A11y home (pillars/tap/footer) + YAML colon/dated-path guards |
+| #12 | `llms.txt`, archives H1, sitemap noise |
+| #13 | Site/tab meta ≤160, og:image/logo, `dynamic_title: false`, alts |
+| #14 | Person + Organization JSON-LD; tertiary `#aeb1bc` |
+| #15 | CookieYes async; FA non-blocking; archives sin AdSense/Intelligence JS |
+| #16 | Bootstrap defer; GTM idle; CMP CLS + contrast CSS; og WebP |
+
+### Lighthouse live (desktop, post-#15; re-measure after #16)
+
+| Página | Perf | Acc | BP | SEO | Notas |
+|--------|------|-----|----|-----|-------|
+| `/` | **83** | 96 | 100 | 100 | Pre-#16; CLS was CookieYes — expect Acc↑ / CLS↓ after #16 |
+| `/tabs/archives/` | **98** | 96 | 100 | 100 | Pre-#16 |
+
+### SEOmator / SEOptimer / Rank Math — consolidado
+
+#### Cerrado / PASS
+
+| Ítem | Estado |
+|------|--------|
+| Title ≤60, meta ≤160, 1× H1, canonical, HTTPS, no noindex | ✅ |
+| og:title/url/image/type + twitter:card | ✅ **`portrait-sm.webp`** (PR #16) |
+| `robots.txt` + `llms.txt` 200 | ✅ |
+| Schema WebSite + **Person** + **Organization** (`sameAs`) | ✅ |
+| Imágenes hero/optimation WebP; ≤2 preconnect | ✅ |
+| CMP non-blocking; FA + **Bootstrap** non-blocking | ✅ (#15–#16) |
+| Archives weight (intel JS / AdSense off) | ✅ |
+| CookieYes Accept/Reject contrast (CSS `#0a58ca`) | ✅ (#16) |
+| CMP CLS reserve (`cky-banner-pending`) | ✅ (#16) |
+| GTM off critical path (idle inject) | ✅ Partial (#16; direct gtag remains) |
+
+#### Abierto — técnico
+
+| # | Ítem | Acción | Estado |
+|---|------|--------|--------|
+| 2 | gtag still loads with GTM later | Optional: drop GTM if events-only via gtag | Partial |
+| 3 | Unused CSS ~44–53 KiB | Trim Chirpy/Bootstrap on stitch | Open |
+| 6 | `page.css` ~163 KB archives | CSS split | Parked (Perf 98) |
+| 7 | Optimation / MathJax | Already gated | Parked |
+
+#### Abierto — editorial GEO (Frase; **no** fingir con template)
+
+| # | Ítem | Notas |
+|---|------|-------|
+| 9 | Missing summary / TL;DR | Reescribir 2–3 money posts |
+| 10 | FAQ JSON-LD | Solo si hay FAQ real en el post |
+| 11 | Question-style H2s | Editorial |
+| 12 | Weak definitions / AI structure / fact density | Editorial |
+
+#### No actionable / ignorar
+
+| Ítem | Por qué |
+|------|---------|
+| `www.` → 404 | User `*.github.io` no soporta www redirect |
+| Cache TTL GTM/CookieYes/jsDelivr | Fuera de control en GH Pages |
+| SEOptimer Usability **F** (paywall) | Sin checklist; viewport/tap ya OK en LH a11y 96 |
+| Security headers (CSP / X-Frame) | Limitado en GH Pages; bajo ROI |
+| Minify local `consent-gate.js` | Cosmético |
+
+### Frase issue table — status (2026-09-16 tarde)
+
+| Issue | Status | Notes |
+|-------|--------|-------|
+| Missing H1 (1) | **Done** | Credit YAML 404 fixed |
+| Multiple H1 (7) | **Done** | `dynamic_title: false` |
+| Missing alt (7) | **Done** | Flagged posts |
+| Long meta (4) | **Done** | Site 128; tabs/archives own desc |
+| Thin schema (4) | **Partial** | Person+Org done; FAQ schema still open |
+| Summary / TL;DR / question-H2 / definitions / AI structure / fact density | **Open** | Content GO only |
 
 ### Audits we actually ran
 
-1. SEOptimer home · 2. Unlighthouse (stale + fresh) · 3. PageSpeed URL (viejo) + Lighthouse local 7 URLs · 4. Frase MD · 5. Rank Math PDF (HotH) · 6. `seo-kickoff` / GSC inspect · 7. `verify-seo-security`
+1. SEOptimer home · 2. Unlighthouse (stale — re-run pending) · 3. PageSpeed (viejo) + Lighthouse local + **Lighthouse live home/archives post-#15** · 4. Frase MD · 5. Rank Math PDF (HotH) · 6. SEOmator-equivalent checklist · 7. `seo-kickoff` / GSC · 8. `verify-seo-security`
 
-### Hacer hoy (top 5)
+### Hacer ahora (top 5)
 
-1. **Merge** `cursor/perf-archives-cmp` (CMP idle, FA defer, archives no ads/intel JS)
-2. **GSC** — wait re-crawl
-3. **Do not chase** FAQ/TL;DR/question-H2 GEO spam unless content GO
-4. **Perf next** — Bootstrap still blocking; archives `page.css` ~163 KB
-5. **www** — ignore (GitHub user Pages)
-### Cola reportes (no P0 — planificar con GO)
+1. **Merge** PR #16 → smoke CookieYes + GA4 Realtime + FOUC check
+2. **GSC** — wait / Request indexing money URLs
+3. Re-LH home after deploy
+4. **No chase** GEO FAQ/TL;DR unless content GO
+5. Optional: unused CSS trim / Unlighthouse
 
-| Fuente | Hallazgo | Acción candidata |
-|--------|----------|------------------|
-| PSI desktop | LCP 2.3s · TBT 190ms · FCP 1.0s | Defer non-critical CSS/JS; LCP image priority |
-| PSI | Render-blocking requests | Audit head: fonts, GTM/CookieYes order, critical CSS |
-| PSI | Image delivery −667 KiB | WebP/AVIF + dimensions; compress hero/assets |
-| PSI | Cache lifetime −1066 KiB | GH Pages headers / fingerprint already? document limits |
-| PSI | Unused JS −270 KiB / CSS −45 KiB | Gate analytics until consent; trim CSS surface |
-| PSI | >4 preconnect | Keep only 1–2 origins |
-| PSI a11y | Contrast, tap size, ARIA roles, heading sequence, same-link purpose | UX pass on shell + post chrome |
-| Unlighthouse | Site Perf ~72; optimation-consumer **41** | Profile that post (math/plots/images) |
-| SEOptimer | Usability **F** (home) | Mobile viewport / tap / font-size — verify vs false positive |
-| Mem host | 15 GiB, **0 swap**, Firefox ~5.6G + Cursor ~3.6G + ML ~0.8G | Close tabs / stop Unlighthouse / add zram|swap |
+### Cola reportes residual (planificar con GO)
+
+| Fuente | Hallazgo | Acción candidata | Estado |
+|--------|----------|------------------|--------|
+| LH | Bootstrap render-blocking | Non-blocking print/onload | **Done** #16 |
+| LH | Unused gtag+GTM | GTM idle; direct GA4 kept | **Partial** #16 |
+| LH | CookieYes btn contrast | CSS `#0a58ca` | **Done** #16 |
+| LH | Home CLS CMP | Banner pending padding | **Done** #16 |
+| LH | Unused CSS | Trim stitch surfaces | Open |
+| PSI (stale) | Image delivery / preconnect | WebP + ≤2 preconnect | **Done** |
+| SEOptimer | Usability F | Ignore unless new evidence | Parked |
+| Mem host | 0 swap | zram/swap | Ops |
 
 ---
 
