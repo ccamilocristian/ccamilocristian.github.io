@@ -31,7 +31,13 @@ mcp.json
 *client_secret*.json
 credentials*.json
 token*.json
+oauth-tokens.json
+**/oauth-tokens.json
 .secrets/
+
+# gsccli — keep only optional public `.gsccli.json` (site URL). Never commit home config.
+.gsccli/
+**/.gsccli/
 
 # yui-compressor
 *.jar
