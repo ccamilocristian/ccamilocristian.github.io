@@ -33,8 +33,8 @@ Soft (WARN unless `SEO_STRICT=1`): title >60 chars, description outside 140–16
 
 | Action | Automatable? | Tool |
 |--------|--------------|------|
-| Resubmit GSC sitemap | Yes | `seo-kickoff.sh` / Search Console API |
-| Inspect index coverage | Yes | `seo-batch.py` / `seo-kickoff.sh` |
+| Resubmit GSC sitemap | Yes | `seo-kickoff.sh` / Search Console API / `gsccli sitemaps submit` |
+| Inspect index coverage | Yes | `gsccli inspect` / `seo-batch.py` / `seo-kickoff.sh` |
 | IndexNow notify Bing/Yandex | Yes | `indexnow-ping.sh` |
 | Bing SubmitFeed (sitemap) | Yes **if** `BING_WEBMASTER_API_KEY` set | `bing-submit-sitemap.sh` |
 | GSC **Request indexing** | **No** (Google blocks API) | Manual URL Inspection UI |
@@ -66,6 +66,32 @@ In the dashboard: open the **SEO** tab → filter failed audits (title, meta des
 5. Re-run `bash tools/bing-submit-sitemap.sh` or `seo-kickoff.sh`.
 
 Until the key exists, IndexNow still notifies Bing of URL changes.
+
+## gsccli — Google Search Console CLI (T-IDX1 ✅)
+
+Primary tool for indexing diagnosis (runbook in `BACKLOG.md`).
+
+```bash
+# One-time install (Node ≥ 22; user prefix — no sudo)
+npm config set prefix "$HOME/.local"
+npm i -g @nalyk/gsccli@latest
+export PATH="$HOME/.local/bin:$PATH"   # add to ~/.zshrc
+
+# Auth = existing service account (already a GSC siteFullUser)
+gsccli config set credentials ~/mcp_servers/google_creds.json
+gsccli config set site 'https://ccamilocristian.github.io/'
+
+gsccli auth status
+gsccli sites list
+gsccli sitemaps list
+gsccli inspect url 'https://ccamilocristian.github.io/posts/…/'
+```
+
+Local site config: `.gsccli.json` (site URL only). Global SA path: `~/.gsccli/config.json`.
+
+**Smoke 2026-09-17:** `sites list` → `siteFullUser`; sitemap `isPending: true`, `lastDownloaded: 2024-10-16` (stale download — next: IDX-G1/G2).
+
+Next runbook steps: **IDX-G1** (already partially smoked) → **IDX-G2** batch URL Inspection.
 
 ## Your remaining checklist (manual only)
 

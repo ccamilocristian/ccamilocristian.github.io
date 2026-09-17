@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-17 (P-M* mobile perf on `cursor/perf-mobile-pm`; gsccli+Bing MCP diagnosis plan)_
+_Last sync: 2026-09-17 (T-IDX1 ✅ gsccli 1.2.1 + SA auth; next IDX-G1/G2)_
 
 _Prev sync: 2026-09-16 (SEOmator follow-ups merged #16)_
 
@@ -102,22 +102,41 @@ LCP = texto `#home-hero-lead` (no imagen). Main thread ocupado por JS/CSS/imagen
 
 ### Hacer ahora (top 5)
 
-1. **Merge** `cursor/perf-mobile-pm` (P-M1/2/4/5) → re-LH mobile  
-2. **GO T-IDX1** — setup `nalyk/gsccli` + IDX-G1/G2  
-3. **GO T-IDX2** — setup `stufently/bing-webmaster-mcp` + IDX-B1/B2  
-4. **IDX-X1** matriz Google↔Bing money URLs  
-5. Request indexing solo P0 · no GEO sin content GO  
+1. **IDX-G1** (cerrar) + **IDX-G2** batch Inspection — di **GO**  
+2. Luego **T-IDX2** Bing MCP  
+3. Seguir runbook → X1 → G3/G4 → Request indexing P0  
+4. **H-H1** / **P-U1** si sobra tiempo  
+5. GEO — no sin content GO  
+
+### Mañana — runbook indexación (orden fijo)
+
+Herramientas: [nalyk/gsccli](https://github.com/nalyk/gsccli) · [stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)  
+Creds: `~/mcp_servers/google_creds.json` · `BING_WEBMASTER_API_KEY`  
+PATH: `export PATH="$HOME/.local/bin:$PATH"`
+
+| # | ID | Acción concreta | Done? |
+|---|-----|-----------------|-------|
+| 1 | **T-IDX1** | Instalar/configurar `gsccli` + SA; smoke `sites list` | ✅ 2026-09-17 (`siteFullUser`, v1.2.1) |
+| 2 | **IDX-G1** | `gsccli sitemaps list` — `isPending`, `lastDownloaded`, errores | ☐ smoke: pending=true, lastDownloaded **2024-10-16** |
+| 3 | **IDX-G2** | Batch URL Inspection money EN+ES + hubs → CSV | ☐ |
+| 4 | **T-IDX2** | Setup `bing-webmaster-mcp` + API key | ☐ |
+| 5 | **IDX-B1** | Bing verify + sitemap + crawl stats | ☐ |
+| 6 | **IDX-B2** | Bing status vs IndexNow log | ☐ |
+| 7 | **IDX-X1** | `docs/INDEXING_MATRIX_YYYY-MM-DD.md` | ☐ |
+| 8 | **IDX-G3** | Triage → lista P0 | ☐ |
+| 9 | **IDX-G4** | Diff sitemap vs on-Google | ☐ |
+| 10 | **IDX-X3** | Request indexing **solo P0** (UI) | ☐ |
+
+**Orden:** `T-IDX1 → G1/G2 → T-IDX2 → B1/B2 → X1 → G3/G4 → Request indexing solo P0`
 
 ### Cola residual
 
 | Fuente | Hallazgo | Estado |
 |--------|----------|--------|
 | LH desktop #16 | RB / CMP contrast / CLS | **Done** |
-| LH mobile | LCP 6.9 s · avatar.png · gtag/GTM · jQuery | **Open** P-M* |
-| SEOptimer | Perf **A** OK; Usability **F** → overall B | **Open** P-U1 |
-| SEOmator SaaS | Sin reporte público | N/A |
-
----
+| LH mobile | avatar / GTM / jQuery | **Done** PR #17 (re-medir LH) |
+| SEOptimer | Usability **F** | **Open** P-U1 |
+| GSC sitemap | `isPending` + lastDownloaded 2024-10-16 | **Open** IDX-G1 |
 
 ---
 
@@ -199,7 +218,7 @@ No hay un único “oráculo” que sustituya GSC **Request indexing** (sigue si
 
 | ID | Tarea | Pri |
 |----|-------|-----|
-| **T-IDX1** | Instalar/usar **[nalyk/gsccli](https://github.com/nalyk/gsccli)** con service account actual | **P1** setup |
+| **T-IDX1** | Instalar/usar **[nalyk/gsccli](https://github.com/nalyk/gsccli)** con service account actual | ✅ 2026-09-17 (`siteFullUser`) |
 | **T-IDX2** | Instalar/usar **[stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)** + `BING_WEBMASTER_API_KEY` | **P1** setup |
 | **T-IDX3** | Documentar flujo en `docs/SEO_TOOLING.md` (comandos + límites Request indexing) | **P2** docs |
 
@@ -209,7 +228,7 @@ Herramientas fijas: **gsccli** (Google) · **bing-webmaster-mcp** (Bing). Nuestr
 
 | ID | Tarea | Tool | Entregable |
 |----|-------|------|------------|
-| **IDX-G1** | Inventory sitios GSC + sitemap status (`isPending`, lastDownloaded) | gsccli | Tabla sitemaps |
+| **IDX-G1** | Inventory sitios GSC + sitemap status (`isPending`, lastDownloaded) | gsccli | Smoke OK — formalizar en matriz |
 | **IDX-G2** | Batch **URL Inspection** money EN+ES + hubs (/, profile, intelligence, archives) | gsccli | CSV: coverageState, robotsTxtState, indexingState, lastCrawl |
 | **IDX-G3** | Triage unknown / excluded / soft-404 / duplicate / crawled-not-indexed | gsccli | Lista P0 con causa |
 | **IDX-G4** | Diff sitemap URLs vs Inspection “URL is on Google” | gsccli + sitemap.xml | Gaps a re-pedir indexing |
@@ -222,7 +241,7 @@ Herramientas fijas: **gsccli** (Google) · **bing-webmaster-mcp** (Bing). Nuestr
 | **IDX-X2** | Automatizar reporte semanal (script wrapper en `tools/`) | ambos | `tools/indexing-diagnosis.sh` |
 | **IDX-X3** | Lo que **sigue manual**: GSC Request indexing UI + Security | — | Checklist en MANUAL |
 
-**Orden sugerido:** T-IDX1 → IDX-G1/G2 → T-IDX2 → IDX-B1/B2 → IDX-X1 → IDX-G3/G4 → Request indexing solo URLs P0.
+**Orden (runbook arriba = fuente de verdad):** `T-IDX1 → G1/G2 → T-IDX2 → B1/B2 → X1 → G3/G4 → Request indexing solo P0`.
 
 
 ## Estado de alineación (¿estamos midiendo bien?)
