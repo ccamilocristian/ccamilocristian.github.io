@@ -5,7 +5,7 @@
 > **Update (2026-09-09) — Audit cleanup + bilingual SEO:**
 > - **Vision Lab unpublished** (`tabs/vision-lab.md` `published:false`) — it was a mock roadmap with no real content. Removed from nav, home teaser, and the Intelligence filter. Files kept in-repo for local iteration; re-publish only when backed by a real CV case study.
 > - **Computer Vision kept as a real skill** (current AI Data Engineer role at Presight; see `_data/profile.yml`). The fictional "Vision Lab" brand was relabeled to "Computer Vision" across Stack/pillars.
-> - **Bilingual restored (highest-impact SEO fix):** the 9 Spanish posts — which carried ~98% of historic organic traffic (see `docs/GSC_AUDIT_2026-06-27.md`) — are **re-published as indexable alternates** with reciprocal `hreflang` and self-canonical URLs. On-site feeds stay English; ES pages are reachable via search and an in-post language switcher.
+> - **Bilingual restored (highest-impact SEO fix):** the 9 Spanish posts — which carried ~98% of historic organic traffic (see `docs/GSC_AUDIT_2026-06-27.md`) — are **re-published as indexable alternates** with reciprocal `hreflang` and self-canonical URLs. **Blog (Intelligence)** lists EN+ES with a language chip; Command Center and Economics Lens stay English-first (ES via search / in-post switcher).
 > - Removed dead code (`intelligence_flagship.yml`, `dashboard-module.html`, `post-paginator.html`) and a fabricated Economics Lens metric.
 
 ## 1. Contexto Actual (Mapeado Automático)

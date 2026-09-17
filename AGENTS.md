@@ -21,6 +21,7 @@ no runtime, **zero LLM calls**. Visual identity: "Calm Technical" dark dashboard
 - `_data/` — content/config: `tabs.yml` (nav), `command_center.yml` (home),
   `post_pairs.yml` (EN↔ES bilingual pairs), `profile.yml`, `portfolio_projects.yml`.
 - `_posts/` — articles. English is canonical; Spanish alternates are `lang: es`.
+  Blog (Intelligence) lists both languages; home / Economics Lens stay EN-first.
 - `tabs/` — top-level pages (`profile.md`, `intelligence.md`, `stack.md`, `economics-lens.md`).
 - `assets/css/` — Sass. Design tokens in `assets/css/tokens/_*.scss` (`--ds-*`);
   dashboard styles in `assets/css/_addon/*.scss`; home in `assets/css/home.scss`.

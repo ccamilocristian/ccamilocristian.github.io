@@ -26,7 +26,13 @@
 
 {% assign featured_image = include.image | default: "" %}
 
-<article class="intelligence-card card-glass intelligence-card--{{ glow }}{% if is_featured %} intelligence-card--featured{% endif %} stitch-reveal" data-domain="{{ domain_slug }}">
+{% assign card_lang = card_post.lang | default: 'en' %}
+{% assign card_lang_label = 'EN' %}
+{% if card_lang == 'es' %}
+  {% assign card_lang_label = 'ES' %}
+{% endif %}
+
+<article class="intelligence-card card-glass intelligence-card--{{ glow }}{% if is_featured %} intelligence-card--featured{% endif %} stitch-reveal" data-domain="{{ domain_slug }}" data-lang="{{ card_lang }}">
   <div class="intelligence-card-glow intelligence-card-glow--{{ glow }}" aria-hidden="true"></div>
 
   {% if is_featured and featured_image != "" %}
@@ -40,6 +46,7 @@
   <div class="intelligence-card-body">
     <div class="intelligence-card-head">
       <span class="intelligence-card-domain intelligence-card-domain--{{ glow }}">{{ domain_label }}</span>
+      <span class="intelligence-card-lang" title="Language">{{ card_lang_label }}</span>
       <time class="intelligence-card-date" datetime="{{ card_post.date | date_to_xmlschema }}">{{ card_post.date | date: "%b %d, %Y" | upcase }}</time>
     </div>
 
