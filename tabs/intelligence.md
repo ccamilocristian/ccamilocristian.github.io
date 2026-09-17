@@ -2,8 +2,8 @@
 title: Blog
 permalink: /tabs/intelligence/
 description: >-
-  Blog and case studies on data science, ML, BI, and economics — English
-  feed with Spanish alternates via search and in-post language switcher.
+  Blog and case studies on data science, ML, BI, and economics — English and
+  Spanish posts in the feed; reciprocal hreflang pairs via in-post switcher.
 redirect_from:
   - /tabs/tags/
   - /tabs/categories/
@@ -56,8 +56,7 @@ breadcrumb:
       {% endfor %}
 
       {% for post in site.posts %}
-        {% assign post_lang = post.lang | default: 'en' %}
-        {% unless post.slug == featured_slug or post_lang == 'es' %}
+        {% unless post.slug == featured_slug %}
           {% include intelligence-artifact-card.html post=post %}
           {% assign feed_index = feed_index | plus: 1 %}
           {% assign feed_mod = feed_index | modulo: feed_interval %}
@@ -71,7 +70,7 @@ breadcrumb:
 
   <section class="stitch-intelligence-start-here stitch-reveal" aria-labelledby="intelligence-start-here">
     <h2 id="intelligence-start-here">Start here</h2>
-    <p class="stitch-intelligence-lead">Canonical English artifacts organized by the decision or system they help build.</p>
+    <p class="stitch-intelligence-lead">English and Spanish artifacts — start with these English hubs; open any card for the language switcher when a pair exists.</p>
     <h3>Economics and Colombia</h3>
     <ul class="stitch-intelligence-start-list">
       <li><a href="{{ '/posts/colombia-cpi-indexation-engine-english/' | relative_url }}">Colombia CPI indexation engine with a monthly audit trail</a></li>

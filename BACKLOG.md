@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-17 evening (GSC sitemap stuck = known github.io/Google; stop resubmit loop)_
+_Last sync: 2026-09-17 (Blog/Intelligence lists EN+ES; GSC sitemap still stuck github.io)_
 
 _Prev sync: 2026-09-16 (SEOmator follow-ups merged #16)_
 
@@ -17,7 +17,7 @@ Punto de entrada del proyecto. Para visión → [`README_UX_EVOLUTION.md`](READM
 | Métrica | Estado |
 |---------|--------|
 | Stitch shell | **3 tabs en nav** (Command Center · Profile · Intelligence; Stack/Economics Lens/Vision Lab fuera del menú pero indexables) |
-| Posts | **18 EN + 9 ES bilingües** (indexables, hreflang recíproco) |
+| Posts | **18 EN + 9 ES bilingües** (indexables; Blog lista EN+ES) |
 | Live regression | ✅ PRs #9–#16 live; smoke HTML/CSS **44/44 PASS** (2026-09-17) |
 | Lighthouse desktop **live** (post-#16) | Home **Perf 95 · Acc 100 · BP 100 · SEO 100** · Archives **98 / 100** |
 | Lighthouse **mobile** home (post-#16) | **Perf 75** — LCP **6.9 s** (render-delay 89%); ver P-M* abajo |

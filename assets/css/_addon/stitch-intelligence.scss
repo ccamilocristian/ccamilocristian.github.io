@@ -284,10 +284,24 @@ body.stitch-dashboard .intelligence-card-domain--tertiary {
   border: 1px solid rgba(246, 190, 52, 0.2);
 }
 
+body.stitch-dashboard .intelligence-card-lang {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-color-text-secondary, #c3c6d2);
+  background: rgba(195, 198, 210, 0.08);
+  border: 1px solid rgba(195, 198, 210, 0.18);
+}
+
 body.stitch-dashboard .intelligence-card-date {
   font-family: var(--ds-type-family-data, 'JetBrains Mono', monospace);
   font-size: 10px;
   color: var(--ds-color-text-tertiary, #aeb1bc);
+  margin-left: auto;
 }
 
 body.stitch-dashboard .intelligence-card-title {
