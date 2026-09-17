@@ -65,7 +65,7 @@ In the dashboard: open the **SEO** tab → filter failed audits (title, meta des
 4. Locally: `export BING_WEBMASTER_API_KEY='…'` (never commit).
 5. Re-run `bash tools/bing-submit-sitemap.sh` or `seo-kickoff.sh`.
 
-Until the key exists, IndexNow still notifies Bing of URL changes.
+Until the key exists, IndexNow still notifies Bing of URL changes. Pings now append to `docs/indexing/indexnow-history.ndjson` (IDX-B2).
 
 ## gsccli — Google Search Console CLI (T-IDX1 ✅)
 
@@ -89,14 +89,52 @@ gsccli inspect url 'https://ccamilocristian.github.io/posts/…/'
 
 Local site config: `.gsccli.json` (site URL only). Global SA path: `~/.gsccli/config.json`.
 
-**Smoke 2026-09-17:** `sites list` → `siteFullUser`; sitemap `isPending: true`, `lastDownloaded: 2024-10-16` (stale download — next: IDX-G1/G2).
+**Smoke 2026-09-17:** `sites list` → `siteFullUser`; sitemap `isPending: true`, `lastDownloaded: 2024-10-16`.
 
-Next runbook steps: **IDX-G1** (already partially smoked) → **IDX-G2** batch URL Inspection.
+**IDX-G1/G2 ✅:** snapshot + 33-URL batch → [`docs/indexing/GSC_INSPECT_2026-09-17.md`](indexing/GSC_INSPECT_2026-09-17.md).
+
+## bing-wm — Bing Webmaster CLI / MCP (T-IDX2 ✅)
+
+Package: [stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp) (PyPI name may lag; install from GitHub if needed).
+
+```bash
+# Local venv (avoid Cursor python shim: use env -i + conda/system python)
+# Current machine: ~/.local/share/venvs/bing-webmaster-mcp → ~/.local/bin/bing-wm
+export PATH="$HOME/.local/bin:$PATH"
+export BING_WM_API_KEY="$BING_WEBMASTER_API_KEY"  # same key as tools/bing-submit-sitemap.sh
+export BING_WM_ALLOW_WRITES=false                 # read-only / plan-only for agents
+
+bing-wm sites list --json
+bing-wm sitemaps list 'https://ccamilocristian.github.io/' --json
+bing-wm crawl stats 'https://ccamilocristian.github.io/' --json
+bing-wm index url 'https://ccamilocristian.github.io/' 'https://ccamilocristian.github.io/posts/…/'
+```
+
+MCP: run `bing-webmaster-mcp` (stdio) with `BING_WM_API_KEY` in the client env.
+
+**Smoke 2026-09-17 (IDX-B1):** site verified; sitemap Success (38 URLs, last crawl 2026-09-14); InIndex ≈ **68**. See [`docs/indexing/BING_SNAPSHOT_2026-09-17.md`](indexing/BING_SNAPSHOT_2026-09-17.md).
+
+## Free “Semrush-like” options (what we lack vs what to add)
+
+Semrush/Ahrefs rigor = proprietary **indexes**. Free tools never match that. For this site, prefer **first-party** data + one thin tracker:
+
+| Gap vs Semrush | Recommended free path | Priority |
+|----------------|----------------------|----------|
+| Organic ranking (real) | **GSC** Search Analytics via `gsccli` (already) | Have |
+| Bing queries / InIndex | **`bing-wm traffic` / crawl** (just set up) | Have |
+| On-page / CWV audit | **Unlighthouse** + SEOptimer guest (already) | Have |
+| Position tracking (chosen KWs) | **[SerpBear](https://github.com/towfiqi/serpbear)** + free-tier scraper, or weekly GSC export | **P2** if we pick ≤20 money KWs |
+| Keyword ideas (no paid API) | Google Autocomplete / Ads Keyword Planner; optional self-host **[UpgradeSEO](https://github.com/upgrade-ventures/upgradeseo)** | **P3** |
+| Backlinks (honest free) | Bing Webmaster inbound links (`bing-wm links`) + OpenPageRank — **not** Ahrefs-depth | **P2** via Bing we already have |
+| Competitor SERP | Skip unless DataForSEO budget; Common Crawl via UpgradeSEO is weak | Park |
+| All-in-one “free Semrush” clones | OpenSEO / CrawlSEO need **DataForSEO $** for real backlinks/KW — skip for now | Park |
+
+**Do not install** SerpBear/UpgradeSEO until we define a KW list (content GO). Next indexing runbook stays Bing/GSC.
 
 ## Your remaining checklist (manual only)
 
 See [`MANUAL_CHECKLIST.md`](MANUAL_CHECKLIST.md) §1 — only:
 
 1. GSC → Security & Manual Actions
-2. GSC → Request indexing for URLs listed by `seo-kickoff.sh`
-3. Bing site verify + API key (once), if not done
+2. GSC → Request indexing for **P0** URLs only (after IDX-G3)
+3. Bing site verify + API key — ✅ done (key in env; site verified 2026-09-17)

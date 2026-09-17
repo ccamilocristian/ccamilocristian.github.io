@@ -1,0 +1,18 @@
+# Thin secrets-only shield for the agent (does NOT hide source/build).
+# Heavy/generated paths stay in .cursorindexingignore so the agent can still
+# read them when needed; this file blocks credential material from context.
+
+.env
+.env.*
+.secrets/
+.gsccli/
+**/oauth-tokens.json
+oauth-tokens.json
+*google_creds*
+*service_account*.json
+*client_secret*.json
+credentials*.json
+*.pem
+*.key
+mcp.json
+**/mcp.json

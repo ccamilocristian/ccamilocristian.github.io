@@ -1,0 +1,15 @@
+[
+  {
+    "Compressed": false,
+    "FileSize": 0,
+    "LastCrawled": "2026-09-14T06:01:50+00:00",
+    "Status": "Success",
+    "Submitted": "2026-09-16T19:03:16.910000+00:00",
+    "Type": "Sitemap",
+    "Url": {
+      "value": "https://ccamilocristian.github.io/sitemap.xml",
+      "untrusted": true
+    },
+    "UrlCount": 38
+  }
+]

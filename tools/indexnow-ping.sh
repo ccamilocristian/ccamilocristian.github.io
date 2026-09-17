@@ -57,8 +57,30 @@ PY
 )
 
 echo "[INFO] IndexNow ping for ${#URLS[@]} URL(s)..."
-curl -sS -X POST "https://api.indexnow.org/indexnow" \
+HTTP=$(curl -sS -o /tmp/indexnow-response.json -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
   -H "Content-Type: application/json; charset=utf-8" \
-  -d "$JSON"
-echo
-echo "[INFO] Done."
+  -d "$JSON" || true)
+RESP=$(cat /tmp/indexnow-response.json 2>/dev/null || true)
+echo "$RESP"
+echo "[INFO] HTTP $HTTP — Done."
+
+# Durable local log for IDX-B2 diffs (no secrets beyond public keyLocation already in JSON)
+LOG_DIR="$WORK_DIR/docs/indexing"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/indexnow-history.ndjson"
+TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+python3 - "$LOG_FILE" "$TS" "$HTTP" "$RESP" "${URLS[@]}" <<'PY'
+import json, sys
+from pathlib import Path
+log_path, ts, http, resp, *urls = sys.argv[1:]
+entry = {
+    "ts": ts,
+    "http": http,
+    "urlCount": len(urls),
+    "urls": urls,
+    "response": (resp or "")[:500],
+}
+with Path(log_path).open("a", encoding="utf-8") as f:
+    f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+print(f"[INFO] Appended {len(urls)} URL(s) → {log_path}")
+PY

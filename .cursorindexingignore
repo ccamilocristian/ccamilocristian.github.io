@@ -16,6 +16,22 @@ node_modules/
 # Local design exports (synced via tools/stitch-sync.sh)
 .stitch/
 
+# Local Lighthouse / Unlighthouse dumps (gitignored; ~55MB+)
+.unlighthouse/
+unlighthouse-reports/
+
+# gsccli home config + accidental secret drops (never index)
+.gsccli/
+.env
+.env.*
+oauth-tokens.json
+**/oauth-tokens.json
+*google_creds*
+*service_account*.json
+*client_secret*.json
+credentials*.json
+.secrets/
+
 # Heavy binary assets (raster images, fonts) — SVGs stay indexed/editable
 assets/img/**/*.png
 assets/img/**/*.jpg
@@ -27,6 +43,15 @@ assets/**/*.woff
 assets/**/*.woff2
 assets/**/*.ttf
 assets/docs/graph.html
+assets/docs/graph*.html
+
+# Indexing API dumps (keep .md / .csv readable; raw JSON/NDJSON is noise)
+docs/indexing/*.ndjson
+docs/indexing/bing-*.json
+docs/indexing/gsc-*.json
+docs/indexing/bing-url-info-*.ndjson
+# keep indexnow-history.ndjson readable (small audit trail)
+
 
 # Minified / generated bundles
 *.min.js

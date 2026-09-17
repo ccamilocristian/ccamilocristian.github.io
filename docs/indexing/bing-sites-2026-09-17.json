@@ -1,0 +1,11 @@
+[
+  {
+    "AuthenticationCode": "[redacted: verification secret]",
+    "DnsVerificationCode": "[redacted: verification secret]",
+    "IsVerified": true,
+    "Url": {
+      "value": "https://ccamilocristian.github.io/",
+      "untrusted": true
+    }
+  }
+]

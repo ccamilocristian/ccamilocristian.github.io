@@ -1,6 +1,6 @@
 # Backlog
 
-_Last sync: 2026-09-17 (T-IDX1 ✅ gsccli 1.2.1 + SA auth; next IDX-G1/G2)_
+_Last sync: 2026-09-17 evening (GSC sitemap stuck = known github.io/Google; stop resubmit loop)_
 
 _Prev sync: 2026-09-16 (SEOmator follow-ups merged #16)_
 
@@ -102,30 +102,78 @@ LCP = texto `#home-hero-lead` (no imagen). Main thread ocupado por JS/CSS/imagen
 
 ### Hacer ahora (top 5)
 
-1. **IDX-G1** (cerrar) + **IDX-G2** batch Inspection — di **GO**  
-2. Luego **T-IDX2** Bing MCP  
-3. Seguir runbook → X1 → G3/G4 → Request indexing P0  
-4. **H-H1** / **P-U1** si sobra tiempo  
-5. GEO — no sin content GO  
+1. **Parar** de reenviar el sitemap — `lastDownloaded` 2024-10-16 es un atasco conocido Google↔GitHub Pages; más submits no lo destrabarán  
+2. Si ya pediste las **8 P0**: no repetir · esperar **7–14 días** · solo **Probar URL publicada** / re-inspeccionar  
+3. Si alguna de las 8 **no** la pediste: pide esa sola (lista abajo)  
+4. Bing ya está OK — no es el frente  
+5. Medio plazo: dominio propio (opcional) mejora crawl budget vs `github.io` compartido  
 
-### Mañana — runbook indexación (orden fijo)
+### Snapshot indexing matrix (2026-09-17) — IDX-X1 ✅
+
+[`docs/INDEXING_MATRIX_2026-09-17.md`](docs/INDEXING_MATRIX_2026-09-17.md) · CSV [`docs/indexing/indexing-matrix-2026-09-17.csv`](docs/indexing/indexing-matrix-2026-09-17.csv)
+
+| Bucket | n |
+|--------|--:|
+| P0 ES stale noindex | 6 |
+| P0 money EN unknown | 8 |
+| P0 crawled-not-indexed | 1 |
+| P1 other unknown | 11 |
+| P1 hubs | 3 |
+| OK both engines | 4 |
+
+**P0 total = 15** (Request indexing candidates). Bing knows all 33; Google is the gap.
+
+### Snapshot GSC Inspection (2026-09-17) — IDX-G1/G2 ✅
+
+Detalle: [`docs/indexing/GSC_INSPECT_2026-09-17.md`](docs/indexing/GSC_INSPECT_2026-09-17.md) · CSV [`docs/indexing/gsc-inspect-2026-09-17.csv`](docs/indexing/gsc-inspect-2026-09-17.csv)
+
+| Hallazgo | Detalle |
+|----------|---------|
+| Sitemap | `lastSubmitted` 2026-09-16 · `lastDownloaded` **2024-10-16** · `isPending` **true** |
+| Indexed (4/33) | `/`, profile, intelligence, `optimation-consumer-english` |
+| Unknown (22) | casi todo EN money + hubs secundarios |
+| Stale noindex (6 ES) | live OK (self-canonical, sin noindex) — hace falta re-crawl |
+| Crawled not indexed (1) | `scraping-plebiscito-colombia` |
+
+**P0 preliminar (no Request-index aún):** ES×6 stale · credit/CPI/RAG/MCP EN · scraping-plebiscito · desbloquear sitemap download.
+
+### Snapshot Bing (2026-09-17) — T-IDX2 + IDX-B1 ✅
+
+Detalle: [`docs/indexing/BING_SNAPSHOT_2026-09-17.md`](docs/indexing/BING_SNAPSHOT_2026-09-17.md)
+
+| Hallazgo | Detalle |
+|----------|---------|
+| Site | Verified |
+| Sitemap | **Success** · 38 URLs · last crawl **2026-09-14** |
+| InIndex | **~68** (vs GSC inspect 4/33) |
+| CLI | `bing-wm` · `BING_WM_API_KEY=$BING_WEBMASTER_API_KEY` · writes off |
+
+### Ignores (2026-09-17)
+
+| File | Change |
+|------|--------|
+| `.cursorindexingignore` | +`.unlighthouse/`, secrets patterns, `graph*.html`, `*.ndjson` |
+| `.cursorignore` | **new** — secrets-only |
+| `.gitignore` | +`.sass-cache/` |
+
+### Runbook indexación (orden fijo)
 
 Herramientas: [nalyk/gsccli](https://github.com/nalyk/gsccli) · [stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)  
-Creds: `~/mcp_servers/google_creds.json` · `BING_WEBMASTER_API_KEY`  
+Creds: `~/mcp_servers/google_creds.json` · `BING_WEBMASTER_API_KEY` → `BING_WM_API_KEY`  
 PATH: `export PATH="$HOME/.local/bin:$PATH"`
 
 | # | ID | Acción concreta | Done? |
 |---|-----|-----------------|-------|
 | 1 | **T-IDX1** | Instalar/configurar `gsccli` + SA; smoke `sites list` | ✅ 2026-09-17 (`siteFullUser`, v1.2.1) |
-| 2 | **IDX-G1** | `gsccli sitemaps list` — `isPending`, `lastDownloaded`, errores | ☐ smoke: pending=true, lastDownloaded **2024-10-16** |
-| 3 | **IDX-G2** | Batch URL Inspection money EN+ES + hubs → CSV | ☐ |
-| 4 | **T-IDX2** | Setup `bing-webmaster-mcp` + API key | ☐ |
-| 5 | **IDX-B1** | Bing verify + sitemap + crawl stats | ☐ |
-| 6 | **IDX-B2** | Bing status vs IndexNow log | ☐ |
-| 7 | **IDX-X1** | `docs/INDEXING_MATRIX_YYYY-MM-DD.md` | ☐ |
-| 8 | **IDX-G3** | Triage → lista P0 | ☐ |
-| 9 | **IDX-G4** | Diff sitemap vs on-Google | ☐ |
-| 10 | **IDX-X3** | Request indexing **solo P0** (UI) | ☐ |
+| 2 | **IDX-G1** | `gsccli sitemaps list` — `isPending`, `lastDownloaded`, errores | ✅ 2026-09-17 — pending + lastDownloaded **2024-10-16** |
+| 3 | **IDX-G2** | Batch URL Inspection money EN+ES + hubs → CSV | ✅ 2026-09-17 — 33 URLs → `docs/indexing/` |
+| 4 | **T-IDX2** | Setup `bing-webmaster-mcp` + API key | ✅ 2026-09-17 — `bing-wm` v0.1.0 |
+| 5 | **IDX-B1** | Bing verify + sitemap + crawl stats | ✅ 2026-09-17 — InIndex ~68 |
+| 6 | **IDX-B2** | Bing status vs IndexNow log | ✅ 2026-09-17 — 33/33 Bing-known; kickoff 11/11; log added |
+| 7 | **IDX-X1** | `docs/INDEXING_MATRIX_YYYY-MM-DD.md` | ✅ 2026-09-17 — 33 rows · **15 P0** |
+| 8 | **IDX-G3** | Triage → lista P0 | ✅ 2026-09-17 — 8 new + 7 wait ([`IDX-G3`](docs/indexing/IDX-G3-P0-2026-09-17.md)) |
+| 9 | **IDX-G4** | Diff sitemap vs on-Google | ✅ 2026-09-17 — 36 locs · 4 on-Google ([`IDX-G4`](docs/indexing/IDX-G4-SITEMAP-DIFF-2026-09-17.md)) |
+| 10 | **IDX-X3** | Request indexing **solo P0** (UI) | ☐ **tú** — 8 URLs en MANUAL |
 
 **Orden:** `T-IDX1 → G1/G2 → T-IDX2 → B1/B2 → X1 → G3/G4 → Request indexing solo P0`
 
@@ -136,7 +184,8 @@ PATH: `export PATH="$HOME/.local/bin:$PATH"`
 | LH desktop #16 | RB / CMP contrast / CLS | **Done** |
 | LH mobile | avatar / GTM / jQuery | **Done** PR #17 (re-medir LH) |
 | SEOptimer | Usability **F** | **Open** P-U1 |
-| GSC sitemap | `isPending` + lastDownloaded 2024-10-16 | **Open** IDX-G1 |
+| GSC sitemap | `isPending` + lastDownloaded 2024-10-16 | **Stuck github.io/Google** — stop resubmit loop |
+| Bing vs GSC | Bing knows **33/33** inspected; GSC 22 unknown + 6 stale noindex | **B2 done** — Google-side P0 |
 
 ---
 
@@ -219,8 +268,8 @@ No hay un único “oráculo” que sustituya GSC **Request indexing** (sigue si
 | ID | Tarea | Pri |
 |----|-------|-----|
 | **T-IDX1** | Instalar/usar **[nalyk/gsccli](https://github.com/nalyk/gsccli)** con service account actual | ✅ 2026-09-17 (`siteFullUser`) |
-| **T-IDX2** | Instalar/usar **[stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)** + `BING_WEBMASTER_API_KEY` | **P1** setup |
-| **T-IDX3** | Documentar flujo en `docs/SEO_TOOLING.md` (comandos + límites Request indexing) | **P2** docs |
+| **T-IDX2** | Instalar/usar **[stufently/bing-webmaster-mcp](https://github.com/stufently/bing-webmaster-mcp)** + `BING_WEBMASTER_API_KEY` | ✅ 2026-09-17 (`bing-wm`) |
+| **T-IDX3** | Documentar flujo en `docs/SEO_TOOLING.md` (comandos + límites Request indexing) | ✅ 2026-09-17 (+ Semrush-gap matrix) |
 
 ### Diagnóstico profundo — checklist operativo (post-setup gsccli + Bing MCP)
 
@@ -228,16 +277,16 @@ Herramientas fijas: **gsccli** (Google) · **bing-webmaster-mcp** (Bing). Nuestr
 
 | ID | Tarea | Tool | Entregable |
 |----|-------|------|------------|
-| **IDX-G1** | Inventory sitios GSC + sitemap status (`isPending`, lastDownloaded) | gsccli | Smoke OK — formalizar en matriz |
-| **IDX-G2** | Batch **URL Inspection** money EN+ES + hubs (/, profile, intelligence, archives) | gsccli | CSV: coverageState, robotsTxtState, indexingState, lastCrawl |
-| **IDX-G3** | Triage unknown / excluded / soft-404 / duplicate / crawled-not-indexed | gsccli | Lista P0 con causa |
-| **IDX-G4** | Diff sitemap URLs vs Inspection “URL is on Google” | gsccli + sitemap.xml | Gaps a re-pedir indexing |
+| **IDX-G1** | Inventory sitios GSC + sitemap status (`isPending`, lastDownloaded) | gsccli | ✅ 2026-09-17 — pending + lastDownloaded 2024-10-16 |
+| **IDX-G2** | Batch **URL Inspection** money EN+ES + hubs (/, profile, intelligence, archives) | gsccli | ✅ 2026-09-17 — 33 URLs CSV/NDJSON |
+| **IDX-G3** | Triage unknown / excluded / soft-404 / duplicate / crawled-not-indexed | gsccli | ✅ 2026-09-17 P0 frozen |
+| **IDX-G4** | Diff sitemap URLs vs Inspection “URL is on Google” | gsccli + sitemap.xml | ✅ 2026-09-17 |
 | **IDX-G5** | Search Analytics 90d: queries/pages con impress≥1 y CTR=0 (oportunidad) | gsccli | Top 20 |
 | **IDX-G6** | Confirmar ES “noindex stale” vs live (Inspection live vs indexed) | gsccli | Clear/false-alarm |
-| **IDX-B1** | Bing site verify + sitemap get + crawl stats | bing-webmaster-mcp | Snapshot Bing |
-| **IDX-B2** | Bing URL / traffic ranking vs IndexNow ping log | bing-webmaster-mcp | Indexed? submitted? |
+| **IDX-B1** | Bing site verify + sitemap get + crawl stats | bing-webmaster-mcp | ✅ 2026-09-17 — InIndex ~68 |
+| **IDX-B2** | Bing URL / traffic ranking vs IndexNow ping log | bing-webmaster-mcp | ✅ 2026-09-17 — see `BING_B2_INDEXNOW_2026-09-17.md` |
 | **IDX-B3** | Submit URLs críticas a Bing API (si no indexadas) + re-check 7d | bing-webmaster-mcp | Queue |
-| **IDX-X1** | Matriz única Google↔Bing por URL money (una fila = una URL) | ambos | `docs/INDEXING_MATRIX_YYYY-MM-DD.md` |
+| **IDX-X1** | Matriz única Google↔Bing por URL money (una fila = una URL) | ambos | ✅ [`docs/INDEXING_MATRIX_2026-09-17.md`](docs/INDEXING_MATRIX_2026-09-17.md) |
 | **IDX-X2** | Automatizar reporte semanal (script wrapper en `tools/`) | ambos | `tools/indexing-diagnosis.sh` |
 | **IDX-X3** | Lo que **sigue manual**: GSC Request indexing UI + Security | — | Checklist en MANUAL |
 
